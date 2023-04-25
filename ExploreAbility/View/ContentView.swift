@@ -14,31 +14,34 @@ struct ContentView: View {
     @StateObject var viewModel = ViewModel()
     
     var body: some View {
-        switch viewModel.gameState {
-        case .connection:
-            ConnectionView(viewModel: viewModel)
-        case .exploring:
-            ExploringView(viewModel: viewModel, namespace: namespace)
-        case .textSize:
-            TextSizeChallenge(namespace: namespace) {
-                withAnimation(.easeOut) {
-                    viewModel.gameState = .exploring
-                    viewModel.completedChallenges.append(.textSize)
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            switch viewModel.gameState {
+            case .connection:
+                ConnectionView(viewModel: viewModel)
+            case .exploring:
+                ExploringView(viewModel: viewModel, namespace: namespace)
+            case .textSize:
+                TextSizeChallenge(namespace: namespace) {
+                    withAnimation(.easeOut(duration: 1)) {
+                        viewModel.gameState = .exploring
+                        viewModel.completedChallenges.append(.textSize)
+                    }
                 }
-            }
-        case .voiceOver:
-            VoiceOverChallenge(namespace: namespace) {
-                withAnimation(.easeOut) {
-                    viewModel.gameState = .exploring
-                    viewModel.completedChallenges.append(.voiceOver)
+            case .voiceOver:
+                VoiceOverChallenge(namespace: namespace) {
+                    withAnimation(.easeOut(duration: 1)) {
+                        viewModel.gameState = .exploring
+                        viewModel.completedChallenges.append(.voiceOver)
+                    }
                 }
+            case .closedCaptions:
+                EmptyView()
+            case .voiceControl:
+                EmptyView()
+            case .guidedAccess:
+                EmptyView()
             }
-        case .closedCaptions:
-            EmptyView()
-        case .voiceControl:
-            EmptyView()
-        case .guidedAccess:
-            EmptyView()
         }
     }
 }

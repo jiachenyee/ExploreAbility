@@ -132,7 +132,7 @@ struct TextSizeChallenge: View {
                     backgroundColor = .black
                 }
                 
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                     onSucceed?()
                 }
             }
