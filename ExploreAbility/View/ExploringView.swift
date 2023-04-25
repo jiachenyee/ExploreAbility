@@ -28,7 +28,7 @@ struct ExploringView: View {
                     
                     Text("Put on your blindfolds")
                         .multilineTextAlignment(.center)
-                        .font(.system(size: 18))
+                        .font(.system(size: 24))
                 }
                 
                 Spacer()

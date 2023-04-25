@@ -41,7 +41,6 @@ struct VoiceOverChallenge: View {
                 
                 Button("Done") {
                     if 0.45...0.55 ~= sliderValue && toggleValue {
-                        
                         withAnimation {
                             didSucceed = true
                         }

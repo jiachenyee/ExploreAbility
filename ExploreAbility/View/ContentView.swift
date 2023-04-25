@@ -15,6 +15,8 @@ struct ContentView: View {
     
     var body: some View {
         switch viewModel.gameState {
+        case .connection:
+            ConnectionView(viewModel: viewModel)
         case .exploring:
             ExploringView(viewModel: viewModel, namespace: namespace)
         case .textSize:

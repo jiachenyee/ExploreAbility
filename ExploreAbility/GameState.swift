@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 enum GameState: Int, CustomStringConvertible {
+    case connection = -2
     case exploring = -1
     
     case textSize = 0
@@ -19,7 +20,7 @@ enum GameState: Int, CustomStringConvertible {
     
     func toIcon() -> String {
         switch self {
-        case .exploring:
+        case .exploring, .connection:
             return "questionmark"
         case .textSize:
             return "textformat.size"
@@ -36,7 +37,7 @@ enum GameState: Int, CustomStringConvertible {
     
     func toColor() -> Color {
         switch self {
-        case .exploring:
+        case .exploring, .connection:
             return .black
         case .textSize:
             return .blue
@@ -65,6 +66,8 @@ enum GameState: Int, CustomStringConvertible {
             return "GuidedAccessChallenge"
         case .exploring:
             return "Exploring"
+        case .connection:
+            return "Connection"
         }
     }
 }
