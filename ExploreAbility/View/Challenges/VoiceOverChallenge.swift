@@ -47,7 +47,7 @@ struct VoiceOverChallenge: View {
                     Circle()
                         .fill(.yellow)
                         .frame(width: 20, height: 20, alignment: .center)
-                        .matchedGeometryEffect(id: "VoiceOverChallengeBubble", in: namespace)
+                        .matchedGeometryEffect(id: GameState.voiceOver, in: namespace)
                         .offset(y: isDropped ? reader.size.height / 2 - 42 : 0)
                         .transition(.scale)
                 }

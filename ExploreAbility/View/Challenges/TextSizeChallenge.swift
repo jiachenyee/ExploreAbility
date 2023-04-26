@@ -51,7 +51,7 @@ struct TextSizeChallenge: View {
                 Circle()
                     .fill(.blue)
                     .frame(width: circleDiameter, height: circleDiameter, alignment: .center)
-                    .matchedGeometryEffect(id: "TextSizeChallengeBubble", in: namespace)
+                    .matchedGeometryEffect(id: GameState.textSize, in: namespace)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .opacity(circleOpacity)
                     .scaleEffect(circleScale)

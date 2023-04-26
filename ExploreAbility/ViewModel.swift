@@ -11,7 +11,7 @@ import CoreLocation
 
 class ViewModel: NSObject, ObservableObject {
     @Published var completedChallenges: [GameState] = []
-    @Published var gameState = GameState.textSize
+    @Published var gameState = GameState.closedCaptions
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
@@ -24,6 +24,6 @@ class ViewModel: NSObject, ObservableObject {
     
     func startMonitoring() {
         let manager = CLLocationManager()
-        manager.startMonitoring(for: <#T##CLRegion#>)
+//        manager.startMonitoring(for: <#T##CLRegion#>)
     }
 }

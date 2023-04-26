@@ -38,7 +38,7 @@ struct ExploringView: View {
                             Circle()
                                 .fill(challenge.toColor())
                                 .frame(width: 30, height: 30)
-                                .matchedGeometryEffect(id: challenge.description + "Bubble", in: namespace)
+                                .matchedGeometryEffect(id: challenge, in: namespace)
                             Image(systemName: challenge.toIcon())
                                 .font(.system(size: 17))
                         }
