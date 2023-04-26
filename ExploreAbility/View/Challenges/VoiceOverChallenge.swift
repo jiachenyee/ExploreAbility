@@ -15,16 +15,16 @@ struct VoiceOverChallenge: View {
     
     var onSucceed: (() -> ())?
     
-    @State var sliderValue = 0.0
-    @State var toggleValue = false
+    @State private var sliderValue = 0.0
+    @State private var toggleValue = false
     
-    @State var isVoiceOverRunning = false
-    @State var challengeState = VoiceOverChallengeState.started
+    @State private var isVoiceOverRunning = false
+    @State private var challengeState = VoiceOverChallengeState.started
     
-    @State var dropControls = false
-    @State var showCircle = false
+    @State private var dropControls = false
+    @State private var showCircle = false
     
-    @State var isDropped = false
+    @State private var isDropped = false
     
     var body: some View {
         GeometryReader { reader in

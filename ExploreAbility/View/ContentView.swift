@@ -36,9 +36,17 @@ struct ContentView: View {
                     }
                 }
             case .closedCaptions:
-                EmptyView()
+                ClosedCaptionsChallenge(namespace: namespace) {
+                    withAnimation(.easeOut(duration: 1)) {
+                        viewModel.gameState = .exploring
+                        viewModel.completedChallenges.append(.closedCaptions)
+                    }
+                }
             case .voiceControl:
-                EmptyView()
+                VoiceControlChallenge(namespace: namespace) {
+                    viewModel.gameState = .exploring
+                    viewModel.completedChallenges.append(.voiceControl)
+                }
             case .guidedAccess:
                 EmptyView()
             }
