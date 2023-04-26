@@ -35,7 +35,6 @@
 		326D42DB29F804FB00AE2F45 /* MCConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42D729F804C600AE2F45 /* MCConstant.swift */; };
 		326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42DF29F8071C00AE2F45 /* ConnectionView.swift */; };
 		326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */; };
-		326D42E629F8ABFE00AE2F45 /* VoiceControlChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */; };
 		326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */; };
 		326D42EA29F8E31400AE2F45 /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E929F8E31400AE2F45 /* BeaconManager.swift */; };
 		326D42EC29F8F4BD00AE2F45 /* CLBeaconRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */; };
@@ -55,6 +54,7 @@
 		326D42FE29F8FEDF00AE2F45 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */; };
 		326D432029F9250800AE2F45 /* game.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D431F29F9250800AE2F45 /* game.mov */; };
 		326D432429F92AC800AE2F45 /* success.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D432329F92AC800AE2F45 /* success.mov */; };
+		326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +90,6 @@
 		326D42DD29F8057700AE2F45 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		326D42DF29F8071C00AE2F45 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedCaptionsChallenge.swift; sourceTree = "<group>"; };
-		326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlChallenge.swift; sourceTree = "<group>"; };
 		326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedAccessChallenge.swift; sourceTree = "<group>"; };
 		326D42E929F8E31400AE2F45 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLBeaconRegion.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
 		326D431F29F9250800AE2F45 /* game.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = game.mov; sourceTree = "<group>"; };
 		326D432329F92AC800AE2F45 /* success.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = success.mov; sourceTree = "<group>"; };
+		326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducedMotionChallenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +187,7 @@
 				326D428F29F7BEF200AE2F45 /* TextSizeChallenge.swift */,
 				326D429829F7E43600AE2F45 /* VoiceOverChallenge.swift */,
 				326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */,
-				326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */,
+				326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */,
 				326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */,
 			);
 			path = Challenges;
@@ -449,7 +449,6 @@
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
-				326D42E629F8ABFE00AE2F45 /* VoiceControlChallenge.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
@@ -459,6 +458,7 @@
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
+				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
 				326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */,
 				326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */,

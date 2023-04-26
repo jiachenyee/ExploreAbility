@@ -42,10 +42,10 @@ struct ContentView: View {
                         viewModel.completedChallenges.append(.closedCaptions)
                     }
                 }
-            case .voiceControl:
-                VoiceControlChallenge(namespace: namespace) {
+            case .reducedMotion:
+                ReducedMotionChallenge(namespace: namespace) {
                     viewModel.gameState = .exploring
-                    viewModel.completedChallenges.append(.voiceControl)
+                    viewModel.completedChallenges.append(.reducedMotion)
                 }
             case .guidedAccess:
                 GuidedAccessChallenge(namespace: namespace) {
