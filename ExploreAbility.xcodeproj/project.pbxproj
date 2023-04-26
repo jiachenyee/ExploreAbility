@@ -19,11 +19,10 @@
 		326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */; };
 		326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429C29F802B400AE2F45 /* MCBrowserView.swift */; };
 		326D42A529F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42A429F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift */; };
-		326D42A729F8044C00AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42A629F8044C00AE2F45 /* ContentView.swift */; };
+		326D42A729F8044C00AE2F45 /* BeaconSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42A629F8044C00AE2F45 /* BeaconSetupView.swift */; };
 		326D42A929F8044D00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D42A829F8044D00AE2F45 /* Assets.xcassets */; };
 		326D42AC29F8044D00AE2F45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D42AB29F8044D00AE2F45 /* Preview Assets.xcassets */; };
 		326D42B729F8048900AE2F45 /* ExploreAbility_Beacon_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42B629F8048900AE2F45 /* ExploreAbility_Beacon_MacApp.swift */; };
-		326D42B929F8048900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42B829F8048900AE2F45 /* ContentView.swift */; };
 		326D42BB29F8048A00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D42BA29F8048A00AE2F45 /* Assets.xcassets */; };
 		326D42BE29F8048A00AE2F45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D42BD29F8048A00AE2F45 /* Preview Assets.xcassets */; };
 		326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42C929F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift */; };
@@ -34,11 +33,26 @@
 		326D42D929F804FA00AE2F45 /* MCConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42D729F804C600AE2F45 /* MCConstant.swift */; };
 		326D42DA29F804FA00AE2F45 /* MCConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42D729F804C600AE2F45 /* MCConstant.swift */; };
 		326D42DB29F804FB00AE2F45 /* MCConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42D729F804C600AE2F45 /* MCConstant.swift */; };
-		326D42DE29F8057700AE2F45 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42DD29F8057700AE2F45 /* ViewModel.swift */; };
 		326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42DF29F8071C00AE2F45 /* ConnectionView.swift */; };
 		326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */; };
 		326D42E629F8ABFE00AE2F45 /* VoiceControlChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */; };
 		326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */; };
+		326D42EA29F8E31400AE2F45 /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E929F8E31400AE2F45 /* BeaconManager.swift */; };
+		326D42EC29F8F4BD00AE2F45 /* CLBeaconRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */; };
+		326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */; };
+		326D42EE29F8F4C200AE2F45 /* CLBeaconRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */; };
+		326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */; };
+		326D42F129F8F65400AE2F45 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42F029F8F65400AE2F45 /* Location.swift */; };
+		326D42F229F8F66200AE2F45 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42F029F8F65400AE2F45 /* Location.swift */; };
+		326D42F329F8F66300AE2F45 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42F029F8F65400AE2F45 /* Location.swift */; };
+		326D42F429F8F66400AE2F45 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42F029F8F65400AE2F45 /* Location.swift */; };
+		326D42F629F8F86F00AE2F45 /* TransmittingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42F529F8F86F00AE2F45 /* TransmittingView.swift */; };
+		326D42F829F8FD9300AE2F45 /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E929F8E31400AE2F45 /* BeaconManager.swift */; };
+		326D42F929F8FD9300AE2F45 /* BeaconSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42A629F8044C00AE2F45 /* BeaconSetupView.swift */; };
+		326D42FA29F8FD9300AE2F45 /* TransmittingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42F529F8F86F00AE2F45 /* TransmittingView.swift */; };
+		326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42DD29F8057700AE2F45 /* ViewModel.swift */; };
+		326D42FD29F8FDE100AE2F45 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */; };
+		326D42FE29F8FEDF00AE2F45 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,12 +70,11 @@
 		326D429C29F802B400AE2F45 /* MCBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCBrowserView.swift; sourceTree = "<group>"; };
 		326D42A229F8044C00AE2F45 /* ExploreAbility Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ExploreAbility Beacon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D42A429F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbility_BeaconApp.swift; sourceTree = "<group>"; };
-		326D42A629F8044C00AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		326D42A629F8044C00AE2F45 /* BeaconSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconSetupView.swift; sourceTree = "<group>"; };
 		326D42A829F8044D00AE2F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		326D42AB29F8044D00AE2F45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		326D42B429F8048900AE2F45 /* ExploreAbility Beacon Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ExploreAbility Beacon Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D42B629F8048900AE2F45 /* ExploreAbility_Beacon_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbility_Beacon_MacApp.swift; sourceTree = "<group>"; };
-		326D42B829F8048900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		326D42BA29F8048A00AE2F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		326D42BD29F8048A00AE2F45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		326D42BF29F8048A00AE2F45 /* ExploreAbility_Beacon_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExploreAbility_Beacon_Mac.entitlements; sourceTree = "<group>"; };
@@ -77,6 +90,11 @@
 		326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedCaptionsChallenge.swift; sourceTree = "<group>"; };
 		326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlChallenge.swift; sourceTree = "<group>"; };
 		326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedAccessChallenge.swift; sourceTree = "<group>"; };
+		326D42E929F8E31400AE2F45 /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLBeaconRegion.swift; sourceTree = "<group>"; };
+		326D42F029F8F65400AE2F45 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		326D42F529F8F86F00AE2F45 /* TransmittingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmittingView.swift; sourceTree = "<group>"; };
+		326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +134,10 @@
 			children = (
 				326D42D629F804B100AE2F45 /* Shared */,
 				326D428029F7AEB900AE2F45 /* ExploreAbility */,
+				326D42C829F804A800AE2F45 /* ExploreAbility Console */,
+				326D42F729F8FD6E00AE2F45 /* ExploreAbility Beacon Shared */,
 				326D42A329F8044C00AE2F45 /* ExploreAbility Beacon */,
 				326D42B529F8048900AE2F45 /* ExploreAbility Beacon Mac */,
-				326D42C829F804A800AE2F45 /* ExploreAbility Console */,
 				326D427F29F7AEB900AE2F45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				326D42A429F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift */,
-				326D42A629F8044C00AE2F45 /* ContentView.swift */,
 				326D42A829F8044D00AE2F45 /* Assets.xcassets */,
 				326D42AA29F8044D00AE2F45 /* Preview Content */,
 			);
@@ -191,8 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				326D42B629F8048900AE2F45 /* ExploreAbility_Beacon_MacApp.swift */,
-				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
-				326D42B829F8048900AE2F45 /* ContentView.swift */,
 				326D42BA29F8048A00AE2F45 /* Assets.xcassets */,
 				326D42BF29F8048A00AE2F45 /* ExploreAbility_Beacon_Mac.entitlements */,
 				326D42BC29F8048A00AE2F45 /* Preview Content */,
@@ -213,6 +229,7 @@
 			children = (
 				326D42C929F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift */,
 				326D42CB29F804A800AE2F45 /* ContentView.swift */,
+				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
 				326D42CD29F804A900AE2F45 /* Assets.xcassets */,
 				326D42D229F804A900AE2F45 /* ExploreAbility_Console.entitlements */,
 				326D42CF29F804A900AE2F45 /* Preview Content */,
@@ -232,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				326D42D729F804C600AE2F45 /* MCConstant.swift */,
+				326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */,
+				326D42F029F8F65400AE2F45 /* Location.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -246,6 +265,17 @@
 				326D429C29F802B400AE2F45 /* MCBrowserView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		326D42F729F8FD6E00AE2F45 /* ExploreAbility Beacon Shared */ = {
+			isa = PBXGroup;
+			children = (
+				326D42E929F8E31400AE2F45 /* BeaconManager.swift */,
+				326D42A629F8044C00AE2F45 /* BeaconSetupView.swift */,
+				326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */,
+				326D42F529F8F86F00AE2F45 /* TransmittingView.swift */,
+			);
+			path = "ExploreAbility Beacon Shared";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +438,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
+				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
 				326D42E629F8ABFE00AE2F45 /* VoiceControlChallenge.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
@@ -429,8 +461,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326D42A729F8044C00AE2F45 /* ContentView.swift in Sources */,
+				326D42EC29F8F4BD00AE2F45 /* CLBeaconRegion.swift in Sources */,
+				326D42FD29F8FDE100AE2F45 /* PopupModifier.swift in Sources */,
+				326D42F629F8F86F00AE2F45 /* TransmittingView.swift in Sources */,
+				326D42A729F8044C00AE2F45 /* BeaconSetupView.swift in Sources */,
+				326D42EA29F8E31400AE2F45 /* BeaconManager.swift in Sources */,
 				326D42A529F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift in Sources */,
+				326D42F129F8F65400AE2F45 /* Location.swift in Sources */,
 				326D42D929F804FA00AE2F45 /* MCConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,10 +476,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326D42B929F8048900AE2F45 /* ContentView.swift in Sources */,
+				326D42EE29F8F4C200AE2F45 /* CLBeaconRegion.swift in Sources */,
+				326D42FE29F8FEDF00AE2F45 /* PopupModifier.swift in Sources */,
 				326D42B729F8048900AE2F45 /* ExploreAbility_Beacon_MacApp.swift in Sources */,
-				326D42DE29F8057700AE2F45 /* ViewModel.swift in Sources */,
+				326D42FA29F8FD9300AE2F45 /* TransmittingView.swift in Sources */,
+				326D42F929F8FD9300AE2F45 /* BeaconSetupView.swift in Sources */,
+				326D42F229F8F66200AE2F45 /* Location.swift in Sources */,
 				326D42DA29F804FA00AE2F45 /* MCConstant.swift in Sources */,
+				326D42F829F8FD9300AE2F45 /* BeaconManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +493,9 @@
 			files = (
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
 				326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */,
+				326D42F329F8F66300AE2F45 /* Location.swift in Sources */,
+				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
+				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,
 				326D42DB29F804FB00AE2F45 /* MCConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,11 +688,13 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Function as iBeacon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,11 +719,13 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Function as iBeacon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -705,6 +753,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Function as iBeacon";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -734,6 +783,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Function as iBeacon";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

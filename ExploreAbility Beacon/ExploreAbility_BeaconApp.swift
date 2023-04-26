@@ -11,7 +11,7 @@ import SwiftUI
 struct ExploreAbility_BeaconApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BeaconSetupView()
         }
     }
 }

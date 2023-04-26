@@ -7,6 +7,7 @@
 
 import Foundation
 import MultipeerConnectivity
+import CoreLocation
 
 class ViewModel: NSObject, ObservableObject {
     @Published var completedChallenges: [GameState] = []
@@ -19,5 +20,10 @@ class ViewModel: NSObject, ObservableObject {
         super.init()
         
         setUpMultipeerConnectivity()
+    }
+    
+    func startMonitoring() {
+        let manager = CLLocationManager()
+        manager.startMonitoring(for: <#T##CLRegion#>)
     }
 }
