@@ -15,6 +15,7 @@ struct PopupModifier: ViewModifier {
     func body(content: Content) -> some View {
         #if os(macOS)
         content
+            .padding()
             .sheet(isPresented: $isPresented) {
                 TransmittingView(isActive: $isPresented)
             }
