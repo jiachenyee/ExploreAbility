@@ -48,7 +48,10 @@ struct ContentView: View {
                     viewModel.completedChallenges.append(.voiceControl)
                 }
             case .guidedAccess:
-                EmptyView()
+                GuidedAccessChallenge(namespace: namespace) {
+                    viewModel.gameState = .exploring
+                    viewModel.completedChallenges.append(.guidedAccess)
+                }
             }
         }
     }

@@ -10,7 +10,7 @@ import MultipeerConnectivity
 
 class ViewModel: NSObject, ObservableObject {
     @Published var completedChallenges: [GameState] = []
-    @Published var gameState = GameState.voiceControl
+    @Published var gameState = GameState.textSize
     
     var peerID: MCPeerID!
     var mcSession: MCSession!

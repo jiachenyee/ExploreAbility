@@ -38,6 +38,7 @@
 		326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42DF29F8071C00AE2F45 /* ConnectionView.swift */; };
 		326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */; };
 		326D42E629F8ABFE00AE2F45 /* VoiceControlChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */; };
+		326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		326D42DF29F8071C00AE2F45 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedCaptionsChallenge.swift; sourceTree = "<group>"; };
 		326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlChallenge.swift; sourceTree = "<group>"; };
+		326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedAccessChallenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				326D429829F7E43600AE2F45 /* VoiceOverChallenge.swift */,
 				326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */,
 				326D42E529F8ABFE00AE2F45 /* VoiceControlChallenge.swift */,
+				326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
+				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
