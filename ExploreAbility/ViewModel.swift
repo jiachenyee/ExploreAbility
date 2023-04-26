@@ -11,7 +11,7 @@ import CoreLocation
 
 class ViewModel: NSObject, ObservableObject {
     @Published var completedChallenges: [GameState] = []
-    @Published var gameState = GameState.reducedMotion
+    @Published var gameState = GameState.connection
     
     var peerID: MCPeerID!
     var mcSession: MCSession!

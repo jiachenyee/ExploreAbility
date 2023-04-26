@@ -10,9 +10,12 @@ import MultipeerConnectivity
 
 extension ViewModel: MCSessionDelegate {
     func setUpMultipeerConnectivity() {
-        peerID = MCPeerID(displayName: UIDevice.current.name)
-        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
+        peerID = MCPeerID(displayName: "lol")
+        mcSession = MCSession(peer: peerID,
+                              securityIdentity: nil,
+                              encryptionPreference: .none)
         mcSession.delegate = self
+        print(mcSession.myPeerID)
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {

@@ -99,6 +99,8 @@
 		326D431F29F9250800AE2F45 /* game.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = game.mov; sourceTree = "<group>"; };
 		326D432329F92AC800AE2F45 /* success.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = success.mov; sourceTree = "<group>"; };
 		326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducedMotionChallenge.swift; sourceTree = "<group>"; };
+		326D432729F9578400AE2F45 /* ExploreAbility-Beacon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ExploreAbility-Beacon-Info.plist"; sourceTree = SOURCE_ROOT; };
+		326D432829F9599100AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		326D428029F7AEB900AE2F45 /* ExploreAbility */ = {
 			isa = PBXGroup;
 			children = (
+				326D432829F9599100AE2F45 /* Info.plist */,
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
 				326D429629F7DFEF00AE2F45 /* GameState.swift */,
 				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
@@ -196,6 +199,7 @@
 		326D42A329F8044C00AE2F45 /* ExploreAbility Beacon */ = {
 			isa = PBXGroup;
 			children = (
+				326D432729F9578400AE2F45 /* ExploreAbility-Beacon-Info.plist */,
 				326D42A429F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift */,
 				326D42A829F8044D00AE2F45 /* Assets.xcassets */,
 				326D42AA29F8044D00AE2F45 /* Preview Content */,
@@ -393,9 +397,9 @@
 			projectRoot = "";
 			targets = (
 				326D427D29F7AEB900AE2F45 /* ExploreAbility */,
+				326D42C629F804A800AE2F45 /* ExploreAbility Console */,
 				326D42A129F8044C00AE2F45 /* ExploreAbility Beacon */,
 				326D42B329F8048900AE2F45 /* ExploreAbility Beacon Mac */,
-				326D42C629F804A800AE2F45 /* ExploreAbility Console */,
 			);
 		};
 /* End PBXProject section */
@@ -636,6 +640,9 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExploreAbility/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -666,6 +673,9 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExploreAbility/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -696,6 +706,8 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ExploreAbility-Beacon-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Function as iBeacon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -727,6 +739,8 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ExploreAbility-Beacon-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Function as iBeacon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

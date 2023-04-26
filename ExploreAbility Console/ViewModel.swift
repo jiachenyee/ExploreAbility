@@ -22,6 +22,8 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         
         mcSession.delegate = self
+        
+        startHosting()
     }
     
     func startHosting() {
@@ -29,10 +31,11 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
                                                       discoveryInfo: nil,
                                                       session: mcSession)
         mcAdvertiserAssistant.start()
+        print("Start")
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        
+        print("HELLO")
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {

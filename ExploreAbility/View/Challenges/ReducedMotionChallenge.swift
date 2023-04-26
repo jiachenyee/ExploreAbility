@@ -53,6 +53,7 @@ struct ReducedMotionChallenge: View {
                         }
                         
                         Text("You did it!\nNow, turn Reduced Motion off.")
+                            .multilineTextAlignment(.center)
                             .font(.system(size: 18))
                             .foregroundColor(.white)
                             .offset(y: state == .reducedMotionEnabled ? -300 : 300)
@@ -94,6 +95,8 @@ struct ReducedMotionChallenge: View {
                         if !onSucceedCalled {
                             onSucceed?()
                             onSucceedCalled = true
+                        } else {
+                            print("WHAT")
                         }
                     }
                 }
