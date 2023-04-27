@@ -10,14 +10,25 @@ import MultipeerConnectivity
 import CoreLocation
 
 class ViewModel: NSObject, ObservableObject {
+    @Published var deviceId: String
+    
     @Published var completedChallenges: [GameState] = []
-    @Published var gameState = GameState.connection
+    @Published var gameState = GameState.connection {
+        didSet {
+            switch gameState {
+            case .exploring: say(text: "Put on your blindfolds.")
+            default: say(text: "Remove your blindfolds.")
+            }
+        }
+    }
     @Published var location = Location.academy
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
     
     override init() {
+        deviceId = String(UUID().uuidString.split(separator: "-")[0])
+        
         super.init()
         
         setUpMultipeerConnectivity()

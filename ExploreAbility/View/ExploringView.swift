@@ -14,6 +14,7 @@ struct ExploringView: View {
     var namespace: Namespace.ID
     
     @State var isTextShown = false
+    @State var tapCounter = 0
     
     var body: some View {
         ZStack {
@@ -23,8 +24,16 @@ struct ExploringView: View {
             VStack {
                 Spacer()
                 if isTextShown {
-                    Image(systemName: "eye.slash")
-                        .font(.system(size: 32))
+                    Button {
+                        tapCounter += 1
+                        if tapCounter == 10 {
+                            viewModel.gameState = .internalTest
+                        }
+                    } label: {
+                        Image(systemName: "eye.slash")
+                            .font(.system(size: 32))
+                            .foregroundColor(.white)
+                    }
                     
                     Text("Put on your blindfolds")
                         .multilineTextAlignment(.center)

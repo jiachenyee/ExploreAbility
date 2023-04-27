@@ -55,6 +55,8 @@
 		326D432029F9250800AE2F45 /* game.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D431F29F9250800AE2F45 /* game.mov */; };
 		326D432429F92AC800AE2F45 /* success.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D432329F92AC800AE2F45 /* success.mov */; };
 		326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */; };
+		32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */; };
+		32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducedMotionChallenge.swift; sourceTree = "<group>"; };
 		326D432729F9578400AE2F45 /* ExploreAbility-Beacon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ExploreAbility-Beacon-Info.plist"; sourceTree = SOURCE_ROOT; };
 		326D432829F9599100AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Speech.swift"; sourceTree = "<group>"; };
+		32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTestMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
 				326D429629F7DFEF00AE2F45 /* GameState.swift */,
 				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
+				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
 				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
 				326D432329F92AC800AE2F45 /* success.mov */,
 				326D431F29F9250800AE2F45 /* game.mov */,
@@ -271,6 +276,7 @@
 				326D428329F7AEB900AE2F45 /* ContentView.swift */,
 				326D429129F7D28700AE2F45 /* ExploringView.swift */,
 				326D42DF29F8071C00AE2F45 /* ConnectionView.swift */,
+				32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */,
 				326D429329F7DF8800AE2F45 /* Challenges */,
 				326D429C29F802B400AE2F45 /* MCBrowserView.swift */,
 			);
@@ -465,6 +471,8 @@
 				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
 				326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */,
+				32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */,
+				32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */,
 				326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,8 @@ struct ContentView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             switch viewModel.gameState {
+            case .internalTest:
+                InternalTestMenu(stage: $viewModel.gameState)
             case .connection:
                 ConnectionView(viewModel: viewModel)
             case .exploring:

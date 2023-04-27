@@ -12,20 +12,48 @@ struct ConnectionView: View {
     
     @ObservedObject var viewModel: ViewModel
     @State var isBrowserPresented = false
+    @State var tapCounter = 0
     
     var body: some View {
         VStack {
+            if !GameState.all.allSatisfy({ $0.performPreconditionCheck() }) {
+                HStack {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundColor(.yellow)
+                        .font(.system(size: 32))
+                    VStack(alignment: .leading) {
+                        Text("Failed Precondition Check")
+                            .bold()
+                        Text("Check debug menu and restart app")
+                    }
+                    .foregroundColor(.white)
+                    Spacer()
+                }
+                .padding()
+                .background(.gray.opacity(0.5)).cornerRadius(8)
+                .padding()
+            }
+            
+            
             Spacer()
             
-            Image(systemName: "antenna.radiowaves.left.and.right")
-                .font(.system(size: 32))
-                .foregroundColor(.white)
-            
-            Text("No Connection")
-                .multilineTextAlignment(.center)
-                .font(.system(size: 24))
-                .fontWeight(.bold)
-                .foregroundColor(.white)
+            Group {
+                Image(systemName: "antenna.radiowaves.left.and.right")
+                    .font(.system(size: 32))
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        tapCounter += 1
+                        if tapCounter == 10 {
+                            viewModel.gameState = .internalTest
+                        }
+                    }
+                
+                Text("No Connection")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 24))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+            }
             
             Rectangle()
                 .fill(.gray)

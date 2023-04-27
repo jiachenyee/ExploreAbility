@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 enum GameState: Int, CustomStringConvertible {
+    case internalTest = -100
+    
     case connection = -2
     case exploring = -1
     
@@ -20,7 +22,7 @@ enum GameState: Int, CustomStringConvertible {
     
     func toIcon() -> String {
         switch self {
-        case .exploring, .connection:
+        case .exploring, .connection, .internalTest:
             return "questionmark"
         case .textSize:
             return "textformat.size"
@@ -37,7 +39,7 @@ enum GameState: Int, CustomStringConvertible {
     
     func toColor() -> Color {
         switch self {
-        case .exploring, .connection:
+        case .exploring, .connection, .internalTest:
             return .black
         case .textSize:
             return .blue
@@ -55,19 +57,40 @@ enum GameState: Int, CustomStringConvertible {
     var description: String {
         switch self {
         case .textSize:
-            return "TextSizeChallenge"
+            return "Dynamic Text"
         case .voiceOver:
-            return "VoiceOverChallenge"
+            return "VoiceOver"
         case .closedCaptions:
-            return "ClosedCaptionChallenge"
+            return "Closed Caption"
         case .reducedMotion:
-            return "ReducedMotionChallenge"
+            return "Reduced Motion"
         case .guidedAccess:
-            return "GuidedAccessChallenge"
+            return "Guided Access"
         case .exploring:
             return "Exploring"
         case .connection:
             return "Connection"
+        case .internalTest:
+            return "Test"
         }
     }
+    
+    func performPreconditionCheck() -> Bool {
+        switch self {
+        case .internalTest, .connection, .exploring:
+            return false
+        case .voiceOver:
+            return !UIAccessibility.isVoiceOverRunning
+        case .textSize:
+            return UIApplication.shared.preferredContentSizeCategory == .medium || UIApplication.shared.preferredContentSizeCategory == .large
+        case .closedCaptions:
+            return !UIAccessibility.isClosedCaptioningEnabled
+        case .reducedMotion:
+            return !UIAccessibility.isReduceMotionEnabled
+        case .guidedAccess:
+            return !UIAccessibility.isGuidedAccessEnabled
+        }
+    }
+    
+    static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reducedMotion, .closedCaptions]
 }

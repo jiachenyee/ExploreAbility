@@ -19,7 +19,7 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
         super.init()
         
         peerID = MCPeerID(displayName: Host.current().localizedName ?? "Unknown Controller")
-        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
+        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         
         mcSession.delegate = self
         
