@@ -10,18 +10,17 @@ import AVFoundation
 
 extension ViewModel {
     func say(text: String) {
-        // Create an AVSpeechSynthesizer instance
-        let synthesizer = AVSpeechSynthesizer()
-        
-        // Create an AVSpeechUtterance with the given text
         let utterance = AVSpeechUtterance(string: text)
         
-        // Set the voice to use for the utterance (optional)
-        let voice = AVSpeechSynthesisVoice(language: "en-US")
+        let voice = AVSpeechSynthesisVoice(language: "en-GB")!
+        
         utterance.voice = voice
         
-        // Speak the utterance using the synthesizer
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        
         synthesizer.speak(utterance)
+        print(synthesizer.isSpeaking)
     }
 }
 
