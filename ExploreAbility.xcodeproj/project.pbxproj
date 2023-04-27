@@ -57,6 +57,8 @@
 		326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */; };
 		32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */; };
 		32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */; };
+		32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */; };
+		32A5344329FA73AB009BC57D /* CLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5344229FA73AB009BC57D /* CLConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,8 @@
 		326D432829F9599100AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Speech.swift"; sourceTree = "<group>"; };
 		32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTestMenu.swift; sourceTree = "<group>"; };
+		32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+CoreLocation.swift"; sourceTree = "<group>"; };
+		32A5344229FA73AB009BC57D /* CLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
 				326D429629F7DFEF00AE2F45 /* GameState.swift */,
 				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
+				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
 				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
 				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
 				326D432329F92AC800AE2F45 /* success.mov */,
@@ -265,6 +270,7 @@
 			children = (
 				326D42D729F804C600AE2F45 /* MCConstant.swift */,
 				326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */,
+				32A5344229FA73AB009BC57D /* CLConstant.swift */,
 				326D42F029F8F65400AE2F45 /* Location.swift */,
 			);
 			path = Shared;
@@ -460,6 +466,7 @@
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
+				32A5344329FA73AB009BC57D /* CLConstant.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
@@ -469,6 +476,7 @@
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
+				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
 				326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */,
 				32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */,
@@ -651,6 +659,7 @@
 				INFOPLIST_FILE = ExploreAbility/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Connect to iBeacons";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -684,6 +693,7 @@
 				INFOPLIST_FILE = ExploreAbility/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Connect to iBeacons";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

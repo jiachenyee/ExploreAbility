@@ -13,6 +13,7 @@ import AVFAudio
 class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     let synthesizer = AVSpeechSynthesizer()
+    let manager = CLLocationManager()
     
     @Published var deviceId: String
     
@@ -37,21 +38,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         synthesizer.delegate = self
         
         setUpMultipeerConnectivity()
-    }
-    
-    func startMonitoring() {
-        let manager = CLLocationManager()
-        
-        switch location {
-        case .academy:
-            for beacon in CLBeaconRegion.allAcademyBeacons {
-                manager.startMonitoring(for: beacon)
-            }
-        case .foundation:
-            for beacon in CLBeaconRegion.allFoundationBeacons {
-                manager.startMonitoring(for: beacon)
-            }
-        }
+        startMonitoring()
     }
     
     deinit {

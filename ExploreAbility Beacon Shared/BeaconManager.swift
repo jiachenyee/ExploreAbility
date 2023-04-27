@@ -22,13 +22,7 @@ class BeaconManager: NSObject, ObservableObject, CBPeripheralManagerDelegate {
     }
     
     func setUp(region: CLBeaconRegion) {
-        let uuid = UUID(uuidString: "CB212A4E-6351-4A71-AB33-579B5E8C41ED")!
-        let major: CLBeaconMajorValue = 1
-        let minor: CLBeaconMinorValue = 1
-        
-        let beaconID = "app.jiachen.exploreability"
-        
-        beaconRegion = CLBeaconRegion(uuid: uuid, major: major, minor: minor, identifier: beaconID)
+        beaconRegion = region
         
         peripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
         
