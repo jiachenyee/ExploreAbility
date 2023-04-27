@@ -12,6 +12,7 @@ import CoreLocation
 class ViewModel: NSObject, ObservableObject {
     @Published var completedChallenges: [GameState] = []
     @Published var gameState = GameState.connection
+    @Published var location = Location.academy
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
@@ -24,6 +25,16 @@ class ViewModel: NSObject, ObservableObject {
     
     func startMonitoring() {
         let manager = CLLocationManager()
-//        manager.startMonitoring(for: <#T##CLRegion#>)
+        
+        switch location {
+        case .academy:
+            for beacon in CLBeaconRegion.allAcademyBeacons {
+                manager.startMonitoring(for: beacon)
+            }
+        case .foundation:
+            for beacon in CLBeaconRegion.allFoundationBeacons {
+                manager.startMonitoring(for: beacon)
+            }
+        }
     }
 }

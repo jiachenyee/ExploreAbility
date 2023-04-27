@@ -13,8 +13,6 @@ struct ConnectionView: View {
     @ObservedObject var viewModel: ViewModel
     @State var isBrowserPresented = false
     
-    @State var currentLocation = Location.academy
-    
     var body: some View {
         VStack {
             Spacer()
@@ -36,7 +34,7 @@ struct ConnectionView: View {
             HStack {
                 Text("Location")
                 Spacer()
-                Picker(selection: $currentLocation) {
+                Picker(selection: $viewModel.location) {
                     Text("Academy Lab")
                         .tag(Location.academy)
                     Text("Foundation Lab")
