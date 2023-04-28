@@ -18,7 +18,7 @@ struct ContentView: View {
             Color.black.edgesIgnoringSafeArea(.all)
             switch viewModel.gameState {
             case .internalTest:
-                InternalTestMenu(stage: $viewModel.gameState)
+                DeveloperMenuConfirmationView(gameState: $viewModel.gameState)
             case .connection:
                 ConnectionView(viewModel: viewModel)
             case .exploring:
@@ -46,13 +46,17 @@ struct ContentView: View {
                 }
             case .reducedMotion:
                 ReducedMotionChallenge(namespace: namespace) {
-                    viewModel.gameState = .exploring
-                    viewModel.completedChallenges.append(.reducedMotion)
+                    withAnimation(.easeOut(duration: 1)) {
+                        viewModel.gameState = .exploring
+                        viewModel.completedChallenges.append(.reducedMotion)
+                    }
                 }
             case .guidedAccess:
                 GuidedAccessChallenge(namespace: namespace) {
-                    viewModel.gameState = .exploring
-                    viewModel.completedChallenges.append(.guidedAccess)
+                    withAnimation(.easeOut(duration: 1)) {
+                        viewModel.gameState = .exploring
+                        viewModel.completedChallenges.append(.guidedAccess)
+                    }
                 }
             }
         }

@@ -22,7 +22,6 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var completedChallenges: [GameState] = []
     @Published var gameState = GameState.connection {
         didSet {
-            print("TEST")
             switch gameState {
             case .exploring: say(text: "Put on your blindfolds.")
             default: say(text: "Remove your blindfolds.")

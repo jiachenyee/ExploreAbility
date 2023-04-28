@@ -37,10 +37,8 @@ extension ViewModel: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
         let beaconRegion = region as? CLBeaconRegion
-        print(beaconRegion?.uuid)
 
         if state == .inside {
-            print("inside")
             manager.startRangingBeacons(satisfying: beaconRegion!.beaconIdentityConstraint)
         } else {
             manager.stopRangingBeacons(satisfying: beaconRegion!.beaconIdentityConstraint)
@@ -62,13 +60,13 @@ extension ViewModel: CLLocationManagerDelegate {
         let runningAverage = runningAverageDatapoints.reduce(0, +) / Double(runningAverageDatapoints.count)
                               
         
-        print(runningAverage)
-//        print(beacon.proximity.rawValue)
+//        print(runningAverage)
+        print(beacon.proximity.rawValue, beacon.accuracy)
 //    case unknown = 0
 //    case immediate = 1 <0.5m
 //    case near = 2 <14.5m
 //    case far = 3
         
-        print(beacon.accuracy)
+//        print(beacon.accuracy)
     }
 }

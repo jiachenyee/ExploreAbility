@@ -26,14 +26,25 @@ struct ClosedCaptionsChallenge: View {
     @State private var convertToCircle = false
     @State private var isDropped = false
     
+    @State private var hideVideoPlayer = false
+    
     var body: some View {
         ZStack {
             GeometryReader { context in
                 if !convertToCircle {
-                    VideoPlayer(player: player)
-                        .allowsHitTesting(false)
+                    let circleRadius = context.size.height * 1.5
+                    
+                    Circle()
+                        .fill(.green)
+                        .frame(width: circleRadius, height: circleRadius)
                         .matchedGeometryEffect(id: GameState.closedCaptions, in: namespace)
-                        .scaleEffect((1080 / context.size.width) / (1920 / context.size.height))
+                        .offset(x: -(circleRadius - context.size.width) / 2, y: -(circleRadius - context.size.height) / 2)
+                    
+                    if !hideVideoPlayer {
+                        VideoPlayer(player: player)
+                            .allowsHitTesting(false)
+                            .scaleEffect((1080 / context.size.width) / (1920 / context.size.height))
+                    }
                 }
             }
             .edgesIgnoringSafeArea(.all)
@@ -88,7 +99,7 @@ struct ClosedCaptionsChallenge: View {
                                                                                       withExtension: "mov")!))
                     player.play()
                     
-                    Timer.scheduledTimer(withTimeInterval: 5.1, repeats: false) { _ in
+                    Timer.scheduledTimer(withTimeInterval: 5.25, repeats: false) { _ in
                         player.pause()
                         
                         withAnimation {
@@ -96,6 +107,7 @@ struct ClosedCaptionsChallenge: View {
                         }
                         
                         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                            hideVideoPlayer = true
                             withAnimation {
                                 convertToCircle = true
                             }
