@@ -15,6 +15,8 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     let synthesizer = AVSpeechSynthesizer()
     let manager = CLLocationManager()
     
+    var rssis: [Double] = []
+    
     @Published var deviceId: String
     
     @Published var completedChallenges: [GameState] = []

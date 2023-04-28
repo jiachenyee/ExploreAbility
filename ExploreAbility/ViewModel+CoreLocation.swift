@@ -7,11 +7,17 @@
 
 import Foundation
 import CoreLocation
+import Accelerate
 
 extension ViewModel: CLLocationManagerDelegate {
     func startMonitoring() {
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -48,23 +54,21 @@ extension ViewModel: CLLocationManagerDelegate {
         guard let beacon = beacons.first else { return }
         
         guard beacon.rssi != 0 else { return }
-        print(beacon.rssi)
+        
+        rssis.append(Double(beacon.rssi))
+        
+        let runningAverageDatapoints = rssis[max(0, rssis.count - 20)...]
+        
+        let runningAverage = runningAverageDatapoints.reduce(0, +) / Double(runningAverageDatapoints.count)
+                              
+        
+        print(runningAverage)
 //        print(beacon.proximity.rawValue)
 //    case unknown = 0
 //    case immediate = 1 <0.5m
 //    case near = 2 <14.5m
 //    case far = 3
         
-        print(calculateAccuracy(txPower: -47, rssi: Double(beacon.rssi)))
-        beacon.rssi
         print(beacon.accuracy)
-    }
-    
-    func calculateAccuracy(txPower: Double, rssi: Double) -> Double {
-        if rssi == 0 {
-            return -1 // if we cannot determine accuracy, return -1.
-        }
-        
-        return pow(10, ((-56-rssi)/(10 * 2))) * 3.2808
     }
 }
