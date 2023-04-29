@@ -20,13 +20,14 @@ struct CommandsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 256, maximum: 300))], spacing: 32) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 200, maximum: 400), spacing: 16)], spacing: 16) {
                     HostingCommandView(location: $viewModel.location,
                                        isActive: $viewModel.isActive)
                     RoomModelImportCommandView(roomCaptureData: $viewModel.roomCaptureData)
-                    SetBeaconLocationsCommandView()
+                    SetBeaconLocationsCommandView(roomCaptureData: viewModel.roomCaptureData)
                 }
             }
+            .frame(minWidth: 200)
             .padding(.horizontal, 8)
             
             Spacer()
