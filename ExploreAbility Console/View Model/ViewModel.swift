@@ -11,35 +11,65 @@ import MultipeerConnectivity
 
 class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     
+    var logger = LoggerViewModel()
+    
     var peerID: MCPeerID!
     var mcSession: MCSession!
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
+    @Published var isActive = false {
+        didSet {
+            if isActive {
+                startHosting()
+            } else {
+                stopHosting()
+            }
+        }
+    }
+    @Published var location: Location = .academy
+    
+    @Published var peers: [MCPeerID] = []
+    
     override init() {
         super.init()
         
-        peerID = MCPeerID(displayName: Host.current().localizedName ?? "Unknown Controller")
+    }
+    
+    func startHosting() {
+        peerID = MCPeerID(displayName: location == .academy ? "Academy" : "Foundation")
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         
         mcSession.delegate = self
         
-        startHosting()
-    }
-    
-    func startHosting() {
         mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: MCConstant.service,
                                                       discoveryInfo: nil,
                                                       session: mcSession)
         mcAdvertiserAssistant.start()
-        print("Start")
+        
+        logger.addLog(.success, "Multipeer Session Started", imageName: "antenna.radiowaves.left.and.right")
+    }
+    
+    func stopHosting() {
+        mcSession.disconnect()
+        mcAdvertiserAssistant.stop()
+        
+        logger.addLog(.critical, "Multipeer Session Ended", imageName: "antenna.radiowaves.left.and.right.slash")
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        print("HELLO")
+        if state == .connected {
+            peers.append(peerID)
+            logger.addLog("Connected to \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right")
+        } else if state == .notConnected {
+            guard let peerIndex = peers.firstIndex(of: peerID) else { return }
+            
+            peers.remove(at: peerIndex)
+            logger.addLog("Disconnected from \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right.slash")
+        }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
+        logger.addLog("Received data from \(peerID.displayName): \(data.count) bytes", imageName: "bubble.right.fill")
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

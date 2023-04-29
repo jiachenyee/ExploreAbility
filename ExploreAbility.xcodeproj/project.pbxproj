@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202746E29FC164500377188 /* DeveloperMenuConfirmationView.swift */; };
+		3202747129FCD2EC00377188 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747029FCD2EC00377188 /* Position.swift */; };
+		3202747229FCD2F500377188 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747029FCD2EC00377188 /* Position.swift */; };
+		3202747329FCD2F600377188 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747029FCD2EC00377188 /* Position.swift */; };
+		3202747429FCD2F600377188 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747029FCD2EC00377188 /* Position.swift */; };
+		3202747629FCD30300377188 /* PeerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747529FCD30300377188 /* PeerLocation.swift */; };
+		3202747829FCD31D00377188 /* IPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747729FCD31D00377188 /* IPSPosition.swift */; };
+		3202747A29FCD34700377188 /* IPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747729FCD31D00377188 /* IPSPosition.swift */; };
+		3202747C29FCD88A00377188 /* LoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747B29FCD88A00377188 /* LoggerView.swift */; };
+		3202747E29FCDA1400377188 /* CommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747D29FCDA1400377188 /* CommandsView.swift */; };
+		3202748029FCDD2300377188 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747F29FCDD2300377188 /* MapView.swift */; };
+		3202748229FCE6E100377188 /* CommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748129FCE6E100377188 /* CommandView.swift */; };
+		3202748429FCE86900377188 /* HostingCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748329FCE86900377188 /* HostingCommandView.swift */; };
+		3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748529FCE94C00377188 /* LoggerViewModel.swift */; };
+		3202748829FCEBBC00377188 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748729FCEBBC00377188 /* Log.swift */; };
+		3202748C29FCEF2D00377188 /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748B29FCEF2D00377188 /* LogType.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -63,6 +78,17 @@
 
 /* Begin PBXFileReference section */
 		3202746E29FC164500377188 /* DeveloperMenuConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperMenuConfirmationView.swift; sourceTree = "<group>"; };
+		3202747029FCD2EC00377188 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		3202747529FCD30300377188 /* PeerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerLocation.swift; sourceTree = "<group>"; };
+		3202747729FCD31D00377188 /* IPSPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSPosition.swift; sourceTree = "<group>"; };
+		3202747B29FCD88A00377188 /* LoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerView.swift; sourceTree = "<group>"; };
+		3202747D29FCDA1400377188 /* CommandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsView.swift; sourceTree = "<group>"; };
+		3202747F29FCDD2300377188 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3202748129FCE6E100377188 /* CommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandView.swift; sourceTree = "<group>"; };
+		3202748329FCE86900377188 /* HostingCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingCommandView.swift; sourceTree = "<group>"; };
+		3202748529FCE94C00377188 /* LoggerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewModel.swift; sourceTree = "<group>"; };
+		3202748729FCEBBC00377188 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		3202748B29FCEF2D00377188 /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +169,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3202748929FCEF1800377188 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				326D42CB29F804A800AE2F45 /* ContentView.swift */,
+				3202747F29FCDD2300377188 /* MapView.swift */,
+				3202747B29FCD88A00377188 /* LoggerView.swift */,
+				3202748F29FCEF6100377188 /* Commands */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3202748A29FCEF2000377188 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
+				3202748529FCE94C00377188 /* LoggerViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		3202748D29FCEF3600377188 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3202748729FCEBBC00377188 /* Log.swift */,
+				3202748B29FCEF2D00377188 /* LogType.swift */,
+				3202747529FCD30300377188 /* PeerLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3202748E29FCEF5000377188 /* Individual Command View */ = {
+			isa = PBXGroup;
+			children = (
+				3202748129FCE6E100377188 /* CommandView.swift */,
+				3202748329FCE86900377188 /* HostingCommandView.swift */,
+			);
+			path = "Individual Command View";
+			sourceTree = "<group>";
+		};
+		3202748F29FCEF6100377188 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				3202747D29FCDA1400377188 /* CommandsView.swift */,
+				3202748E29FCEF5000377188 /* Individual Command View */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
 		326D427529F7AEB900AE2F45 = {
 			isa = PBXGroup;
 			children = (
@@ -248,8 +322,9 @@
 			isa = PBXGroup;
 			children = (
 				326D42C929F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift */,
-				326D42CB29F804A800AE2F45 /* ContentView.swift */,
-				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
+				3202748D29FCEF3600377188 /* Model */,
+				3202748929FCEF1800377188 /* View */,
+				3202748A29FCEF2000377188 /* View Model */,
 				326D42CD29F804A900AE2F45 /* Assets.xcassets */,
 				326D42D229F804A900AE2F45 /* ExploreAbility_Console.entitlements */,
 				326D42CF29F804A900AE2F45 /* Preview Content */,
@@ -271,6 +346,8 @@
 				326D42D729F804C600AE2F45 /* MCConstant.swift */,
 				326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */,
 				326D42F029F8F65400AE2F45 /* Location.swift */,
+				3202747029FCD2EC00377188 /* Position.swift */,
+				3202747729FCD31D00377188 /* IPSPosition.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -469,6 +546,7 @@
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
+				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
@@ -476,6 +554,7 @@
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
+				3202747229FCD2F500377188 /* Position.swift in Sources */,
 				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
 				326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */,
@@ -497,6 +576,7 @@
 				326D42A529F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift in Sources */,
 				326D42F129F8F65400AE2F45 /* Location.swift in Sources */,
 				326D42D929F804FA00AE2F45 /* MCConstant.swift in Sources */,
+				3202747329FCD2F600377188 /* Position.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +592,7 @@
 				326D42F229F8F66200AE2F45 /* Location.swift in Sources */,
 				326D42DA29F804FA00AE2F45 /* MCConstant.swift in Sources */,
 				326D42F829F8FD9300AE2F45 /* BeaconManager.swift in Sources */,
+				3202747429FCD2F600377188 /* Position.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,8 +600,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3202747129FCD2EC00377188 /* Position.swift in Sources */,
+				3202748029FCDD2300377188 /* MapView.swift in Sources */,
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
+				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
+				3202747E29FCDA1400377188 /* CommandsView.swift in Sources */,
+				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
+				3202748829FCEBBC00377188 /* Log.swift in Sources */,
+				3202748C29FCEF2D00377188 /* LogType.swift in Sources */,
+				3202747C29FCD88A00377188 /* LoggerView.swift in Sources */,
+				3202748429FCE86900377188 /* HostingCommandView.swift in Sources */,
+				3202748229FCE6E100377188 /* CommandView.swift in Sources */,
 				326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */,
+				3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */,
 				326D42F329F8F66300AE2F45 /* Location.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
 				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,

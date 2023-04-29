@@ -13,5 +13,6 @@ struct ExploreAbility_ConsoleApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(.hiddenTitleBar)
     }
 }
