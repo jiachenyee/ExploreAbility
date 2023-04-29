@@ -16,7 +16,7 @@
 		3202747829FCD31D00377188 /* IPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747729FCD31D00377188 /* IPSPosition.swift */; };
 		3202747A29FCD34700377188 /* IPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747729FCD31D00377188 /* IPSPosition.swift */; };
 		3202747C29FCD88A00377188 /* LoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747B29FCD88A00377188 /* LoggerView.swift */; };
-		3202747E29FCDA1400377188 /* CommandsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747D29FCDA1400377188 /* CommandsView.swift */; };
+		3202747E29FCDA1400377188 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747D29FCDA1400377188 /* DashboardView.swift */; };
 		3202748029FCDD2300377188 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747F29FCDD2300377188 /* MapView.swift */; };
 		3202748229FCE6E100377188 /* CommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748129FCE6E100377188 /* CommandView.swift */; };
 		3202748429FCE86900377188 /* HostingCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748329FCE86900377188 /* HostingCommandView.swift */; };
@@ -99,7 +99,7 @@
 		3202747529FCD30300377188 /* PeerLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerLocation.swift; sourceTree = "<group>"; };
 		3202747729FCD31D00377188 /* IPSPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPSPosition.swift; sourceTree = "<group>"; };
 		3202747B29FCD88A00377188 /* LoggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerView.swift; sourceTree = "<group>"; };
-		3202747D29FCDA1400377188 /* CommandsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsView.swift; sourceTree = "<group>"; };
+		3202747D29FCDA1400377188 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		3202747F29FCDD2300377188 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3202748129FCE6E100377188 /* CommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandView.swift; sourceTree = "<group>"; };
 		3202748329FCE86900377188 /* HostingCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingCommandView.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		3202748F29FCEF6100377188 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				3202747D29FCDA1400377188 /* CommandsView.swift */,
+				3202747D29FCDA1400377188 /* DashboardView.swift */,
 				3202748E29FCEF5000377188 /* Individual Command View */,
 			);
 			path = Commands;
@@ -722,7 +722,7 @@
 				320274E329FD33A200377188 /* GroupView.swift in Sources */,
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
-				3202747E29FCDA1400377188 /* CommandsView.swift in Sources */,
+				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
 				3202748829FCEBBC00377188 /* Log.swift in Sources */,

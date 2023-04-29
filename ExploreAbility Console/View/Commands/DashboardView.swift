@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct CommandsView: View {
+struct DashboardView: View {
     
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
-            Text("Commands")
+            Text("Dashboard")
                 .padding(8)
                 .font(.title)
                 .fontWeight(.bold)
