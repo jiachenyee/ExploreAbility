@@ -23,6 +23,20 @@
 		3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748529FCE94C00377188 /* LoggerViewModel.swift */; };
 		3202748829FCEBBC00377188 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748729FCEBBC00377188 /* Log.swift */; };
 		3202748C29FCEF2D00377188 /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748B29FCEF2D00377188 /* LogType.swift */; };
+		3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202749029FCF33600377188 /* RoomModelImportCommandView.swift */; };
+		3202749329FCF7BD00377188 /* SetBeaconLocationsCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202749229FCF7BD00377188 /* SetBeaconLocationsCommandView.swift */; };
+		320274BD29FD088900377188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320274BC29FD088900377188 /* Assets.xcassets */; };
+		320274C029FD088900377188 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320274BF29FD088900377188 /* Preview Assets.xcassets */; };
+		320274D229FD114600377188 /* RoomCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274CC29FD114600377188 /* RoomCaptureViewController.swift */; };
+		320274D329FD114600377188 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274CD29FD114600377188 /* OnboardingViewController.swift */; };
+		320274D429FD114600377188 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274CE29FD114600377188 /* SceneDelegate.swift */; };
+		320274D529FD114600377188 /* UnsupportedDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320274CF29FD114600377188 /* UnsupportedDevice.storyboard */; };
+		320274D629FD114600377188 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274D029FD114600377188 /* AppDelegate.swift */; };
+		320274D729FD114600377188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320274D129FD114600377188 /* Main.storyboard */; };
+		320274D929FD14B500377188 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747029FCD2EC00377188 /* Position.swift */; };
+		320274DB29FD162900377188 /* RoomCaptureImportedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274DA29FD162900377188 /* RoomCaptureImportedData.swift */; };
+		320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274DA29FD162900377188 /* RoomCaptureImportedData.swift */; };
+		320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274DD29FD1A5400377188 /* RoomCaptureData.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -89,6 +103,20 @@
 		3202748529FCE94C00377188 /* LoggerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewModel.swift; sourceTree = "<group>"; };
 		3202748729FCEBBC00377188 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3202748B29FCEF2D00377188 /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
+		3202749029FCF33600377188 /* RoomModelImportCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModelImportCommandView.swift; sourceTree = "<group>"; };
+		3202749229FCF7BD00377188 /* SetBeaconLocationsCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBeaconLocationsCommandView.swift; sourceTree = "<group>"; };
+		320274B629FD088800377188 /* ExploreAbility Room Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ExploreAbility Room Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		320274BC29FD088900377188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		320274BF29FD088900377188 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		320274CC29FD114600377188 /* RoomCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCaptureViewController.swift; sourceTree = "<group>"; };
+		320274CD29FD114600377188 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		320274CE29FD114600377188 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		320274CF29FD114600377188 /* UnsupportedDevice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnsupportedDevice.storyboard; sourceTree = "<group>"; };
+		320274D029FD114600377188 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		320274D129FD114600377188 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		320274D829FD11FC00377188 /* ExploreAbility-Room-Scanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ExploreAbility-Room-Scanner-Info.plist"; sourceTree = SOURCE_ROOT; };
+		320274DA29FD162900377188 /* RoomCaptureImportedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureImportedData.swift; sourceTree = "<group>"; };
+		320274DD29FD1A5400377188 /* RoomCaptureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureData.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +166,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		320274B329FD088800377188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		326D427B29F7AEB900AE2F45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +229,7 @@
 			children = (
 				3202748729FCEBBC00377188 /* Log.swift */,
 				3202748B29FCEF2D00377188 /* LogType.swift */,
+				320274DD29FD1A5400377188 /* RoomCaptureData.swift */,
 				3202747529FCD30300377188 /* PeerLocation.swift */,
 			);
 			path = Model;
@@ -204,6 +240,8 @@
 			children = (
 				3202748129FCE6E100377188 /* CommandView.swift */,
 				3202748329FCE86900377188 /* HostingCommandView.swift */,
+				3202749029FCF33600377188 /* RoomModelImportCommandView.swift */,
+				3202749229FCF7BD00377188 /* SetBeaconLocationsCommandView.swift */,
 			);
 			path = "Individual Command View";
 			sourceTree = "<group>";
@@ -217,6 +255,30 @@
 			path = Commands;
 			sourceTree = "<group>";
 		};
+		320274B729FD088800377188 /* ExploreAbility Room Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				320274D829FD11FC00377188 /* ExploreAbility-Room-Scanner-Info.plist */,
+				320274D029FD114600377188 /* AppDelegate.swift */,
+				320274CE29FD114600377188 /* SceneDelegate.swift */,
+				320274D129FD114600377188 /* Main.storyboard */,
+				320274CD29FD114600377188 /* OnboardingViewController.swift */,
+				320274CC29FD114600377188 /* RoomCaptureViewController.swift */,
+				320274CF29FD114600377188 /* UnsupportedDevice.storyboard */,
+				320274BC29FD088900377188 /* Assets.xcassets */,
+				320274BE29FD088900377188 /* Preview Content */,
+			);
+			path = "ExploreAbility Room Scanner";
+			sourceTree = "<group>";
+		};
+		320274BE29FD088900377188 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				320274BF29FD088900377188 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		326D427529F7AEB900AE2F45 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +288,7 @@
 				326D42F729F8FD6E00AE2F45 /* ExploreAbility Beacon Shared */,
 				326D42A329F8044C00AE2F45 /* ExploreAbility Beacon */,
 				326D42B529F8048900AE2F45 /* ExploreAbility Beacon Mac */,
+				320274B729FD088800377188 /* ExploreAbility Room Scanner */,
 				326D427F29F7AEB900AE2F45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -237,6 +300,7 @@
 				326D42A229F8044C00AE2F45 /* ExploreAbility Beacon.app */,
 				326D42B429F8048900AE2F45 /* ExploreAbility Beacon Mac.app */,
 				326D42C729F804A800AE2F45 /* ExploreAbility Console.app */,
+				320274B629FD088800377188 /* ExploreAbility Room Scanner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +411,7 @@
 				326D42EB29F8F4BD00AE2F45 /* CLBeaconRegion.swift */,
 				326D42F029F8F65400AE2F45 /* Location.swift */,
 				3202747029FCD2EC00377188 /* Position.swift */,
+				320274DA29FD162900377188 /* RoomCaptureImportedData.swift */,
 				3202747729FCD31D00377188 /* IPSPosition.swift */,
 			);
 			path = Shared;
@@ -380,6 +445,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		320274B529FD088800377188 /* ExploreAbility Room Scanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 320274C129FD088900377188 /* Build configuration list for PBXNativeTarget "ExploreAbility Room Scanner" */;
+			buildPhases = (
+				320274B229FD088800377188 /* Sources */,
+				320274B329FD088800377188 /* Frameworks */,
+				320274B429FD088800377188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ExploreAbility Room Scanner";
+			productName = "ExploreAbility Room Scanner";
+			productReference = 320274B629FD088800377188 /* ExploreAbility Room Scanner.app */;
+			productType = "com.apple.product-type.application";
+		};
 		326D427D29F7AEB900AE2F45 /* ExploreAbility */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 326D428C29F7AEBA00AE2F45 /* Build configuration list for PBXNativeTarget "ExploreAbility" */;
@@ -458,6 +540,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					320274B529FD088800377188 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					326D427D29F7AEB900AE2F45 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -489,11 +574,23 @@
 				326D42C629F804A800AE2F45 /* ExploreAbility Console */,
 				326D42A129F8044C00AE2F45 /* ExploreAbility Beacon */,
 				326D42B329F8048900AE2F45 /* ExploreAbility Beacon Mac */,
+				320274B529FD088800377188 /* ExploreAbility Room Scanner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		320274B429FD088800377188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				320274D529FD114600377188 /* UnsupportedDevice.storyboard in Resources */,
+				320274C029FD088900377188 /* Preview Assets.xcassets in Resources */,
+				320274BD29FD088900377188 /* Assets.xcassets in Resources */,
+				320274D729FD114600377188 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		326D427C29F7AEB900AE2F45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,6 +632,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		320274B229FD088800377188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				320274D229FD114600377188 /* RoomCaptureViewController.swift in Sources */,
+				320274D629FD114600377188 /* AppDelegate.swift in Sources */,
+				320274D329FD114600377188 /* OnboardingViewController.swift in Sources */,
+				320274D929FD14B500377188 /* Position.swift in Sources */,
+				320274D429FD114600377188 /* SceneDelegate.swift in Sources */,
+				320274DB29FD162900377188 /* RoomCaptureImportedData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		326D427A29F7AEB900AE2F45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +716,7 @@
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
 				3202747E29FCDA1400377188 /* CommandsView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
+				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
 				3202748829FCEBBC00377188 /* Log.swift in Sources */,
 				3202748C29FCEF2D00377188 /* LogType.swift in Sources */,
 				3202747C29FCD88A00377188 /* LoggerView.swift in Sources */,
@@ -614,15 +725,80 @@
 				326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */,
 				3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */,
 				326D42F329F8F66300AE2F45 /* Location.swift in Sources */,
+				320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
+				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,
 				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,
 				326D42DB29F804FB00AE2F45 /* MCConstant.swift in Sources */,
+				3202749329FCF7BD00377188 /* SetBeaconLocationsCommandView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		320274C229FD088900377188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ExploreAbility Room Scanner/Preview Content\"";
+				DEVELOPMENT_TEAM = XL5JK4F896;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ExploreAbility-Room-Scanner-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "To scan rooms";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.jiachen.ExploreAbility-Room-Scanner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		320274C329FD088900377188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ExploreAbility Room Scanner/Preview Content\"";
+				DEVELOPMENT_TEAM = XL5JK4F896;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ExploreAbility-Room-Scanner-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "To scan rooms";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.jiachen.ExploreAbility-Room-Scanner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		326D428A29F7AEBA00AE2F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -992,6 +1168,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		320274C129FD088900377188 /* Build configuration list for PBXNativeTarget "ExploreAbility Room Scanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				320274C229FD088900377188 /* Debug */,
+				320274C329FD088900377188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		326D427929F7AEB900AE2F45 /* Build configuration list for PBXProject "ExploreAbility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

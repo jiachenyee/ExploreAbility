@@ -30,7 +30,7 @@ enum LogType {
     func toBackground() -> Color {
         switch self {
         case .normal:
-            return .clear
+            return .gray.opacity(0.1)
         case .critical:
             return .red
         case .warning:

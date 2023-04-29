@@ -23,6 +23,8 @@ struct CommandsView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 256, maximum: 300))], spacing: 32) {
                     HostingCommandView(location: $viewModel.location,
                                        isActive: $viewModel.isActive)
+                    RoomModelImportCommandView(roomCaptureData: $viewModel.roomCaptureData)
+                    SetBeaconLocationsCommandView()
                 }
             }
             .padding(.horizontal, 8)

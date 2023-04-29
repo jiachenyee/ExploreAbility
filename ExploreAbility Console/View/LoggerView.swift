@@ -19,7 +19,7 @@ struct LoggerView: View {
     
     var body: some View {
         VStack {
-            Text("Logs")
+            Text("Notifications")
                 .padding(8)
                 .font(.title)
                 .fontWeight(.bold)

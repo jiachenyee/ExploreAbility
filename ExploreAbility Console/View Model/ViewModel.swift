@@ -28,6 +28,12 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     }
     @Published var location: Location = .academy
     
+    @Published var roomCaptureData: RoomCaptureData? {
+        didSet {
+            logger.addLog("Imported Room 3D Model", imageName: "cube.transparent")
+        }
+    }
+    
     @Published var peers: [MCPeerID] = []
     
     override init() {
