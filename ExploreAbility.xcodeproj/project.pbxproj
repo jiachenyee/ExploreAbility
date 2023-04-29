@@ -37,6 +37,9 @@
 		320274DB29FD162900377188 /* RoomCaptureImportedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274DA29FD162900377188 /* RoomCaptureImportedData.swift */; };
 		320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274DA29FD162900377188 /* RoomCaptureImportedData.swift */; };
 		320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274DD29FD1A5400377188 /* RoomCaptureData.swift */; };
+		320274DF29FD322300377188 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429629F7DFEF00AE2F45 /* GameState.swift */; };
+		320274E129FD337200377188 /* ConnectedGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E029FD337200377188 /* ConnectedGroupsView.swift */; };
+		320274E329FD33A200377188 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E229FD33A200377188 /* GroupView.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -117,6 +120,8 @@
 		320274D829FD11FC00377188 /* ExploreAbility-Room-Scanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ExploreAbility-Room-Scanner-Info.plist"; sourceTree = SOURCE_ROOT; };
 		320274DA29FD162900377188 /* RoomCaptureImportedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureImportedData.swift; sourceTree = "<group>"; };
 		320274DD29FD1A5400377188 /* RoomCaptureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCaptureData.swift; sourceTree = "<group>"; };
+		320274E029FD337200377188 /* ConnectedGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedGroupsView.swift; sourceTree = "<group>"; };
+		320274E229FD33A200377188 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				326D42CB29F804A800AE2F45 /* ContentView.swift */,
+				320274E029FD337200377188 /* ConnectedGroupsView.swift */,
+				320274E229FD33A200377188 /* GroupView.swift */,
 				3202747F29FCDD2300377188 /* MapView.swift */,
 				3202747B29FCD88A00377188 /* LoggerView.swift */,
 				3202748F29FCEF6100377188 /* Commands */,
@@ -310,7 +317,6 @@
 			children = (
 				326D432829F9599100AE2F45 /* Info.plist */,
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
-				326D429629F7DFEF00AE2F45 /* GameState.swift */,
 				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
 				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
 				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
@@ -413,6 +419,7 @@
 				3202747029FCD2EC00377188 /* Position.swift */,
 				320274DA29FD162900377188 /* RoomCaptureImportedData.swift */,
 				3202747729FCD31D00377188 /* IPSPosition.swift */,
+				326D429629F7DFEF00AE2F45 /* GameState.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -712,6 +719,7 @@
 			files = (
 				3202747129FCD2EC00377188 /* Position.swift in Sources */,
 				3202748029FCDD2300377188 /* MapView.swift in Sources */,
+				320274E329FD33A200377188 /* GroupView.swift in Sources */,
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
 				3202747E29FCDA1400377188 /* CommandsView.swift in Sources */,
@@ -725,12 +733,14 @@
 				326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */,
 				3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */,
 				326D42F329F8F66300AE2F45 /* Location.swift in Sources */,
+				320274E129FD337200377188 /* ConnectedGroupsView.swift in Sources */,
 				320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
 				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,
 				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,
 				326D42DB29F804FB00AE2F45 /* MCConstant.swift in Sources */,
 				3202749329FCF7BD00377188 /* SetBeaconLocationsCommandView.swift in Sources */,
+				320274DF29FD322300377188 /* GameState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

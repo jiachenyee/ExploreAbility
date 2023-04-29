@@ -75,6 +75,7 @@ enum GameState: Int, CustomStringConvertible {
         }
     }
     
+    #if canImport(UIKit)
     func performPreconditionCheck() -> Bool {
         switch self {
         case .internalTest, .connection, .exploring:
@@ -91,6 +92,7 @@ enum GameState: Int, CustomStringConvertible {
             return !UIAccessibility.isGuidedAccessEnabled
         }
     }
+    #endif
     
     static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reducedMotion, .closedCaptions]
 }

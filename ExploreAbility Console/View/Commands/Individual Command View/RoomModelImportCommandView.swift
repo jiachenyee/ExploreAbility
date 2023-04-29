@@ -31,7 +31,7 @@ struct RoomModelImportCommandView: View {
         CommandView(icon: {
             Image(systemName: "cube.transparent")
                 .foregroundColor(.yellow)
-        }, title: "Room 3D Model") {
+        }, title: "Room Model") {
             VStack(alignment: .leading) {
                 HStack {
                     Text("Room Scan")

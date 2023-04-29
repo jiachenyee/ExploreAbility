@@ -9,6 +9,23 @@ import Foundation
 import AppKit
 import MultipeerConnectivity
 
+struct Group: Identifiable {
+    var id: String {
+        name
+    }
+    
+    var name: String {
+        peerID.displayName
+    }
+    var peerID: MCPeerID
+    var completedChallenges: [GameState] = []
+    
+    var currentState: GameState?
+    var nextChallenge: GameState?
+    
+    var position: IPSPosition?
+}
+
 class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     
     var logger = LoggerViewModel()
@@ -34,7 +51,7 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
         }
     }
     
-    @Published var peers: [MCPeerID] = []
+    @Published var groups: [Group] = []
     
     override init() {
         super.init()
@@ -64,12 +81,19 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         if state == .connected {
-            peers.append(peerID)
+            Task {
+                await MainActor.run {
+                    groups.append(Group(peerID: peerID))
+                }
+            }
             logger.addLog("Connected to \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right")
         } else if state == .notConnected {
-            guard let peerIndex = peers.firstIndex(of: peerID) else { return }
+            guard let peerIndex = groups.firstIndex(where: {
+                $0.peerID == peerID
+            }) else { return }
             
-            peers.remove(at: peerIndex)
+            groups.remove(at: peerIndex)
+            
             logger.addLog("Disconnected from \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right.slash")
         }
     }
