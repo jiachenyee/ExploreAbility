@@ -17,7 +17,7 @@ struct ContentView: View {
                 .frame(minWidth: 256, maxWidth: 400)
             
             VSplitView {
-                MapView()
+                MapView(viewModel: viewModel)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 HSplitView {

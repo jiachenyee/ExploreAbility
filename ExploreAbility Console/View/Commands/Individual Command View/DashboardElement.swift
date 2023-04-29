@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CommandView<Content: View, IconImage: View>: View {
+struct DashboardElement<Content: View, IconImage: View>: View {
     
     @ViewBuilder
     var icon: () -> IconImage

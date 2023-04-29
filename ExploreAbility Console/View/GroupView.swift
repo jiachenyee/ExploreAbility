@@ -31,6 +31,8 @@ struct GroupView: View {
                                     .font(.system(size: 35))
                             }
                         }
+                        
+                        Spacer()
                     }
                 }
                 Spacer()

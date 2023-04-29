@@ -13,8 +13,8 @@ struct SetBeaconLocationsCommandView: View {
     var roomCaptureData: RoomCaptureData?
     
     var body: some View {
-        CommandView(icon: {
-            Image(systemName: "sensor.tag.radiowaves.forward")
+        DashboardElement(icon: {
+            Image(systemName: "mappin.and.ellipse")
                 .foregroundColor(.blue)
         }, title: "Configure Beacons") {
             VStack(alignment: .leading) {

@@ -28,7 +28,7 @@ struct RoomModelImportCommandView: View {
     }
     
     var body: some View {
-        CommandView(icon: {
+        DashboardElement(icon: {
             Image(systemName: "cube.transparent")
                 .foregroundColor(.yellow)
         }, title: "Room Model") {

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MapView: View {
+    
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
         VStack {
             Text("Map")
@@ -15,14 +18,17 @@ struct MapView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Spacer()
+            
+            if viewModel.roomCaptureData != nil {
+                MapSceneView(viewModel: viewModel)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                Text("Import a room model to render map")
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            }
+            
         }
         .padding()
-    }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
     }
 }

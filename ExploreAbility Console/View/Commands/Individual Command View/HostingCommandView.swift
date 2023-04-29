@@ -13,7 +13,7 @@ struct HostingCommandView: View {
     @Binding var isActive: Bool
     
     var body: some View {
-        CommandView(icon: {
+        DashboardElement(icon: {
             Image(systemName: "antenna.radiowaves.left.and.right" + (isActive ? "" : ".slash"))
                 .foregroundColor(isActive ? .green : .red)
         }, title: "Hosting") {
