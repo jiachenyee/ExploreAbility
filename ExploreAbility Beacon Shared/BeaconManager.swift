@@ -14,7 +14,13 @@ class BeaconManager: NSObject, ObservableObject, CBPeripheralManagerDelegate {
     var beaconRegion: CLBeaconRegion!
     var peripheralData: NSDictionary!
     
-    @Published var isActive = false
+    @Published var isActive = false {
+        didSet {
+            if !isActive {
+                peripheralManager.stopAdvertising()
+            }
+        }
+    }
     
     override init() {
         super.init()
@@ -24,7 +30,22 @@ class BeaconManager: NSObject, ObservableObject, CBPeripheralManagerDelegate {
     func setUp(region: CLBeaconRegion) {
         beaconRegion = region
         
+        #if os(macOS)
+        let peripheralData = NSMutableDictionary()
+        
+        var dataToSend = withUnsafeBytes(of: beaconRegion.uuid.uuid) { Data($0) }
+        
+        dataToSend.append(withUnsafeBytes(of: beaconRegion.major!.uint16Value.bigEndian) { Data($0) })
+        dataToSend.append(withUnsafeBytes(of: beaconRegion.minor!.uint16Value.bigEndian) { Data($0) })
+        
+        dataToSend.append(0xC5)
+        
+        peripheralData.setValue(dataToSend, forKey: "kCBAdvDataAppleBeaconKey")
+        
+        self.peripheralData = peripheralData
+        #else
         peripheralData = beaconRegion.peripheralData(withMeasuredPower: nil)
+        #endif
         
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
     }
@@ -34,7 +55,6 @@ class BeaconManager: NSObject, ObservableObject, CBPeripheralManagerDelegate {
             peripheralManager.startAdvertising(peripheralData as! [String : Any]?)
             isActive = true
         } else if peripheral.state == .poweredOff {
-            peripheralManager.stopAdvertising()
             isActive = false
         }
     }
