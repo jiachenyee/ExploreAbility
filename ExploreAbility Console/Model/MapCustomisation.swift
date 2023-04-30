@@ -12,5 +12,7 @@ struct MapCustomisations {
     var followingFocusedGroup = false
     
     var showBeacons = true
+    var animateBeacons = true
+    
     var showGroups = true
 }

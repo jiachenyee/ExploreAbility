@@ -35,6 +35,9 @@ struct MapView: View {
                         }
                         .font(.title2)
                         .fontWeight(.bold)
+                        
+                        Divider()
+                        
                         HStack {
                             Text("Show Beacons")
                                 .font(.title3)
@@ -43,6 +46,17 @@ struct MapView: View {
                             Toggle("", isOn: $viewModel.mapCustomizations.showBeacons)
                                 .toggleStyle(.switch)
                         }
+                        
+                        HStack {
+                            Text("Animate Beacons")
+                                .font(.title3)
+                                .fontWeight(.medium)
+                            Spacer()
+                            Toggle("", isOn: $viewModel.mapCustomizations.animateBeacons)
+                                .toggleStyle(.switch)
+                        }
+                        
+                        Divider()
                         
                         HStack {
                             Text("Show Groups")
