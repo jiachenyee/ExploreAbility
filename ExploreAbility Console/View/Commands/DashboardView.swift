@@ -24,7 +24,7 @@ struct DashboardView: View {
                     HostingCommandView(location: $viewModel.location,
                                        isActive: $viewModel.isActive)
                     RoomModelImportCommandView(roomCaptureData: $viewModel.roomCaptureData)
-                    SetBeaconLocationsCommandView(roomCaptureData: viewModel.roomCaptureData)
+                    SetBeaconLocationsCommandView(roomCaptureData: viewModel.roomCaptureData, beaconPositions: $viewModel.beaconPositions)
                     BeaconOnlineDashboardView(location: viewModel.location)
                 }
             }

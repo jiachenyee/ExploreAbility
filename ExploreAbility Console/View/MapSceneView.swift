@@ -11,29 +11,17 @@ import SceneKit
 
 struct MapSceneView: NSViewRepresentable {
     
-    private let sceneView = SCNView()
-    
     @ObservedObject var viewModel: ViewModel
     
-    func makeNSView(context: Context) -> SCNView {
-        if let usdzURL = viewModel.roomCaptureData?.usdzURL,
-           let scene = try? SCNScene(url: usdzURL) {
-            
-            sceneView.scene = scene
-        }
+    func makeNSView(context: Context) -> MapSceneRenderView {
+        let sceneView = MapSceneRenderView()
         
-        sceneView.allowsCameraControl = true
-        sceneView.autoenablesDefaultLighting = true
-        sceneView.backgroundColor = .clear
+        sceneView.url = viewModel.roomCaptureData?.usdzURL
         
         return sceneView
     }
     
-    func updateNSView(_ nsView: SCNView, context: Context) {
-        if let usdzURL = viewModel.roomCaptureData?.usdzURL,
-           let scene = try? SCNScene(url: usdzURL) {
-            scene.background.contents = NSColor.clear
-            sceneView.scene = scene
-        }
+    func updateNSView(_ nsView: MapSceneRenderView, context: Context) {
+        nsView.url = viewModel.roomCaptureData?.usdzURL
     }
 }

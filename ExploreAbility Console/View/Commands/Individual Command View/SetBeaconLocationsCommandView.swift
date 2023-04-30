@@ -11,6 +11,9 @@ import SwiftUI
 struct SetBeaconLocationsCommandView: View {
     
     var roomCaptureData: RoomCaptureData?
+    @Binding var beaconPositions: [Position?]
+    
+    @State var isSetUpSheetPresented = false
     
     var body: some View {
         DashboardElement(icon: {
@@ -18,21 +21,26 @@ struct SetBeaconLocationsCommandView: View {
                 .foregroundColor(.blue)
         }, title: "Configure Beacons") {
             VStack(alignment: .leading) {
-                HStack {
-                    Text("Set Beacon Locations")
-                        .font(.title3)
-                        .fontWeight(.medium)
-                    
-                    Spacer()
-                    
-                    Button {
-                        
-                    } label: {
-                        Text("Set Up")
-                    }
-                }
-                
                 if let walls = roomCaptureData?.walls {
+                    HStack {
+                        Text("Set Beacon Locations")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                        
+                        Spacer()
+                        
+                        Button {
+                            isSetUpSheetPresented = true
+                        } label: {
+                            Text("Set Up")
+                        }
+                    }
+                    .sheet(isPresented: $isSetUpSheetPresented) {
+                        SetBeaconLocationsView(roomCaptureData: roomCaptureData,
+                                               beaconPositions: $beaconPositions)
+                            .frame(minWidth: 512, maxWidth: .infinity, minHeight: 512, maxHeight: .infinity)
+                    }
+                    
                     GeometryReader { reader in
                         let (lowestX, lowestY, highestX, highestY) = getWallsLowestAndHighest(walls: walls)
                         let height = highestY - lowestY
@@ -63,10 +71,11 @@ struct SetBeaconLocationsCommandView: View {
                             .opacity(0.5)
                             .border(.blue)
                             
+                            let offset = (reader.size.width - width * multiplier) / 2
+                            
                             Path { path in
                                 for wall in walls {
                                     guard let bottom = wall.first, let top = wall.last else { break }
-                                    let offset = (reader.size.width - width * multiplier) / 2
                                     print(offset)
                                     path.move(to: .init(x: (bottom.x - lowestX) * multiplier + offset,
                                                         y: (bottom.y - lowestY) * multiplier))
@@ -75,9 +84,19 @@ struct SetBeaconLocationsCommandView: View {
                                 }
                             }
                             .stroke(lineWidth: 2)
+                            
+                            ForEach(0..<5) { (i: Int) in
+                                if let location = beaconPositions[i] {
+                                    Circle()
+                                        .fill(.blue)
+                                        .frame(width: 0.25 * multiplier, height: 0.25 * multiplier)
+                                        .position(x: (location.x - lowestX) * multiplier + offset, y: (location.y - lowestY) * multiplier)
+                                }
+                            }
                         }
-                        
                     }
+                } else {
+                    Text("Import a Room Scan to configure beacons.")
                 }
             }
         }

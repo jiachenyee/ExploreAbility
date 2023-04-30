@@ -9,23 +9,6 @@ import Foundation
 import AppKit
 import MultipeerConnectivity
 
-struct Group: Identifiable {
-    var id: String {
-        name
-    }
-    
-    var name: String {
-        peerID.displayName
-    }
-    var peerID: MCPeerID
-    var completedChallenges: [GameState] = []
-    
-    var currentState: GameState?
-    var nextChallenge: GameState?
-    
-    var position: IPSPosition?
-}
-
 class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     
     var logger = LoggerViewModel()
@@ -43,6 +26,9 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
             }
         }
     }
+    
+    @Published var mapCustomizations = MapCustomisations()
+    
     @Published var location: Location = .academy
     
     @Published var roomCaptureData: RoomCaptureData? {
@@ -52,6 +38,8 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     }
     
     @Published var groups: [Group] = []
+    
+    @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 5)
     
     override init() {
         super.init()
