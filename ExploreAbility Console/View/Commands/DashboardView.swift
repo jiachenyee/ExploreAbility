@@ -25,7 +25,7 @@ struct DashboardView: View {
                                        isActive: $viewModel.isActive)
                     RoomModelImportCommandView(roomCaptureData: $viewModel.roomCaptureData)
                     SetBeaconLocationsCommandView(roomCaptureData: viewModel.roomCaptureData)
-                    BeaconOnlineDashboardView()
+                    BeaconOnlineDashboardView(location: viewModel.location)
                 }
             }
             .frame(minWidth: 200)

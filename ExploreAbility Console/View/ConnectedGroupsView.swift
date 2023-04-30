@@ -14,7 +14,7 @@ struct ConnectedGroupsView: View {
     var body: some View {
         List {
             Text("Connected Groups")
-                .padding(.vertical)
+                .padding(.bottom)
                 .font(.title)
                 .fontWeight(.bold)
             

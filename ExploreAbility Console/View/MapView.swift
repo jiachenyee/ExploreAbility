@@ -14,7 +14,7 @@ struct MapView: View {
     var body: some View {
         VStack {
             Text("Map")
-                .padding(8)
+                .padding([.leading, .bottom], 8)
                 .font(.title)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)

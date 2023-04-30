@@ -42,6 +42,8 @@
 		320274E329FD33A200377188 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E229FD33A200377188 /* GroupView.swift */; };
 		320274E529FD441800377188 /* MapSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E429FD441800377188 /* MapSceneView.swift */; };
 		320274E729FD4A0D00377188 /* BeaconOnlineDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E629FD4A0D00377188 /* BeaconOnlineDashboardView.swift */; };
+		320274E929FD522C00377188 /* IndividualOnlineBeaconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E829FD522C00377188 /* IndividualOnlineBeaconView.swift */; };
+		320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -126,6 +128,8 @@
 		320274E229FD33A200377188 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		320274E429FD441800377188 /* MapSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneView.swift; sourceTree = "<group>"; };
 		320274E629FD4A0D00377188 /* BeaconOnlineDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconOnlineDashboardView.swift; sourceTree = "<group>"; };
+		320274E829FD522C00377188 /* IndividualOnlineBeaconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualOnlineBeaconView.swift; sourceTree = "<group>"; };
+		320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStatusViewModel.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
+				320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */,
 				3202748529FCE94C00377188 /* LoggerViewModel.swift */,
 			);
 			path = "View Model";
@@ -252,6 +257,7 @@
 			children = (
 				3202748129FCE6E100377188 /* DashboardElement.swift */,
 				320274E629FD4A0D00377188 /* BeaconOnlineDashboardView.swift */,
+				320274E829FD522C00377188 /* IndividualOnlineBeaconView.swift */,
 				3202748329FCE86900377188 /* HostingCommandView.swift */,
 				3202749029FCF33600377188 /* RoomModelImportCommandView.swift */,
 				3202749229FCF7BD00377188 /* SetBeaconLocationsCommandView.swift */,
@@ -723,11 +729,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320274E929FD522C00377188 /* IndividualOnlineBeaconView.swift in Sources */,
 				3202747129FCD2EC00377188 /* Position.swift in Sources */,
 				3202748029FCDD2300377188 /* MapView.swift in Sources */,
 				320274E329FD33A200377188 /* GroupView.swift in Sources */,
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
+				320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */,
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
@@ -767,7 +775,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ExploreAbility-Room-Scanner-Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "To scan rooms";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "iBeacon connection";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -798,7 +806,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ExploreAbility-Room-Scanner-Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "To scan rooms";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "iBeacon connection";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1139,7 +1147,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to iBeacons";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = iBeacons;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1168,7 +1178,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to iBeacons";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = iBeacons;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

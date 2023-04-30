@@ -8,6 +8,10 @@
 import Foundation
 import CoreLocation
 
+extension UUID {
+    static let iBeacon = UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!
+}
+
 extension CLBeaconRegion {
     static let academyConsole = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 0, identifier: "app.jiachen.exploreability.academy.0")
     static let academy1 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 1, identifier: "app.jiachen.exploreability.academy.1")
