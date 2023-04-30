@@ -80,21 +80,28 @@ class ViewModel: NSObject, ObservableObject, MCSessionDelegate {
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        if state == .connected {
+        switch state {
+        case .connecting:
+            logger.addLog("Connecting to \(peerID.displayName)…", imageName: "antenna.radiowaves.left.and.right")
+        case .connected:
             Task {
                 await MainActor.run {
                     groups.append(Group(peerID: peerID))
                 }
             }
             logger.addLog("Connected to \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right")
-        } else if state == .notConnected {
+        case .notConnected:
             guard let peerIndex = groups.firstIndex(where: {
                 $0.peerID == peerID
             }) else { return }
             
-            groups.remove(at: peerIndex)
-            
+            Task {
+                await MainActor.run {
+                    groups.remove(at: peerIndex)
+                }
+            }
             logger.addLog("Disconnected from \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right.slash")
+        @unknown default: fatalError()
         }
     }
     
