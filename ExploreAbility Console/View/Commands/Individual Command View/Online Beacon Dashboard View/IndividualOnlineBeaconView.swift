@@ -46,23 +46,3 @@ struct IndividualOnlineBeaconView: View {
         }
     }
 }
-
-enum BeaconStatus {
-    case online
-    case warning
-    case error
-    case offline
-    
-    func toColor() -> Color {
-        switch self {
-        case .online:
-            return .green
-        case .warning:
-            return .yellow
-        case .error:
-            return .red
-        case .offline:
-            return .gray
-        }
-    }
-}
