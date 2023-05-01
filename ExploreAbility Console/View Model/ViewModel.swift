@@ -50,7 +50,11 @@ class ViewModel: NSObject, ObservableObject {
                     }
                     
                     try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
-                    logger.addLog("Sent message to start game", imageName: "flag.checkered.2.crossed")
+                    logger.addLog(.success, "Sent message to start game", imageName: "flag.checkered.2.crossed")
+                    
+                    Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                        self.logger.addLog(.success, "Game started!", imageName: "flag.checkered.2.crossed")
+                    }
                     
                 } catch {
                     logger.addLog(.critical, "Unable to start game: \(error.localizedDescription)", imageName: "pc")
