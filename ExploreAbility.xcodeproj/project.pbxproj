@@ -404,10 +404,10 @@
 				326D432829F9599100AE2F45 /* Info.plist */,
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
 				32AB445029FFE86F00E688BB /* View Model */,
-				326D432329F92AC800AE2F45 /* success.mov */,
-				326D431F29F9250800AE2F45 /* game.mov */,
 				326D42DC29F8052B00AE2F45 /* View */,
 				326D428529F7AEBA00AE2F45 /* Assets.xcassets */,
+				326D432329F92AC800AE2F45 /* success.mov */,
+				326D431F29F9250800AE2F45 /* game.mov */,
 				326D428729F7AEBA00AE2F45 /* Preview Content */,
 			);
 			path = ExploreAbility;
