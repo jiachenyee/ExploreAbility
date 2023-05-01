@@ -17,9 +17,7 @@ struct Group: Identifiable, Equatable {
         name
     }
     
-    var name: String {
-        peerID.displayName
-    }
+    var name: String
     var peerID: MCPeerID
     var completedChallenges: [GameState] = []
     
@@ -30,4 +28,8 @@ struct Group: Identifiable, Equatable {
     var nextChallengePosition: Position?
     
     var compassHeading: Double? // in degrees
+    
+    var isOnline = true
+    
+    var lastUpdated: Date?
 }

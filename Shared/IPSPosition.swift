@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct IPSPosition {
+struct IPSPosition: Codable {
     var position: Position
     var error: Double
     var date: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case position = "p"
+        case error = "e"
+        case date = "d"
+    }
 }

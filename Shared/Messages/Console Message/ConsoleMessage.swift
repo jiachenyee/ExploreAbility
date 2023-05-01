@@ -8,20 +8,36 @@
 import Foundation
 
 struct ConsoleMessage: Codable {
-    var messageCode: MessageCode
+    private(set) var messageCode: MessageCode
     
     var payload: DecodedMessageContents
     
+    init(payload: DecodedMessageContents) {
+        self.payload = payload
+        switch payload {
+        case .sessionInfo(_):
+            messageCode = .sessionInfo
+        case .positionResponse(_):
+            messageCode = .positionResponse
+        case .startGame(_):
+            messageCode = .startGame
+        case .nextChallenge(_):
+            messageCode = .nextChallenge
+        }
+    }
+    
     enum MessageCode: Int, Codable {
-        case hello = 1
-        case heartbeat = 3
-        case challengeCompletion = 6
+        case sessionInfo = 2
+        case positionResponse = 4
+        case startGame = 5
+        case nextChallenge = 7
     }
     
     enum DecodedMessageContents {
-        case hello(HelloClientMessage)
-        case heartbeat(HeartbeatClientMessage)
-        case challengeCompletion(ChallengeCompletionClientMessage)
+        case sessionInfo(SessionInfoConsoleMessage)
+        case positionResponse(PositionResponseConsoleMessage)
+        case startGame(StartGameConsoleMessage)
+        case nextChallenge(NextChallengeConsoleMessage)
     }
     
     enum CodingKeys: String, CodingKey {
@@ -35,11 +51,13 @@ struct ConsoleMessage: Codable {
         try container.encode(messageCode, forKey: .messageCode)
         
         switch payload {
-        case .hello(let payloadData):
+        case .sessionInfo(let payloadData):
             try container.encode(payloadData, forKey: .payload)
-        case .heartbeat(let payloadData):
+        case .positionResponse(let payloadData):
             try container.encode(payloadData, forKey: .payload)
-        case .challengeCompletion(let payloadData):
+        case .startGame(let payloadData):
+            try container.encode(payloadData, forKey: .payload)
+        case .nextChallenge(let payloadData):
             try container.encode(payloadData, forKey: .payload)
         }
     }
@@ -50,12 +68,19 @@ struct ConsoleMessage: Codable {
         self.messageCode = try container.decode(MessageCode.self, forKey: .messageCode)
         
         switch messageCode {
-        case .hello:
-            self.payload = .hello(try container.decode(HelloClientMessage.self, forKey: .payload))
-        case .heartbeat:
-            self.payload = .heartbeat(try container.decode(HeartbeatClientMessage.self, forKey: .payload))
-        case .challengeCompletion:
-            self.payload = .challengeCompletion(try container.decode(ChallengeCompletionClientMessage.self, forKey: .payload))
+        case .sessionInfo:
+            self.payload = .sessionInfo(try container.decode(SessionInfoConsoleMessage.self, forKey: .payload))
+        case .positionResponse:
+            self.payload = .positionResponse(try container.decode(PositionResponseConsoleMessage.self, forKey: .payload))
+        case .startGame:
+            self.payload = .startGame(try container.decode(StartGameConsoleMessage.self, forKey: .payload))
+        case .nextChallenge:
+            self.payload = .nextChallenge(try container.decode(NextChallengeConsoleMessage.self, forKey: .payload))
         }
+    }
+    
+    func toData() throws -> Data {
+        let encoder = JSONEncoder()
+        return try encoder.encode(self)
     }
 }

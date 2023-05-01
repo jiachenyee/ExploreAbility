@@ -14,7 +14,9 @@ class LoggerViewModel: ObservableObject {
     func addLog(_ type: LogType, _ text: String, imageName: String) {
         Task {
             await MainActor.run {
-                log.insert(Log(text: text, imageName: imageName, type: type), at: 0)
+                withAnimation {
+                    log.insert(Log(text: text, imageName: imageName, type: type), at: 0)
+                }
             }
         }
     }
@@ -22,7 +24,9 @@ class LoggerViewModel: ObservableObject {
     func addLog(_ text: String, imageName: String) {
         Task {
             await MainActor.run {
-                log.insert(Log(text: text, imageName: imageName, type: .normal), at: 0)
+                withAnimation {
+                    log.insert(Log(text: text, imageName: imageName, type: .normal), at: 0)
+                }
             }
         }
     }

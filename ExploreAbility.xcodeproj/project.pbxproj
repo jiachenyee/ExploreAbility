@@ -116,6 +116,16 @@
 		32AB443629FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443429FFBAF500E688BB /* ChallengeCompletionMessage.swift */; };
 		32AB443929FFBEA800E688BB /* ConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443829FFBEA800E688BB /* ConsoleMessage.swift */; };
 		32AB443A29FFBEA800E688BB /* ConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443829FFBEA800E688BB /* ConsoleMessage.swift */; };
+		32AB443D29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */; };
+		32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */; };
+		32AB444029FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */; };
+		32AB444229FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */; };
+		32AB444329FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */; };
+		32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */; };
+		32AB444629FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */; };
+		32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
+		32AB444929FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
+		32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +222,12 @@
 		32AB443129FFBAE900E688BB /* HeartbeatClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatClientMessage.swift; sourceTree = "<group>"; };
 		32AB443429FFBAF500E688BB /* ChallengeCompletionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletionMessage.swift; sourceTree = "<group>"; };
 		32AB443829FFBEA800E688BB /* ConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleMessage.swift; sourceTree = "<group>"; };
+		32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MCSessionDelegate.swift"; sourceTree = "<group>"; };
+		32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoConsoleMessage.swift; sourceTree = "<group>"; };
+		32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionResponseConsoleMessage.swift; sourceTree = "<group>"; };
+		32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameConsoleMessage.swift; sourceTree = "<group>"; };
+		32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengeConsoleMessage.swift; sourceTree = "<group>"; };
+		32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MessageHandler.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
+				32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */,
+				32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */,
 				320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */,
 				3202748529FCE94C00377188 /* LoggerViewModel.swift */,
 			);
@@ -548,6 +566,10 @@
 			isa = PBXGroup;
 			children = (
 				32AB443829FFBEA800E688BB /* ConsoleMessage.swift */,
+				32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */,
+				32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */,
+				32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */,
+				32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */,
 			);
 			path = "Console Message";
 			sourceTree = "<group>";
@@ -768,18 +790,22 @@
 				32AB443529FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */,
 				32AB443229FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
+				32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
+				32AB444229FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
 				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
+				32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				32AB442E29FFBAD300E688BB /* HelloClientMessage.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
 				3202747229FCD2F500377188 /* Position.swift in Sources */,
+				32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,
 				32AB442B29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
@@ -835,6 +861,7 @@
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
 				32AB442229FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift in Sources */,
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
+				32AB444629FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */,
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
@@ -845,6 +872,7 @@
 				32AB442429FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift in Sources */,
 				3202748829FCEBBC00377188 /* Log.swift in Sources */,
 				3202748C29FCEF2D00377188 /* LogType.swift in Sources */,
+				32AB443D29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift in Sources */,
 				32AB441529FE71C300E688BB /* SetBeaconLocationsView.swift in Sources */,
 				32AB443329FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */,
 				3202747C29FCD88A00377188 /* LoggerView.swift in Sources */,
@@ -856,12 +884,16 @@
 				320274ED29FE398B00377188 /* MapSceneRenderView.swift in Sources */,
 				3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */,
 				326D42F329F8F66300AE2F45 /* Location.swift in Sources */,
+				32AB444029FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
 				320274E129FD337200377188 /* ConnectedGroupsView.swift in Sources */,
+				32AB444929FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
 				320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
+				32AB444329FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */,
 				32AB442C29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
 				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,
 				32AB442829FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift in Sources */,
+				32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */,
 				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,
 				32AB442629FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift in Sources */,
 				32AB442F29FFBAD300E688BB /* HelloClientMessage.swift in Sources */,
@@ -1069,6 +1101,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1103,6 +1136,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

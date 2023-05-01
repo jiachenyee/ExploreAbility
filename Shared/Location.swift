@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Location: Int, Hashable {
+enum Location: Int, Hashable, Codable {
     case academy = 1
     case foundation = 2
 }

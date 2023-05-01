@@ -8,9 +8,22 @@
 import Foundation
 
 struct ClientMessage: Codable {
-    var messageCode: MessageCode
+    private(set) var messageCode: MessageCode
     
     var payload: DecodedMessageContents
+    
+    init(payload: DecodedMessageContents) {
+        self.payload = payload
+        
+        switch payload {
+        case .hello(_):
+            messageCode = .hello
+        case .heartbeat(_):
+            messageCode = .heartbeat
+        case .challengeCompletion(_):
+            messageCode = .challengeCompletion
+        }
+    }
     
     enum MessageCode: Int, Codable {
         case hello = 1
