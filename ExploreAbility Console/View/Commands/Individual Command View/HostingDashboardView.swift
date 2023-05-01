@@ -29,6 +29,7 @@ struct HostingDashboardView: View {
             } label: {
                 EmptyView()
             }
+            .disabled(isActive)
             
             Divider()
                 .padding(.vertical, 4)
