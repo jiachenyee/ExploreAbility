@@ -229,11 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				326D42CB29F804A800AE2F45 /* ContentView.swift */,
-				320274E029FD337200377188 /* ConnectedGroupsView.swift */,
-				320274E229FD33A200377188 /* GroupView.swift */,
-				3202747F29FCDD2300377188 /* MapView.swift */,
-				320274E429FD441800377188 /* MapSceneView.swift */,
-				320274EC29FE398B00377188 /* MapSceneRenderView.swift */,
+				32AB441B29FF5FB600E688BB /* Connected Groups */,
+				32AB441A29FF5FAE00E688BB /* Map Views */,
 				3202747B29FCD88A00377188 /* LoggerView.swift */,
 				3202748F29FCEF6100377188 /* Commands */,
 			);
@@ -471,6 +468,25 @@
 				326D42F529F8F86F00AE2F45 /* TransmittingView.swift */,
 			);
 			path = "ExploreAbility Beacon Shared";
+			sourceTree = "<group>";
+		};
+		32AB441A29FF5FAE00E688BB /* Map Views */ = {
+			isa = PBXGroup;
+			children = (
+				3202747F29FCDD2300377188 /* MapView.swift */,
+				320274E429FD441800377188 /* MapSceneView.swift */,
+				320274EC29FE398B00377188 /* MapSceneRenderView.swift */,
+			);
+			path = "Map Views";
+			sourceTree = "<group>";
+		};
+		32AB441B29FF5FB600E688BB /* Connected Groups */ = {
+			isa = PBXGroup;
+			children = (
+				320274E029FD337200377188 /* ConnectedGroupsView.swift */,
+				320274E229FD33A200377188 /* GroupView.swift */,
+			);
+			path = "Connected Groups";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
