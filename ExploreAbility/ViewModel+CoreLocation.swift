@@ -30,6 +30,7 @@ extension ViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        guard let location else { return }
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             switch location {
             case .academy:

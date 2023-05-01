@@ -11,6 +11,7 @@ import SwiftUI
 enum GameState: Int, CustomStringConvertible, Codable {
     case internalTest = -100
     
+    case groupSetUp = -3
     case connection = -2
     case exploring = -1
     
@@ -22,7 +23,7 @@ enum GameState: Int, CustomStringConvertible, Codable {
     
     func toIcon() -> String {
         switch self {
-        case .exploring, .connection, .internalTest:
+        case .exploring, .connection, .internalTest, .groupSetUp:
             return "questionmark"
         case .textSize:
             return "textformat.size"
@@ -39,7 +40,7 @@ enum GameState: Int, CustomStringConvertible, Codable {
     
     func toColor() -> Color {
         switch self {
-        case .exploring, .connection, .internalTest:
+        case .exploring, .connection, .internalTest, .groupSetUp:
             return .black
         case .textSize:
             return .blue
@@ -72,13 +73,15 @@ enum GameState: Int, CustomStringConvertible, Codable {
             return "Connection"
         case .internalTest:
             return "Test"
+        case .groupSetUp:
+            return "Group Setup"
         }
     }
     
     #if canImport(UIKit)
     func performPreconditionCheck() -> Bool {
         switch self {
-        case .internalTest, .connection, .exploring:
+        case .internalTest, .connection, .exploring, .groupSetUp:
             return false
         case .voiceOver:
             return !UIAccessibility.isVoiceOverRunning

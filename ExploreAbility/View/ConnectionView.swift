@@ -60,25 +60,6 @@ struct ConnectionView: View {
                 .frame(height: 0.5)
             
             HStack {
-                Text("Location")
-                Spacer()
-                Picker(selection: $viewModel.location) {
-                    Text("Academy Lab")
-                        .tag(Location.academy)
-                    Text("Foundation Lab")
-                        .tag(Location.foundation)
-                } label: {
-                    Text("Location")
-                }
-            }
-            .foregroundColor(.white)
-            .padding(.horizontal)
-            
-            Rectangle()
-                .fill(.gray)
-                .frame(height: 0.5)
-            
-            HStack {
                 Toggle(isOn: $isBrowserPresented) {
                     Label("Select ExploreAbility Console", systemImage: "server.rack")
                 }
@@ -90,6 +71,17 @@ struct ConnectionView: View {
             Rectangle()
                 .fill(.gray)
                 .frame(height: 0.5)
+            
+            if viewModel.isConnected {
+                Button("Next") {
+                    viewModel.gameState = .groupSetUp
+                }
+                .frame(maxWidth: .infinity)
+                
+                Rectangle()
+                    .fill(.gray)
+                    .frame(height: 0.5)
+            }
             
             Spacer()
             

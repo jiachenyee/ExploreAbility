@@ -18,11 +18,22 @@ extension ViewModel: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        if peerID == self.peerID && state == .connected {
-            gameState = .exploring
+        guard peerID.displayName == "Academy" || peerID.displayName == "Foundation" else { return }
+        switch state {
+        case .notConnected:
+            Task {
+                await MainActor.run {
+                    isConnected = false
+                }
+            }
+        case .connected:
+            Task {
+                await MainActor.run {
+                    isConnected = true
+                }
+            }
+        default: break
         }
-        print(state == .connecting)
-        print("TEST")
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {

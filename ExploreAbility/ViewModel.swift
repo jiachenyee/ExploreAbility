@@ -28,10 +28,13 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             }
         }
     }
-    @Published var location = Location.academy
+    
+    @Published var location: Location?
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
+    
+    @Published var isConnected = false
     
     override init() {
         deviceId = String(UUID().uuidString.split(separator: "-")[0])

@@ -17,6 +17,8 @@ struct ContentView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             switch viewModel.gameState {
+            case .groupSetUp:
+                Text("Lol")
             case .internalTest:
                 DeveloperMenuConfirmationView(gameState: $viewModel.gameState)
             case .connection:
