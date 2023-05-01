@@ -99,6 +99,13 @@
 		32AB441529FE71C300E688BB /* SetBeaconLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441429FE71C300E688BB /* SetBeaconLocationsView.swift */; };
 		32AB441729FE95E500E688BB /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441629FE95E500E688BB /* Group.swift */; };
 		32AB441929FE9B2200E688BB /* MapCustomisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441829FE9B2200E688BB /* MapCustomisation.swift */; };
+		32AB441D29FF616F00E688BB /* MessageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441C29FF616F00E688BB /* MessageCode.swift */; };
+		32AB441E29FF884800E688BB /* MessageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441C29FF616F00E688BB /* MessageCode.swift */; };
+		32AB442029FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441F29FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift */; };
+		32AB442229FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442129FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift */; };
+		32AB442429FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442329FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift */; };
+		32AB442629FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442529FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift */; };
+		32AB442829FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442729FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +191,12 @@
 		32AB441429FE71C300E688BB /* SetBeaconLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBeaconLocationsView.swift; sourceTree = "<group>"; };
 		32AB441629FE95E500E688BB /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		32AB441829FE9B2200E688BB /* MapCustomisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCustomisation.swift; sourceTree = "<group>"; };
+		32AB441C29FF616F00E688BB /* MessageCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCode.swift; sourceTree = "<group>"; };
+		32AB441F29FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+Beacon.swift"; sourceTree = "<group>"; };
+		32AB442129FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+GridPlane.swift"; sourceTree = "<group>"; };
+		32AB442329FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+WallOpacity.swift"; sourceTree = "<group>"; };
+		32AB442529FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+SceneSetup.swift"; sourceTree = "<group>"; };
+		32AB442729FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+MapCustomization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +454,7 @@
 				320274DA29FD162900377188 /* RoomCaptureImportedData.swift */,
 				3202747729FCD31D00377188 /* IPSPosition.swift */,
 				326D429629F7DFEF00AE2F45 /* GameState.swift */,
+				32AB441C29FF616F00E688BB /* MessageCode.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -476,6 +490,11 @@
 				3202747F29FCDD2300377188 /* MapView.swift */,
 				320274E429FD441800377188 /* MapSceneView.swift */,
 				320274EC29FE398B00377188 /* MapSceneRenderView.swift */,
+				32AB442729FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift */,
+				32AB442529FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift */,
+				32AB442329FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift */,
+				32AB442129FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift */,
+				32AB441F29FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift */,
 			);
 			path = "Map Views";
 			sourceTree = "<group>";
@@ -697,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
+				32AB441E29FF884800E688BB /* MessageCode.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
@@ -763,11 +783,15 @@
 				3202748029FCDD2300377188 /* MapView.swift in Sources */,
 				320274E329FD33A200377188 /* GroupView.swift in Sources */,
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
+				32AB442229FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift in Sources */,
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
 				320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */,
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
+				32AB441D29FF616F00E688BB /* MessageCode.swift in Sources */,
+				32AB442029FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift in Sources */,
+				32AB442429FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift in Sources */,
 				3202748829FCEBBC00377188 /* Log.swift in Sources */,
 				3202748C29FCEF2D00377188 /* LogType.swift in Sources */,
 				32AB441529FE71C300E688BB /* SetBeaconLocationsView.swift in Sources */,
@@ -784,7 +808,9 @@
 				320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
 				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,
+				32AB442829FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift in Sources */,
 				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,
+				32AB442629FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift in Sources */,
 				326D42DB29F804FB00AE2F45 /* MCConstant.swift in Sources */,
 				32AB441729FE95E500E688BB /* Group.swift in Sources */,
 				3202749329FCF7BD00377188 /* SetBeaconLocationsCommandView.swift in Sources */,

@@ -78,7 +78,7 @@ struct MapView: View {
                                 .toggleStyle(.switch)
                         }
                         
-                        if viewModel.mapCustomizations.focusedGroup != nil {
+                        if viewModel.mapCustomizations.focusedGroupID != nil {
                             Divider()
                             HStack {
                                 Text("Follow Focused Group")

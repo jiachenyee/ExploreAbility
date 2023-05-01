@@ -8,7 +8,7 @@
 import Foundation
 
 struct MapCustomisations: Equatable {
-    var focusedGroup: Group?
+    var focusedGroupID: String?
     var followingFocusedGroup = false
     
     var showBeacons = true
