@@ -25,12 +25,54 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
                 material.transparencyMode = .dualLayer
             }
             
-//            addSampleNode()
-            createBeaconNode()
-            let x = createGridPlane()
-            scene.rootNode.addChildNode(x)
+            scene.rootNode.addChildNode(gridNode)
+            scene.rootNode.addChildNode(beaconGroupNode)
         }
     }
+    
+    var mapCustomizations: MapCustomisations! {
+        didSet {
+            guard mapCustomizations != oldValue else { return }
+            
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 0.5
+            
+            beaconGroupNode.opacity = mapCustomizations.showBeacons ? 1 : 0
+            gridNode.opacity = mapCustomizations.showGrid ? 1 : 0
+            groupsGroupNode.opacity = mapCustomizations.showGroups ? 1 : 0
+            
+            if mapCustomizations.animateBeacons != oldValue?.animateBeacons {
+                beaconGroupNode.childNodes.forEach {
+                    $0.childNodes.first?.isHidden = !mapCustomizations.animateBeacons
+                }
+            }
+            
+            SCNTransaction.commit()
+        }
+    }
+    
+    var beaconPositions: [Position?]! {
+        didSet {
+            guard beaconPositions != oldValue,
+                  let beaconPositions else { return }
+            
+            SCNTransaction.begin()
+            for (n, beaconPosition) in beaconPositions.enumerated() {
+                if let beaconPosition {
+                    beaconGroupNode.childNodes[n].position = SCNVector3(x: beaconPosition.x, y: 1, z: beaconPosition.y)
+                    beaconGroupNode.childNodes[n].isHidden = false
+                } else {
+                    beaconGroupNode.childNodes[n].isHidden = true
+                }
+            }
+            SCNTransaction.commit()
+        }
+    }
+    
+    // MARK: - Nodes
+    var beaconGroupNode = SCNNode()
+    var groupsGroupNode = SCNNode()
+    var gridNode = SCNNode()
     
     init() {
         super.init(frame: .zero)
@@ -39,6 +81,9 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
         backgroundColor = .clear
         
         delegate = self
+        
+        createGridPlane()
+        setUpBeaconNodes()
     }
     
     required init?(coder: NSCoder) {
@@ -87,7 +132,15 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
         scene?.rootNode.addChildNode(node)
     }
     
-    func createBeaconNode() {
+    func setUpBeaconNodes() {
+        beaconGroupNode.addChildNode(createBeaconNode())
+        beaconGroupNode.addChildNode(createBeaconNode())
+        beaconGroupNode.addChildNode(createBeaconNode())
+        beaconGroupNode.addChildNode(createBeaconNode())
+        beaconGroupNode.addChildNode(createBeaconNode())
+    }
+    
+    func createBeaconNode() -> SCNNode {
         let beacon = SCNSphere(radius: 0.25)
         beacon.firstMaterial?.diffuse.contents = NSColor.systemBlue
         
@@ -100,7 +153,16 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
         
         let radioWaveBubbleNode = SCNNode(geometry: radioWaveBubble)
         
+        createBeaconAnimation(radioWaveBubbleNode)
         
+        beaconNode.addChildNode(radioWaveBubbleNode)
+        
+        beaconNode.isHidden = true
+        
+        return beaconNode
+    }
+    
+    func createBeaconAnimation(_ node: SCNNode) {
         let scaleAndOpacity = SCNAction.repeatForever(
             .sequence([
                 .group([
@@ -111,11 +173,7 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
         
         scaleAndOpacity.timingMode = .linear
         
-        radioWaveBubbleNode.runAction(scaleAndOpacity)
-        
-        beaconNode.addChildNode(radioWaveBubbleNode)
-        
-        scene?.rootNode.addChildNode(beaconNode)
+        node.runAction(scaleAndOpacity)
     }
     
     var previousCameraPosition: simd_float3?
@@ -158,7 +216,7 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
         return parent.childNodes
     }
     
-    func createGridPlane() -> SCNNode {
+    func createGridPlane() {
         let size = 50.0
         // Create a plane
         let planeGeometry = SCNPlane(width: CGFloat(size), height: CGFloat(size))
@@ -191,7 +249,7 @@ class MapSceneRenderView: SCNView, SCNSceneRendererDelegate {
         planeNode.eulerAngles.x = -.pi / 2
         planeNode.position = .init(x: 0, y: -1.5, z: 0)
         
-        return planeNode
+        gridNode.addChildNode(planeNode)
     }
 
 }

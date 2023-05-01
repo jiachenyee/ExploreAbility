@@ -17,11 +17,16 @@ struct MapSceneView: NSViewRepresentable {
         let sceneView = MapSceneRenderView()
         
         sceneView.url = viewModel.roomCaptureData?.usdzURL
+        sceneView.showsStatistics = true
+        sceneView.mapCustomizations = viewModel.mapCustomizations
+        sceneView.beaconPositions = viewModel.beaconPositions
         
         return sceneView
     }
     
     func updateNSView(_ nsView: MapSceneRenderView, context: Context) {
         nsView.url = viewModel.roomCaptureData?.usdzURL
+        nsView.mapCustomizations = viewModel.mapCustomizations
+        nsView.beaconPositions = viewModel.beaconPositions
     }
 }

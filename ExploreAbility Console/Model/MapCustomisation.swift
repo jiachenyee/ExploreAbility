@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct MapCustomisations {
+struct MapCustomisations: Equatable {
     var focusedGroup: Group?
     var followingFocusedGroup = false
     
     var showBeacons = true
     var animateBeacons = true
+    
+    var showGrid = true
     
     var showGroups = true
 }

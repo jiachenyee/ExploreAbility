@@ -8,7 +8,11 @@
 import Foundation
 import MultipeerConnectivity
 
-struct Group: Identifiable {
+struct Group: Identifiable, Equatable {
+    static func == (lhs: Group, rhs: Group) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id: String {
         name
     }

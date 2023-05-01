@@ -47,13 +47,15 @@ struct MapView: View {
                                 .toggleStyle(.switch)
                         }
                         
-                        HStack {
-                            Text("Animate Beacons")
-                                .font(.title3)
-                                .fontWeight(.medium)
-                            Spacer()
-                            Toggle("", isOn: $viewModel.mapCustomizations.animateBeacons)
-                                .toggleStyle(.switch)
+                        if viewModel.mapCustomizations.showBeacons {
+                            HStack {
+                                Text("Animate Beacons")
+                                    .font(.title3)
+                                    .fontWeight(.medium)
+                                Spacer()
+                                Toggle("", isOn: $viewModel.mapCustomizations.animateBeacons)
+                                    .toggleStyle(.switch)
+                            }
                         }
                         
                         Divider()
@@ -67,7 +69,17 @@ struct MapView: View {
                                 .toggleStyle(.switch)
                         }
                         
+                        HStack {
+                            Text("Show Grid")
+                                .font(.title3)
+                                .fontWeight(.medium)
+                            Spacer()
+                            Toggle("", isOn: $viewModel.mapCustomizations.showGrid)
+                                .toggleStyle(.switch)
+                        }
+                        
                         if viewModel.mapCustomizations.focusedGroup != nil {
+                            Divider()
                             HStack {
                                 Text("Follow Focused Group")
                                     .font(.title3)
@@ -85,6 +97,7 @@ struct MapView: View {
                     .cornerRadius(8)
                     .padding()
                     .padding(.trailing, 8)
+                    .animation(.easeInOut, value: viewModel.mapCustomizations)
                 }
             } else {
                 Text("Import a room model to render map")

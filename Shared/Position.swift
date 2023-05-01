@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Position: Codable {
+struct Position: Codable, Equatable {
     var x: Double
     var y: Double
 }
