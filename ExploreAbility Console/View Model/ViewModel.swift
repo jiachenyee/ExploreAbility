@@ -37,6 +37,29 @@ class ViewModel: NSObject, ObservableObject {
         }
     }
     
+    @Published var isGameActive = false {
+        didSet {
+            if isGameActive {
+                do {
+                    let data = try ConsoleMessage(payload: .startGame(.init(startDate: .now.addingTimeInterval(3)))).toData()
+                    
+                    guard mcSession != nil else {
+                        logger.addLog(.critical, "Unable to start game: No MCSession", imageName: "pc")
+                        isGameActive = false
+                        return
+                    }
+                    
+                    try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
+                    logger.addLog("Sent message to start game", imageName: "flag.checkered.2.crossed")
+                    
+                } catch {
+                    logger.addLog(.critical, "Unable to start game: \(error.localizedDescription)", imageName: "pc")
+                    isGameActive = false
+                }
+            }
+        }
+    }
+    
     @Published var groups: [Group] = []
     
     @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 5)

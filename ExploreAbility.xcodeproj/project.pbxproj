@@ -126,10 +126,10 @@
 		32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
 		32AB444929FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
 		32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */; };
-		32AB445229FFE8B500E688BB /* GroupSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445129FFE8B500E688BB /* GroupSetupView.swift */; };
-		32AB445329FFE8B500E688BB /* GroupSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445129FFE8B500E688BB /* GroupSetupView.swift */; };
 		32AB445529FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
 		32AB445629FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
+		32AB445929FFF78900E688BB /* GameStatusDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */; };
+		32AB445A29FFF87700E688BB /* GroupSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445129FFE8B500E688BB /* GroupSetupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +234,7 @@
 		32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MessageHandler.swift"; sourceTree = "<group>"; };
 		32AB445129FFE8B500E688BB /* GroupSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSetupView.swift; sourceTree = "<group>"; };
 		32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomView.swift; sourceTree = "<group>"; };
+		32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusDashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				3202748129FCE6E100377188 /* DashboardElement.swift */,
+				32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */,
 				320274E629FD4A0D00377188 /* BeaconOnlineDashboardView.swift */,
 				320274E829FD522C00377188 /* IndividualOnlineBeaconView.swift */,
 				3202748329FCE86900377188 /* HostingCommandView.swift */,
@@ -801,6 +803,7 @@
 				32AB441E29FF884800E688BB /* MessageContents.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
 				32AB443929FFBEA800E688BB /* ConsoleMessage.swift in Sources */,
+				32AB445A29FFF87700E688BB /* GroupSetupView.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
 				32AB443529FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */,
@@ -812,7 +815,6 @@
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
 				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
-				32AB445229FFE8B500E688BB /* GroupSetupView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
 				32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
@@ -882,7 +884,6 @@
 				32AB444629FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */,
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
-				32AB445329FFE8B500E688BB /* GroupSetupView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
 				32AB441D29FF616F00E688BB /* MessageContents.swift in Sources */,
@@ -911,6 +912,7 @@
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB444329FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */,
 				32AB442C29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
+				32AB445929FFF78900E688BB /* GameStatusDashboardView.swift in Sources */,
 				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,
 				32AB442829FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift in Sources */,
 				32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */,
