@@ -19,6 +19,9 @@ extension ViewModel: MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         guard peerID.displayName == "Academy" || peerID.displayName == "Foundation" else { return }
+        
+        hostPeerID = peerID
+        
         switch state {
         case .notConnected:
             Task {
@@ -37,7 +40,45 @@ extension ViewModel: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print("hello")
+        didReceiveData(data, from: peerID)
+    }
+    
+    func didReceiveData(_ data: Data, from peerID: MCPeerID) {
+        let decoder = JSONDecoder()
+        do {
+            let consoleMessage = try decoder.decode(ConsoleMessage.self, from: data)
+            
+            switch consoleMessage.payload {
+            case .sessionInfo(let sessionInfo):
+                Task {
+                    await MainActor.run {
+                        self.location = sessionInfo.location
+                    }
+                }
+            case .positionResponse(let positionResponse):
+                Task {
+                    await MainActor.run {
+                        self.ipsPosition = positionResponse.position
+                    }
+                }
+            case .startGame(let startGame):
+                Task {
+                    let ttl = abs(startGame.startDate.timeIntervalSinceNow) * 1000
+
+                    try await Task.sleep(for: .milliseconds(Int(ttl)))
+                    
+                    await MainActor.run {
+                        self.gameState = .exploring
+                    }
+                }
+            case .nextChallenge(let nextChallenge):
+                #warning("Incomplete implementation")
+                print(nextChallenge)
+            }
+            
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

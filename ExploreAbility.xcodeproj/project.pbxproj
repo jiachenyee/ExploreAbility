@@ -126,6 +126,10 @@
 		32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
 		32AB444929FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
 		32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */; };
+		32AB445229FFE8B500E688BB /* GroupSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445129FFE8B500E688BB /* GroupSetupView.swift */; };
+		32AB445329FFE8B500E688BB /* GroupSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445129FFE8B500E688BB /* GroupSetupView.swift */; };
+		32AB445529FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
+		32AB445629FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -228,6 +232,8 @@
 		32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengeConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MessageHandler.swift"; sourceTree = "<group>"; };
+		32AB445129FFE8B500E688BB /* GroupSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSetupView.swift; sourceTree = "<group>"; };
+		32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +499,8 @@
 			isa = PBXGroup;
 			children = (
 				326D428329F7AEB900AE2F45 /* ContentView.swift */,
+				32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */,
+				32AB445129FFE8B500E688BB /* GroupSetupView.swift */,
 				326D429129F7D28700AE2F45 /* ExploringView.swift */,
 				326D42DF29F8071C00AE2F45 /* ConnectionView.swift */,
 				32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */,
@@ -804,9 +812,11 @@
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
 				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
+				32AB445229FFE8B500E688BB /* GroupSetupView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
 				32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
+				32AB445529FFEA0F00E688BB /* WaitingRoomView.swift in Sources */,
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
@@ -872,6 +882,7 @@
 				32AB444629FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */,
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
+				32AB445329FFE8B500E688BB /* GroupSetupView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
 				32AB441D29FF616F00E688BB /* MessageContents.swift in Sources */,
@@ -895,6 +906,7 @@
 				32AB444029FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
 				320274E129FD337200377188 /* ConnectedGroupsView.swift in Sources */,
 				32AB444929FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
+				32AB445629FFEA0F00E688BB /* WaitingRoomView.swift in Sources */,
 				320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB444329FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */,

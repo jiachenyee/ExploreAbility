@@ -17,8 +17,10 @@ struct ContentView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             switch viewModel.gameState {
+            case .waitingRoom:
+                WaitingRoomView(groupName: viewModel.groupName)
             case .groupSetUp:
-                Text("Lol")
+                GroupSetupView(viewModel: viewModel)
             case .internalTest:
                 DeveloperMenuConfirmationView(gameState: $viewModel.gameState)
             case .connection:

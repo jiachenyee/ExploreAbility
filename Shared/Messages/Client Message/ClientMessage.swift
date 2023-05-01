@@ -71,4 +71,9 @@ struct ClientMessage: Codable {
             self.payload = .challengeCompletion(try container.decode(ChallengeCompletionClientMessage.self, forKey: .payload))
         }
     }
+    
+    func toData() throws -> Data {
+        let encoder = JSONEncoder()
+        return try encoder.encode(self)
+    }
 }

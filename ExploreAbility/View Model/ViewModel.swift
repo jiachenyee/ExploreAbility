@@ -9,6 +9,7 @@ import Foundation
 import MultipeerConnectivity
 import CoreLocation
 import AVFAudio
+import SwiftUI
 
 class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
@@ -17,6 +18,8 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     var rssis: [Double] = []
     
+    @Published var groupName: String = ""
+    
     @Published var deviceId: String
     
     @Published var completedChallenges: [GameState] = []
@@ -24,12 +27,17 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         didSet {
             switch gameState {
             case .exploring: say(text: "Put on your blindfolds.")
+            case .internalTest, .groupSetUp, .waitingRoom: break
             default: say(text: "Remove your blindfolds.")
             }
         }
     }
     
     @Published var location: Location?
+    
+    @Published var ipsPosition: IPSPosition?
+    
+    var hostPeerID: MCPeerID?
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
@@ -47,5 +55,22 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     deinit {
         print("Deinitialised!!!")
+    }
+    
+    func sendHelloMessage() {
+        guard let hostPeerID else { return }
+        
+        let helloMessage = HelloClientMessage(groupName: groupName)
+        do {
+            let data = try ClientMessage(payload: .hello(helloMessage)).toData()
+            
+            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
+            
+            withAnimation {
+                gameState = .waitingRoom
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
