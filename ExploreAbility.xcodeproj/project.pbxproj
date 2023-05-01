@@ -384,10 +384,7 @@
 			children = (
 				326D432829F9599100AE2F45 /* Info.plist */,
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
-				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
-				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
-				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
-				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
+				32AB445029FFE86F00E688BB /* View Model */,
 				326D432329F92AC800AE2F45 /* success.mov */,
 				326D431F29F9250800AE2F45 /* game.mov */,
 				326D42DC29F8052B00AE2F45 /* View */,
@@ -572,6 +569,17 @@
 				32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */,
 			);
 			path = "Console Message";
+			sourceTree = "<group>";
+		};
+		32AB445029FFE86F00E688BB /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
+				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
+				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
+				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
