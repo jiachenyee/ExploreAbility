@@ -130,10 +130,9 @@
 		32AB445629FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
 		32AB445929FFF78900E688BB /* GameStatusDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */; };
 		32AB445A29FFF87700E688BB /* GroupSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445129FFE8B500E688BB /* GroupSetupView.swift */; };
-		32AB445C2A00034200E688BB /* GPSHomingDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445B2A00034200E688BB /* GPSHomingDashboardView.swift */; };
 		32AB445D2A00034200E688BB /* GPSHomingDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445B2A00034200E688BB /* GPSHomingDashboardView.swift */; };
-		32AB445F2A00065700E688BB /* GPSHomingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445E2A00065700E688BB /* GPSHomingMapView.swift */; };
 		32AB44602A00065700E688BB /* GPSHomingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445E2A00065700E688BB /* GPSHomingMapView.swift */; };
+		32AB44622A003BF400E688BB /* MapPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44612A003BF400E688BB /* MapPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +240,7 @@
 		32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusDashboardView.swift; sourceTree = "<group>"; };
 		32AB445B2A00034200E688BB /* GPSHomingDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSHomingDashboardView.swift; sourceTree = "<group>"; };
 		32AB445E2A00065700E688BB /* GPSHomingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSHomingMapView.swift; sourceTree = "<group>"; };
+		32AB44612A003BF400E688BB /* MapPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +332,7 @@
 				32AB441429FE71C300E688BB /* SetBeaconLocationsView.swift */,
 				32AB445B2A00034200E688BB /* GPSHomingDashboardView.swift */,
 				32AB445E2A00065700E688BB /* GPSHomingMapView.swift */,
+				32AB44612A003BF400E688BB /* MapPreviewView.swift */,
 			);
 			path = "Individual Command View";
 			sourceTree = "<group>";
@@ -825,13 +826,11 @@
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
-				32AB445F2A00065700E688BB /* GPSHomingMapView.swift in Sources */,
 				32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
 				32AB445529FFEA0F00E688BB /* WaitingRoomView.swift in Sources */,
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
-				32AB445C2A00034200E688BB /* GPSHomingDashboardView.swift in Sources */,
 				32AB442E29FFBAD300E688BB /* HelloClientMessage.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
 				3202747229FCD2F500377188 /* Position.swift in Sources */,
@@ -896,6 +895,7 @@
 				320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */,
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
+				32AB44622A003BF400E688BB /* MapPreviewView.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportCommandView.swift in Sources */,
 				32AB441D29FF616F00E688BB /* MessageContents.swift in Sources */,
 				32AB442029FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift in Sources */,
