@@ -21,10 +21,10 @@ struct DashboardView: View {
             
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 200, maximum: 400), spacing: 16)], spacing: 16) {
-                    HostingCommandView(location: $viewModel.location,
+                    HostingDashboardView(location: $viewModel.location,
                                        isActive: $viewModel.isActive)
-                    RoomModelImportCommandView(roomCaptureData: $viewModel.roomCaptureData)
-                    SetBeaconLocationsCommandView(roomCaptureData: viewModel.roomCaptureData, beaconPositions: $viewModel.beaconPositions)
+                    RoomModelImportDashboardView(roomCaptureData: $viewModel.roomCaptureData)
+                    SetBeaconsDashboardView(roomCaptureData: viewModel.roomCaptureData, beaconPositions: $viewModel.beaconPositions)
                     BeaconOnlineDashboardView(location: viewModel.location)
                     GameStatusDashboardView(isGameActive: $viewModel.isGameActive)
                     GPSHomingDashboardView(roomCaptureData: viewModel.roomCaptureData)

@@ -1,5 +1,5 @@
 //
-//  RoomModelImportCommandView.swift
+//  RoomModelImportDashboardView.swift
 //  ExploreAbility Console
 //
 //  Created by Jia Chen Yee on 29/4/23.
@@ -9,7 +9,7 @@ import SwiftUI
 import SceneKit
 import RealityKit
 
-struct RoomModelImportCommandView: View {
+struct RoomModelImportDashboardView: View {
     
     @State var fileImporterPresented = false
     
@@ -83,7 +83,7 @@ struct RoomModelImportCommandView: View {
                 Button("Done") {
                 }
             } message: {
-                Text("")
+                Text("Failed to read data. Make sure you are uploading the correct .json file.")
             }
         }
     }

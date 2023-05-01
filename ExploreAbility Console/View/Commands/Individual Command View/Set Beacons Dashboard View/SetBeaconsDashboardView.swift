@@ -1,5 +1,5 @@
 //
-//  SetBeaconLocationsCommandView.swift
+//  SetBeaconsDashboardView.swift
 //  ExploreAbility Console
 //
 //  Created by Jia Chen Yee on 29/4/23.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct SetBeaconLocationsCommandView: View {
+struct SetBeaconsDashboardView: View {
     
     var roomCaptureData: RoomCaptureData?
     @Binding var beaconPositions: [Position?]
@@ -36,7 +36,7 @@ struct SetBeaconLocationsCommandView: View {
                         }
                     }
                     .sheet(isPresented: $isSetUpSheetPresented) {
-                        SetBeaconLocationsView(roomCaptureData: roomCaptureData,
+                        SetBeaconsView(roomCaptureData: roomCaptureData,
                                                beaconPositions: $beaconPositions)
                             .frame(minWidth: 512, maxWidth: .infinity, minHeight: 512, maxHeight: .infinity)
                     }

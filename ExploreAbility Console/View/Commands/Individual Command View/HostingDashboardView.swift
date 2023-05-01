@@ -1,5 +1,5 @@
 //
-//  HostingCommandView.swift
+//  HostingDashboardView.swift
 //  ExploreAbility Console
 //
 //  Created by Jia Chen Yee on 29/4/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HostingCommandView: View {
+struct HostingDashboardView: View {
     
     @Binding var location: Location
     @Binding var isActive: Bool

@@ -34,6 +34,9 @@ struct GroupView: View {
                         
                         Spacer()
                     }
+                    
+                    Text(group.isOnline ? "Online" : "Offline")
+                        .font(.caption)
                 }
                 Spacer()
                 Image(systemName: "chevron.forward")

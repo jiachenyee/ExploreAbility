@@ -1,5 +1,5 @@
 //
-//  SetBeaconLocationsView.swift
+//  SetBeaconsView.swift
 //  ExploreAbility Console
 //
 //  Created by Jia Chen Yee on 30/4/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetBeaconLocationsView: View {
+struct SetBeaconsView: View {
     
     @State var scale: CGFloat = 1.0
     @State var newScale = 1.0
