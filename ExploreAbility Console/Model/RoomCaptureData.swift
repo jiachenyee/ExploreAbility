@@ -8,6 +8,6 @@
 import Foundation
 
 struct RoomCaptureData {
-    var walls: [[Position]]
+    var walls: Walls
     var usdzURL: URL
 }

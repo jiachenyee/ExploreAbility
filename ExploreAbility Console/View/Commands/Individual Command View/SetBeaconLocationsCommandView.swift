@@ -42,7 +42,7 @@ struct SetBeaconLocationsCommandView: View {
                     }
                     
                     GeometryReader { reader in
-                        let (lowestX, lowestY, highestX, highestY) = getWallsLowestAndHighest(walls: walls)
+                        let (lowestX, lowestY, highestX, highestY) = walls.getLowestAndHighest()
                         let height = highestY - lowestY
                         let width = highestX - lowestX
                         let multiplier = min(reader.size.height / height, reader.size.width / width)
@@ -100,23 +100,5 @@ struct SetBeaconLocationsCommandView: View {
                 }
             }
         }
-    }
-    
-    func getWallsLowestAndHighest(walls: [[Position]]) -> (Double, Double, Double, Double) {
-        var lowestX = Double.infinity
-        var lowestY = Double.infinity
-        var highestX = -Double.infinity
-        var highestY = -Double.infinity
-        
-        for wall in walls {
-            for position in wall {
-                lowestX = min(lowestX, position.x)
-                lowestY = min(lowestY, position.y)
-                highestX = max(highestX, position.x)
-                highestY = max(highestY, position.y)
-            }
-        }
-        
-        return (lowestX, lowestY, highestX, highestY)
     }
 }
