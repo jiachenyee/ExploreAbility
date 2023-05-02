@@ -28,14 +28,20 @@ struct BeaconOnlineDashboardView: View {
                                                    status: beaconStatusViewModel.academyStatus[0])
                         IndividualOnlineBeaconView(beaconIndex: 2, lastUpdateDate: beaconStatusViewModel.academyBeacons[1],
                                                    status: beaconStatusViewModel.academyStatus[1])
-                        IndividualOnlineBeaconView(beaconIndex: 3, lastUpdateDate: beaconStatusViewModel.academyBeacons[2],
-                                                   status: beaconStatusViewModel.academyStatus[2])
                     }
                     HStack {
+                        IndividualOnlineBeaconView(beaconIndex: 3, lastUpdateDate: beaconStatusViewModel.academyBeacons[2],
+                                                   status: beaconStatusViewModel.academyStatus[2])
                         IndividualOnlineBeaconView(beaconIndex: 4, lastUpdateDate: beaconStatusViewModel.academyBeacons[3],
                                                    status: beaconStatusViewModel.academyStatus[3])
                         IndividualOnlineBeaconView(beaconIndex: 5, lastUpdateDate: beaconStatusViewModel.academyBeacons[4],
                                                    status: beaconStatusViewModel.academyStatus[4])
+                    }
+                    HStack {
+                        IndividualOnlineBeaconView(beaconIndex: 6, lastUpdateDate: beaconStatusViewModel.academyBeacons[5],
+                                                   status: beaconStatusViewModel.academyStatus[5])
+                        IndividualOnlineBeaconView(beaconIndex: 7, lastUpdateDate: beaconStatusViewModel.academyBeacons[6],
+                                                   status: beaconStatusViewModel.academyStatus[6])
                     }
                 } else {
                     HStack {

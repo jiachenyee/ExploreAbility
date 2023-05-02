@@ -28,7 +28,7 @@ struct BeaconSetupView: View {
                     }
                     
                     Picker(selection: $beaconIndex) {
-                        ForEach(0..<5) { index in
+                        ForEach(0..<7) { index in
                             Text("\(index + 1)")
                         }
                     } label: {

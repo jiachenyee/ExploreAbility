@@ -23,21 +23,21 @@ class BeaconStatusViewModel: NSObject, ObservableObject, CBCentralManagerDelegat
     let beaconUUID = CBUUID(string: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")
 
     override init() {
-        academyBeacons = .init(repeating: nil, count: 5)
-        academyStatus = .init(repeating: .offline, count: 5)
-        foundationBeacons = .init(repeating: nil, count: 5)
-        foundationStatus = .init(repeating: .offline, count: 5)
+        academyBeacons = .init(repeating: nil, count: 7)
+        academyStatus = .init(repeating: .offline, count: 7)
+        foundationBeacons = .init(repeating: nil, count: 7)
+        foundationStatus = .init(repeating: .offline, count: 7)
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
     func startMonitoring() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
-            for i in 0..<5 {
+            for i in 0..<7 {
                 if let academyBeaconDate = academyBeacons[i] {
                     let seconds = abs(academyBeaconDate.timeIntervalSinceNow)
 
-                    if seconds < 1 {
+                    if seconds < 1.5 {
                         if academyStatus[i] != .online {
                             academyStatus[i] = .online
                             logger.addLog(.success, "Connected to Academy \(i + 1) Beacon", imageName: "waveform")
@@ -60,7 +60,7 @@ class BeaconStatusViewModel: NSObject, ObservableObject, CBCentralManagerDelegat
                 if let foundationBeaconDate = foundationBeacons[i] {
                     let seconds = abs(foundationBeaconDate.timeIntervalSinceNow)
 
-                    if seconds < 1 {
+                    if seconds < 1.5 {
                         if foundationStatus[i] != .online {
                             foundationStatus[i] = .online
                             logger.addLog(.success, "Connected to Foundation \(i + 1) Beacon", imageName: "waveform")
@@ -142,81 +142,4 @@ class BeaconStatusViewModel: NSObject, ObservableObject, CBCentralManagerDelegat
         var minor: UInt16
         var power: Int8
     }
-
-    
-//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-//        if central.state == .poweredOn {
-//            startMonitoring()
-//        } else {
-//            print("Bye")
-//        }
-//    }
-    
-//    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-//        if let serviceUUIDs = advertisementData[CBAdvertisementDataServiceUUIDsKey] as? [CBUUID], serviceUUIDs.contains(beaconUUID) {
-//            print("iBeacon found: \(peripheral.name ?? "unknown") with RSSI: \(RSSI)")
-//        }
-//
-//        print("EJIFuhisvc")
-//        if let iBeacon = advertisementData["kCBAdvDataAppleBeaconKey"] {
-//            print(iBeacon)
-//        }
-//
-//        print("NOT")
-        
-//        if advertisementData.keys.contains(where: {
-//            $0.lowercased().contains("key")
-//        }) {
-//            print("THIS")
-//        }
-//
-//        if let manufacturerData = advertisementData[CBAdvertisementDataManufacturerDataKey] as? Data {
-//
-//
-//            let iBeaconPrefix: UInt16 = 0x004C
-//            let iBeaconPrefixData = Data([UInt8(iBeaconPrefix >> 8), UInt8(iBeaconPrefix & 0xFF)])
-//
-//            // Check if the advertisement data contains iBeacon prefix
-//            guard manufacturerData.count >= 25,
-//                  manufacturerData.prefix(upTo: iBeaconPrefixData.count) == iBeaconPrefixData else {
-//                return
-//            }
-//
-//            // Decode iBeacon data
-//            let major = UInt16(bigEndian: manufacturerData[18...19].withUnsafeBytes { $0.load(as: UInt16.self) })
-//            let minor = UInt16(bigEndian: manufacturerData[20...21].withUnsafeBytes { $0.load(as: UInt16.self) })
-//            let uuidBytes = manufacturerData[2...17]
-//            let uuidString = uuidBytes.map { String(format: "%02X", $0) }.joined()
-//            let uuid = UUID(uuidString: uuidString)
-//
-//            print("iBeacon found:")
-//            print("UUID: \(uuid?.uuidString ?? "Invalid UUID")")
-//            print("Major: \(major)")
-//            print("Minor: \(minor)")
-//        }
-//    }
-    
-//    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
-//        let beaconRegion = region as? CLBeaconRegion
-//        print("beacon detected")
-//        if state == .inside {
-//            manager.startRangingBeacons(satisfying: beaconRegion!.beaconIdentityConstraint)
-//        } else {
-//            manager.stopRangingBeacons(satisfying: beaconRegion!.beaconIdentityConstraint)
-//        }
-//        manager.startRangingBeacons(satisfying: beaconRegion!.beaconIdentityConstraint)
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager,
-//                         didRange beacons: [CLBeacon],
-//                         satisfying beaconConstraint: CLBeaconIdentityConstraint) {
-//        print("HELLO")
-//        for beacon in beacons {
-//            if beacon.major == 1 {
-//                academyBeacons[Int(truncating: beacon.minor) - 1] = .now
-//            } else {
-//                foundationBeacons[Int(truncating: beacon.major) - 1] = .now
-//            }
-//        }
-//    }
 }

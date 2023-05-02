@@ -19,6 +19,8 @@ extension CLBeaconRegion {
     static let academy3 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 3, identifier: "app.jiachen.exploreability.academy.3")
     static let academy4 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 4, identifier: "app.jiachen.exploreability.academy.4")
     static let academy5 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 5, identifier: "app.jiachen.exploreability.academy.5")
+    static let academy6 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 6, identifier: "app.jiachen.exploreability.academy.6")
+    static let academy7 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 1, minor: 7, identifier: "app.jiachen.exploreability.academy.7")
     
     static let foundationConsole = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 0, identifier: "app.jiachen.exploreability.foundations.0")
     static let foundation1 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 1, identifier: "app.jiachen.exploreability.foundations.1")
@@ -26,6 +28,8 @@ extension CLBeaconRegion {
     static let foundation3 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 3, identifier: "app.jiachen.exploreability.foundations.3")
     static let foundation4 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 4, identifier: "app.jiachen.exploreability.foundations.4")
     static let foundation5 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 5, identifier: "app.jiachen.exploreability.foundations.5")
+    static let foundation6 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 6, identifier: "app.jiachen.exploreability.foundations.6")
+    static let foundation7 = CLBeaconRegion(uuid: UUID(uuidString: "1D8123E8-E703-4FE8-AB73-14EFB3B3EA40")!, major: 2, minor: 7, identifier: "app.jiachen.exploreability.foundations.7")
     
     static let allFoundationBeacons = [
         foundationConsole,
@@ -33,7 +37,9 @@ extension CLBeaconRegion {
         foundation2,
         foundation3,
         foundation4,
-        foundation5
+        foundation5,
+        foundation6,
+        foundation7
     ]
     
     static let allAcademyBeacons = [
@@ -42,6 +48,8 @@ extension CLBeaconRegion {
         academy2,
         academy3,
         academy4,
-        academy5
+        academy5,
+        academy6,
+        academy7
     ]
 }

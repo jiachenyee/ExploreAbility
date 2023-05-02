@@ -65,7 +65,7 @@ struct SetBeaconsView: View {
                         }
                         .stroke(lineWidth: 2)
                         
-                        ForEach(0..<5) { (i: Int) in
+                        ForEach(0..<7) { (i: Int) in
                             if let location = beaconPositions[i] {
                                 ZStack {
                                     Circle()
@@ -100,7 +100,7 @@ struct SetBeaconsView: View {
             
             ScrollView(.horizontal) {
                 HStack(spacing: 16) {
-                    ForEach(0..<5) { index in
+                    ForEach(0..<7) { index in
                         ZStack {
                             Circle()
                                 .fill(.blue.opacity(beaconPositions[index] == nil ? 0.1 : 1))

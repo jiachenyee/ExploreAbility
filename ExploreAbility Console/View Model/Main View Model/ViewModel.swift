@@ -66,7 +66,7 @@ class ViewModel: NSObject, ObservableObject {
     
     @Published var groups: [Group] = []
     
-    @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 5)
+    @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 7)
     
     override init() {
         super.init()

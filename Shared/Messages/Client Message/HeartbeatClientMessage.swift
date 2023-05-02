@@ -17,7 +17,7 @@ struct HeartbeatClientMessage: MessageContents {
     var trueHeading: Double
     
     /// GPS latitude value
-    var latitude: Double
+    var gpsLatitude: Double
     
     /// GPS Longitude value
     var gpsLongitude: Double

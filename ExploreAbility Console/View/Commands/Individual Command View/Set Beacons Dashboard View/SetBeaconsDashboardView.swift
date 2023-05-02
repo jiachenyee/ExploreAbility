@@ -85,7 +85,7 @@ struct SetBeaconsDashboardView: View {
                             }
                             .stroke(lineWidth: 2)
                             
-                            ForEach(0..<5) { (i: Int) in
+                            ForEach(0..<7) { (i: Int) in
                                 if let location = beaconPositions[i] {
                                     Circle()
                                         .fill(.blue)

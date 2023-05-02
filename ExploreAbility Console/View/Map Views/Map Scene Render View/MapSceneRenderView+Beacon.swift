@@ -15,6 +15,8 @@ extension MapSceneRenderView {
         beaconGroupNode.addChildNode(createBeaconNode())
         beaconGroupNode.addChildNode(createBeaconNode())
         beaconGroupNode.addChildNode(createBeaconNode())
+        beaconGroupNode.addChildNode(createBeaconNode())
+        beaconGroupNode.addChildNode(createBeaconNode())
     }
     
     fileprivate func createBeaconNode() -> SCNNode {

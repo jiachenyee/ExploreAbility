@@ -73,4 +73,18 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             print(error.localizedDescription)
         }
     }
+    
+    func sendHeartbeatMessage() {
+        
+        guard let location = manager.location,
+              let heading = manager.heading?.trueHeading else { return }
+        
+//        HeartbeatClientMessage(gameState: gameState,
+//                               beaconDistances: <#T##[HeartbeatClientMessage.BeaconProximity]#>,
+//                               trueHeading: heading,
+//                               gpsLatitude: location.coordinate.latitude,
+//                               gpsLongitude: location.coordinate.longitude,
+//                               gpsAccuracy: location.horizontalAccuracy,
+//                               date: .now)
+    }
 }
