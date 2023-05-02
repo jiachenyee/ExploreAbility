@@ -24,7 +24,7 @@ extension MapSceneRenderView {
     }
     
     fileprivate func updateWallOpacity(pointOfView: SCNNode) {
-        let thresholdDistance: Float = 5
+        let thresholdDistance: Float = 10
         let wallNodes = getWallNodes()
         
         for wallNode in wallNodes {
