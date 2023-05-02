@@ -17,8 +17,6 @@ sequenceDiagram
     loop every second
         U->>C: 💗 Heartbeat
         activate C
-        C-->>U: 📍 Position Response
-        deactivate C
     end
     
     Note over U, C: Game
@@ -30,25 +28,39 @@ sequenceDiagram
         C-->>U: ✅ Next Challenge Info
         deactivate C
     end
+    
+    C->>U: 🔑 Session Info Update
 ```
 
 ## Establishing Connection
 1. **Hello**: Initial connection message and information such as group name.
-2. **Session Info**: Information about the game session such as the location (Academy/Foundation), host device identifier, and more.
+2. **Session Info**: 
+    - Game Location (Academy/Foundation)
+    - Host device identifier
+    - Beacon Locations (local coordinate space)
+    - Origin Coordinates (Lat & Long for the origin point of the area)
 
 ## Heartbeat Loop
-3. Heartbeat: 
+3. **Heartbeat**: 
     - Location Information: 
-        - Relative location to beacons with accuracies
-        - GPS location with error
-        - True heading
+        - Location
+        - Accuracy
+        - Date
+        - Device Heading
     - Current game state
     - Group's identifier
-4. Position Response
-    - Console returns the user's predicted location based on the information provided.
 
 ## Game
-5. **Start Game Command**: Indicate the start date of the game, usually 1 second after the message is sent.
-6. **Challenge Started**: User sends a message to indicate they started on a challenge. This message provides information about the new challenge.
-7. **Next Challenge**: Response to a challenge completion message. This message is intended to provide information about the next challenge and it's location.
-    - The next challenge position is calculated by trying to find a location that would avoid collisions with other groups as much as possible, while requiring the group to walk at least 15m.
+4. **Start Game Command**: 
+    - Start date of game (by default, 3 seconds after the message is sent.)
+5. **Challenge Started**:
+    - Current challenge
+6. **Next Challenge**: 
+    - Response to a challenge started message.
+    - Next Challenge
+    - Next Challenge Position
+    - Game administrators manually set the position.
+7. **Session Info Update**:
+    - Exact same payload as Session Info.
+    - Sent whenever beacon location changes/GPS center position changes.
+    - Should not/rarely be sent out.
