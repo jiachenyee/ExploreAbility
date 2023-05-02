@@ -25,9 +25,9 @@ sequenceDiagram
     C->>U: 🏁 Start Game Command
     
     loop Game Loop
-        U->>C: 👍 Challenge Completion
+        U->>C: 🏎️ Challenge Started
         activate C
-        C-->>U: ✅ Next Challenge
+        C-->>U: ✅ Next Challenge Info
         deactivate C
     end
 ```
@@ -49,6 +49,6 @@ sequenceDiagram
 
 ## Game
 5. **Start Game Command**: Indicate the start date of the game, usually 1 second after the message is sent.
-6. **Challenge Completion**: User sends a completion message. This message provides information like how long the group took on the challenge, and where the group is.
+6. **Challenge Started**: User sends a message to indicate they started on a challenge. This message provides information about the new challenge.
 7. **Next Challenge**: Response to a challenge completion message. This message is intended to provide information about the next challenge and it's location.
     - The next challenge position is calculated by trying to find a location that would avoid collisions with other groups as much as possible, while requiring the group to walk at least 15m.
