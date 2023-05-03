@@ -14,10 +14,13 @@ extension MapSceneRenderView {
         
         let currentCameraPosition = pointOfView.simdWorldPosition
         
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 0.1
         // Check if the camera position has changed
         if previousCameraPosition != nil && simd_distance(previousCameraPosition!, currentCameraPosition) > 0 {
             updateWallOpacity(pointOfView: pointOfView)
         }
+        SCNTransaction.commit()
         
         // Update the previous camera position
         previousCameraPosition = currentCameraPosition

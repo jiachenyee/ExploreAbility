@@ -26,6 +26,7 @@ extension MapSceneRenderView: SCNSceneRendererDelegate {
         
         scene.rootNode.addChildNode(gridNode)
         scene.rootNode.addChildNode(beaconGroupNode)
+        createFloor()
     }
     
     func setUpSceneView() {
@@ -35,7 +36,6 @@ extension MapSceneRenderView: SCNSceneRendererDelegate {
         
         delegate = self
         
-        createGridPlane()
         setUpBeaconNodes()
     }
 }

@@ -102,7 +102,7 @@
 		32AB441D29FF616F00E688BB /* MessageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441C29FF616F00E688BB /* MessageContents.swift */; };
 		32AB441E29FF884800E688BB /* MessageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441C29FF616F00E688BB /* MessageContents.swift */; };
 		32AB442029FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB441F29FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift */; };
-		32AB442229FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442129FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift */; };
+		32AB442229FF9C5900E688BB /* MapSceneRenderView+Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442129FF9C5900E688BB /* MapSceneRenderView+Floor.swift */; };
 		32AB442429FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442329FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift */; };
 		32AB442629FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442529FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift */; };
 		32AB442829FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442729FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift */; };
@@ -225,7 +225,7 @@
 		32AB441829FE9B2200E688BB /* MapCustomisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCustomisation.swift; sourceTree = "<group>"; };
 		32AB441C29FF616F00E688BB /* MessageContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContents.swift; sourceTree = "<group>"; };
 		32AB441F29FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+Beacon.swift"; sourceTree = "<group>"; };
-		32AB442129FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+GridPlane.swift"; sourceTree = "<group>"; };
+		32AB442129FF9C5900E688BB /* MapSceneRenderView+Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+Floor.swift"; sourceTree = "<group>"; };
 		32AB442329FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+WallOpacity.swift"; sourceTree = "<group>"; };
 		32AB442529FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+SceneSetup.swift"; sourceTree = "<group>"; };
 		32AB442729FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapSceneRenderView+MapCustomization.swift"; sourceTree = "<group>"; };
@@ -657,7 +657,7 @@
 				32AB442729FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift */,
 				32AB442529FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift */,
 				32AB442329FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift */,
-				32AB442129FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift */,
+				32AB442129FF9C5900E688BB /* MapSceneRenderView+Floor.swift */,
 				32AB441F29FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift */,
 			);
 			path = "Map Scene Render View";
@@ -991,7 +991,7 @@
 				320274E329FD33A200377188 /* GroupView.swift in Sources */,
 				326D42CC29F804A800AE2F45 /* ContentView.swift in Sources */,
 				32AB44602A00065700E688BB /* GPSHomingMapView.swift in Sources */,
-				32AB442229FF9C5900E688BB /* MapSceneRenderView+GridPlane.swift in Sources */,
+				32AB442229FF9C5900E688BB /* MapSceneRenderView+Floor.swift in Sources */,
 				32AB44702A0040B200E688BB /* BeaconStatus.swift in Sources */,
 				32AB44652A003D1900E688BB /* Walls.swift in Sources */,
 				3202747629FCD30300377188 /* PeerLocation.swift in Sources */,
