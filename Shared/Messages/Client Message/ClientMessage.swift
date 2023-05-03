@@ -20,21 +20,21 @@ struct ClientMessage: Codable {
             messageCode = .hello
         case .heartbeat(_):
             messageCode = .heartbeat
-        case .challengeCompletion(_):
-            messageCode = .challengeCompletion
+        case .challengeStarted(_):
+            messageCode = .challengeStarted
         }
     }
     
     enum MessageCode: Int, Codable {
         case hello = 1
         case heartbeat = 3
-        case challengeCompletion = 6
+        case challengeStarted = 5
     }
     
     enum DecodedMessageContents {
         case hello(HelloClientMessage)
         case heartbeat(HeartbeatClientMessage)
-        case challengeCompletion(ChallengeStartedClientMessage)
+        case challengeStarted(ChallengeStartedClientMessage)
     }
     
     enum CodingKeys: String, CodingKey {
@@ -52,7 +52,7 @@ struct ClientMessage: Codable {
             try container.encode(payloadData, forKey: .payload)
         case .heartbeat(let payloadData):
             try container.encode(payloadData, forKey: .payload)
-        case .challengeCompletion(let payloadData):
+        case .challengeStarted(let payloadData):
             try container.encode(payloadData, forKey: .payload)
         }
     }
@@ -67,8 +67,8 @@ struct ClientMessage: Codable {
             self.payload = .hello(try container.decode(HelloClientMessage.self, forKey: .payload))
         case .heartbeat:
             self.payload = .heartbeat(try container.decode(HeartbeatClientMessage.self, forKey: .payload))
-        case .challengeCompletion:
-            self.payload = .challengeCompletion(try container.decode(ChallengeStartedClientMessage.self, forKey: .payload))
+        case .challengeStarted:
+            self.payload = .challengeStarted(try container.decode(ChallengeStartedClientMessage.self, forKey: .payload))
         }
     }
     

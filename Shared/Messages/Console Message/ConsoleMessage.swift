@@ -27,7 +27,7 @@ struct ConsoleMessage: Codable {
     enum MessageCode: Int, Codable {
         case sessionInfo = 2
         case startGame = 5
-        case nextChallenge = 7
+        case nextChallenge = 6
     }
     
     enum DecodedMessageContents {
