@@ -24,12 +24,6 @@ extension MapSceneRenderView {
         let beaconNode = SCNNode(geometry: beacon)
         beaconNode.position = .init(0, 1, 0)
         
-        let radioWaveBubble = SCNSphere(radius: 0.25)
-        
-        radioWaveBubble.firstMaterial?.diffuse.contents = NSColor.systemBlue.withAlphaComponent(0.5)
-        
-        let radioWaveBubbleNode = SCNNode(geometry: radioWaveBubble)
-        
         let light = SCNLight()
         light.type = .omni
         light.areaType = .polygon
@@ -40,12 +34,9 @@ extension MapSceneRenderView {
         
         beacon.firstMaterial?.emission.contents = NSColor.systemBlue
         
-//        let lightNode = SCNNode()
         beaconNode.light = light
 
         createBeaconAnimation(beaconNode)
-        
-//        beaconNode.addChildNode(lightNode)
         
         beaconNode.isHidden = true
         
