@@ -187,7 +187,7 @@ struct GPSHomingMapView: View {
         guard let centerPoint = region?.center,
               let localLocation else { return }
         
-        print(getLocalOrigin(lat: centerPoint.latitude, long: centerPoint.longitude, point: Position(x: localLocation.x, y: localLocation.y)))
+        self.originPosition = getLocalOrigin(lat: centerPoint.latitude, long: centerPoint.longitude, point: Position(x: localLocation.x, y: localLocation.y))
     }
     
     func getLocalOrigin(lat: Double, long: Double, point pointInLocalSystem: Position) -> GPSPosition {

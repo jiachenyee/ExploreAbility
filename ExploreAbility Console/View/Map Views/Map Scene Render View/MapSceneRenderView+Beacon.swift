@@ -10,13 +10,11 @@ import SceneKit
 
 extension MapSceneRenderView {
     func setUpBeaconNodes() {
-        beaconGroupNode.addChildNode(createBeaconNode())
-        beaconGroupNode.addChildNode(createBeaconNode())
-        beaconGroupNode.addChildNode(createBeaconNode())
-        beaconGroupNode.addChildNode(createBeaconNode())
-        beaconGroupNode.addChildNode(createBeaconNode())
-        beaconGroupNode.addChildNode(createBeaconNode())
-        beaconGroupNode.addChildNode(createBeaconNode())
+        for i in 0..<7 {
+            let beaconNode = createBeaconNode()
+            beaconNode.name = "Beacon \(i + 1)"
+            beaconGroupNode.addChildNode(beaconNode)
+        }
     }
     
     fileprivate func createBeaconNode() -> SCNNode {

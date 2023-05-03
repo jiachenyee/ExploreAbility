@@ -76,7 +76,7 @@ struct SetBeaconsDashboardView: View {
                             Path { path in
                                 for wall in walls {
                                     guard let bottom = wall.first, let top = wall.last else { break }
-                                    print(offset)
+                                    
                                     path.move(to: .init(x: (bottom.x - lowestX) * multiplier + offset,
                                                         y: (bottom.y - lowestY) * multiplier))
                                     path.addLine(to: .init(x: (top.x - lowestX) * multiplier + offset,

@@ -43,6 +43,7 @@ extension ViewModel {
     }
     
     func sendSessionInfoMessage() {
+        guard let mcSession, !mcSession.connectedPeers.isEmpty else { return }
         do {
             let sessionInfo = SessionInfoConsoleMessage(hostID: mcSession.myPeerID.displayName,
                                                         location: location,
