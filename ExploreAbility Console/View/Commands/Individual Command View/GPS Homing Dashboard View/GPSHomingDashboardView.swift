@@ -11,6 +11,8 @@ import MapKit
 struct GPSHomingDashboardView: View {
     
     var roomCaptureData: RoomCaptureData?
+    @Binding var originPosition: GPSPosition?
+    
     @State private var setUpPresented = false
     
     var body: some View {
@@ -26,7 +28,7 @@ struct GPSHomingDashboardView: View {
                     setUpPresented = true
                 }
                 .sheet(isPresented: $setUpPresented) {
-                    GPSHomingMapView(roomCaptureData: roomCaptureData)
+                    GPSHomingMapView(roomCaptureData: roomCaptureData, originPosition: $originPosition)
                 }
             } else {
                 Text("Import a room model to set up.")

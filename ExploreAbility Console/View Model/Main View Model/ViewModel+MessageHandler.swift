@@ -39,9 +39,15 @@ extension ViewModel {
             }
         }
         
+        sendSessionInfoMessage()
+    }
+    
+    func sendSessionInfoMessage() {
         do {
             let sessionInfo = SessionInfoConsoleMessage(hostID: mcSession.myPeerID.displayName,
-                                                        location: location)
+                                                        location: location,
+                                                        beaconLocations: beaconPositions,
+                                                        originPosition: originPosition)
             
             let data = try ConsoleMessage(payload: .sessionInfo(sessionInfo)).toData()
             
@@ -56,38 +62,13 @@ extension ViewModel {
             $0.peerID == peerID
         }) else { return }
         
-        let locationData = heartbeatMessage.beaconDistances.enumerated().compactMap { n, distance in
-            if let maxDistance = distance.maxRadius(),
-               let position = beaconPositions[n] {
-                
-                return LocationData(position: position, distance: maxDistance)
-            }
-            
-            return nil
-        }
-        
-        #warning("TODO: Incorporate GPS location into calculation and append to `locationData`")
-        
-        let position = calculatePosition(using: locationData, date: heartbeatMessage.date)
-        
         // Update group info
         Task {
             await MainActor.run {
-                groups[groupIndex].compassHeading = heartbeatMessage.trueHeading
                 groups[groupIndex].currentState = heartbeatMessage.gameState
-                groups[groupIndex].position = position
+                groups[groupIndex].position = heartbeatMessage.ipsPosition
                 groups[groupIndex].lastUpdated = .now
             }
-        }
-        
-        do {
-            let positionResponse = PositionResponseConsoleMessage(position: position)
-            
-            let data = try ConsoleMessage(payload: .positionResponse(positionResponse)).toData()
-            
-            try mcSession.send(data, toPeers: [peerID], with: .unreliable)
-        } catch {
-            logger.addLog(.critical, "Error responding to position response: \(error.localizedDescription)", imageName: "waveform.badge.exclamationmark")
         }
     }
     
@@ -96,10 +77,12 @@ extension ViewModel {
         var distance: Double
     }
     
-    func calculatePosition(using locationData: [LocationData], date: Date) -> IPSPosition {
+#warning("Incomplete implementation, move func to ExploreAbility target")
+    func calculatePosition(using locationData: [LocationData], date: Date) -> IPSPosition? {
         // Check if we have at least 3 beacons
         if locationData.count < 3 {
-            fatalError("At least 3 beacons are required for trilateration")
+            print("At least 3 beacons are required for trilateration")
+            return nil
         }
         
         // Find the weighted centroid
@@ -129,6 +112,6 @@ extension ViewModel {
         }
         errorEstimate = sqrt(errorEstimate / Double(locationData.count))
         
-        return IPSPosition(position: centroid, error: errorEstimate, date: date)
+        return IPSPosition(position: centroid, error: errorEstimate, date: date, trueHeading: .zero)
     }
 }

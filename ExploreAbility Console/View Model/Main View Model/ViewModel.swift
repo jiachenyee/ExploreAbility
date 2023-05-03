@@ -66,7 +66,17 @@ class ViewModel: NSObject, ObservableObject {
     
     @Published var groups: [Group] = []
     
-    @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 7)
+    @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 7) {
+        didSet {
+            sendSessionInfoMessage()
+        }
+    }
+    
+    @Published var originPosition: GPSPosition? {
+        didSet {
+            sendSessionInfoMessage()
+        }
+    }
     
     override init() {
         super.init()

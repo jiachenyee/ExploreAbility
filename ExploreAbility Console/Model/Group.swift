@@ -27,8 +27,6 @@ struct Group: Identifiable, Equatable {
     var nextChallenge: GameState?
     var nextChallengePosition: Position?
     
-    var compassHeading: Double? // in degrees
-    
     var isOnline = true
     
     var lastUpdated: Date?

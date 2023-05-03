@@ -112,8 +112,8 @@
 		32AB442F29FFBAD300E688BB /* HelloClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB442D29FFBAD300E688BB /* HelloClientMessage.swift */; };
 		32AB443229FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443129FFBAE900E688BB /* HeartbeatClientMessage.swift */; };
 		32AB443329FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443129FFBAE900E688BB /* HeartbeatClientMessage.swift */; };
-		32AB443529FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443429FFBAF500E688BB /* ChallengeCompletionMessage.swift */; };
-		32AB443629FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443429FFBAF500E688BB /* ChallengeCompletionMessage.swift */; };
+		32AB443529FFBAF500E688BB /* ChallengeStartedClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443429FFBAF500E688BB /* ChallengeStartedClientMessage.swift */; };
+		32AB443629FFBAF500E688BB /* ChallengeStartedClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443429FFBAF500E688BB /* ChallengeStartedClientMessage.swift */; };
 		32AB443929FFBEA800E688BB /* ConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443829FFBEA800E688BB /* ConsoleMessage.swift */; };
 		32AB443A29FFBEA800E688BB /* ConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443829FFBEA800E688BB /* ConsoleMessage.swift */; };
 		32AB443D29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */; };
@@ -136,6 +136,8 @@
 		32AB44652A003D1900E688BB /* Walls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44642A003D1900E688BB /* Walls.swift */; };
 		32AB44702A0040B200E688BB /* BeaconStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB446F2A0040B200E688BB /* BeaconStatus.swift */; };
 		32AB44722A00410E00E688BB /* SetBeaconView+DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44712A00410E00E688BB /* SetBeaconView+DropDelegate.swift */; };
+		32AB44752A02041200E688BB /* GPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44742A02041200E688BB /* GPSPosition.swift */; };
+		32AB44762A02043A00E688BB /* GPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44742A02041200E688BB /* GPSPosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,7 +232,7 @@
 		32AB442A29FFBAAE00E688BB /* ClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMessage.swift; sourceTree = "<group>"; };
 		32AB442D29FFBAD300E688BB /* HelloClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloClientMessage.swift; sourceTree = "<group>"; };
 		32AB443129FFBAE900E688BB /* HeartbeatClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatClientMessage.swift; sourceTree = "<group>"; };
-		32AB443429FFBAF500E688BB /* ChallengeCompletionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletionMessage.swift; sourceTree = "<group>"; };
+		32AB443429FFBAF500E688BB /* ChallengeStartedClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStartedClientMessage.swift; sourceTree = "<group>"; };
 		32AB443829FFBEA800E688BB /* ConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MCSessionDelegate.swift"; sourceTree = "<group>"; };
 		32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoConsoleMessage.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		32AB44642A003D1900E688BB /* Walls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walls.swift; sourceTree = "<group>"; };
 		32AB446F2A0040B200E688BB /* BeaconStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStatus.swift; sourceTree = "<group>"; };
 		32AB44712A00410E00E688BB /* SetBeaconView+DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetBeaconView+DropDelegate.swift"; sourceTree = "<group>"; };
+		32AB44742A02041200E688BB /* GPSPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSPosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +504,7 @@
 				3202747029FCD2EC00377188 /* Position.swift */,
 				320274DA29FD162900377188 /* RoomCaptureImportedData.swift */,
 				3202747729FCD31D00377188 /* IPSPosition.swift */,
+				32AB44742A02041200E688BB /* GPSPosition.swift */,
 				326D429629F7DFEF00AE2F45 /* GameState.swift */,
 				32AB442929FFBA9600E688BB /* Messages */,
 			);
@@ -563,7 +567,7 @@
 			children = (
 				32AB442A29FFBAAE00E688BB /* ClientMessage.swift */,
 				32AB443129FFBAE900E688BB /* HeartbeatClientMessage.swift */,
-				32AB443429FFBAF500E688BB /* ChallengeCompletionMessage.swift */,
+				32AB443429FFBAF500E688BB /* ChallengeStartedClientMessage.swift */,
 				32AB442D29FFBAD300E688BB /* HelloClientMessage.swift */,
 			);
 			path = "Client Message";
@@ -905,6 +909,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32AB44762A02043A00E688BB /* GPSPosition.swift in Sources */,
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB441E29FF884800E688BB /* MessageContents.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
@@ -912,7 +917,7 @@
 				32AB445A29FFF87700E688BB /* GroupSetupView.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
-				32AB443529FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */,
+				32AB443529FFBAF500E688BB /* ChallengeStartedClientMessage.swift in Sources */,
 				32AB443229FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
@@ -997,8 +1002,9 @@
 				32AB44622A003BF400E688BB /* MapPreviewView.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportDashboardView.swift in Sources */,
 				32AB441D29FF616F00E688BB /* MessageContents.swift in Sources */,
+				32AB44752A02041200E688BB /* GPSPosition.swift in Sources */,
 				32AB442029FF9B4B00E688BB /* MapSceneRenderView+Beacon.swift in Sources */,
-				32AB443629FFBAF500E688BB /* ChallengeCompletionMessage.swift in Sources */,
+				32AB443629FFBAF500E688BB /* ChallengeStartedClientMessage.swift in Sources */,
 				32AB442429FF9CA100E688BB /* MapSceneRenderView+WallOpacity.swift in Sources */,
 				3202748829FCEBBC00377188 /* Log.swift in Sources */,
 				3202748C29FCEF2D00377188 /* LogType.swift in Sources */,

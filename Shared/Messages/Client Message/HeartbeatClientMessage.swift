@@ -9,23 +9,7 @@ import Foundation
 
 struct HeartbeatClientMessage: MessageContents {
     var gameState: GameState
-    
-    /// Distances to beacons. If a beacon is undetected/unknown, it is marked as `.unknown`. Otherwise, it follows CoreLocation's mapping.
-    var beaconDistances: [BeaconProximity]
-    
-    /// Compass true heading
-    var trueHeading: Double
-    
-    /// GPS latitude value
-    var gpsLatitude: Double
-    
-    /// GPS Longitude value
-    var gpsLongitude: Double
-    
-    /// GPS accuracy in meters
-    var gpsAccuracy: Double
-    
-    var date: Date
+    var ipsPosition: IPSPosition
     
     enum BeaconProximity: Int, Codable {
         case unknown = 0

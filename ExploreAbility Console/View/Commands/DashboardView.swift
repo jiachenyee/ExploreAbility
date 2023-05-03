@@ -27,7 +27,7 @@ struct DashboardView: View {
                     SetBeaconsDashboardView(roomCaptureData: viewModel.roomCaptureData, beaconPositions: $viewModel.beaconPositions)
                     BeaconOnlineDashboardView(location: viewModel.location)
                     GameStatusDashboardView(isGameActive: $viewModel.isGameActive)
-                    GPSHomingDashboardView(roomCaptureData: viewModel.roomCaptureData)
+                    GPSHomingDashboardView(roomCaptureData: viewModel.roomCaptureData, originPosition: $viewModel.originPosition)
                 }
             }
             .frame(minWidth: 200)

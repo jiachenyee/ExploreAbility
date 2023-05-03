@@ -10,9 +10,11 @@ import MapKit
 
 struct GPSHomingMapView: View {
     
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     
     var roomCaptureData: RoomCaptureData
+    
+    @Binding var originPosition: GPSPosition?
     
     @State private var region: MKCoordinateRegion?
     @State private var rotationAngle: Double = 0.0
@@ -170,6 +172,50 @@ struct GPSHomingMapView: View {
             }
         }
         .frame(minWidth: 512, minHeight: 512)
+        .onChange(of: localLocation) { _ in
+            update()
+        }
+        .onChange(of: region?.center.latitude) { _ in
+            update()
+        }
+        .onChange(of: region?.center.longitude) { _ in
+            update()
+        }
+    }
+    
+    func update() {
+        guard let centerPoint = region?.center,
+              let localLocation else { return }
+        
+        print(getLocalOrigin(lat: centerPoint.latitude, long: centerPoint.longitude, point: Position(x: localLocation.x, y: localLocation.y)))
+    }
+    
+    func getLocalOrigin(lat: Double, long: Double, point pointInLocalSystem: Position) -> GPSPosition {
+        let scaleFactor = 1.0 // Replace with your scale factor
+        
+        // Convert latitude and longitude to radians
+        let latInRadians = lat * Double.pi / 180.0
+        let longInRadians = long * Double.pi / 180.0
+        
+        // Convert x and y coordinates to meters
+        let xInMeters = pointInLocalSystem.x
+        let yInMeters = pointInLocalSystem.y
+        
+        // Calculate distance from origin in meters
+        let distanceFromOriginInMeters = sqrt(xInMeters * xInMeters + yInMeters * yInMeters) * scaleFactor
+        
+        // Calculate bearing from origin to point in radians
+        let bearing = atan2(yInMeters, xInMeters)
+        
+        // Calculate latitude and longitude of the origin
+        let R = 6371000.0 // radius of the Earth in meters
+        let originLatInRadians = asin(sin(latInRadians) * cos(distanceFromOriginInMeters / R) + cos(latInRadians) * sin(distanceFromOriginInMeters / R) * cos(bearing))
+        let originLongInRadians = longInRadians + atan2(sin(bearing) * sin(distanceFromOriginInMeters / R) * cos(latInRadians), cos(distanceFromOriginInMeters / R) - sin(latInRadians) * sin(originLatInRadians))
+        
+        // Convert back to degrees
+        let originLat = originLatInRadians * 180.0 / Double.pi
+        let originLong = originLongInRadians * 180.0 / Double.pi
+        
+        return GPSPosition(latitude: originLat, longitude: originLong)
     }
 }
-

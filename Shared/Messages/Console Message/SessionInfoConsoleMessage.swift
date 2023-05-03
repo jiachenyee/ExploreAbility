@@ -11,8 +11,13 @@ struct SessionInfoConsoleMessage: MessageContents {
     var hostID: String
     var location: Location
     
+    var beaconLocations: [Position?]
+    var originPosition: GPSPosition?
+    
     enum CodingKeys: String, CodingKey {
         case hostID = "hid"
         case location = "l"
+        case beaconLocations = "b"
+        case originPosition = "o"
     }
 }
