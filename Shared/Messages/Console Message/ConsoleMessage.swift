@@ -17,8 +17,6 @@ struct ConsoleMessage: Codable {
         switch payload {
         case .sessionInfo(_):
             messageCode = .sessionInfo
-        case .positionResponse(_):
-            messageCode = .positionResponse
         case .startGame(_):
             messageCode = .startGame
         case .nextChallenge(_):
@@ -28,14 +26,12 @@ struct ConsoleMessage: Codable {
     
     enum MessageCode: Int, Codable {
         case sessionInfo = 2
-        case positionResponse = 4
         case startGame = 5
         case nextChallenge = 7
     }
     
     enum DecodedMessageContents {
         case sessionInfo(SessionInfoConsoleMessage)
-        case positionResponse(PositionResponseConsoleMessage)
         case startGame(StartGameConsoleMessage)
         case nextChallenge(NextChallengeConsoleMessage)
     }
@@ -53,8 +49,6 @@ struct ConsoleMessage: Codable {
         switch payload {
         case .sessionInfo(let payloadData):
             try container.encode(payloadData, forKey: .payload)
-        case .positionResponse(let payloadData):
-            try container.encode(payloadData, forKey: .payload)
         case .startGame(let payloadData):
             try container.encode(payloadData, forKey: .payload)
         case .nextChallenge(let payloadData):
@@ -70,8 +64,6 @@ struct ConsoleMessage: Codable {
         switch messageCode {
         case .sessionInfo:
             self.payload = .sessionInfo(try container.decode(SessionInfoConsoleMessage.self, forKey: .payload))
-        case .positionResponse:
-            self.payload = .positionResponse(try container.decode(PositionResponseConsoleMessage.self, forKey: .payload))
         case .startGame:
             self.payload = .startGame(try container.decode(StartGameConsoleMessage.self, forKey: .payload))
         case .nextChallenge:

@@ -119,8 +119,6 @@
 		32AB443D29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */; };
 		32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */; };
 		32AB444029FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */; };
-		32AB444229FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */; };
-		32AB444329FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */; };
 		32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */; };
 		32AB444629FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */; };
 		32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
@@ -236,7 +234,6 @@
 		32AB443829FFBEA800E688BB /* ConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MCSessionDelegate.swift"; sourceTree = "<group>"; };
 		32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoConsoleMessage.swift; sourceTree = "<group>"; };
-		32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionResponseConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengeConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MessageHandler.swift"; sourceTree = "<group>"; };
@@ -578,7 +575,6 @@
 			children = (
 				32AB443829FFBEA800E688BB /* ConsoleMessage.swift */,
 				32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */,
-				32AB444129FFC54800E688BB /* PositionResponseConsoleMessage.swift */,
 				32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */,
 				32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */,
 			);
@@ -921,7 +917,6 @@
 				32AB443229FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
-				32AB444229FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
 				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
@@ -1026,7 +1021,6 @@
 				32AB445629FFEA0F00E688BB /* WaitingRoomView.swift in Sources */,
 				320274DC29FD162F00377188 /* RoomCaptureImportedData.swift in Sources */,
 				326D42EF29F8F4C300AE2F45 /* CLBeaconRegion.swift in Sources */,
-				32AB444329FFC54800E688BB /* PositionResponseConsoleMessage.swift in Sources */,
 				32AB442C29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
 				32AB445929FFF78900E688BB /* GameStatusDashboardView.swift in Sources */,
 				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,

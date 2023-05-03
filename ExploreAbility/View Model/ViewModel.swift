@@ -33,7 +33,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         }
     }
     
-    @Published var location: Location?
+    @Published var sessionInfo: SessionInfoConsoleMessage?
     
     @Published var ipsPosition: IPSPosition?
     

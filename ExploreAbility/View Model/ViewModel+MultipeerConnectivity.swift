@@ -52,13 +52,7 @@ extension ViewModel: MCSessionDelegate {
             case .sessionInfo(let sessionInfo):
                 Task {
                     await MainActor.run {
-                        self.location = sessionInfo.location
-                    }
-                }
-            case .positionResponse(let positionResponse):
-                Task {
-                    await MainActor.run {
-                        self.ipsPosition = positionResponse.position
+                        self.sessionInfo = sessionInfo
                     }
                 }
             case .startGame(let startGame):
