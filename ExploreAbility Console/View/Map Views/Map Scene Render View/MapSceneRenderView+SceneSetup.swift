@@ -23,7 +23,7 @@ extension MapSceneRenderView: SCNSceneRendererDelegate {
             material.isDoubleSided = true
             material.transparencyMode = .dualLayer
         }
-        
+        scene.rootNode.castsShadow = true
         scene.rootNode.addChildNode(gridNode)
         scene.rootNode.addChildNode(beaconGroupNode)
         createFloor()
@@ -31,7 +31,6 @@ extension MapSceneRenderView: SCNSceneRendererDelegate {
     
     func setUpSceneView() {
         allowsCameraControl = true
-        autoenablesDefaultLighting = true
         backgroundColor = .clear
         
         delegate = self

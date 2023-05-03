@@ -16,6 +16,8 @@ class MapSceneRenderView: SCNView {
                   let scene = try? SCNScene(url: url) else { return }
             
             setUpScene(scene: scene)
+            createGroupNode()
+            createOtherGroupNode()
         }
     }
     
@@ -67,22 +69,65 @@ class MapSceneRenderView: SCNView {
     }
     
     override init(frame: NSRect, options: [String : Any]? = nil) {
-        super.init(frame: frame, options: options   )
+        super.init(frame: frame, options: options)
     }
     
     func createGroupNode() {
-        let geometry = SCNSphere(radius: 0.25)
+        let geometry = SCNSphere(radius: 0.4)
         
-        geometry.firstMaterial?.diffuse.contents = NSColor.systemBlue.withAlphaComponent(0.5)
+        geometry.firstMaterial?.diffuse.contents = NSColor.red
+        geometry.firstMaterial?.emission.contents = NSColor.red
         
         let node = SCNNode(geometry: geometry)
         
-        node.position = .init(0, 1, 0)
+        node.position = .init(1, scene!.rootNode.boundingBox.min.y + 2, 1)
+        
+        let light = SCNLight()
+        light.type = .omni
+        
+        light.areaType = .polygon
+        light.color = NSColor.red.withAlphaComponent(0.8)
+        light.intensity = 5
+        
+        node.light = light
         
         let action = SCNAction.repeatForever(
             .sequence([
-                .moveBy(x: 0, y: 0.2, z: 0, duration: 1),
-                .moveBy(x: 0, y: -0.2, z: 0, duration: 1)
+                .moveBy(x: 0, y: 0.5, z: 0, duration: 1),
+                .moveBy(x: 0, y: -0.5, z: 0, duration: 1)
+            ])
+        )
+        
+        action.timingMode = .easeInEaseOut
+        
+        node.runAction(action)
+        
+        scene?.rootNode.addChildNode(node)
+    }
+    
+    func createOtherGroupNode() {
+        let geometry = SCNSphere(radius: 0.4)
+        
+        geometry.firstMaterial?.diffuse.contents = NSColor.systemBrown
+        geometry.firstMaterial?.emission.contents = NSColor.systemBrown
+        
+        let node = SCNNode(geometry: geometry)
+        
+        node.position = .init(-3.5, scene!.rootNode.boundingBox.min.y + 2, 4.5)
+        
+        let light = SCNLight()
+        light.type = .omni
+        
+        light.areaType = .polygon
+        light.color = NSColor.systemBrown.withAlphaComponent(0.8)
+        light.intensity = 5
+        
+        node.light = light
+        
+        let action = SCNAction.repeatForever(
+            .sequence([
+                .moveBy(x: 0, y: 0.5, z: 0, duration: 1),
+                .moveBy(x: 0, y: -0.5, z: 0, duration: 1)
             ])
         )
         

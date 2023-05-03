@@ -30,9 +30,22 @@ extension MapSceneRenderView {
         
         let radioWaveBubbleNode = SCNNode(geometry: radioWaveBubble)
         
-        createBeaconAnimation(radioWaveBubbleNode)
+        let light = SCNLight()
+        light.type = .omni
+        light.areaType = .polygon
         
-        beaconNode.addChildNode(radioWaveBubbleNode)
+        light.intensity = 0.75
+        
+        light.color = NSColor.blue
+        
+        beacon.firstMaterial?.emission.contents = NSColor.systemBlue
+        
+//        let lightNode = SCNNode()
+        beaconNode.light = light
+
+        createBeaconAnimation(beaconNode)
+        
+//        beaconNode.addChildNode(lightNode)
         
         beaconNode.isHidden = true
         
@@ -43,13 +56,15 @@ extension MapSceneRenderView {
         let scaleAndOpacity = SCNAction.repeatForever(
             .sequence([
                 .group([
-                    .scale(to: 10, duration: 2),
-                    .fadeOpacity(to: 0, duration: 2)]),
-                .group([.fadeOpacity(to: 1, duration: 0), .scale(to: 1, duration: 0)])
+                    .scale(to: 1.5, duration: 1)
+                ]),
+                .group([
+                    .scale(to: 1, duration: 1)
+                ])
             ]))
-        
-        scaleAndOpacity.timingMode = .linear
-        
+
+        scaleAndOpacity.timingMode = .easeInEaseOut
+
         node.runAction(scaleAndOpacity)
     }
 }

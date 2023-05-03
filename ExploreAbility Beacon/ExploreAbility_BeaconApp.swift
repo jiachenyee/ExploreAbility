@@ -12,6 +12,9 @@ struct ExploreAbility_BeaconApp: App {
     var body: some Scene {
         WindowGroup {
             BeaconSetupView()
+                .onAppear {
+                    UIApplication.shared.isIdleTimerDisabled = true
+                }
         }
     }
 }

@@ -24,7 +24,7 @@ struct BeaconSetupView: View {
                         Text("Foundation Lab")
                             .tag(Location.foundation)
                     } label: {
-                        Text("Location")
+                        Text("Location") 
                     }
                     
                     Picker(selection: $beaconIndex) {
@@ -43,7 +43,7 @@ struct BeaconSetupView: View {
                 }
             }
             .navigationTitle("Setup Beacon")
-            .modifier(PopupModifier(isPresented: $beaconManager.isActive))
+            .modifier(PopupModifier(beaconName: "\(currentLocation.description) \(beaconIndex + 1)", isPresented: $beaconManager.isActive))
         }
     }
 }
