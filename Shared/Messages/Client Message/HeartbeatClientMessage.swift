@@ -26,4 +26,9 @@ struct HeartbeatClientMessage: MessageContents {
             }
         }
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case gameState = "gs"
+        case ipsPosition = "p"
+    }
 }

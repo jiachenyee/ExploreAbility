@@ -10,4 +10,9 @@ import Foundation
 struct NextChallengeConsoleMessage: MessageContents {
     var nextChallenge: GameState
     var position: Position
+    
+    enum CodingKeys: String, CodingKey {
+        case nextChallenge = "nc"
+        case position = "p"
+    }
 }

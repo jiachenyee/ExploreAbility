@@ -8,5 +8,11 @@
 import Foundation
 
 struct ChallengeStartedClientMessage: MessageContents {
-    var challenge: GameState
+    var gameState: GameState
+    var date: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case gameState = "gs"
+        case date = "d"
+    }
 }

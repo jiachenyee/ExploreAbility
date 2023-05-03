@@ -9,4 +9,8 @@ import Foundation
 
 struct StartGameConsoleMessage: MessageContents {
     var startDate: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case startDate = "d"
+    }
 }
