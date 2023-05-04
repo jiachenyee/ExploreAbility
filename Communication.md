@@ -29,6 +29,7 @@ sequenceDiagram
         deactivate C
     end
     
+    U->>C: 🏅 Challenge Finished
     C->>U: 🔑 Session Info Update
 ```
 
@@ -61,7 +62,10 @@ sequenceDiagram
     - Next Challenge
     - Next Challenge Position
     - Game administrators manually set the position.
-7. **Session Info Update** `Reliable`:
+7. **Challenge Finished**: `Reliable`
+    - Completed challenge
+    - Date
+8. **Session Info Update** `Reliable`:
     - Exact same payload as Session Info.
     - Sent whenever beacon location changes/GPS center position changes.
     - Should not/rarely be sent out.
