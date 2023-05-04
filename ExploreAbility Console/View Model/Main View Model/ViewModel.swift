@@ -102,9 +102,6 @@ class ViewModel: NSObject, ObservableObject {
         nearbyService.delegate = self
         nearbyService.startAdvertisingPeer()
         
-//        mcAdvertiserAssistant.delegate = self
-//        mcAdvertiserAssistant.start()
-        
         logger.addLog(.success, "Multipeer Session Started", imageName: "antenna.radiowaves.left.and.right")
     }
     

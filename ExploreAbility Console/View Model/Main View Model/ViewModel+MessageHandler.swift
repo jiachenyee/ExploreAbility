@@ -23,8 +23,16 @@ extension ViewModel {
             case .heartbeat(let heartbeatMessage):
                 receivedHeartbeatMessage(heartbeatMessage, from: peerID)
                 
-            case .challengeStarted(_):
-                break
+            case .challengeStarted(let challengeStartedMessage):
+                guard let group = groups.first(where: { $0.peerID == peerID }) else { return }
+                
+                logger.addLog("\(group.name) started \(challengeStartedMessage.gameState.description)", imageName: "flag.checkered")
+            case .challengeFinished(let challengeFinishedMessage):
+                guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
+                
+                groups[groupIndex].completedChallenges.append(challengeFinishedMessage.gameState)
+                
+                logger.addLog("\(groups[groupIndex].name) finished \(challengeFinishedMessage.gameState.description)", imageName: "medal")
             }
             
         } catch {
