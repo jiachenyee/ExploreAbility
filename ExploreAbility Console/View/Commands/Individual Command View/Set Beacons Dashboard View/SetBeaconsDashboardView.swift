@@ -32,7 +32,7 @@ struct SetBeaconsDashboardView: View {
                         Button {
                             isSetUpSheetPresented = true
                         } label: {
-                            Text("Set Up")
+                            Text(beaconPositions.contains(where: { $0 != nil }) ? "Change…" : "Set Up")
                         }
                     }
                     .sheet(isPresented: $isSetUpSheetPresented) {

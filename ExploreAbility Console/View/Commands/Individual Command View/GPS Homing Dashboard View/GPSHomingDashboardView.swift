@@ -24,7 +24,7 @@ struct GPSHomingDashboardView: View {
             Divider()
             
             if let roomCaptureData {
-                Button("Set Up") {
+                Button(originPosition == nil ? "Set Up" : "Change…") {
                     setUpPresented = true
                 }
                 .sheet(isPresented: $setUpPresented) {
