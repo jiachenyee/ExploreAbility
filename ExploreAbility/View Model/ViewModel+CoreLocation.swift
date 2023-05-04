@@ -61,14 +61,10 @@ extension ViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        guard let location = sessionInfo?.location else { return }
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-//            switch location {
-//            case .academy:
-//            case .foundation:
-//            }
             let constraint = CLBeaconIdentityConstraint(uuid: CLBeaconRegion.academyConsole.uuid, major: 1)
             manager.startRangingBeacons(satisfying: constraint)
+            
             let anotherConstraint = CLBeaconIdentityConstraint(uuid: CLBeaconRegion.foundationConsole.uuid, major: 2)
             manager.startRangingBeacons(satisfying: anotherConstraint)
         }

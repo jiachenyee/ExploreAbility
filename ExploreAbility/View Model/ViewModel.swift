@@ -101,14 +101,15 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         guard abs((lastHeatbeatMessageDate ?? .distantPast).timeIntervalSinceNow) > 1,
               let hostPeerID,
               let ipsPosition else {
-            heartbeatScheduled = true
-            
-            let newDate = lastHeatbeatMessageDate!.advanced(by: 1.001)
-            
-            Timer.scheduledTimer(withTimeInterval: abs(newDate.timeIntervalSinceNow), repeats: false) { _ in
-                self.sendHeartbeatMessage()
+            if !heartbeatScheduled {
+                heartbeatScheduled = true
+                
+                let newDate = lastHeatbeatMessageDate!.advanced(by: 1.001)
+                
+                Timer.scheduledTimer(withTimeInterval: abs(newDate.timeIntervalSinceNow), repeats: false) { _ in
+                    self.sendHeartbeatMessage()
+                }
             }
-            
             return
         }
         
