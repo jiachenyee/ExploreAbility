@@ -23,6 +23,7 @@ _Example with 5 iBeacon ranges (in red) overlapped with the GPS location range (
 - Each data point, such as a GPS location or iBeacon information provides a maximum distance (iBeacon is based on the categories above, GPS is based on the accuracy) this distance can be coupled with the position of these data points within the academy to create circles.
 - The intersection area of all/most of these circles indicate the exact position.
 - This allows us to get a good idea of the user's position even while using imprecise data.
+- You can check out the algorithm [here](ExploreAbility/View%20Model/ViewModel%2BPositionCalculation.swift).
 
 ## Visualizing Results
 This is a visualization and test of the algorithm to calculate the user's position through the use of circles using sample data.
