@@ -9,7 +9,7 @@ import Foundation
 import ActivityKit
 
 extension ViewModel {
-    func startActivity() {
+    func startLiveActivity() {
         if ActivityAuthorizationInfo().areActivitiesEnabled {
             let initialContentState = LiveActivityAttributes.ContentState(currentGameState: gameState,
                                                                           completedChallenges: completedChallenges)

@@ -73,7 +73,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         
         setUpMultipeerConnectivity()
         startMonitoring()
-        startActivity()
+        startLiveActivity()
     }
     
     deinit {
