@@ -11,18 +11,49 @@ import Accelerate
 
 extension ViewModel: CLLocationManagerDelegate {
     func startMonitoring() {
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        manager.startUpdatingHeading()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
         
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let originPosition = sessionInfo?.originPosition, let location = locations.first else { return }
+        
+        locationData[.gps] = LocationData(position: calculateLocalPosition(origin: originPosition,
+                                                                           target: .init(location: location.coordinate)),
+                                          distance: location.horizontalAccuracy,
+                                          date: .now)
+    }
+    
+    func calculateLocalPosition(origin: GPSPosition, target: GPSPosition) -> Position {
+        // Convert latitude and longitude to radians
+        let originLatInRadians = origin.latitude * Double.pi / 180.0
+        let originLongInRadians = origin.longitude * Double.pi / 180.0
+        
+        let targetLatInRadians = target.latitude * Double.pi / 180.0
+        let targetLongInRadians = target.longitude * Double.pi / 180.0
+        
+        // Calculate distance and bearing between origin and target in meters
+        let R = 6371000.0 // radius of the Earth in meters
+        let deltaLatInRadians = targetLatInRadians - originLatInRadians
+        let deltaLongInRadians = targetLongInRadians - originLongInRadians
+        let a = sin(deltaLatInRadians/2) * sin(deltaLatInRadians/2) + cos(originLatInRadians) * cos(targetLatInRadians) * sin(deltaLongInRadians/2) * sin(deltaLongInRadians/2)
+        let c = 2 * atan2(sqrt(a), sqrt(1-a))
+        let distanceInMeters = R * c
+        
+        let bearing = atan2(sin(deltaLongInRadians) * cos(targetLatInRadians), cos(originLatInRadians) * sin(targetLatInRadians) - sin(originLatInRadians) * cos(targetLatInRadians) * cos(deltaLongInRadians))
+        
+        // Calculate x and y coordinates in the local coordinate system
+        let x = distanceInMeters * cos(bearing)
+        let y = distanceInMeters * sin(bearing)
+        
+        return Position(x: x, y: y)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        print(newHeading.magneticHeading)
+        
     }
     
     func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
@@ -30,18 +61,16 @@ extension ViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        guard let location = sessionInfo?.location else { return }
+//        guard let location = sessionInfo?.location else { return }
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-            switch location {
-            case .academy:
-                let constraint = CLBeaconIdentityConstraint(uuid: CLBeaconRegion.academyConsole.uuid, major: 1)
-                
-                manager.startRangingBeacons(satisfying: constraint)
-            case .foundation:
-                let constraint = CLBeaconIdentityConstraint(uuid: CLBeaconRegion.foundationConsole.uuid, major: 2)
-                
-                manager.startRangingBeacons(satisfying: constraint)
-            }
+//            switch location {
+//            case .academy:
+//            case .foundation:
+//            }
+            let constraint = CLBeaconIdentityConstraint(uuid: CLBeaconRegion.academyConsole.uuid, major: 1)
+            manager.startRangingBeacons(satisfying: constraint)
+            let anotherConstraint = CLBeaconIdentityConstraint(uuid: CLBeaconRegion.foundationConsole.uuid, major: 2)
+            manager.startRangingBeacons(satisfying: anotherConstraint)
         }
     }
     
@@ -59,24 +88,36 @@ extension ViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didRange beacons: [CLBeacon],
                          satisfying beaconConstraint: CLBeaconIdentityConstraint) {
-        guard let beacon = beacons.first else { return }
         
-        guard beacon.rssi != 0 else { return }
+        guard let sessionInfo else { return }
         
-        rssis.append(Double(beacon.rssi))
+        for beacon in beacons where sessionInfo.location.rawValue == beacon.major.intValue {
+            print(beacon.major)
+            
+            guard let locationDataSource = LocationDataSource(rawValue: beacon.minor.intValue),
+                  let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue] else { return }
+            
+            // Distance from center in M
+            var distance: Double?
+            
+            switch beacon.proximity {
+            case .immediate:
+                distance = 0.5
+            case .near:
+                distance = 10
+            case .far:
+                distance = 50
+            default: break
+            }
+            
+            if let distance {
+                locationData[locationDataSource] = LocationData(position: localBeaconPosition, distance: distance, date: .now)
+            }
+        }
         
-        let runningAverageDatapoints = rssis[max(0, rssis.count - 20)...]
-        
-        let runningAverage = runningAverageDatapoints.reduce(0, +) / Double(runningAverageDatapoints.count)
-                              
-        
-//        print(runningAverage)
-        print(beacon.proximity.rawValue, beacon.accuracy)
 //    case unknown = 0
 //    case immediate = 1 <0.5m
 //    case near = 2 <14.5m
 //    case far = 3
-        
-//        print(beacon.accuracy)
     }
 }

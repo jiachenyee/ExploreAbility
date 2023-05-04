@@ -14,13 +14,11 @@ import SwiftUI
 class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     let synthesizer = AVSpeechSynthesizer()
-    let manager = CLLocationManager()
-    
-    var rssis: [Double] = []
+    let locationManager = CLLocationManager()
     
     @Published var groupName: String = ""
     
-    @Published var deviceId: String
+    @AppStorage("deviceID") var deviceId: String = String(UUID().uuidString.split(separator: "-")[0])
     
     @Published var completedChallenges: [GameState] = []
     @Published var gameState = GameState.connection {
@@ -37,16 +35,29 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     @Published var ipsPosition: IPSPosition?
     
+    var locationData: [LocationDataSource: LocationData] = [:] {
+        didSet {
+            let localPosition = calculatePosition(using: Array(locationData.values), date: .now)
+            
+            ipsPosition = localPosition
+            
+            sendHeartbeatMessage()
+        }
+    }
+    
     var hostPeerID: MCPeerID?
     
     var peerID: MCPeerID!
     var mcSession: MCSession!
+    var browserManager: MCBrowserManager!
     
-    @Published var isConnected = false
+    var lastHeatbeatMessageDate: Date?
+    
+    var heartbeatScheduled = false
     
     override init() {
-        deviceId = String(UUID().uuidString.split(separator: "-")[0])
         super.init()
+        
         synthesizer.delegate = self
         
         setUpMultipeerConnectivity()
@@ -75,16 +86,76 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     }
     
     func sendHeartbeatMessage() {
+        guard abs((lastHeatbeatMessageDate ?? .distantPast).timeIntervalSinceNow) > 1,
+              let hostPeerID,
+              let ipsPosition else {
+            heartbeatScheduled = true
+            
+            let newDate = lastHeatbeatMessageDate!.advanced(by: 1.001)
+            
+            Timer.scheduledTimer(withTimeInterval: abs(newDate.timeIntervalSinceNow), repeats: false) { _ in
+                self.sendHeartbeatMessage()
+            }
+            
+            return
+        }
         
-        guard let location = manager.location,
-              let heading = manager.heading?.trueHeading else { return }
+        heartbeatScheduled = false
         
-//        HeartbeatClientMessage(gameState: gameState,
-//                               beaconDistances: <#T##[HeartbeatClientMessage.BeaconProximity]#>,
-//                               trueHeading: heading,
-//                               gpsLatitude: location.coordinate.latitude,
-//                               gpsLongitude: location.coordinate.longitude,
-//                               gpsAccuracy: location.horizontalAccuracy,
-//                               date: .now)
+        lastHeatbeatMessageDate = .now
+        
+        let heartbeat = HeartbeatClientMessage(gameState: gameState, ipsPosition: ipsPosition)
+        
+        do {
+            let data = try ClientMessage(payload: .heartbeat(heartbeat)).toData()
+            
+            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
+            
+            withAnimation {
+                gameState = .waitingRoom
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        print(heartbeat)
+    }
+    
+    func calculatePosition(using locationData: [LocationData], date: Date) -> IPSPosition? {
+        let filteredLocationData = locationData.filter { abs($0.date.timeIntervalSinceNow) < 5 }
+        
+        // Check if we have at least 3 beacons
+        if filteredLocationData.count < 3 {
+            print("At least 3 beacons are required for trilateration")
+            return nil
+        }
+        
+        // Find the weighted centroid
+        var sumWeightedX = 0.0
+        var sumWeightedY = 0.0
+        var sumWeights = 0.0
+        
+        for beacon in filteredLocationData {
+            let weight = 1.0 / (beacon.distance * beacon.distance)
+            sumWeightedX += beacon.position.x * weight
+            sumWeightedY += beacon.position.y * weight
+            sumWeights += weight
+        }
+        
+        let centroidX = sumWeightedX / sumWeights
+        let centroidY = sumWeightedY / sumWeights
+        let centroid = Position(x: centroidX, y: centroidY)
+        
+        // Create that circle thing that mapping apps do around points
+        var errorEstimate = 0.0
+        
+        for beacon in locationData {
+            let deltaX = beacon.position.x - centroidX
+            let deltaY = beacon.position.y - centroidY
+            let distanceError = sqrt(deltaX * deltaX + deltaY * deltaY) - beacon.distance
+            errorEstimate += distanceError * distanceError
+        }
+        errorEstimate = sqrt(errorEstimate / Double(locationData.count))
+        
+        return IPSPosition(position: centroid, error: errorEstimate, date: date, trueHeading: locationManager.heading?.trueHeading)
     }
 }

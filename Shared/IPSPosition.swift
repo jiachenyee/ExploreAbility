@@ -13,7 +13,7 @@ struct IPSPosition: Codable {
     var date: Date
     
     /// Compass true heading
-    var trueHeading: Double
+    var trueHeading: Double?
     
     enum CodingKeys: String, CodingKey {
         case position = "p"

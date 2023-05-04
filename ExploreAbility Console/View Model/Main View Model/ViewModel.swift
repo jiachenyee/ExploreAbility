@@ -83,6 +83,8 @@ class ViewModel: NSObject, ObservableObject {
         
     }
     
+    var nearbyService: MCNearbyServiceAdvertiser!
+    
     func startHosting() {
         peerID = MCPeerID(displayName: location == .academy ? "Academy" : "Foundation")
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
@@ -92,7 +94,16 @@ class ViewModel: NSObject, ObservableObject {
         mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType: MCConstant.service,
                                                       discoveryInfo: nil,
                                                       session: mcSession!)
-        mcAdvertiserAssistant.start()
+        
+        nearbyService = MCNearbyServiceAdvertiser(peer: peerID,
+                                                  discoveryInfo: nil,
+                                                  serviceType: MCConstant.service)
+        
+        nearbyService.delegate = self
+        nearbyService.startAdvertisingPeer()
+        
+//        mcAdvertiserAssistant.delegate = self
+//        mcAdvertiserAssistant.start()
         
         logger.addLog(.success, "Multipeer Session Started", imageName: "antenna.radiowaves.left.and.right")
     }
@@ -104,5 +115,14 @@ class ViewModel: NSObject, ObservableObject {
         
         self.mcSession = nil
         logger.addLog(.critical, "Multipeer Session Ended", imageName: "antenna.radiowaves.left.and.right.slash")
+    }
+}
+
+extension ViewModel: MCNearbyServiceAdvertiserDelegate {
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser,
+                    didReceiveInvitationFromPeer peerID: MCPeerID,
+                    withContext context: Data?,
+                    invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        invitationHandler(true, mcSession)
     }
 }

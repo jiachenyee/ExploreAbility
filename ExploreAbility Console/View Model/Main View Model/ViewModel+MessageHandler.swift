@@ -23,7 +23,7 @@ extension ViewModel {
             case .heartbeat(let heartbeatMessage):
                 receivedHeartbeatMessage(heartbeatMessage, from: peerID)
                 
-            case .challengeCompletion(_):
+            case .challengeStarted(_):
                 break
             }
             
@@ -39,10 +39,10 @@ extension ViewModel {
             }
         }
         
-        sendSessionInfoMessage()
+        sendSessionInfoMessage(to: [peerID])
     }
     
-    func sendSessionInfoMessage() {
+    func sendSessionInfoMessage(to peerIDs: [MCPeerID]? = nil) {
         guard let mcSession, !mcSession.connectedPeers.isEmpty else { return }
         do {
             let sessionInfo = SessionInfoConsoleMessage(hostID: mcSession.myPeerID.displayName,
@@ -52,7 +52,7 @@ extension ViewModel {
             
             let data = try ConsoleMessage(payload: .sessionInfo(sessionInfo)).toData()
             
-            try mcSession.send(data, toPeers: [peerID], with: .reliable)
+            try mcSession.send(data, toPeers: peerIDs ?? mcSession.connectedPeers, with: .reliable)
         } catch {
             logger.addLog(.critical, "Error responding to Hello: \(error.localizedDescription)", imageName: "waveform.badge.exclamationmark")
         }
@@ -71,48 +71,5 @@ extension ViewModel {
                 groups[groupIndex].lastUpdated = .now
             }
         }
-    }
-    
-    struct LocationData {
-        var position: Position
-        var distance: Double
-    }
-    
-#warning("Incomplete implementation, move func to ExploreAbility target")
-    func calculatePosition(using locationData: [LocationData], date: Date) -> IPSPosition? {
-        // Check if we have at least 3 beacons
-        if locationData.count < 3 {
-            print("At least 3 beacons are required for trilateration")
-            return nil
-        }
-        
-        // Find the weighted centroid
-        var sumWeightedX = 0.0
-        var sumWeightedY = 0.0
-        var sumWeights = 0.0
-        
-        for beacon in locationData {
-            let weight = 1.0 / (beacon.distance * beacon.distance)
-            sumWeightedX += beacon.position.x * weight
-            sumWeightedY += beacon.position.y * weight
-            sumWeights += weight
-        }
-        
-        let centroidX = sumWeightedX / sumWeights
-        let centroidY = sumWeightedY / sumWeights
-        let centroid = Position(x: centroidX, y: centroidY)
-        
-        // Create that circle thing that mapping apps do around points
-        var errorEstimate = 0.0
-        
-        for beacon in locationData {
-            let deltaX = beacon.position.x - centroidX
-            let deltaY = beacon.position.y - centroidY
-            let distanceError = sqrt(deltaX * deltaX + deltaY * deltaY) - beacon.distance
-            errorEstimate += distanceError * distanceError
-        }
-        errorEstimate = sqrt(errorEstimate / Double(locationData.count))
-        
-        return IPSPosition(position: centroid, error: errorEstimate, date: date, trueHeading: .zero)
     }
 }

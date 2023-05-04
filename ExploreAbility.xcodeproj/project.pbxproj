@@ -55,7 +55,6 @@
 		326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429629F7DFEF00AE2F45 /* GameState.swift */; };
 		326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429829F7E43600AE2F45 /* VoiceOverChallenge.swift */; };
 		326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */; };
-		326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D429C29F802B400AE2F45 /* MCBrowserView.swift */; };
 		326D42A529F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42A429F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift */; };
 		326D42A729F8044C00AE2F45 /* BeaconSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42A629F8044C00AE2F45 /* BeaconSetupView.swift */; };
 		326D42A929F8044D00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D42A829F8044D00AE2F45 /* Assets.xcassets */; };
@@ -136,6 +135,8 @@
 		32AB44722A00410E00E688BB /* SetBeaconView+DropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44712A00410E00E688BB /* SetBeaconView+DropDelegate.swift */; };
 		32AB44752A02041200E688BB /* GPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44742A02041200E688BB /* GPSPosition.swift */; };
 		32AB44762A02043A00E688BB /* GPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44742A02041200E688BB /* GPSPosition.swift */; };
+		32AB44792A025ABF00E688BB /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44782A025ABF00E688BB /* LocationData.swift */; };
+		32AB447B2A03365F00E688BB /* MCBrowserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB447A2A03365F00E688BB /* MCBrowserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,7 +184,6 @@
 		326D429629F7DFEF00AE2F45 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		326D429829F7E43600AE2F45 /* VoiceOverChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverChallenge.swift; sourceTree = "<group>"; };
 		326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MultipeerConnectivity.swift"; sourceTree = "<group>"; };
-		326D429C29F802B400AE2F45 /* MCBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCBrowserView.swift; sourceTree = "<group>"; };
 		326D42A229F8044C00AE2F45 /* ExploreAbility Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ExploreAbility Beacon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D42A429F8044C00AE2F45 /* ExploreAbility_BeaconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbility_BeaconApp.swift; sourceTree = "<group>"; };
 		326D42A629F8044C00AE2F45 /* BeaconSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconSetupView.swift; sourceTree = "<group>"; };
@@ -247,6 +247,8 @@
 		32AB446F2A0040B200E688BB /* BeaconStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStatus.swift; sourceTree = "<group>"; };
 		32AB44712A00410E00E688BB /* SetBeaconView+DropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetBeaconView+DropDelegate.swift"; sourceTree = "<group>"; };
 		32AB44742A02041200E688BB /* GPSPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSPosition.swift; sourceTree = "<group>"; };
+		32AB44782A025ABF00E688BB /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		32AB447A2A03365F00E688BB /* MCBrowserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCBrowserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +403,7 @@
 			children = (
 				326D432829F9599100AE2F45 /* Info.plist */,
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
+				32AB44772A025AB800E688BB /* Model */,
 				32AB445029FFE86F00E688BB /* View Model */,
 				326D42DC29F8052B00AE2F45 /* View */,
 				326D428529F7AEBA00AE2F45 /* Assets.xcassets */,
@@ -588,6 +591,7 @@
 				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
 				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
 				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
+				32AB447A2A03365F00E688BB /* MCBrowserManager.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -613,7 +617,6 @@
 			isa = PBXGroup;
 			children = (
 				326D42DF29F8071C00AE2F45 /* ConnectionView.swift */,
-				326D429C29F802B400AE2F45 /* MCBrowserView.swift */,
 			);
 			path = "Connection View";
 			sourceTree = "<group>";
@@ -696,6 +699,14 @@
 				32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */,
 			);
 			path = "Main View Model";
+			sourceTree = "<group>";
+		};
+		32AB44772A025AB800E688BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32AB44782A025ABF00E688BB /* LocationData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -909,6 +920,8 @@
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB441E29FF884800E688BB /* MessageContents.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
+				32AB447B2A03365F00E688BB /* MCBrowserManager.swift in Sources */,
+				32AB44792A025ABF00E688BB /* LocationData.swift in Sources */,
 				32AB443929FFBEA800E688BB /* ConsoleMessage.swift in Sources */,
 				32AB445A29FFF87700E688BB /* GroupSetupView.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
@@ -935,7 +948,6 @@
 				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,
 				32AB442B29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
-				326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */,
 				32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */,
 				32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */,
 				326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */,

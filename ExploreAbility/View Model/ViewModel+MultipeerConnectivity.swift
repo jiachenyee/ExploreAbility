@@ -15,27 +15,28 @@ extension ViewModel: MCSessionDelegate {
                               securityIdentity: nil,
                               encryptionPreference: .none)
         mcSession.delegate = self
+        
+        browserManager = MCBrowserManager(session: mcSession)
+    }
+    
+    func startSearching(for location: Location) {
+        browserManager.start(location: location)
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        
         guard peerID.displayName == "Academy" || peerID.displayName == "Foundation" else { return }
         
         hostPeerID = peerID
         
-        switch state {
-        case .notConnected:
+        if state == .connected {
             Task {
                 await MainActor.run {
-                    isConnected = false
+                    gameState = .groupSetUp
                 }
             }
-        case .connected:
-            Task {
-                await MainActor.run {
-                    isConnected = true
-                }
-            }
-        default: break
+            
+            browserManager.stop()
         }
     }
     

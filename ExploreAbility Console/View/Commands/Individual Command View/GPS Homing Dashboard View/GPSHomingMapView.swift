@@ -163,10 +163,12 @@ struct GPSHomingMapView: View {
         .onAppear {
             locationManager.startUpdatingLocation()
             
-            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
                 if let coordinate = locationManager.location?.coordinate {
-                    timer.invalidate()
                     self.region = MKCoordinateRegion(center: coordinate,
+                                                     span: MKCoordinateSpan(latitudeDelta: 0.00001, longitudeDelta: 0.00001))
+                } else {
+                    self.region = MKCoordinateRegion(center: .init(latitude: 1.184836, longitude: 104.102683),
                                                      span: MKCoordinateSpan(latitudeDelta: 0.00001, longitudeDelta: 0.00001))
                 }
             }

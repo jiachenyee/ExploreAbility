@@ -11,8 +11,11 @@ import MultipeerConnectivity
 struct ConnectionView: View {
     
     @ObservedObject var viewModel: ViewModel
-    @State var isBrowserPresented = false
     @State var tapCounter = 0
+    
+    @State private var location: Location = .academy
+    
+    @State var isSearching = false
     
     var body: some View {
         VStack {
@@ -55,33 +58,44 @@ struct ConnectionView: View {
                     .foregroundColor(.white)
             }
             
-            Rectangle()
-                .fill(.gray)
-                .frame(height: 0.5)
-            
-            HStack {
-                Toggle(isOn: $isBrowserPresented) {
-                    Label("Select ExploreAbility Console", systemImage: "server.rack")
-                }
-                .toggleStyle(.button)
-                Spacer()
-            }
-            .padding(.horizontal, 4)
+            Text(viewModel.deviceId)
             
             Rectangle()
                 .fill(.gray)
                 .frame(height: 0.5)
             
-            if viewModel.isConnected {
-                Button("Next") {
-                    viewModel.gameState = .groupSetUp
+            if !isSearching {
+                Picker("Location", selection: $location) {
+                    Text("Academy Lab")
+                        .tag(Location.academy)
+                    Text("Foundation Lab")
+                        .tag(Location.foundation)
                 }
-                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 4)
                 
                 Rectangle()
                     .fill(.gray)
                     .frame(height: 0.5)
+                
+                Button("Start Session") {
+                    viewModel.startSearching(for: location)
+                    
+                    withAnimation {
+                        isSearching = true
+                    }
+                }
+            } else {
+                Group {
+                    Text("Connecting…")
+                        .foregroundColor(.white)
+                    ProgressView()
+                        .tint(.white)
+                }
+                .padding(.vertical)
             }
+            Rectangle()
+                .fill(.gray)
+                .frame(height: 0.5)
             
             Spacer()
             
@@ -90,9 +104,6 @@ struct ConnectionView: View {
                 .font(.system(size: 16))
                 .padding(.horizontal)
                 .foregroundColor(.white)
-        }
-        .sheet(isPresented: $isBrowserPresented) {
-            MCBrowserView(session: viewModel.mcSession)
         }
     }
 }
