@@ -9,10 +9,20 @@ import SwiftUI
 
 @main
 struct ExploreAbility_ConsoleApp: App {
+    
+    @StateObject var viewModel = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: viewModel)
         }
         .windowStyle(.hiddenTitleBar)
+        
+        Window("Nothing to see here.", id: "nothing-to-see-here") {
+            VStack {
+                Text("Nothing to see here.")
+                Text("Make sure this view is kept out of view of the players.")
+            }
+        }
     }
 }

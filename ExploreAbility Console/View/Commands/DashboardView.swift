@@ -29,6 +29,7 @@ struct DashboardView: View {
                         RoomModelImportDashboardView(roomCaptureData: $viewModel.roomCaptureData)
                         SetBeaconsDashboardView(roomCaptureData: viewModel.roomCaptureData, beaconPositions: $viewModel.beaconPositions)
                         GPSHomingDashboardView(roomCaptureData: viewModel.roomCaptureData, originPosition: $viewModel.originPosition)
+                        NothingToSeeHereDashboardView()
                     }
                     .padding(.top, 8)
                 } label: {

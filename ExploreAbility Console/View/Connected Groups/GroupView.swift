@@ -13,55 +13,57 @@ struct GroupView: View {
     @Binding var group: Group
     
     var body: some View {
-        Button {
-            
-        } label: {
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Circle()
-                            .fill(group.isOnline ? .green : .red)
-                            .frame(width: 20, height: 20)
+        VStack {
+            Button {
+                
+            } label: {
+                HStack {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Circle()
+                                .fill(group.isOnline ? .green : .red)
+                                .frame(width: 20, height: 20)
                             
-                        Text(group.name)
-                            .font(.title2)
-                    }
-                    
-                    if let lastUpdated = group.lastUpdated {
-                        HStack(spacing: 0) {
-                            Text("Last Updated: ")
-                            Text(lastUpdated, style: .offset)
+                            Text(group.name)
+                                .font(.title2)
                         }
-                    }
-                    
-                    HStack(spacing: -8) {
-                        ForEach(group.completedChallenges, id: \.self) { challenge in
-                            ZStack {
-                                Circle()
-                                    .fill(challenge.toColor())
-                                    .frame(width: 60, height: 60)
-                                
-                                Image(systemName: challenge.toIcon())
-                                    .font(.system(size: 35))
+                        
+                        if let lastUpdated = group.lastUpdated {
+                            HStack(spacing: 0) {
+                                Text("Last Updated: ")
+                                Text(lastUpdated, style: .offset)
                             }
                         }
                         
-                        Spacer()
+                        HStack(spacing: -8) {
+                            ForEach(group.completedChallenges, id: \.self) { challenge in
+                                ZStack {
+                                    Circle()
+                                        .fill(challenge.toColor())
+                                        .frame(width: 60, height: 60)
+                                    
+                                    Image(systemName: challenge.toIcon())
+                                        .font(.system(size: 35))
+                                }
+                            }
+                            
+                            Spacer()
+                        }
                     }
+                    Spacer()
+                    Image(systemName: "chevron.forward")
                 }
-                Spacer()
-                Image(systemName: "chevron.forward")
+                .background(.white.opacity(0.000000000000000000000000000000000000000000001))
             }
-            .background(.white.opacity(0.000000000000000000000000000000000000000000001))
-        }
-        .buttonStyle(.plain)
-        
-        if group.needsNextChallenge {
-            Button("Set Next Challenge") {
-                
+            .buttonStyle(.plain)
+            
+            if group.needsNextChallenge {
+                Button("Set Next Challenge") {
+                    
+                }
             }
+            
+            Divider()
         }
-        
-        Divider()
     }
 }

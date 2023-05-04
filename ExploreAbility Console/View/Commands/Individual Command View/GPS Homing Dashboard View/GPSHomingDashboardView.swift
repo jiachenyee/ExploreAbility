@@ -18,6 +18,7 @@ struct GPSHomingDashboardView: View {
     var body: some View {
         DashboardElement(icon: {
             Image(systemName: "location")
+                .foregroundColor(.indigo)
         }, title: "GPS Homing") {
             Text("Set the current location of this Mac compared against the local map scan.")
             
