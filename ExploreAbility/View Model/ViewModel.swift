@@ -69,6 +69,8 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         
         synthesizer.delegate = self
         
+        deleteLiveActivity()
+        
         setUpMultipeerConnectivity()
         startMonitoring()
         startActivity()

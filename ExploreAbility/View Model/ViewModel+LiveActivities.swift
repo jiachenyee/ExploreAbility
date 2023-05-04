@@ -38,7 +38,10 @@ extension ViewModel {
     
     func deleteLiveActivity() {
         Task {
-            await liveActivity?.end(nil, dismissalPolicy: .immediate)
+            let activities = Activity<LiveActivityAttributes>.activities
+            for activity in activities {
+                await activity.end(nil, dismissalPolicy: .immediate)
+            }
         }
     }
 }
