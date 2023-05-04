@@ -28,5 +28,6 @@ struct MapSceneView: NSViewRepresentable {
         nsView.url = viewModel.roomCaptureData?.usdzURL
         nsView.mapCustomizations = viewModel.mapCustomizations
         nsView.beaconPositions = viewModel.beaconPositions
+        nsView.groups = viewModel.groups
     }
 }

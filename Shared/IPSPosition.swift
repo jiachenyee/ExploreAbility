@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct IPSPosition: Codable {
+struct IPSPosition: Codable, Equatable {
     var position: Position
     var error: Double
     var date: Date

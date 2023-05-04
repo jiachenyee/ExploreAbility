@@ -22,8 +22,5 @@ struct ConnectedGroupsView: View {
                 GroupView(group: $group)
             }
         }
-        .onChange(of: groups) { newValue in
-            print("GROUP UPDATED")
-        }
     }
 }

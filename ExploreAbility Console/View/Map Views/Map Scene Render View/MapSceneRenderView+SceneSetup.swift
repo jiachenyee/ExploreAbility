@@ -26,6 +26,7 @@ extension MapSceneRenderView: SCNSceneRendererDelegate {
         scene.rootNode.castsShadow = true
         scene.rootNode.addChildNode(gridNode)
         scene.rootNode.addChildNode(beaconGroupNode)
+        scene.rootNode.addChildNode(groupsGroupNode)
         createFloor()
     }
     

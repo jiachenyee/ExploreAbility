@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum GameState: Int, CustomStringConvertible, Codable {
+enum GameState: Int, CustomStringConvertible, Codable, Equatable {
     case internalTest = -100
     
     case waitingRoom = -4

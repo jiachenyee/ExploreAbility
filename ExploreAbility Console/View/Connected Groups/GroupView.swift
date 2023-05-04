@@ -17,8 +17,21 @@ struct GroupView: View {
         } label: {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(group.name)
-                        .font(.title2)
+                    HStack {
+                        Circle()
+                            .fill(group.isOnline ? .green : .red)
+                            .frame(width: 20, height: 20)
+                            
+                        Text(group.name)
+                            .font(.title2)
+                    }
+                    
+                    if let lastUpdated = group.lastUpdated {
+                        HStack(spacing: 0) {
+                            Text("Last Updated: ")
+                            Text(lastUpdated, style: .offset)
+                        }
+                    }
                     
                     HStack(spacing: -8) {
                         ForEach(group.completedChallenges, id: \.self) { challenge in
@@ -34,9 +47,6 @@ struct GroupView: View {
                         
                         Spacer()
                     }
-                    
-                    Text(group.isOnline ? "Online" : "Offline")
-                        .font(.caption)
                 }
                 Spacer()
                 Image(systemName: "chevron.forward")

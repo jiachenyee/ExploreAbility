@@ -16,8 +16,6 @@ class MapSceneRenderView: SCNView {
                   let scene = try? SCNScene(url: url) else { return }
             
             setUpScene(scene: scene)
-            createGroupNode()
-            createOtherGroupNode()
         }
     }
     
@@ -41,6 +39,30 @@ class MapSceneRenderView: SCNView {
                     beaconGroupNode.childNodes[n].isHidden = false
                 } else {
                     beaconGroupNode.childNodes[n].isHidden = true
+                }
+            }
+            SCNTransaction.commit()
+        }
+    }
+    
+    let groupColors: [NSColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemMint, .systemPurple, .systemPink]
+    
+    var groups: [Group] = [] {
+        didSet {
+            guard groups != oldValue,
+                  !groups.isEmpty else { return }
+            
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 0.5
+            for (n, group) in groups.enumerated() {
+                if !oldValue.contains(where: { $0.id == group.id }) {
+                    createGroupNode(index: n)
+                }
+                
+                guard let node = groupsGroupNode.childNode(withName: "\(n)", recursively: false) else { return }
+                
+                if let position = group.position {
+                    node.position = .init(x: position.position.x, y: scene!.rootNode.boundingBox.min.y + 2, z: position.position.y)
                 }
             }
             SCNTransaction.commit()
@@ -72,21 +94,21 @@ class MapSceneRenderView: SCNView {
         super.init(frame: frame, options: options)
     }
     
-    func createGroupNode() {
+    func createGroupNode(index: Int) {
         let geometry = SCNSphere(radius: 0.4)
         
-        geometry.firstMaterial?.diffuse.contents = NSColor.red
-        geometry.firstMaterial?.emission.contents = NSColor.red
+        geometry.firstMaterial?.diffuse.contents = groupColors[index]
+        geometry.firstMaterial?.emission.contents = groupColors[index]
         
         let node = SCNNode(geometry: geometry)
         
-        node.position = .init(1, scene!.rootNode.boundingBox.min.y + 2, 1)
+        node.position = .init(0, scene!.rootNode.boundingBox.min.y + 2, 0)
         
         let light = SCNLight()
         light.type = .omni
         
         light.areaType = .polygon
-        light.color = NSColor.red.withAlphaComponent(0.8)
+        light.color = groupColors[index].withAlphaComponent(0.8)
         light.intensity = 5
         
         node.light = light
@@ -102,39 +124,8 @@ class MapSceneRenderView: SCNView {
         
         node.runAction(action)
         
-        scene?.rootNode.addChildNode(node)
-    }
-    
-    func createOtherGroupNode() {
-        let geometry = SCNSphere(radius: 0.4)
+        node.name = "\(index)"
         
-        geometry.firstMaterial?.diffuse.contents = NSColor.systemBrown
-        geometry.firstMaterial?.emission.contents = NSColor.systemBrown
-        
-        let node = SCNNode(geometry: geometry)
-        
-        node.position = .init(-3.5, scene!.rootNode.boundingBox.min.y + 2, 4.5)
-        
-        let light = SCNLight()
-        light.type = .omni
-        
-        light.areaType = .polygon
-        light.color = NSColor.systemBrown.withAlphaComponent(0.8)
-        light.intensity = 5
-        
-        node.light = light
-        
-        let action = SCNAction.repeatForever(
-            .sequence([
-                .moveBy(x: 0, y: 0.5, z: 0, duration: 1),
-                .moveBy(x: 0, y: -0.5, z: 0, duration: 1)
-            ])
-        )
-        
-        action.timingMode = .easeInEaseOut
-        
-        node.runAction(action)
-        
-        scene?.rootNode.addChildNode(node)
+        groupsGroupNode.addChildNode(node)
     }
 }
