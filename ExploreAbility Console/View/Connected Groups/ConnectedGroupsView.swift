@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConnectedGroupsView: View {
     
+    @ObservedObject var viewModel: ViewModel
     @Binding var groups: [Group]
     
     var body: some View {
@@ -19,7 +20,7 @@ struct ConnectedGroupsView: View {
                 .fontWeight(.bold)
             
             ForEach($groups) { $group in
-                GroupView(group: $group)
+                GroupView(viewModel: viewModel, group: $group)
             }
         }
     }

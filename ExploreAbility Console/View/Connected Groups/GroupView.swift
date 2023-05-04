@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GroupView: View {
     
+    @ObservedObject var viewModel: ViewModel
     @Binding var group: Group
     
     var body: some View {
