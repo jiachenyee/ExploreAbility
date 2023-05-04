@@ -15,6 +15,16 @@ extension ViewModel: MCSessionDelegate {
             logger.addLog("Connecting to \(peerID.displayName)…", imageName: "antenna.radiowaves.left.and.right")
         case .connected:
             logger.addLog("Connected to \(peerID.displayName)", imageName: "antenna.radiowaves.left.and.right")
+            
+            guard let peerIndex = groups.firstIndex(where: {
+                $0.peerID == peerID
+            }) else { return }
+            
+            Task {
+                await MainActor.run {
+                    groups[peerIndex].isOnline = true
+                }
+            }
         case .notConnected:
             guard let peerIndex = groups.firstIndex(where: {
                 $0.peerID == peerID
@@ -22,6 +32,8 @@ extension ViewModel: MCSessionDelegate {
             
             Task {
                 await MainActor.run {
+                    print("\(groups[peerIndex].name) is offline")
+                    
                     groups[peerIndex].isOnline = false
                 }
             }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConnectedGroupsView: View {
     
-    var groups: [Group]
+    @Binding var groups: [Group]
     
     var body: some View {
         List {
@@ -18,9 +18,12 @@ struct ConnectedGroupsView: View {
                 .font(.title)
                 .fontWeight(.bold)
             
-            ForEach(groups) { group in
-                GroupView(group: group)
+            ForEach($groups) { $group in
+                GroupView(group: $group)
             }
+        }
+        .onChange(of: groups) { newValue in
+            print("GROUP UPDATED")
         }
     }
 }

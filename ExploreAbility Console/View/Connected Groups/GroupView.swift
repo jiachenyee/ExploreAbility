@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GroupView: View {
     
-    var group: Group
+    @Binding var group: Group
     
     var body: some View {
         Button {

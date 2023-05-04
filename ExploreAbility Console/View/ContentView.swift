@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         HSplitView {
-            ConnectedGroupsView(groups: viewModel.groups)
+            ConnectedGroupsView(groups: $viewModel.groups)
                 .frame(minWidth: 256, maxWidth: 400)
             
             VSplitView {
