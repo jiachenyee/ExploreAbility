@@ -32,6 +32,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             default:
                 say(text: "Remove your blindfolds.")
                 updateLiveActivity()
+                sendChallengeStartedMessage()
             }
         }
     }
@@ -123,14 +124,22 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             let data = try ClientMessage(payload: .heartbeat(heartbeat)).toData()
             
             try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
-            
-            withAnimation {
-                gameState = .waitingRoom
-            }
         } catch {
             print(error.localizedDescription)
         }
-        print(heartbeat)
+        print(heartbeat.ipsPosition)
+    }
+    
+    func sendChallengeStartedMessage() {
+        guard let hostPeerID else { return }
+        
+        do {
+            let data = try ClientMessage(payload: .challengeStarted(ChallengeStartedClientMessage(gameState: gameState, date: .now))).toData()
+            
+            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func calculatePosition(using locationData: [LocationData], date: Date) -> IPSPosition? {
