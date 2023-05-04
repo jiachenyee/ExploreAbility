@@ -18,7 +18,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     @Published var groupName: String = ""
     
-    @AppStorage("deviceID") var deviceId: String = String(UUID().uuidString.split(separator: "-")[0])
+    let deviceId: String
     
     @Published var completedChallenges: [GameState] = []
     @Published var gameState = GameState.connection {
@@ -56,6 +56,10 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     var heartbeatScheduled = false
     
     override init() {
+        deviceId = UserDefaults.standard.string(forKey: "deviceID") ?? String(UUID().uuidString.split(separator: "-")[0])
+        
+        UserDefaults.standard.set(deviceId, forKey: "deviceID")
+        
         super.init()
         
         synthesizer.delegate = self

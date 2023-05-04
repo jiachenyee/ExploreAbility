@@ -137,6 +137,7 @@
 		32AB44762A02043A00E688BB /* GPSPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44742A02041200E688BB /* GPSPosition.swift */; };
 		32AB44792A025ABF00E688BB /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB44782A025ABF00E688BB /* LocationData.swift */; };
 		32AB447B2A03365F00E688BB /* MCBrowserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB447A2A03365F00E688BB /* MCBrowserManager.swift */; };
+		32AB447E2A0357F000E688BB /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 32AB447D2A0357F000E688BB /* Forever */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -263,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32AB447E2A0357F000E688BB /* Forever in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +744,9 @@
 			dependencies = (
 			);
 			name = ExploreAbility;
+			packageProductDependencies = (
+				32AB447D2A0357F000E688BB /* Forever */,
+			);
 			productName = ExploreAbility;
 			productReference = 326D427E29F7AEB900AE2F45 /* ExploreAbility.app */;
 			productType = "com.apple.product-type.application";
@@ -833,6 +838,9 @@
 				Base,
 			);
 			mainGroup = 326D427529F7AEB900AE2F45;
+			packageReferences = (
+				32AB447C2A0357F000E688BB /* XCRemoteSwiftPackageReference "forever" */,
+			);
 			productRefGroup = 326D427F29F7AEB900AE2F45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1545,6 +1553,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32AB447C2A0357F000E688BB /* XCRemoteSwiftPackageReference "forever" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jiachenyee/forever";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32AB447D2A0357F000E688BB /* Forever */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32AB447C2A0357F000E688BB /* XCRemoteSwiftPackageReference "forever" */;
+			productName = Forever;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 326D427629F7AEB900AE2F45 /* Project object */;
 }
