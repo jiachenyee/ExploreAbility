@@ -7,6 +7,7 @@
 - **UIKit**: Challenge validation (validating accessibility features with UIAccessibility).
 - **CoreLocation**: Determine current location (using iBeacons, GPS, and compass).
 - **AVFoundation/AVKit**: Video during one of the challenge.
+- **AVFAudio**: Text to speech.
 - **MultipeerConnectivity**: Connect to console app and receive commands.
 - **UserNotifications**: Send notification if the user leaves the app for too long.
 - **ActivityKit/WidgetKit**: Create Live Activity indicating challenge progress.
