@@ -18,23 +18,14 @@ extension ViewModel {
             case .hello(let helloMessage):
                 receivedHelloMessage(helloMessage, from: peerID)
                 
-                logger.addLog("Received Hello Message from \(peerID.displayName)", imageName: "hand.wave")
-                
             case .heartbeat(let heartbeatMessage):
                 receivedHeartbeatMessage(heartbeatMessage, from: peerID)
                 
             case .challengeStarted(let challengeStartedMessage):
-                guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
+                receivedChallengeStartMessage(challengeStartedMessage)
                 
-                groups[groupIndex].needsNextChallenge = true
-                
-                logger.addLog("\(groups[groupIndex].name) started \(challengeStartedMessage.gameState.description)", imageName: "flag.checkered")
             case .challengeFinished(let challengeFinishedMessage):
-                guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
-                
-                groups[groupIndex].completedChallenges.append(challengeFinishedMessage.gameState)
-                
-                logger.addLog("\(groups[groupIndex].name) finished \(challengeFinishedMessage.gameState.description)", imageName: "medal")
+                receivedChallengeFinishedMessage(challengeFinishedMessage)
             }
             
         } catch {
@@ -50,6 +41,8 @@ extension ViewModel {
         }
         
         sendSessionInfoMessage(to: [peerID])
+        
+        logger.addLog("Received Hello Message from \(peerID.displayName)", imageName: "hand.wave")
     }
     
     func sendSessionInfoMessage(to peerIDs: [MCPeerID]? = nil) {
@@ -81,5 +74,36 @@ extension ViewModel {
                 groups[groupIndex].lastUpdated = .now
             }
         }
+    }
+    
+    fileprivate func receivedChallengeStartMessage(_ challengeStartedMessage: ChallengeStartedClientMessage) {
+        guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
+        
+        groups[groupIndex].needsNextChallenge = true
+        
+        logger.addLog("\(groups[groupIndex].name) started \(challengeStartedMessage.gameState.description)", imageName: "flag.checkered")
+    }
+    
+    func sendNextChallengeMessage(nextChallenge: GameState, position: Position, to group: inout Group) {
+        let message = NextChallengeConsoleMessage(nextChallenge: nextChallenge, position: position)
+        
+        do {
+            let data = try ConsoleMessage(payload: .nextChallenge(message)).toData()
+            try mcSession?.send(data, toPeers: [group.peerID], with: .reliable)
+            
+            group.needsNextChallenge = false
+            group.nextChallenge = nextChallenge
+            group.nextChallengePosition = position
+        } catch {
+            logger.addLog(.critical, "Failed to send next challenge message", imageName: "bubble.left.and.exclamationmark.bubble.right")
+        }
+    }
+    
+    fileprivate func receivedChallengeFinishedMessage(_ challengeFinishedMessage: ChallengeFinishedClientMessage) {
+        guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
+        
+        groups[groupIndex].completedChallenges.append(challengeFinishedMessage.gameState)
+        
+        logger.addLog("\(groups[groupIndex].name) finished \(challengeFinishedMessage.gameState.description)", imageName: "medal")
     }
 }
