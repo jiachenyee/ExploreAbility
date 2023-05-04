@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreLocation
-import Accelerate
 
 extension ViewModel: CLLocationManagerDelegate {
     func startMonitoring() {
