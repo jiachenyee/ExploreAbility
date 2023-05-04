@@ -34,16 +34,16 @@ sequenceDiagram
 ```
 
 ## Establishing Connection
-1. **Hello** `Reliable`:
+1. [**Hello**](Shared/Messages/Client%20Message/HelloClientMessage.swift) `Reliable`:
     - Initial connection message and information such as group name.
-2. **Session Info**: 
+2. [**Session Info**](Shared/Messages/Console%20Message/SessionInfoConsoleMessage.swift) `Reliable`:
     - Game Location (Academy/Foundation)
     - Host device identifier
     - Beacon Locations (local coordinate space)
     - Origin Coordinates (Lat & Long for the origin point of the area)
 
 ## Heartbeat Loop
-3. **Heartbeat** `Unreliable`: 
+3. [**Heartbeat**](Shared/Messages/Client%20Message/HeartbeatClientMessage.swift) `Unreliable`: 
     - Location Information: 
         - Location
         - Accuracy
@@ -53,19 +53,19 @@ sequenceDiagram
     - Group's identifier
 
 ## Game
-4. **Start Game Command** `Reliable`: 
+4. [**Start Game Command**](Shared/Messages/Console%20Message/StartGameConsoleMessage.swift) `Reliable`: 
     - Start date of game (by default, 3 seconds after the message is sent.)
-5. **Challenge Started** `Reliable`:
+5. [**Challenge Started**](Shared/Messages/Client%20Message/ChallengeStartedClientMessage.swift) `Reliable`:
     - Current challenge
-6. **Next Challenge** `Reliable`: 
+6. [**Next Challenge**](Shared/Messages/Console%20Message/NextChallengeConsoleMessage.swift) `Reliable`: 
     - Response to a challenge started message.
     - Next Challenge
     - Next Challenge Position
     - Game administrators manually set the position.
-7. **Challenge Finished**: `Reliable`
+7. [**Challenge Finished**](Shared/Messages/Client%20Message/ChallengeFinishedClientMessage.swift) `Reliable`:
     - Completed challenge
     - Date
-8. **Session Info Update** `Reliable`:
+8. **[Session Info](Shared/Messages/Console%20Message/SessionInfoConsoleMessage.swift) Update** `Reliable`:
     - Exact same payload as Session Info.
     - Sent whenever beacon location changes/GPS center position changes.
     - Should not/rarely be sent out.
