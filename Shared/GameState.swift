@@ -81,24 +81,5 @@ enum GameState: Int, CustomStringConvertible, Codable {
         }
     }
     
-    #if canImport(UIKit)
-    func performPreconditionCheck() -> Bool {
-        switch self {
-        case .internalTest, .connection, .exploring, .groupSetUp, .waitingRoom:
-            return false
-        case .voiceOver:
-            return !UIAccessibility.isVoiceOverRunning
-        case .textSize:
-            return UIApplication.shared.preferredContentSizeCategory == .medium || UIApplication.shared.preferredContentSizeCategory == .large
-        case .closedCaptions:
-            return !UIAccessibility.isClosedCaptioningEnabled
-        case .reducedMotion:
-            return !UIAccessibility.isReduceMotionEnabled
-        case .guidedAccess:
-            return !UIAccessibility.isGuidedAccessEnabled
-        }
-    }
-    #endif
-    
     static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reducedMotion, .closedCaptions]
 }

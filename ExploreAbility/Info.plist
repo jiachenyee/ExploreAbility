@@ -7,5 +7,7 @@
 		<string>_ilb-ExpAbility._tcp</string>
 		<string>_ilb-ExpAbility._udp</string>
 	</array>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Push notifciations</string>
 </dict>
 </plist>

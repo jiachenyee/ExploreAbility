@@ -10,11 +10,14 @@ import MultipeerConnectivity
 import CoreLocation
 import AVFAudio
 import SwiftUI
+import ActivityKit
 
 class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     let synthesizer = AVSpeechSynthesizer()
     let locationManager = CLLocationManager()
+    
+    var liveActivity: Activity<LiveActivityAttributes>?
     
     @Published var groupName: String = ""
     
@@ -26,7 +29,9 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             switch gameState {
             case .exploring: say(text: "Put on your blindfolds.")
             case .internalTest, .groupSetUp, .waitingRoom: break
-            default: say(text: "Remove your blindfolds.")
+            default:
+                say(text: "Remove your blindfolds.")
+                updateLiveActivity()
             }
         }
     }
@@ -66,6 +71,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         
         setUpMultipeerConnectivity()
         startMonitoring()
+        startActivity()
     }
     
     deinit {

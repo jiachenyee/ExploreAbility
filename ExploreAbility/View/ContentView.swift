@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     
     @Namespace var namespace
     
     @StateObject var viewModel = ViewModel()
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         ZStack {
@@ -62,6 +64,37 @@ struct ContentView: View {
                         viewModel.completedChallenges.append(.guidedAccess)
                     }
                 }
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            switch newPhase {
+            case .inactive: break
+            case .active:
+                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+            case .background:
+//                if GameState.all.contains(viewModel.gameState) {
+                    let content = UNMutableNotificationContent()
+                    
+                    content.title = "You've been gone for a while"
+                    content.body = "Try using a hint to solve this challenge!"
+                    
+                    content.sound = .default
+                    
+                    // show this notification five seconds from now
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+                    
+                    // choose a random identifier
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    
+                    // add our notification request
+                    UNUserNotificationCenter.current().add(request)
+//                }
+            @unknown default: break
+            }
+        }
+        .onAppear {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             }
         }
     }
