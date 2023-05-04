@@ -55,6 +55,12 @@ struct GroupView: View {
         }
         .buttonStyle(.plain)
         
+        if group.needsNextChallenge {
+            Button("Set Next Challenge") {
+                
+            }
+        }
+        
         Divider()
     }
 }
