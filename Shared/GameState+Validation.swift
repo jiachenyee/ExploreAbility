@@ -19,7 +19,7 @@ extension GameState {
             return UIApplication.shared.preferredContentSizeCategory == .medium || UIApplication.shared.preferredContentSizeCategory == .large
         case .closedCaptions:
             return !UIAccessibility.isClosedCaptioningEnabled
-        case .reducedMotion:
+        case .reduceMotion:
             return !UIAccessibility.isReduceMotionEnabled
         case .guidedAccess:
             return !UIAccessibility.isGuidedAccessEnabled

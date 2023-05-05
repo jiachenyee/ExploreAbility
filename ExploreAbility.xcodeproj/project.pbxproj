@@ -91,7 +91,7 @@
 		326D42FE29F8FEDF00AE2F45 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */; };
 		326D432029F9250800AE2F45 /* game.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D431F29F9250800AE2F45 /* game.mov */; };
 		326D432429F92AC800AE2F45 /* success.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D432329F92AC800AE2F45 /* success.mov */; };
-		326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */; };
+		326D432629F9323700AE2F45 /* ReduceMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReduceMotionChallenge.swift */; };
 		3284FBC62A041E1800F6CA13 /* ViewModel+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBC52A041E1800F6CA13 /* ViewModel+Messages.swift */; };
 		3284FBC82A041E4700F6CA13 /* ViewModel+PositionCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBC72A041E4700F6CA13 /* ViewModel+PositionCalculation.swift */; };
 		3284FBCB2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBCA2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift */; };
@@ -255,7 +255,7 @@
 		326D42FC29F8FDE100AE2F45 /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
 		326D431F29F9250800AE2F45 /* game.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = game.mov; sourceTree = "<group>"; };
 		326D432329F92AC800AE2F45 /* success.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = success.mov; sourceTree = "<group>"; };
-		326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducedMotionChallenge.swift; sourceTree = "<group>"; };
+		326D432529F9323700AE2F45 /* ReduceMotionChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceMotionChallenge.swift; sourceTree = "<group>"; };
 		326D432729F9578400AE2F45 /* ExploreAbility-Beacon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ExploreAbility-Beacon-Info.plist"; sourceTree = SOURCE_ROOT; };
 		326D432829F9599100AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3284FBC52A041E1800F6CA13 /* ViewModel+Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Messages.swift"; sourceTree = "<group>"; };
@@ -501,7 +501,7 @@
 				326D428F29F7BEF200AE2F45 /* TextSizeChallenge.swift */,
 				326D429829F7E43600AE2F45 /* VoiceOverChallenge.swift */,
 				326D42E129F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift */,
-				326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */,
+				326D432529F9323700AE2F45 /* ReduceMotionChallenge.swift */,
 				326D42E729F8C5EA00AE2F45 /* GuidedAccessChallenge.swift */,
 			);
 			path = Challenges;
@@ -1093,7 +1093,7 @@
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				32AB442E29FFBAD300E688BB /* HelloClientMessage.swift in Sources */,
-				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
+				326D432629F9323700AE2F45 /* ReduceMotionChallenge.swift in Sources */,
 				3202747229FCD2F500377188 /* Position.swift in Sources */,
 				32AB44A12A03798A00E688BB /* LiveActivityAttributes.swift in Sources */,
 				32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,

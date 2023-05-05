@@ -19,7 +19,7 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
     case textSize = 0
     case voiceOver = 1
     case closedCaptions = 2
-    case reducedMotion = 3
+    case reduceMotion = 3
     case guidedAccess = 4
     
     func toIcon() -> String {
@@ -32,7 +32,7 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
             return "speaker.wave.3"
         case .closedCaptions:
             return "captions.bubble"
-        case .reducedMotion:
+        case .reduceMotion:
             return "square.stack.3d.forward.dottedline"
         case .guidedAccess:
             return "lock.ipad"
@@ -49,7 +49,7 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
             return .yellow
         case .closedCaptions:
             return .green
-        case .reducedMotion:
+        case .reduceMotion:
             return .red
         case .guidedAccess:
             return .purple
@@ -64,8 +64,8 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
             return "VoiceOver"
         case .closedCaptions:
             return "Closed Caption"
-        case .reducedMotion:
-            return "Reduced Motion"
+        case .reduceMotion:
+            return "Reduce Motion"
         case .guidedAccess:
             return "Guided Access"
         case .exploring:
@@ -81,5 +81,5 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
         }
     }
     
-    static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reducedMotion, .closedCaptions]
+    static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reduceMotion, .closedCaptions]
 }

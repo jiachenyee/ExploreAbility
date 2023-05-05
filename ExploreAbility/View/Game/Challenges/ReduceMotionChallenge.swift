@@ -1,5 +1,5 @@
 //
-//  ReducedMotionChallenge.swift
+//  ReduceMotionChallenge.swift
 //  ExploreAbility
 //
 //  Created by Jia Chen Yee on 26/4/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReducedMotionChallenge: View {
+struct ReduceMotionChallenge: View {
     
     var namespace: Namespace.ID
     
@@ -20,7 +20,7 @@ struct ReducedMotionChallenge: View {
     
     @State private var isDropped = false
     
-    @State private var state = ReducedMotionState.started
+    @State private var state = ReduceMotionState.started
     
     var body: some View {
         GeometryReader { context in
@@ -34,35 +34,35 @@ struct ReducedMotionChallenge: View {
                             .offset(x: .random(in: -context.size.width / 2..<context.size.width / 2) + (startRandomMove ? .random(in: -context.size.width / 2..<context.size.width / 2) : 0),
                                     y: .random(in: -context.size.height / 2..<context.size.height / 2) + (startRandomMove ? .random(in: -context.size.width / 2..<context.size.width / 2) : 0))
                             .opacity(0.5)
-                            .matchedGeometryEffect(id: "ReducedMotion\(index)", in: namespace)
+                            .matchedGeometryEffect(id: "ReduceMotion\(index)", in: namespace)
                     }
-                case .reducedMotionEnabled:
+                case .reduceMotionEnabled:
                     VStack {
                         ZStack {
                             ForEach(0..<20) { index in
                                 Circle()
                                     .fill(.red)
                                     .frame(width: 20, height: 20)
-                                    .matchedGeometryEffect(id: "ReducedMotion\(index)", in: namespace)
+                                    .matchedGeometryEffect(id: "ReduceMotion\(index)", in: namespace)
                             }
                             
                             Circle()
                                 .fill(.red)
                                 .frame(width: 20, height: 20)
-                                .matchedGeometryEffect(id: GameState.reducedMotion, in: namespace)
+                                .matchedGeometryEffect(id: GameState.reduceMotion, in: namespace)
                         }
                         
-                        Text("You did it!\nNow, turn Reduced Motion off.")
+                        Text("You did it!\nNow, turn Reduce Motion off.")
                             .multilineTextAlignment(.center)
                             .font(.system(size: 18))
                             .foregroundColor(.white)
-                            .offset(y: state == .reducedMotionEnabled ? -300 : 300)
+                            .offset(y: state == .reduceMotionEnabled ? -300 : 300)
                     }
-                case .reducedMotionDisabled:
+                case .reduceMotionDisabled:
                     Circle()
                         .fill(.red)
                         .frame(width: 20, height: 20)
-                        .matchedGeometryEffect(id: GameState.reducedMotion, in: namespace)
+                        .matchedGeometryEffect(id: GameState.reduceMotion, in: namespace)
                         .offset(y: isDropped ? context.size.height / 2 - 42 : 0)
                 }
             }
@@ -78,12 +78,12 @@ struct ReducedMotionChallenge: View {
             if UIAccessibility.isReduceMotionEnabled && state == .started {
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
                     withAnimation {
-                        state = .reducedMotionEnabled
+                        state = .reduceMotionEnabled
                     }
                 }
-            } else if !UIAccessibility.isReduceMotionEnabled && state == .reducedMotionEnabled {
+            } else if !UIAccessibility.isReduceMotionEnabled && state == .reduceMotionEnabled {
                 withAnimation {
-                    state = .reducedMotionDisabled
+                    state = .reduceMotionDisabled
                 }
                 
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
@@ -104,9 +104,9 @@ struct ReducedMotionChallenge: View {
         }
     }
     
-    enum ReducedMotionState {
+    enum ReduceMotionState {
         case started
-        case reducedMotionEnabled
-        case reducedMotionDisabled
+        case reduceMotionEnabled
+        case reduceMotionDisabled
     }
 }

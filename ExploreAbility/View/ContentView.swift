@@ -50,11 +50,11 @@ struct ContentView: View {
                         viewModel.completedChallenges.append(.closedCaptions)
                     }
                 }
-            case .reducedMotion:
-                ReducedMotionChallenge(namespace: namespace) {
+            case .reduceMotion:
+                ReduceMotionChallenge(namespace: namespace) {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
-                        viewModel.completedChallenges.append(.reducedMotion)
+                        viewModel.completedChallenges.append(.reduceMotion)
                     }
                 }
             case .guidedAccess:

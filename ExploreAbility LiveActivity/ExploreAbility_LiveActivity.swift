@@ -191,7 +191,7 @@ struct LiveActivity: Widget {
 
 struct ExploreAbility_LiveActivityLiveActivity_Previews: PreviewProvider {
     static let attributes = LiveActivityAttributes()
-    static let contentState = LiveActivityAttributes.ContentState(currentGameState: .voiceOver, completedChallenges: [.voiceOver, .reducedMotion, .closedCaptions, .textSize])
+    static let contentState = LiveActivityAttributes.ContentState(currentGameState: .voiceOver, completedChallenges: [.voiceOver, .reduceMotion, .closedCaptions, .textSize])
 
     static var previews: some View {
         attributes
