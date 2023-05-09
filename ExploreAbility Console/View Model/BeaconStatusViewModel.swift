@@ -11,8 +11,6 @@ import CoreBluetooth
 
 class BeaconStatusViewModel: NSObject, ObservableObject, CBCentralManagerDelegate {
     
-    var logger: LoggerViewModel!
-    
     @Published var academyBeacons: [Date?]
     @Published var academyStatus: [BeaconStatus]
     
@@ -40,17 +38,17 @@ class BeaconStatusViewModel: NSObject, ObservableObject, CBCentralManagerDelegat
                     if seconds < 1.5 {
                         if academyStatus[i] != .online {
                             academyStatus[i] = .online
-                            logger.addLog(.success, "Connected to Academy \(i + 1) Beacon", imageName: "waveform")
+                            Logger.shared.addLog(.success, "Connected to Academy \(i + 1) Beacon", imageName: "waveform")
                         }
                     } else if seconds < 5 {
                         if academyStatus[i] != .warning {
                             academyStatus[i] = .warning
-                            logger.addLog(.warning, "Unstable Connection with Academy \(i + 1) Beacon", imageName: "waveform.badge.exclamationmark")
+                            Logger.shared.addLog(.warning, "Unstable Connection with Academy \(i + 1) Beacon", imageName: "waveform.badge.exclamationmark")
                         }
                     } else {
                         if academyStatus[i] != .error {
                             academyStatus[i] = .error
-                            logger.addLog(.critical, "Lost Connection to Academy \(i + 1) Beacon", imageName: "waveform.slash")
+                            Logger.shared.addLog(.critical, "Lost Connection to Academy \(i + 1) Beacon", imageName: "waveform.slash")
                         }
                     }
                 } else {
@@ -63,17 +61,17 @@ class BeaconStatusViewModel: NSObject, ObservableObject, CBCentralManagerDelegat
                     if seconds < 1.5 {
                         if foundationStatus[i] != .online {
                             foundationStatus[i] = .online
-                            logger.addLog(.success, "Connected to Foundation \(i + 1) Beacon", imageName: "waveform")
+                            Logger.shared.addLog(.success, "Connected to Foundation \(i + 1) Beacon", imageName: "waveform")
                         }
                     } else if seconds < 5 {
                         if foundationStatus[i] != .warning {
                             foundationStatus[i] = .warning
-                            logger.addLog(.warning, "Unstable Connection with Foundation \(i + 1) Beacon", imageName: "waveform.badge.exclamationmark")
+                            Logger.shared.addLog(.warning, "Unstable Connection with Foundation \(i + 1) Beacon", imageName: "waveform.badge.exclamationmark")
                         }
                     } else {
                         if foundationStatus[i] != .error {
                             foundationStatus[i] = .error
-                            logger.addLog(.critical, "Lost Connection to Foundation \(i + 1) Beacon", imageName: "waveform.slash")
+                            Logger.shared.addLog(.critical, "Lost Connection to Foundation \(i + 1) Beacon", imageName: "waveform.slash")
                         }
                     }
                 } else {

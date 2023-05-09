@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class LoggerViewModel: ObservableObject {
+class Logger: ObservableObject {
     @Published var log: [Log] = []
     
     func addLog(_ type: LogType, _ text: String, imageName: String) {
@@ -30,4 +30,6 @@ class LoggerViewModel: ObservableObject {
             }
         }
     }
+    
+    static let shared = Logger()
 }

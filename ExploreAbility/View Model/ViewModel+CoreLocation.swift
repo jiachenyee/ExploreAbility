@@ -23,7 +23,7 @@ extension ViewModel: CLLocationManagerDelegate {
         locationData[.gps] = LocationData(position: calculateLocalPosition(origin: originPosition,
                                                                            target: .init(location: location.coordinate)),
                                           distance: location.horizontalAccuracy,
-                                          date: .now)
+                                          date: .now, weight: 5)
     }
     
     func calculateLocalPosition(origin: GPSPosition, target: GPSPosition) -> Position {
@@ -85,28 +85,27 @@ extension ViewModel: CLLocationManagerDelegate {
                          satisfying beaconConstraint: CLBeaconIdentityConstraint) {
         
         guard let sessionInfo else { return }
-        
         for beacon in beacons where sessionInfo.location.rawValue == beacon.major.intValue {
             print(beacon.major)
             
             guard let locationDataSource = LocationDataSource(rawValue: beacon.minor.intValue),
-                  let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue] else { return }
+                  let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue - 1] else { return }
             
             // Distance from center in M
             var distance: Double?
             
             switch beacon.proximity {
             case .immediate:
-                distance = 0.5
+                distance = 1
             case .near:
-                distance = 10
+                distance = 14
             case .far:
                 distance = 50
             default: break
             }
             
-            if let distance {
-                locationData[locationDataSource] = LocationData(position: localBeaconPosition, distance: distance, date: .now)
+            if let distance, beacon.accuracy > 0 {
+                locationData[locationDataSource] = LocationData(position: localBeaconPosition, distance: distance, date: .now, weight: beacon.accuracy)
             }
         }
         
@@ -114,5 +113,7 @@ extension ViewModel: CLLocationManagerDelegate {
 //    case immediate = 1 <0.5m
 //    case near = 2 <14.5m
 //    case far = 3
+        
+        
     }
 }

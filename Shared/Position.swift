@@ -10,4 +10,8 @@ import Foundation
 struct Position: Codable, Equatable {
     var x: Double
     var y: Double
+    
+    func distance(to otherPosition: Position) -> Double {
+        return sqrt(pow(x - otherPosition.x, 2) + pow(self.y - otherPosition.y, 2))
+    }
 }

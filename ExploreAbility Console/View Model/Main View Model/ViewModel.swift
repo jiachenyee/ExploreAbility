@@ -11,7 +11,7 @@ import MultipeerConnectivity
 
 class ViewModel: NSObject, ObservableObject {
     
-    var logger = LoggerViewModel()
+    var logger = Logger.shared
     
     var peerID: MCPeerID!
     var mcSession: MCSession?

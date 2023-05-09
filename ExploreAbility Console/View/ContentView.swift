@@ -23,7 +23,7 @@ struct ContentView: View {
                 HSplitView {
                     DashboardView(viewModel: viewModel)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    LoggerView(loggerViewModel: viewModel.logger)
+                    LoggerView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }

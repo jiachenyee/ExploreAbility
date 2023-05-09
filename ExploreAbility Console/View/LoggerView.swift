@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoggerView: View {
     
-    @ObservedObject var loggerViewModel: LoggerViewModel
+    @StateObject var loggerViewModel: Logger = .shared
     
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()

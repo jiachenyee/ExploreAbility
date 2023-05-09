@@ -20,7 +20,7 @@
 		3202748029FCDD2300377188 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202747F29FCDD2300377188 /* MapView.swift */; };
 		3202748229FCE6E100377188 /* DashboardElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748129FCE6E100377188 /* DashboardElement.swift */; };
 		3202748429FCE86900377188 /* HostingDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748329FCE86900377188 /* HostingDashboardView.swift */; };
-		3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748529FCE94C00377188 /* LoggerViewModel.swift */; };
+		3202748629FCE94C00377188 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748529FCE94C00377188 /* Logger.swift */; };
 		3202748829FCEBBC00377188 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748729FCEBBC00377188 /* Log.swift */; };
 		3202748C29FCEF2D00377188 /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202748B29FCEF2D00377188 /* LogType.swift */; };
 		3202749129FCF33600377188 /* RoomModelImportDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202749029FCF33600377188 /* RoomModelImportDashboardView.swift */; };
@@ -192,7 +192,7 @@
 		3202747F29FCDD2300377188 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3202748129FCE6E100377188 /* DashboardElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardElement.swift; sourceTree = "<group>"; };
 		3202748329FCE86900377188 /* HostingDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingDashboardView.swift; sourceTree = "<group>"; };
-		3202748529FCE94C00377188 /* LoggerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewModel.swift; sourceTree = "<group>"; };
+		3202748529FCE94C00377188 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3202748729FCEBBC00377188 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		3202748B29FCEF2D00377188 /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 		3202749029FCF33600377188 /* RoomModelImportDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModelImportDashboardView.swift; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 			children = (
 				32AB44732A00412C00E688BB /* Main View Model */,
 				320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */,
-				3202748529FCE94C00377188 /* LoggerViewModel.swift */,
+				3202748529FCE94C00377188 /* Logger.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1180,7 +1180,7 @@
 				3284FBCF2A0435DA00F6CA13 /* SetNextChallengeView.swift in Sources */,
 				320274E529FD441800377188 /* MapSceneView.swift in Sources */,
 				320274ED29FE398B00377188 /* MapSceneRenderView.swift in Sources */,
-				3202748629FCE94C00377188 /* LoggerViewModel.swift in Sources */,
+				3202748629FCE94C00377188 /* Logger.swift in Sources */,
 				326D42F329F8F66300AE2F45 /* Location.swift in Sources */,
 				32AB444029FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
 				320274E129FD337200377188 /* ConnectedGroupsView.swift in Sources */,

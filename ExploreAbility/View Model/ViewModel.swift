@@ -43,9 +43,9 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     var locationData: [LocationDataSource: LocationData] = [:] {
         didSet {
-            let localPosition = calculatePosition(using: Array(locationData.values), date: .now)
+//            let localPosition = calculatePosition(using: locationData, date: .now)
             
-            ipsPosition = localPosition
+//            ipsPosition = localPosition
             
             sendHeartbeatMessage()
         }

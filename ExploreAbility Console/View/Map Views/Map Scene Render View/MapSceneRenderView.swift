@@ -97,8 +97,8 @@ class MapSceneRenderView: SCNView {
     func createGroupNode(index: Int) {
         let geometry = SCNSphere(radius: 0.4)
         
-        geometry.firstMaterial?.diffuse.contents = groupColors[index]
-        geometry.firstMaterial?.emission.contents = groupColors[index]
+        geometry.firstMaterial?.diffuse.contents = groupColors[index % groupColors.count]
+        geometry.firstMaterial?.emission.contents = groupColors[index % groupColors.count]
         
         let node = SCNNode(geometry: geometry)
         
@@ -108,7 +108,7 @@ class MapSceneRenderView: SCNView {
         light.type = .omni
         
         light.areaType = .polygon
-        light.color = groupColors[index].withAlphaComponent(0.8)
+        light.color = groupColors[index % groupColors.count].withAlphaComponent(0.8)
         light.intensity = 5
         
         node.light = light

@@ -9,6 +9,7 @@ import Foundation
 
 struct IPSPosition: Codable, Equatable {
     var position: Position
+    /// Accuracy
     var error: Double
     var date: Date
     

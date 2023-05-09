@@ -34,7 +34,7 @@ extension ViewModel {
             if !heartbeatScheduled {
                 heartbeatScheduled = true
                 
-                let newDate = lastHeatbeatMessageDate!.advanced(by: 1.001)
+                let newDate = (lastHeatbeatMessageDate ?? .now).advanced(by: 1.001)
                 
                 Timer.scheduledTimer(withTimeInterval: abs(newDate.timeIntervalSinceNow), repeats: false) { _ in
                     self.sendHeartbeatMessage()

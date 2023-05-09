@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BeaconOnlineDashboardView: View {
     
-    @EnvironmentObject var logger: LoggerViewModel
+    @EnvironmentObject var logger: Logger
     
     @StateObject var beaconStatusViewModel = BeaconStatusViewModel()
     
@@ -61,9 +61,6 @@ struct BeaconOnlineDashboardView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-        }
-        .onAppear {
-            beaconStatusViewModel.logger = logger
         }
     }
 }
