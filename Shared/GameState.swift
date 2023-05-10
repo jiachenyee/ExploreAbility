@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+let password = "346678"
+
 enum GameState: Int, CustomStringConvertible, Codable, Equatable {
     case internalTest = -100
     
@@ -16,11 +18,13 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
     case connection = -2
     case exploring = -1
     
-    case textSize = 0
-    case voiceOver = 1
-    case closedCaptions = 2
-    case reduceMotion = 3
-    case guidedAccess = 4
+    case closedCaptions = 0
+    case reduceMotion = 1
+    case guidedAccess = 2
+    case voiceOver = 3
+    case textSize = 4
+    
+    case gameOver = 100
     
     func toIcon() -> String {
         switch self {
@@ -36,12 +40,14 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
             return "square.stack.3d.forward.dottedline"
         case .guidedAccess:
             return "lock.ipad"
+        case .gameOver:
+            return "checkmark.seal"
         }
     }
     
     func toColor() -> Color {
         switch self {
-        case .exploring, .connection, .internalTest, .groupSetUp, .waitingRoom:
+        case .exploring, .connection, .internalTest, .groupSetUp, .waitingRoom, .gameOver:
             return .black
         case .textSize:
             return .blue
@@ -78,6 +84,8 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
             return "Group Setup"
         case .waitingRoom:
             return "Waiting Room"
+        case .gameOver:
+            return "Game Over"
         }
     }
     

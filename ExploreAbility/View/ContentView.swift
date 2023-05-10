@@ -32,7 +32,7 @@ struct ContentView: View {
             case .textSize:
                 TextSizeChallenge(namespace: namespace) {
                     withAnimation(.easeOut(duration: 1)) {
-                        viewModel.gameState = .exploring
+                        viewModel.gameState = .gameOver
                         viewModel.completedChallenges.append(.textSize)
                     }
                 }
@@ -64,6 +64,8 @@ struct ContentView: View {
                         viewModel.completedChallenges.append(.guidedAccess)
                     }
                 }
+            case .gameOver:
+                Text("Game Over")
             }
         }
         .onChange(of: scenePhase) { newPhase in

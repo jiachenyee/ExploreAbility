@@ -11,7 +11,7 @@ import UIKit
 extension GameState {
     func performPreconditionCheck() -> Bool {
         switch self {
-        case .internalTest, .connection, .exploring, .groupSetUp, .waitingRoom:
+        case .internalTest, .connection, .exploring, .groupSetUp, .waitingRoom, .gameOver:
             return false
         case .voiceOver:
             return !UIAccessibility.isVoiceOverRunning
