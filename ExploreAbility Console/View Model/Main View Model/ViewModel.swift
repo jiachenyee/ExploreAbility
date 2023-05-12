@@ -66,6 +66,8 @@ class ViewModel: NSObject, ObservableObject {
     
     @Published var groups: [Group] = []
     
+    @Published var nextChallengeRequests: [NextChallenge] = []
+    
     @Published var beaconPositions: [Position?] = .init(repeating: nil, count: 7) {
         didSet {
             sendSessionInfoMessage()

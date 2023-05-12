@@ -10,7 +10,8 @@ import SwiftUI
 
 let password = "346678"
 
-enum GameState: Int, CustomStringConvertible, Codable, Equatable {
+enum GameState: Int, CustomStringConvertible, Codable, Equatable, Comparable {
+    
     case internalTest = -100
     
     case waitingRoom = -4
@@ -89,5 +90,13 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable {
         }
     }
     
+    var next: GameState? {
+        GameState(rawValue: rawValue + 1)
+    }
+    
     static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reduceMotion, .closedCaptions]
+    
+    static func < (lhs: GameState, rhs: GameState) -> Bool {
+        lhs.rawValue < rhs.rawValue
+    }
 }

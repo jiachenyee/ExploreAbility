@@ -53,6 +53,8 @@
 		32618A612A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A602A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift */; };
 		32618A632A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A622A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift */; };
 		32618A652A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */; };
+		32618A672A0E946700448C32 /* NextChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A662A0E946700448C32 /* NextChallenge.swift */; };
+		32618A692A0E965800448C32 /* PrivateControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A682A0E965800448C32 /* PrivateControllerView.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -235,6 +237,8 @@
 		32618A602A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+CoreMotion.swift"; sourceTree = "<group>"; };
 		32618A622A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+MultipeerConnectivity.swift"; sourceTree = "<group>"; };
 		32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+MCBrowser.swift"; sourceTree = "<group>"; };
+		32618A662A0E946700448C32 /* NextChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallenge.swift; sourceTree = "<group>"; };
+		32618A682A0E965800448C32 /* PrivateControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateControllerView.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -384,11 +388,8 @@
 		3202748929FCEF1800377188 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				326D42CB29F804A800AE2F45 /* ContentView.swift */,
-				32AB441B29FF5FB600E688BB /* Connected Groups */,
-				32AB441A29FF5FAE00E688BB /* Map Views */,
-				3202747B29FCD88A00377188 /* LoggerView.swift */,
-				3202748F29FCEF6100377188 /* Commands */,
+				32618A6A2A0E966300448C32 /* Main Window */,
+				32618A6B2A0E967600448C32 /* Private Window */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +413,7 @@
 				32AB441629FE95E500E688BB /* Group.swift */,
 				32AB441829FE9B2200E688BB /* MapCustomisation.swift */,
 				32AB446F2A0040B200E688BB /* BeaconStatus.swift */,
+				32618A662A0E946700448C32 /* NextChallenge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,6 +489,27 @@
 				32AB447A2A03365F00E688BB /* MCBrowserManager.swift */,
 			);
 			path = "Main View Model";
+			sourceTree = "<group>";
+		};
+		32618A6A2A0E966300448C32 /* Main Window */ = {
+			isa = PBXGroup;
+			children = (
+				326D42CB29F804A800AE2F45 /* ContentView.swift */,
+				32AB441B29FF5FB600E688BB /* Connected Groups */,
+				32AB441A29FF5FAE00E688BB /* Map Views */,
+				3202747B29FCD88A00377188 /* LoggerView.swift */,
+				3202748F29FCEF6100377188 /* Commands */,
+			);
+			path = "Main Window";
+			sourceTree = "<group>";
+		};
+		32618A6B2A0E967600448C32 /* Private Window */ = {
+			isa = PBXGroup;
+			children = (
+				32618A682A0E965800448C32 /* PrivateControllerView.swift */,
+				3284FBCE2A0435DA00F6CA13 /* SetNextChallengeView.swift */,
+			);
+			path = "Private Window";
 			sourceTree = "<group>";
 		};
 		326D427529F7AEB900AE2F45 = {
@@ -680,7 +703,6 @@
 			children = (
 				320274E029FD337200377188 /* ConnectedGroupsView.swift */,
 				320274E229FD33A200377188 /* GroupView.swift */,
-				3284FBCE2A0435DA00F6CA13 /* SetNextChallengeView.swift */,
 			);
 			path = "Connected Groups";
 			sourceTree = "<group>";
@@ -1210,6 +1232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32618A672A0E946700448C32 /* NextChallenge.swift in Sources */,
 				320274E929FD522C00377188 /* IndividualOnlineBeaconView.swift in Sources */,
 				32AB441929FE9B2200E688BB /* MapCustomisation.swift in Sources */,
 				3202747129FCD2EC00377188 /* Position.swift in Sources */,
@@ -1239,6 +1262,7 @@
 				32AB443D29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift in Sources */,
 				32AB441529FE71C300E688BB /* SetBeaconsView.swift in Sources */,
 				32AB443329FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */,
+				32618A692A0E965800448C32 /* PrivateControllerView.swift in Sources */,
 				3202747C29FCD88A00377188 /* LoggerView.swift in Sources */,
 				3202748429FCE86900377188 /* HostingDashboardView.swift in Sources */,
 				3202748229FCE6E100377188 /* DashboardElement.swift in Sources */,

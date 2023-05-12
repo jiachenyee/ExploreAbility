@@ -79,7 +79,10 @@ extension ViewModel {
     fileprivate func receivedChallengeStartMessage(_ challengeStartedMessage: ChallengeStartedClientMessage) {
         guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
         
-        groups[groupIndex].needsNextChallenge = true
+        if let nextChallenge = groups[groupIndex].completedChallenges.max()?.next {
+            nextChallengeRequests.append(NextChallenge(groupId: groups[groupIndex].id,
+                                                       challenge: nextChallenge))
+        }
         
         logger.addLog("\(groups[groupIndex].name) started \(challengeStartedMessage.gameState.description)", imageName: "flag.checkered")
     }
@@ -91,7 +94,6 @@ extension ViewModel {
             let data = try ConsoleMessage(payload: .nextChallenge(message)).toData()
             try mcSession?.send(data, toPeers: [group.peerID], with: .reliable)
             
-            group.needsNextChallenge = false
             group.nextChallenge = nextChallenge
             group.nextChallengePosition = position
         } catch {

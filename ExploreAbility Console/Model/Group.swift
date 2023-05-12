@@ -23,8 +23,6 @@ struct Group: Identifiable, Equatable {
     var nextChallenge: GameState?
     var nextChallengePosition: Position?
     
-    var needsNextChallenge = false
-    
     var isOnline = true
     
     var lastUpdated: Date?

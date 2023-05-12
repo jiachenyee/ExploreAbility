@@ -19,10 +19,7 @@ struct ExploreAbility_ConsoleApp: App {
         .windowStyle(.hiddenTitleBar)
         
         Window("Nothing to see here.", id: "nothing-to-see-here") {
-            VStack {
-                Text("Nothing to see here.")
-                Text("Make sure this view is kept out of view of the players.")
-            }
+            PrivateControllerView()
         }
     }
 }
