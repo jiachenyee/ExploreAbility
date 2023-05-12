@@ -7,6 +7,7 @@
 - **UIKit**: Challenge validation (validating accessibility features with UIAccessibility).
 - **CoreLocation**: Determine current location (using iBeacons, GPS, and compass).
 - **AVFoundation/AVKit**: Video during one of the challenge.
+- **AVFAudio**: Text to speech.
 - **MultipeerConnectivity**: Connect to console app and receive commands.
 - **UserNotifications**: Send notification if the user leaves the app for too long.
 - **ActivityKit/WidgetKit**: Create Live Activity indicating challenge progress.
@@ -32,5 +33,6 @@
 ## how does it work?
 - [**📍 Indoor Positioning**](IndoorPositioning.md): How we know where on earth (or more specifically, in the academy) you are.
 - [**💬 Communication**](Communication.md): How a connection is established, what data gets sent between the Console and Client apps.
+- [**🏆 Challenges**](Challenges.md): Find the challenges, and solutions.
 
 > Designed by [Jia Chen](https://github.com/jiachenyee) and [Tafa](https://github.com/ratafani) for the Apple Developer Academy @ Infinite Learning.
