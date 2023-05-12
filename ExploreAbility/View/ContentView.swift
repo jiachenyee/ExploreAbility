@@ -65,7 +65,7 @@ struct ContentView: View {
                     }
                 }
             case .gameOver:
-                Text("Game Over")
+                GameOverView()
             }
         }
         .onChange(of: scenePhase) { newPhase in

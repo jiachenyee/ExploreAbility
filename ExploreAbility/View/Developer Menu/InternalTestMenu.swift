@@ -40,6 +40,12 @@ struct InternalTestMenu: View {
                         }
                     }
                 }
+                
+                Section("View Tester") {
+                    Button("Game Over View") {
+                        stage = .gameOver
+                    }
+                }
             }
             .navigationTitle("Debug Menu")
         }

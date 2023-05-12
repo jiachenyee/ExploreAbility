@@ -45,6 +45,8 @@
 		320274E929FD522C00377188 /* IndividualOnlineBeaconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274E829FD522C00377188 /* IndividualOnlineBeaconView.swift */; };
 		320274EB29FD60C000377188 /* BeaconStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */; };
 		320274ED29FE398B00377188 /* MapSceneRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274EC29FE398B00377188 /* MapSceneRenderView.swift */; };
+		32618A552A0DD84400448C32 /* PasswordDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A542A0DD84400448C32 /* PasswordDigitView.swift */; };
+		32618A572A0DD86000448C32 /* PasswordNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A562A0DD86000448C32 /* PasswordNumberView.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -156,6 +158,9 @@
 		32AB44A02A03798700E688BB /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */; };
 		32AB44A12A03798A00E688BB /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */; };
 		32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */; };
+		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
+		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
+		32E418E32A0C9DA900D04174 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E22A0C9DA900D04174 /* PasscodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +221,8 @@
 		320274E829FD522C00377188 /* IndividualOnlineBeaconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualOnlineBeaconView.swift; sourceTree = "<group>"; };
 		320274EA29FD60C000377188 /* BeaconStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconStatusViewModel.swift; sourceTree = "<group>"; };
 		320274EC29FE398B00377188 /* MapSceneRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneRenderView.swift; sourceTree = "<group>"; };
+		32618A542A0DD84400448C32 /* PasswordDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDigitView.swift; sourceTree = "<group>"; };
+		32618A562A0DD86000448C32 /* PasswordNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordNumberView.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -308,6 +315,9 @@
 		32AB449D2A036D3000E688BB /* ChallengeBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeBallView.swift; sourceTree = "<group>"; };
 		32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityAttributes.swift; sourceTree = "<group>"; };
 		32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+LiveActivities.swift"; sourceTree = "<group>"; };
+		32E418C12A0B82B300D04174 /* GameOverARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverARView.swift; sourceTree = "<group>"; };
+		32E418E02A0C9C3800D04174 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		32E418E22A0C9DA900D04174 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -590,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				326D428329F7AEB900AE2F45 /* ContentView.swift */,
+				32E418C02A0B829F00D04174 /* Game Over */,
 				32AB44682A003E7600E688BB /* Pre-Game */,
 				32AB44692A003E8F00E688BB /* Game */,
 				32AB44662A003E5300E688BB /* Developer Menu */,
@@ -816,6 +827,18 @@
 				32AB44922A03607600E688BB /* Info.plist */,
 			);
 			path = "ExploreAbility LiveActivity";
+			sourceTree = "<group>";
+		};
+		32E418C02A0B829F00D04174 /* Game Over */ = {
+			isa = PBXGroup;
+			children = (
+				32E418E02A0C9C3800D04174 /* GameOverView.swift */,
+				32E418E22A0C9DA900D04174 /* PasscodeView.swift */,
+				32618A562A0DD86000448C32 /* PasswordNumberView.swift */,
+				32618A542A0DD84400448C32 /* PasswordDigitView.swift */,
+				32E418C12A0B82B300D04174 /* GameOverARView.swift */,
+			);
+			path = "Game Over";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1063,6 +1086,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32AB44762A02043A00E688BB /* GPSPosition.swift in Sources */,
+				32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */,
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB441E29FF884800E688BB /* MessageContents.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
@@ -1090,7 +1114,9 @@
 				32AB443F29FFC51B00E688BB /* SessionInfoConsoleMessage.swift in Sources */,
 				32AB445529FFEA0F00E688BB /* WaitingRoomView.swift in Sources */,
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
+				32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
+				32618A552A0DD84400448C32 /* PasswordDigitView.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				32AB442E29FFBAD300E688BB /* HelloClientMessage.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReduceMotionChallenge.swift in Sources */,
@@ -1099,9 +1125,11 @@
 				32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,
 				32AB442B29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
+				32618A572A0DD86000448C32 /* PasswordNumberView.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
 				32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */,
 				32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */,
+				32E418E32A0C9DA900D04174 /* PasscodeView.swift in Sources */,
 				326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1418,6 +1446,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExploreAbility/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSCameraUsageDescription = AR;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Connect to iBeacons";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
@@ -1455,6 +1484,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExploreAbility/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSCameraUsageDescription = AR;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Connect to iBeacons";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
