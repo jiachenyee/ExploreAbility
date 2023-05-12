@@ -29,6 +29,10 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             switch gameState {
             case .exploring: say(text: "Put on your blindfolds.")
             case .internalTest, .groupSetUp, .waitingRoom: break
+            case .gameOver:
+                leaveSession()
+                deleteLiveActivity()
+                say(text: "Remove your blindfolds.")
             default:
                 say(text: "Remove your blindfolds.")
                 updateLiveActivity()

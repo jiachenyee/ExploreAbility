@@ -47,6 +47,12 @@
 		320274ED29FE398B00377188 /* MapSceneRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320274EC29FE398B00377188 /* MapSceneRenderView.swift */; };
 		32618A552A0DD84400448C32 /* PasswordDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A542A0DD84400448C32 /* PasswordDigitView.swift */; };
 		32618A572A0DD86000448C32 /* PasswordNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A562A0DD86000448C32 /* PasswordNumberView.swift */; };
+		32618A592A0DE4C800448C32 /* GameOverUnlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A582A0DE4C800448C32 /* GameOverUnlockedView.swift */; };
+		32618A5B2A0E048600448C32 /* GameOverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A5A2A0E048600448C32 /* GameOverViewModel.swift */; };
+		32618A5F2A0E0D0800448C32 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A5E2A0E0D0800448C32 /* GameOverState.swift */; };
+		32618A612A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A602A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift */; };
+		32618A632A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A622A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift */; };
+		32618A652A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -223,6 +229,12 @@
 		320274EC29FE398B00377188 /* MapSceneRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneRenderView.swift; sourceTree = "<group>"; };
 		32618A542A0DD84400448C32 /* PasswordDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDigitView.swift; sourceTree = "<group>"; };
 		32618A562A0DD86000448C32 /* PasswordNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordNumberView.swift; sourceTree = "<group>"; };
+		32618A582A0DE4C800448C32 /* GameOverUnlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverUnlockedView.swift; sourceTree = "<group>"; };
+		32618A5A2A0E048600448C32 /* GameOverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewModel.swift; sourceTree = "<group>"; };
+		32618A5E2A0E0D0800448C32 /* GameOverState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
+		32618A602A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+CoreMotion.swift"; sourceTree = "<group>"; };
+		32618A622A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+MultipeerConnectivity.swift"; sourceTree = "<group>"; };
+		32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+MCBrowser.swift"; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -450,6 +462,31 @@
 				320274BF29FD088900377188 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		32618A5C2A0E0CF100448C32 /* Game Over */ = {
+			isa = PBXGroup;
+			children = (
+				32618A5A2A0E048600448C32 /* GameOverViewModel.swift */,
+				32618A622A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift */,
+				32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */,
+				32618A602A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift */,
+			);
+			path = "Game Over";
+			sourceTree = "<group>";
+		};
+		32618A5D2A0E0CF700448C32 /* Main View Model */ = {
+			isa = PBXGroup;
+			children = (
+				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
+				3284FBC72A041E4700F6CA13 /* ViewModel+PositionCalculation.swift */,
+				32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */,
+				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
+				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
+				3284FBC92A041E7700F6CA13 /* Multipeer Connectivity */,
+				32AB447A2A03365F00E688BB /* MCBrowserManager.swift */,
+			);
+			path = "Main View Model";
 			sourceTree = "<group>";
 		};
 		326D427529F7AEB900AE2F45 = {
@@ -684,13 +721,8 @@
 		32AB445029FFE86F00E688BB /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				326D429429F7DFB600AE2F45 /* ViewModel.swift */,
-				3284FBC72A041E4700F6CA13 /* ViewModel+PositionCalculation.swift */,
-				32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */,
-				32A5344029FA63B1009BC57D /* ViewModel+CoreLocation.swift */,
-				32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */,
-				3284FBC92A041E7700F6CA13 /* Multipeer Connectivity */,
-				32AB447A2A03365F00E688BB /* MCBrowserManager.swift */,
+				32618A5D2A0E0CF700448C32 /* Main View Model */,
+				32618A5C2A0E0CF100448C32 /* Game Over */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -804,6 +836,7 @@
 			isa = PBXGroup;
 			children = (
 				32AB44782A025ABF00E688BB /* LocationData.swift */,
+				32618A5E2A0E0D0800448C32 /* GameOverState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -833,6 +866,7 @@
 			isa = PBXGroup;
 			children = (
 				32E418E02A0C9C3800D04174 /* GameOverView.swift */,
+				32618A582A0DE4C800448C32 /* GameOverUnlockedView.swift */,
 				32E418E22A0C9DA900D04174 /* PasscodeView.swift */,
 				32618A562A0DD86000448C32 /* PasswordNumberView.swift */,
 				32618A542A0DD84400448C32 /* PasswordDigitView.swift */,
@@ -1086,9 +1120,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				32AB44762A02043A00E688BB /* GPSPosition.swift in Sources */,
+				32618A592A0DE4C800448C32 /* GameOverUnlockedView.swift in Sources */,
 				32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */,
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB441E29FF884800E688BB /* MessageContents.swift in Sources */,
+				32618A612A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
 				32AB447B2A03365F00E688BB /* MCBrowserManager.swift in Sources */,
 				32AB44792A025ABF00E688BB /* LocationData.swift in Sources */,
@@ -1098,6 +1134,7 @@
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
 				32AB443529FFBAF500E688BB /* ChallengeStartedClientMessage.swift in Sources */,
+				32618A652A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift in Sources */,
 				32AB443229FFBAE900E688BB /* HeartbeatClientMessage.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
@@ -1107,6 +1144,7 @@
 				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
 				32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
+				32618A5F2A0E0D0800448C32 /* GameOverState.swift in Sources */,
 				32AB449C2A0362EE00E688BB /* GameState+Validation.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				3284FBCB2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift in Sources */,
@@ -1120,7 +1158,9 @@
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				32AB442E29FFBAD300E688BB /* HelloClientMessage.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReduceMotionChallenge.swift in Sources */,
+				32618A5B2A0E048600448C32 /* GameOverViewModel.swift in Sources */,
 				3202747229FCD2F500377188 /* Position.swift in Sources */,
+				32618A632A0E0FB200448C32 /* GameOverViewModel+MultipeerConnectivity.swift in Sources */,
 				32AB44A12A03798A00E688BB /* LiveActivityAttributes.swift in Sources */,
 				32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,

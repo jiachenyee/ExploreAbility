@@ -9,12 +9,12 @@ import SwiftUI
 
 struct GameOverView: View {
     
-    @State var state = GameOverState.ar
-    
     @State var isPasswordViewVisible = false
     
+    @StateObject private var goViewModel = GameOverViewModel()
+    
     var body: some View {
-        switch state {
+        switch goViewModel.state {
         case .ar:
             ZStack {
                 GameOverARView()
@@ -39,13 +39,13 @@ struct GameOverView: View {
                 if isPasswordViewVisible {
                     PasswordView(isVisible: $isPasswordViewVisible) {
                         withAnimation {
-                            state = .unlocked
+                            goViewModel.state = .unlocked
                         }
                     }
                 }
             }
-        case .unlocked:
-            EmptyView()
+        case .unlocked, .scanning:
+            GameOverUnlockedView()
         case .completed:
             EmptyView()
         }
@@ -56,10 +56,4 @@ struct GameOverView_Previews: PreviewProvider {
     static var previews: some View {
         GameOverView()
     }
-}
-
-enum GameOverState {
-    case ar
-    case unlocked
-    case completed
 }
