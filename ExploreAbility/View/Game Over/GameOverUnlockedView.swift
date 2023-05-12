@@ -22,7 +22,7 @@ struct GameOverUnlockedView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if dataReceivedCompletely {
-                Text("RECEIVED INCOMING MESSAGE:")
+                Text("RECEIVED MESSAGE:")
                     .foregroundColor(.green)
                     .bold()
                     .padding(.bottom)
@@ -128,7 +128,7 @@ THANK YOU.
     }
     
     func randomCharacters(length: Int) -> String {
-        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=<>?/\\|{}[];':\",./`~abcdefghijklmnopqrstuvwxyz0123456789"
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=<>?/\\|{}[];':\",./`~0123456789"
         return String((0..<length).map { _ in letters.randomElement()! })
     }
 }
