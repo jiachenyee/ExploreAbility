@@ -17,7 +17,21 @@ extension GameOverViewModel: MCNearbyServiceBrowserDelegate {
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-        browser.invitePeer(peerID, to: session, withContext: nil, timeout: 30)
+        guard peerID.displayName == "Celebration" else { return }
+        
+        browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
+        
+        var retryAttempt = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+            if session.connectedPeers.count > 0 || retryAttempt == 3 {
+                timer.invalidate()
+            } else {
+                browser.invitePeer(peerID, to: session, withContext: nil, timeout: 30)
+            }
+            
+            retryAttempt += 1
+        }
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
