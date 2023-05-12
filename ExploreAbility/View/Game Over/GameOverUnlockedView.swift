@@ -17,6 +17,8 @@ struct GameOverUnlockedView: View {
     
     @State private var imageState = 0
     
+    var onAnimationCompleted: () -> Void
+    
     var body: some View {
         VStack(alignment: .leading) {
             if dataReceivedCompletely {
@@ -72,7 +74,9 @@ YOU COMPLETED THE MISSION.
 REPORT TO AUDITORIUM TO UPLOAD YOUR DEVICE DATA TO THE SERVER.
 
 UPLOADING YOUR DATA:
-PUT YOUR PHONE DOWN AT THE COLLECTION POINT AND STAND BACK. YOUR DATA WILL BE UPLOADED AUTOMATICALLY.
+1. PUT YOUR PHONE DOWN AT THE COLLECTION POINT.
+2. STAND BACK.
+3. THE DATA WILL BE UPLOADED AUTOMATICALLY.
 
 THANK YOU.
 
@@ -117,6 +121,8 @@ THANK YOU.
                 withAnimation {
                     dataReceivedCompletely = true
                 }
+                
+                onAnimationCompleted()
             }
         }
     }
@@ -124,11 +130,5 @@ THANK YOU.
     func randomCharacters(length: Int) -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=<>?/\\|{}[];':\",./`~abcdefghijklmnopqrstuvwxyz0123456789"
         return String((0..<length).map { _ in letters.randomElement()! })
-    }
-}
-
-struct GameOverUnlockedView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameOverUnlockedView()
     }
 }

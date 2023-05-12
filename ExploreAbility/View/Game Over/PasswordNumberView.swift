@@ -24,7 +24,7 @@ struct PasswordNumberButton: View {
                 
                 if !numberToLetter[number].isEmpty {
                     Text(numberToLetter[number])
-                        .font(.system(size: 11, weight: .bold))
+                        .font(.system(size: 11, weight: .medium))
                         .kerning(1.5)
                         .padding(.top, -5)
                 }

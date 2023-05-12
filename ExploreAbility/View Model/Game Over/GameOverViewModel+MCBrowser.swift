@@ -23,8 +23,8 @@ extension GameOverViewModel: MCNearbyServiceBrowserDelegate {
         
         var retryAttempt = 0
         
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
-            if !session.connectedPeers.isEmpty || retryAttempt == 3 {
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [self] timer in
+            if session.connectedPeers.isEmpty || retryAttempt == 3 {
                 timer.invalidate()
             } else {
                 browser.invitePeer(peerID, to: session, withContext: nil, timeout: 30)

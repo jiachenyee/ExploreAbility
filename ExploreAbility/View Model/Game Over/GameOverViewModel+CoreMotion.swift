@@ -18,10 +18,9 @@ extension GameOverViewModel {
             let duration = 3
             let sampleCount = duration * 100
             
-            if data.acceleration.z < -0.9 {
+            if data.acceleration.z < -1 && -0.005..<0.005 ~= data.acceleration.x {
                 if collectedMotionData.count > sampleCount {
-                    print(abs(collectedMotionData.last! - collectedMotionData[collectedMotionData.count - sampleCount]))
-                    if abs(collectedMotionData.last! - collectedMotionData[collectedMotionData.count - sampleCount]) < 0.005 {
+                    if abs(collectedMotionData.last! - collectedMotionData[collectedMotionData.count - sampleCount]) < 0.001 {
                         
                         if state == .scanning {
                             state = .completed

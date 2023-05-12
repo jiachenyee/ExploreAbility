@@ -45,9 +45,11 @@ struct GameOverView: View {
                 }
             }
         case .unlocked, .scanning:
-            GameOverUnlockedView()
+            GameOverUnlockedView {
+                goViewModel.state = .scanning
+            }
         case .completed:
-            EmptyView()
+            Text("DONE")
         }
     }
 }
