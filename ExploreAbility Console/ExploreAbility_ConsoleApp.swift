@@ -19,7 +19,7 @@ struct ExploreAbility_ConsoleApp: App {
         .windowStyle(.hiddenTitleBar)
         
         Window("Nothing to see here.", id: "nothing-to-see-here") {
-            PrivateControllerView()
+            PrivateControllerView(viewModel: viewModel)
         }
     }
 }
