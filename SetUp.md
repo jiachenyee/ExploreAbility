@@ -49,9 +49,9 @@
 21. Done.
 
 ## The Game
-18. To start the game, toggle the switch on the dashboard to start it.
-19. During the game, your main role will be to assign Next Challenges to the teams as they play.
-20. That's about it.
+1. To start the game, toggle the switch on the dashboard to start it.
+2. During the game, your main role will be to assign Next Challenges to the teams as they play.
+3. That's about it.
 
 ## Post-Game Reset
 ### Resetting Player Devices
@@ -59,6 +59,6 @@
 2. Go to Settings, disable all Accessibility features, including triple-click shortcuts.
 
 ### Resetting ExploreAbility Console & Celebration
-1. Quit the console app
-2. Download the celebration logs
-3. Quit the celebration app.
+3. Quit the console app
+4. Download the celebration logs
+5. Quit the celebration app.
