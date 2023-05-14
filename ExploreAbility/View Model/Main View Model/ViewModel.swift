@@ -43,14 +43,9 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     @Published var sessionInfo: SessionInfoConsoleMessage?
     
-    @Published var ipsPosition: IPSPosition?
-    
     var locationData: [LocationDataSource: LocationData] = [:] {
         didSet {
-//            let localPosition = calculatePosition(using: locationData, date: .now)
-            
-//            ipsPosition = localPosition
-            
+            calculateCurrentProgress()
             sendHeartbeatMessage()
         }
     }
@@ -64,6 +59,11 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     var lastHeatbeatMessageDate: Date?
     
     var heartbeatScheduled = false
+    
+    var currentChallenge: NextChallengeConsoleMessage?
+    var nextChallenge: NextChallengeConsoleMessage?
+    
+    var progress: Double = 0.0
     
     override init() {
         deviceId = UserDefaults.standard.string(forKey: "deviceID") ?? String(UUID().uuidString.split(separator: "-")[0])

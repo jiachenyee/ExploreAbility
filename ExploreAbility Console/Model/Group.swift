@@ -18,10 +18,12 @@ struct Group: Identifiable, Equatable {
     var completedChallenges: [GameState] = []
     
     var currentState: GameState?
-    var position: IPSPosition?
+    var progress: Double?
     
     var nextChallenge: GameState?
-    var nextChallengePosition: Position?
+    var nextChallengeBeacon: Int?
+    
+    var currentBeacon: Int?
     
     var isOnline = true
     

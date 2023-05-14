@@ -9,10 +9,8 @@ import Foundation
 
 struct LocationData {
     var position: Position
-    var distance: Double
+    var rssi: Double
     var date: Date
-    
-    var weight: Double
 }
 
 enum LocationDataSource: Int, Hashable {

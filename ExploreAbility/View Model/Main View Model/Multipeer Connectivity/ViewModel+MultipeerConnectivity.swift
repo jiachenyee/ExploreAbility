@@ -76,8 +76,7 @@ extension ViewModel: MCSessionDelegate {
                     }
                 }
             case .nextChallenge(let nextChallenge):
-                #warning("Incomplete implementation")
-                print(nextChallenge)
+                self.nextChallenge = nextChallenge
             }
             
         } catch {

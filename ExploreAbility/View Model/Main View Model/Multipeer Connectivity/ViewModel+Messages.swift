@@ -29,8 +29,7 @@ extension ViewModel {
     
     func sendHeartbeatMessage() {
         guard abs((lastHeatbeatMessageDate ?? .distantPast).timeIntervalSinceNow) > 1,
-              let hostPeerID,
-              let ipsPosition else {
+              let hostPeerID else {
             if !heartbeatScheduled {
                 heartbeatScheduled = true
                 
@@ -47,7 +46,7 @@ extension ViewModel {
         
         lastHeatbeatMessageDate = .now
         
-        let heartbeat = HeartbeatClientMessage(gameState: gameState, ipsPosition: ipsPosition)
+        let heartbeat = HeartbeatClientMessage(gameState: gameState, progress: progress)
         
         do {
             let data = try ClientMessage(payload: .heartbeat(heartbeat)).toData()
@@ -56,7 +55,6 @@ extension ViewModel {
         } catch {
             print(error.localizedDescription)
         }
-        print(heartbeat.ipsPosition)
     }
     
     func sendChallengeStartedMessage() {

@@ -12,20 +12,9 @@ extension ViewModel: CLLocationManagerDelegate {
     func startMonitoring() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let originPosition = sessionInfo?.originPosition, let location = locations.first else { return }
-        
-        locationData[.gps] = LocationData(position: calculateLocalPosition(origin: originPosition,
-                                                                           target: .init(location: location.coordinate)),
-                                          distance: location.horizontalAccuracy,
-                                          date: .now, weight: 5)
-    }
-    
     func calculateLocalPosition(origin: GPSPosition, target: GPSPosition) -> Position {
         // Convert latitude and longitude to radians
         let originLatInRadians = origin.latitude * Double.pi / 180.0
@@ -85,28 +74,26 @@ extension ViewModel: CLLocationManagerDelegate {
                          satisfying beaconConstraint: CLBeaconIdentityConstraint) {
         
         guard let sessionInfo else { return }
+        
         for beacon in beacons where sessionInfo.location.rawValue == beacon.major.intValue {
             print(beacon.major)
             
             guard let locationDataSource = LocationDataSource(rawValue: beacon.minor.intValue),
-                  let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue - 1] else { return }
+                  let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue - 1],
+                  beacon.accuracy > 0 else { return }
             
-            // Distance from center in M
-            var distance: Double?
+//            switch beacon.proximity {
+//            case .immediate:
+//                distance = 1
+//            case .near:
+//                distance = 14
+//            case .far:
+//                distance = 50
+//            default: break
+//            }
             
-            switch beacon.proximity {
-            case .immediate:
-                distance = 1
-            case .near:
-                distance = 14
-            case .far:
-                distance = 50
-            default: break
-            }
-            
-            if let distance, beacon.accuracy > 0 {
-                locationData[locationDataSource] = LocationData(position: localBeaconPosition, distance: distance, date: .now, weight: beacon.accuracy)
-            }
+            locationData[locationDataSource] = LocationData(position: localBeaconPosition,
+                                                            rssi: Double(beacon.rssi), date: .now)
         }
         
 //    case unknown = 0

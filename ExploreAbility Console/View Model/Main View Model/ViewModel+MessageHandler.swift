@@ -70,7 +70,7 @@ extension ViewModel {
         Task {
             await MainActor.run {
                 groups[groupIndex].currentState = heartbeatMessage.gameState
-                groups[groupIndex].position = heartbeatMessage.ipsPosition
+                groups[groupIndex].progress = heartbeatMessage.progress
                 groups[groupIndex].lastUpdated = .now
             }
         }
@@ -89,15 +89,15 @@ extension ViewModel {
         logger.addLog("\(groups[groupIndex].name) started \(challengeStartedMessage.gameState.description)", imageName: "flag.checkered")
     }
     
-    func sendNextChallengeMessage(nextChallenge: GameState, position: Position, to group: inout Group) {
-        let message = NextChallengeConsoleMessage(nextChallenge: nextChallenge, position: position)
+    func sendNextChallengeMessage(nextChallenge: GameState, beacon: Int, to group: inout Group) {
+        let message = NextChallengeConsoleMessage(nextChallenge: nextChallenge, beacon: beacon)
         
         do {
             let data = try ConsoleMessage(payload: .nextChallenge(message)).toData()
             try mcSession?.send(data, toPeers: [group.peerID], with: .reliable)
             
             group.nextChallenge = nextChallenge
-            group.nextChallengePosition = position
+            group.nextChallengeBeacon = beacon
         } catch {
             logger.addLog(.critical, "Failed to send next challenge message", imageName: "bubble.left.and.exclamationmark.bubble.right")
         }
@@ -107,6 +107,8 @@ extension ViewModel {
         guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
         
         groups[groupIndex].completedChallenges.append(challengeFinishedMessage.gameState)
+        groups[groupIndex].currentState = .exploring
+        groups[groupIndex].lastUpdated = .now
         
         logger.addLog("\(groups[groupIndex].name) finished \(challengeFinishedMessage.gameState.description)", imageName: "medal")
     }

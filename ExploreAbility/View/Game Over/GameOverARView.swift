@@ -108,11 +108,6 @@ struct GameOverARView: UIViewRepresentable {
             tvPlaneNode.eulerAngles.x = -.pi / 2
             tvPlaneNode.position = SCNVector3(0, 0.5, 0)
             
-            // create a plane node with a triangle. Two sides of the triangle should be equal (isoceles triangle)
-            // the triangle should be pointing upwards
-            let triangleGeometry = SCNPyramid(width: 0.2, height: 0.2, length: 0.2)
-
-            
             return tvPlaneNode
         }
     }

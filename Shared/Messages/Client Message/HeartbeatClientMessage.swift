@@ -9,7 +9,7 @@ import Foundation
 
 struct HeartbeatClientMessage: MessageContents {
     var gameState: GameState
-    var ipsPosition: IPSPosition
+    var progress: Double
     
     enum BeaconProximity: Int, Codable {
         case unknown = 0
@@ -29,6 +29,6 @@ struct HeartbeatClientMessage: MessageContents {
     
     enum CodingKeys: String, CodingKey {
         case gameState = "gs"
-        case ipsPosition = "p"
+        case progress = "p"
     }
 }
