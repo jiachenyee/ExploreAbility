@@ -19,7 +19,7 @@ struct ConnectionView: View {
     
     var body: some View {
         VStack {
-            if !GameState.all.allSatisfy({ $0.performPreconditionCheck() }) {
+            if !GameState.allChallenges.allSatisfy({ $0.performPreconditionCheck() }) {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundColor(.yellow)

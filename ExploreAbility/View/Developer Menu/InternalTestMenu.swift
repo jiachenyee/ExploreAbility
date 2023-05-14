@@ -15,7 +15,7 @@ struct InternalTestMenu: View {
         NavigationStack {
             List {
                 Section("Challenge Tester") {
-                    ForEach(GameState.all, id: \.description) { gameState in
+                    ForEach(GameState.allChallenges, id: \.description) { gameState in
                         Button {
                             stage = gameState
                         } label: {
@@ -30,7 +30,7 @@ struct InternalTestMenu: View {
                 }
                 
                 Section("Precondition Check") {
-                    ForEach(GameState.all, id: \.description) { gameState in
+                    ForEach(GameState.allChallenges, id: \.description) { gameState in
                         let isReady = gameState.performPreconditionCheck()
                         HStack {
                             Image(systemName: isReady ? "checkmark.circle.fill" : "xmark.circle.fill")

@@ -98,7 +98,13 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable, Comparable {
         GameState(rawValue: rawValue - 1)
     }
     
-    static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reduceMotion, .closedCaptions]
+    static let allChallenges: [GameState] = [
+        .closedCaptions,
+        .reduceMotion,
+        .guidedAccess,
+        .voiceOver,
+        .textSize
+    ]
     
     static func < (lhs: GameState, rhs: GameState) -> Bool {
         lhs.rawValue < rhs.rawValue

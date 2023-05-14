@@ -81,7 +81,7 @@ struct ContentView: View {
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                 UNUserNotificationCenter.current().removeAllDeliveredNotifications()
             case .background:
-//                if GameState.all.contains(viewModel.gameState) {
+                if GameState.allChallenges.contains(viewModel.gameState) {
                     let content = UNMutableNotificationContent()
                     
                     content.title = "You've been gone for a while"
@@ -97,7 +97,7 @@ struct ContentView: View {
                     
                     // add our notification request
                     UNUserNotificationCenter.current().add(request)
-//                }
+                }
             @unknown default: break
             }
         }
