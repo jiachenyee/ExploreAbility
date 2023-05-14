@@ -40,26 +40,7 @@ class ViewModel: NSObject, ObservableObject {
     @Published var isGameActive = false {
         didSet {
             if isGameActive {
-                do {
-                    let data = try ConsoleMessage(payload: .startGame(.init(startDate: .now.addingTimeInterval(3)))).toData()
-                    
-                    guard let mcSession else {
-                        logger.addLog(.critical, "Unable to start game: No MCSession", imageName: "pc")
-                        isGameActive = false
-                        return
-                    }
-                    
-                    try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
-                    logger.addLog(.success, "Sent message to start game", imageName: "flag.checkered.2.crossed")
-                    
-                    Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                        self.logger.addLog(.success, "Game started!", imageName: "flag.checkered.2.crossed")
-                    }
-                    
-                } catch {
-                    logger.addLog(.critical, "Unable to start game: \(error.localizedDescription)", imageName: "pc")
-                    isGameActive = false
-                }
+                sendStartGameMessage()
             }
         }
     }

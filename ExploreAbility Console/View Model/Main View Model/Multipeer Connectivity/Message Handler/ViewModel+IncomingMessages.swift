@@ -45,22 +45,6 @@ extension ViewModel {
         logger.addLog("Received Hello Message from \(peerID.displayName)", imageName: "hand.wave")
     }
     
-    func sendSessionInfoMessage(to peerIDs: [MCPeerID]? = nil) {
-        guard let mcSession, !mcSession.connectedPeers.isEmpty else { return }
-        do {
-            let sessionInfo = SessionInfoConsoleMessage(hostID: mcSession.myPeerID.displayName,
-                                                        location: location,
-                                                        beaconLocations: beaconPositions,
-                                                        originPosition: originPosition)
-            
-            let data = try ConsoleMessage(payload: .sessionInfo(sessionInfo)).toData()
-            
-            try mcSession.send(data, toPeers: peerIDs ?? mcSession.connectedPeers, with: .reliable)
-        } catch {
-            logger.addLog(.critical, "Error responding to Hello: \(error.localizedDescription)", imageName: "waveform.badge.exclamationmark")
-        }
-    }
-    
     fileprivate func receivedHeartbeatMessage(_ heartbeatMessage: HeartbeatClientMessage, from peerID: MCPeerID) {
         guard let groupIndex = groups.firstIndex(where: {
             $0.peerID == peerID
@@ -87,20 +71,6 @@ extension ViewModel {
         }
         
         logger.addLog("\(groups[groupIndex].name) started \(challengeStartedMessage.gameState.description)", imageName: "flag.checkered")
-    }
-    
-    func sendNextChallengeMessage(nextChallenge: GameState, beacon: Int, to group: inout Group) {
-        let message = NextChallengeConsoleMessage(nextChallenge: nextChallenge, beacon: beacon)
-        
-        do {
-            let data = try ConsoleMessage(payload: .nextChallenge(message)).toData()
-            try mcSession?.send(data, toPeers: [group.peerID], with: .reliable)
-            
-            group.nextChallenge = nextChallenge
-            group.nextChallengeBeacon = beacon
-        } catch {
-            logger.addLog(.critical, "Failed to send next challenge message", imageName: "bubble.left.and.exclamationmark.bubble.right")
-        }
     }
     
     fileprivate func receivedChallengeFinishedMessage(_ challengeFinishedMessage: ChallengeFinishedClientMessage) {

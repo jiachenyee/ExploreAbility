@@ -55,6 +55,8 @@
 		32618A652A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */; };
 		32618A672A0E946700448C32 /* NextChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A662A0E946700448C32 /* NextChallenge.swift */; };
 		32618A692A0E965800448C32 /* PrivateControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A682A0E965800448C32 /* PrivateControllerView.swift */; };
+		32618A982A113CF400448C32 /* ViewModel+OutgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A972A113CF400448C32 /* ViewModel+OutgoingMessages.swift */; };
+		32618A9C2A113DC200448C32 /* ViewModel+Incoming Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A9B2A113DC200448C32 /* ViewModel+Incoming Messages.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -102,7 +104,7 @@
 		326D432029F9250800AE2F45 /* game.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D431F29F9250800AE2F45 /* game.mov */; };
 		326D432429F92AC800AE2F45 /* success.mov in Resources */ = {isa = PBXBuildFile; fileRef = 326D432329F92AC800AE2F45 /* success.mov */; };
 		326D432629F9323700AE2F45 /* ReduceMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReduceMotionChallenge.swift */; };
-		3284FBC62A041E1800F6CA13 /* ViewModel+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBC52A041E1800F6CA13 /* ViewModel+Messages.swift */; };
+		3284FBC62A041E1800F6CA13 /* ViewModel+Outgoing Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBC52A041E1800F6CA13 /* ViewModel+Outgoing Messages.swift */; };
 		3284FBC82A041E4700F6CA13 /* ViewModel+PositionCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBC72A041E4700F6CA13 /* ViewModel+PositionCalculation.swift */; };
 		3284FBCB2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBCA2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift */; };
 		3284FBCD2A04206300F6CA13 /* ChallengeFinishedClientMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FBCA2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift */; };
@@ -138,7 +140,7 @@
 		32AB444629FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */; };
 		32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
 		32AB444929FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */; };
-		32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */; };
+		32AB444F29FFCF1900E688BB /* ViewModel+IncomingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB444D29FFCF1900E688BB /* ViewModel+IncomingMessages.swift */; };
 		32AB445529FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
 		32AB445629FFEA0F00E688BB /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */; };
 		32AB445929FFF78900E688BB /* GameStatusDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */; };
@@ -239,6 +241,8 @@
 		32618A642A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameOverViewModel+MCBrowser.swift"; sourceTree = "<group>"; };
 		32618A662A0E946700448C32 /* NextChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallenge.swift; sourceTree = "<group>"; };
 		32618A682A0E965800448C32 /* PrivateControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateControllerView.swift; sourceTree = "<group>"; };
+		32618A972A113CF400448C32 /* ViewModel+OutgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+OutgoingMessages.swift"; sourceTree = "<group>"; };
+		32618A9B2A113DC200448C32 /* ViewModel+Incoming Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Incoming Messages.swift"; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -281,7 +285,7 @@
 		326D432529F9323700AE2F45 /* ReduceMotionChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceMotionChallenge.swift; sourceTree = "<group>"; };
 		326D432729F9578400AE2F45 /* ExploreAbility-Beacon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ExploreAbility-Beacon-Info.plist"; sourceTree = SOURCE_ROOT; };
 		326D432829F9599100AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		3284FBC52A041E1800F6CA13 /* ViewModel+Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Messages.swift"; sourceTree = "<group>"; };
+		3284FBC52A041E1800F6CA13 /* ViewModel+Outgoing Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Outgoing Messages.swift"; sourceTree = "<group>"; };
 		3284FBC72A041E4700F6CA13 /* ViewModel+PositionCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+PositionCalculation.swift"; sourceTree = "<group>"; };
 		3284FBCA2A041F8D00F6CA13 /* ChallengeFinishedClientMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFinishedClientMessage.swift; sourceTree = "<group>"; };
 		3284FBCE2A0435DA00F6CA13 /* SetNextChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNextChallengeView.swift; sourceTree = "<group>"; };
@@ -307,7 +311,7 @@
 		32AB443E29FFC51B00E688BB /* SessionInfoConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444429FFC56C00E688BB /* StartGameConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameConsoleMessage.swift; sourceTree = "<group>"; };
 		32AB444729FFC58800E688BB /* NextChallengeConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengeConsoleMessage.swift; sourceTree = "<group>"; };
-		32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+MessageHandler.swift"; sourceTree = "<group>"; };
+		32AB444D29FFCF1900E688BB /* ViewModel+IncomingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+IncomingMessages.swift"; sourceTree = "<group>"; };
 		32AB445129FFE8B500E688BB /* GroupSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSetupView.swift; sourceTree = "<group>"; };
 		32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomView.swift; sourceTree = "<group>"; };
 		32AB445729FFF78900E688BB /* GameStatusDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusDashboardView.swift; sourceTree = "<group>"; };
@@ -512,6 +516,24 @@
 			path = "Private Window";
 			sourceTree = "<group>";
 		};
+		32618A992A113D7B00448C32 /* Multipeer Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */,
+				32618A9A2A113D8300448C32 /* Message Handler */,
+			);
+			path = "Multipeer Connectivity";
+			sourceTree = "<group>";
+		};
+		32618A9A2A113D8300448C32 /* Message Handler */ = {
+			isa = PBXGroup;
+			children = (
+				32AB444D29FFCF1900E688BB /* ViewModel+IncomingMessages.swift */,
+				32618A972A113CF400448C32 /* ViewModel+OutgoingMessages.swift */,
+			);
+			path = "Message Handler";
+			sourceTree = "<group>";
+		};
 		326D427529F7AEB900AE2F45 = {
 			isa = PBXGroup;
 			children = (
@@ -683,7 +705,8 @@
 			isa = PBXGroup;
 			children = (
 				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
-				3284FBC52A041E1800F6CA13 /* ViewModel+Messages.swift */,
+				3284FBC52A041E1800F6CA13 /* ViewModel+Outgoing Messages.swift */,
+				32618A9B2A113DC200448C32 /* ViewModel+Incoming Messages.swift */,
 			);
 			path = "Multipeer Connectivity";
 			sourceTree = "<group>";
@@ -848,8 +871,7 @@
 			isa = PBXGroup;
 			children = (
 				326D42DD29F8057700AE2F45 /* ViewModel.swift */,
-				32AB443B29FFC47A00E688BB /* ViewModel+MCSessionDelegate.swift */,
-				32AB444D29FFCF1900E688BB /* ViewModel+MessageHandler.swift */,
+				32618A992A113D7B00448C32 /* Multipeer Connectivity */,
 			);
 			path = "Main View Model";
 			sourceTree = "<group>";
@@ -1150,10 +1172,11 @@
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
 				32AB447B2A03365F00E688BB /* MCBrowserManager.swift in Sources */,
 				32AB44792A025ABF00E688BB /* LocationData.swift in Sources */,
-				3284FBC62A041E1800F6CA13 /* ViewModel+Messages.swift in Sources */,
+				3284FBC62A041E1800F6CA13 /* ViewModel+Outgoing Messages.swift in Sources */,
 				32AB443929FFBEA800E688BB /* ConsoleMessage.swift in Sources */,
 				32AB445A29FFF87700E688BB /* GroupSetupView.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
+				32618A9C2A113DC200448C32 /* ViewModel+Incoming Messages.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
 				32AB443529FFBAF500E688BB /* ChallengeStartedClientMessage.swift in Sources */,
 				32618A652A0E107D00448C32 /* GameOverViewModel+MCBrowser.swift in Sources */,
@@ -1268,6 +1291,7 @@
 				3202748229FCE6E100377188 /* DashboardElement.swift in Sources */,
 				3284FBD12A04392600F6CA13 /* NothingToSeeHereDashboardView.swift in Sources */,
 				326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */,
+				32618A982A113CF400448C32 /* ViewModel+OutgoingMessages.swift in Sources */,
 				320274E729FD4A0D00377188 /* BeaconOnlineDashboardView.swift in Sources */,
 				3284FBCF2A0435DA00F6CA13 /* SetNextChallengeView.swift in Sources */,
 				320274E529FD441800377188 /* MapSceneView.swift in Sources */,
@@ -1284,7 +1308,7 @@
 				32AB445929FFF78900E688BB /* GameStatusDashboardView.swift in Sources */,
 				320274DE29FD1A5400377188 /* RoomCaptureData.swift in Sources */,
 				32AB442829FF9E9800E688BB /* MapSceneRenderView+MapCustomization.swift in Sources */,
-				32AB444F29FFCF1900E688BB /* ViewModel+MessageHandler.swift in Sources */,
+				32AB444F29FFCF1900E688BB /* ViewModel+IncomingMessages.swift in Sources */,
 				326D42FB29F8FDAC00AE2F45 /* ViewModel.swift in Sources */,
 				32AB442629FF9D4100E688BB /* MapSceneRenderView+SceneSetup.swift in Sources */,
 				32AB445D2A00034200E688BB /* GPSHomingDashboardView.swift in Sources */,
