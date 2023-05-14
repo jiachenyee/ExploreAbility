@@ -67,6 +67,11 @@ struct ContentView: View {
             case .gameOver:
                 GameOverView()
             }
+            
+            Image(systemName: viewModel.isConnected ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
+                .foregroundColor(viewModel.isConnected ? .green : .red)
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
         .onChange(of: scenePhase) { newPhase in
             switch newPhase {
