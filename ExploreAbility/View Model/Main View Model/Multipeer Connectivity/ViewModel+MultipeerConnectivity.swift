@@ -34,11 +34,13 @@ extension ViewModel: MCSessionDelegate {
         hostPeerID = peerID
         
         if state == .connected {
-            if sessionInfo == nil {
-                Task {
-                    await MainActor.run {
+            Task {
+                await MainActor.run {
+                    if sessionInfo == nil {
                         gameState = .groupSetUp
                     }
+                    
+                    isConnected = true
                 }
             }
             
@@ -46,6 +48,12 @@ extension ViewModel: MCSessionDelegate {
         } else if state == .notConnected, let location = sessionInfo?.location {
             browserManager.start(location: location)
             print("Reconnecting")
+            
+            Task {
+                await MainActor.run {
+                    isConnected = false
+                }
+            }
         }
     }
     
@@ -68,7 +76,7 @@ extension ViewModel: MCSessionDelegate {
             case .startGame(let startGame):
                 Task {
                     let ttl = abs(startGame.startDate.timeIntervalSinceNow) * 1000
-
+                    
                     try await Task.sleep(for: .milliseconds(Int(ttl)))
                     
                     await MainActor.run {

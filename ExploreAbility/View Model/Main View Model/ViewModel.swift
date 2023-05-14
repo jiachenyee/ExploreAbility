@@ -23,6 +23,8 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     let deviceId: String
     
+    @Published var isConnected = false
+    
     @Published var completedChallenges: [GameState] = []
     @Published var gameState = GameState.connection {
         didSet {
