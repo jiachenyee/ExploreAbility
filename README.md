@@ -35,6 +35,6 @@
 - [**📍 Indoor Positioning**](IndoorPositioning.md): How we know where on earth (or more specifically, in the academy) you are.
 - [**💬 Communication**](Communication.md): How a connection is established, what data gets sent between the Console and Client apps.
 - [**🏆 Challenges**](Challenges.md): Find the challenges, and solutions.
-- [**🏁 Game Over**](GameOver.md): How the game over sequence works
+- [**🎉 Celebration**](Celebration.md): How the game over sequence works
 
 > Designed by [Jia Chen](https://github.com/jiachenyee) and [Tafa](https://github.com/ratafani) for the Apple Developer Academy @ Infinite Learning.
