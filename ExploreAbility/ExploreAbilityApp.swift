@@ -14,6 +14,7 @@ struct ExploreAbilityApp: App {
             ContentView()
                 .persistentSystemOverlays(.hidden)
                 .statusBarHidden()
+                .preferredColorScheme(.light)
         }
     }
 }
