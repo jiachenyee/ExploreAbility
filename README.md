@@ -12,6 +12,7 @@
 - **UserNotifications**: Send notification if the user leaves the app for too long.
 - **ActivityKit/WidgetKit**: Create Live Activity indicating challenge progress.
 - **CoreHaptics**: Provide haptic feedback to locate beacons.
+- **ARKit**: Game Over sequence
  
 ### console app 
 - **SwiftUI**: App interface.
@@ -34,5 +35,6 @@
 - [**📍 Indoor Positioning**](IndoorPositioning.md): How we know where on earth (or more specifically, in the academy) you are.
 - [**💬 Communication**](Communication.md): How a connection is established, what data gets sent between the Console and Client apps.
 - [**🏆 Challenges**](Challenges.md): Find the challenges, and solutions.
+- [**🏁 Game Over**](GameOver.md): How the game over sequence works
 
 > Designed by [Jia Chen](https://github.com/jiachenyee) and [Tafa](https://github.com/ratafani) for the Apple Developer Academy @ Infinite Learning.
