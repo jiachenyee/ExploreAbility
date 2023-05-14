@@ -72,6 +72,7 @@ struct ContentView: View {
                 .foregroundColor(viewModel.isConnected ? .green : .red)
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .accessibilityHidden(true)
         }
         .onChange(of: scenePhase) { newPhase in
             switch newPhase {
