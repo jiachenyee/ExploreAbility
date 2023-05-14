@@ -94,6 +94,10 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable, Comparable {
         GameState(rawValue: rawValue + 1)
     }
     
+    var previous: GameState? {
+        GameState(rawValue: rawValue - 1)
+    }
+    
     static let all: [GameState] = [.textSize, .voiceOver, .guidedAccess, .reduceMotion, .closedCaptions]
     
     static func < (lhs: GameState, rhs: GameState) -> Bool {

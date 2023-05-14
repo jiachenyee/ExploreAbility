@@ -12,6 +12,8 @@ struct SetNextChallengeView: View {
     
     var roomCaptureData: RoomCaptureData
     
+    var beaconPositions: [Position?]
+    
     var body: some View {
         let walls = roomCaptureData.walls
         GeometryReader { reader in
@@ -58,16 +60,22 @@ struct SetNextChallengeView: View {
                 }
                 .stroke(lineWidth: 2)
                 
-                //                    Rectangle()
-                //                        .fill(.clear)
-                //                        .onDrop(of: [.plainText], delegate: BeaconDropDelegate { value, location in
-                //                            Task {
-                //                                await MainActor.run {
-                //                                    beaconPositions[value] = .init(x: (location.x - offset) / multiplier + lowestX,
-                //                                                                   y: location.y / multiplier + lowestY)
-                //                                }
-                //                            }
-                //                        })
+                ForEach(Array(beaconPositions.enumerated()), id: \.offset) { (index, beacon) in
+                    if let beacon = beacon {
+                        ZStack {
+                            Circle()
+                                .fill(Color.blue)
+                                .overlay {
+                                    Text("\(index + 1)")
+                                        .font(.title)
+                                        .foregroundColor(.white)
+                                }
+                                .frame(width: 50, height: 50)
+                                .position(x: (beacon.x - lowestX) * multiplier + offset,
+                                          y: (beacon.y - lowestY) * multiplier)
+                        }
+                    }
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

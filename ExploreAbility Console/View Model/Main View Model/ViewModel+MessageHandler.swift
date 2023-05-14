@@ -22,7 +22,7 @@ extension ViewModel {
                 receivedHeartbeatMessage(heartbeatMessage, from: peerID)
                 
             case .challengeStarted(let challengeStartedMessage):
-                receivedChallengeStartMessage(challengeStartedMessage)
+                receivedChallengeStartMessage(challengeStartedMessage, from: peerID)
                 
             case .challengeFinished(let challengeFinishedMessage):
                 receivedChallengeFinishedMessage(challengeFinishedMessage)
@@ -76,10 +76,12 @@ extension ViewModel {
         }
     }
     
-    fileprivate func receivedChallengeStartMessage(_ challengeStartedMessage: ChallengeStartedClientMessage) {
-        guard let groupIndex = groups.firstIndex(where: { $0.peerID == peerID }) else { return }
+    fileprivate func receivedChallengeStartMessage(_ challengeStartedMessage: ChallengeStartedClientMessage, from peerID: MCPeerID) {
+        guard let groupIndex = groups.firstIndex(where: { $0.peerID.displayName == peerID.displayName }) else { return }
         
-        if let nextChallenge = groups[groupIndex].completedChallenges.max()?.next {
+        groups[groupIndex].currentState = challengeStartedMessage.gameState
+        
+        if let nextChallenge = challengeStartedMessage.gameState.next {
             nextChallengeRequests.append(NextChallenge(groupId: groups[groupIndex].id,
                                                        challenge: nextChallenge))
         }
