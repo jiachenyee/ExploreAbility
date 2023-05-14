@@ -68,4 +68,16 @@ extension ViewModel {
             print(error.localizedDescription)
         }
     }
+    
+    func sendChallengeCompletedMessage() {
+        guard let hostPeerID, let finishedChallenge = completedChallenges.last else { return }
+        
+        do {
+            let data = try ClientMessage(payload: .challengeFinished(ChallengeFinishedClientMessage(gameState: finishedChallenge, date: .now))).toData()
+            
+            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

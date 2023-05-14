@@ -34,6 +34,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .gameOver
                         viewModel.completedChallenges.append(.textSize)
+                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .voiceOver:
@@ -41,6 +42,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.voiceOver)
+                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .closedCaptions:
@@ -48,6 +50,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.closedCaptions)
+                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .reduceMotion:
@@ -55,6 +58,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.reduceMotion)
+                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .guidedAccess:
@@ -62,6 +66,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.guidedAccess)
+                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .gameOver:
