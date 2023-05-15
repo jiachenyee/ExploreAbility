@@ -57,6 +57,8 @@
 		32618A692A0E965800448C32 /* PrivateControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A682A0E965800448C32 /* PrivateControllerView.swift */; };
 		32618A982A113CF400448C32 /* ViewModel+OutgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A972A113CF400448C32 /* ViewModel+OutgoingMessages.swift */; };
 		32618A9C2A113DC200448C32 /* ViewModel+Incoming Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A9B2A113DC200448C32 /* ViewModel+Incoming Messages.swift */; };
+		32618A9E2A11C99A00448C32 /* SetUserNextBeaconLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A9D2A11C99A00448C32 /* SetUserNextBeaconLocationView.swift */; };
+		32618AA02A11C9B200448C32 /* GroupNextChallengeRequestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32618A9F2A11C9B200448C32 /* GroupNextChallengeRequestRow.swift */; };
 		326D428229F7AEB900AE2F45 /* ExploreAbilityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */; };
 		326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D428329F7AEB900AE2F45 /* ContentView.swift */; };
 		326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D428529F7AEBA00AE2F45 /* Assets.xcassets */; };
@@ -243,6 +245,8 @@
 		32618A682A0E965800448C32 /* PrivateControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateControllerView.swift; sourceTree = "<group>"; };
 		32618A972A113CF400448C32 /* ViewModel+OutgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+OutgoingMessages.swift"; sourceTree = "<group>"; };
 		32618A9B2A113DC200448C32 /* ViewModel+Incoming Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Incoming Messages.swift"; sourceTree = "<group>"; };
+		32618A9D2A11C99A00448C32 /* SetUserNextBeaconLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserNextBeaconLocationView.swift; sourceTree = "<group>"; };
+		32618A9F2A11C9B200448C32 /* GroupNextChallengeRequestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNextChallengeRequestRow.swift; sourceTree = "<group>"; };
 		326D427E29F7AEB900AE2F45 /* ExploreAbility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreAbility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreAbilityApp.swift; sourceTree = "<group>"; };
 		326D428329F7AEB900AE2F45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				32618A682A0E965800448C32 /* PrivateControllerView.swift */,
+				32618A9F2A11C9B200448C32 /* GroupNextChallengeRequestRow.swift */,
+				32618A9D2A11C99A00448C32 /* SetUserNextBeaconLocationView.swift */,
 				3284FBCE2A0435DA00F6CA13 /* SetNextChallengeView.swift */,
 			);
 			path = "Private Window";
@@ -1273,6 +1279,7 @@
 				3202747E29FCDA1400377188 /* DashboardView.swift in Sources */,
 				3202747829FCD31D00377188 /* IPSPosition.swift in Sources */,
 				32AB44622A003BF400E688BB /* MapPreviewView.swift in Sources */,
+				32618AA02A11C9B200448C32 /* GroupNextChallengeRequestRow.swift in Sources */,
 				3202749129FCF33600377188 /* RoomModelImportDashboardView.swift in Sources */,
 				32AB441D29FF616F00E688BB /* MessageContents.swift in Sources */,
 				32AB44752A02041200E688BB /* GPSPosition.swift in Sources */,
@@ -1291,6 +1298,7 @@
 				3202748229FCE6E100377188 /* DashboardElement.swift in Sources */,
 				3284FBD12A04392600F6CA13 /* NothingToSeeHereDashboardView.swift in Sources */,
 				326D42CA29F804A800AE2F45 /* ExploreAbility_ConsoleApp.swift in Sources */,
+				32618A9E2A11C99A00448C32 /* SetUserNextBeaconLocationView.swift in Sources */,
 				32618A982A113CF400448C32 /* ViewModel+OutgoingMessages.swift in Sources */,
 				320274E729FD4A0D00377188 /* BeaconOnlineDashboardView.swift in Sources */,
 				3284FBCF2A0435DA00F6CA13 /* SetNextChallengeView.swift in Sources */,

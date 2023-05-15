@@ -21,17 +21,8 @@ struct PrivateControllerView: View {
                     ScrollView {
                         LazyVStack {
                             ForEach(viewModel.nextChallengeRequests) { nextChallengeRequest in
-                                if let group = viewModel.groups.first(where: {
-                                    $0.id == nextChallengeRequest.groupId
-                                }) {
-                                    VStack {
-                                        Text("\(group.name) requested for the next challenge.")
-                                        Button("Assign") {
-                                            
-                                        }
-                                    }
-                                }
-                                Divider()
+                                GroupNextChallengeRequestRow(viewModel: viewModel,
+                                                             nextChallengeRequest: nextChallengeRequest)
                             }
                         }
                     }
@@ -55,8 +46,7 @@ struct PrivateControllerView: View {
                         
                         ForEach(0..<7) { beaconIndex in
                             VStack(alignment: .leading) {
-                                
-                                Text("Beacon \(beaconIndex)")
+                                Text("Beacon \(beaconIndex + 1)")
                                     .font(.title2)
                                     .fontWeight(.medium)
                                 
@@ -114,7 +104,7 @@ struct PrivateControllerView: View {
                 if group.currentState == .exploring {
                     arrivals.append(group.name)
                 } else {
-                    arrivals.append(group.name)
+                    at.append(group.name)
                 }
             } else if group.nextChallengeBeacon == beaconIndex + 1 {
                 departures.append(group.name)

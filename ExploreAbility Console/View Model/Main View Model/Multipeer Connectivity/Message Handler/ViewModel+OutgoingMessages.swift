@@ -26,6 +26,10 @@ extension ViewModel {
     }
 
     func sendNextChallengeMessage(nextChallenge: GameState, beacon: Int, to group: inout Group) {
+        nextChallengeRequests.removeAll { nextChallenge in
+            nextChallenge.groupId == group.id
+        }
+        
         let message = NextChallengeConsoleMessage(nextChallenge: nextChallenge, beacon: beacon)
         
         do {
