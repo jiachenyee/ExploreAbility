@@ -69,7 +69,11 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     var currentChallenge: NextChallengeConsoleMessage?
     var nextChallenge: NextChallengeConsoleMessage?
     
-    var progress: Double = 0.0
+    var progress: Double = 0.0 {
+        didSet {
+            
+        }
+    }
     
     override init() {
         deviceId = UserDefaults.standard.string(forKey: "deviceID") ?? String(UUID().uuidString.split(separator: "-")[0])

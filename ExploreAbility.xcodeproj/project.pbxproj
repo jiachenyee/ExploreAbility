@@ -170,6 +170,7 @@
 		32AB44A02A03798700E688BB /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */; };
 		32AB44A12A03798A00E688BB /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */; };
 		32ADA1F02A120E5C007E071B /* AdminSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */; };
+		32ADA1F22A13203C007E071B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADA1F12A13203C007E071B /* HapticsManager.swift */; };
 		32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */; };
 		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
 		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
@@ -340,6 +341,7 @@
 		32AB449D2A036D3000E688BB /* ChallengeBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeBallView.swift; sourceTree = "<group>"; };
 		32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityAttributes.swift; sourceTree = "<group>"; };
 		32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSetUpView.swift; sourceTree = "<group>"; };
+		32ADA1F12A13203C007E071B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+LiveActivities.swift"; sourceTree = "<group>"; };
 		32E418C12A0B82B300D04174 /* GameOverARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverARView.swift; sourceTree = "<group>"; };
 		32E418E02A0C9C3800D04174 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 			children = (
 				32618A5D2A0E0CF700448C32 /* Main View Model */,
 				32618A5C2A0E0CF100448C32 /* Game Over */,
+				32ADA1F12A13203C007E071B /* HapticsManager.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1220,6 +1223,7 @@
 				32AB444529FFC56C00E688BB /* StartGameConsoleMessage.swift in Sources */,
 				32A5344129FA63B1009BC57D /* ViewModel+CoreLocation.swift in Sources */,
 				32AB442B29FFBAAE00E688BB /* ClientMessage.swift in Sources */,
+				32ADA1F22A13203C007E071B /* HapticsManager.swift in Sources */,
 				32618A572A0DD86000448C32 /* PasswordNumberView.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
 				32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */,

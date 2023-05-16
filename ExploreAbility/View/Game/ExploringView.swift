@@ -16,6 +16,8 @@ struct ExploringView: View {
     @State var isTextShown = false
     @State var tapCounter = 0
     
+    @StateObject var hapticsManager = HapticsManager()
+    
     var body: some View {
         ZStack {
             Color.black
@@ -63,5 +65,9 @@ struct ExploringView: View {
             }
         }
         .foregroundColor(.white)
+        .onAppear {
+            hapticsManager.viewModel = viewModel
+            hapticsManager.play()
+        }
     }
 }
