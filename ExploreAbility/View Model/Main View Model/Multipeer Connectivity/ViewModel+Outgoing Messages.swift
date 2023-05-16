@@ -13,6 +13,9 @@ extension ViewModel {
     func sendHelloMessage(initialBeacon: Int, nextBeacon: Int) {
         guard let hostPeerID else { return }
         
+        currentChallenge = NextChallengeConsoleMessage(nextChallenge: .waitingRoom, beacon: initialBeacon)
+        nextChallenge = NextChallengeConsoleMessage(nextChallenge: .closedCaptions, beacon: nextBeacon)
+        
         let helloMessage = HelloClientMessage(groupName: groupName, initialBeacon: initialBeacon, nextBeacon: nextBeacon)
         do {
             let data = try ClientMessage(payload: .hello(helloMessage)).toData()

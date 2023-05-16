@@ -62,10 +62,8 @@ class MapSceneRenderView: SCNView {
                 guard let node = groupsGroupNode.childNode(withName: "\(n)", recursively: false) else { return }
                 
                 if let progress = group.progress,
-                   let initialBeacon = group.currentBeacon,
-                   let nextBeacon = group.nextChallengeBeacon,
-                   let initialPosition = beaconPositions[initialBeacon],
-                   let nextPosition = beaconPositions[nextBeacon] {
+                   let initialPosition = beaconPositions[group.currentBeacon],
+                   let nextPosition = beaconPositions[group.nextChallengeBeacon] {
                     
                     let position = initialPosition.getMidpointPosition(with: nextPosition, progress: progress)
                     

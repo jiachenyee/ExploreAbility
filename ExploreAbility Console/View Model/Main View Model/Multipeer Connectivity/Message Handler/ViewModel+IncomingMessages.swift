@@ -36,7 +36,11 @@ extension ViewModel {
     fileprivate func receivedHelloMessage(_ helloMessage: HelloClientMessage, from peerID: MCPeerID) {
         Task {
             await MainActor.run {
-                groups.append(Group(name: helloMessage.groupName, peerID: peerID))
+                groups.append(Group(name: helloMessage.groupName,
+                                    peerID: peerID,
+                                    nextChallenge: .closedCaptions,
+                                    nextChallengeBeacon: helloMessage.nextBeacon,
+                                    currentBeacon: helloMessage.initialBeacon))
             }
         }
         

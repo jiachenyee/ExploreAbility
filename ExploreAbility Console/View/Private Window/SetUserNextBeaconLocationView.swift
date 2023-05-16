@@ -23,7 +23,7 @@ struct SetUserNextBeaconLocationView: View {
         let group = viewModel.groups[groupIndex]
         
         Form {
-            TextField("Current Beacon", text: .constant(group.currentBeacon?.description ?? "No Beacon"))
+            TextField("Current Beacon", text: .constant(group.currentBeacon.description))
                 .textFieldStyle(.plain)
                 .disabled(true)
             

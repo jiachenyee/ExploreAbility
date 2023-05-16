@@ -20,10 +20,10 @@ struct Group: Identifiable, Equatable {
     var currentState: GameState?
     var progress: Double?
     
-    var nextChallenge: GameState?
-    var nextChallengeBeacon: Int?
+    var nextChallenge: GameState
+    var nextChallengeBeacon: Int
     
-    var currentBeacon: Int?
+    var currentBeacon: Int
     
     var isOnline = true
     
