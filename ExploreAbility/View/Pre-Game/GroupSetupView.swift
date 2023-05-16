@@ -11,20 +11,41 @@ struct GroupSetupView: View {
     
     @ObservedObject var viewModel: ViewModel
     
+    @State private var currentBeacon = 0
+    @State private var nextBeacon = 1
+    
+    @State private var isAdminSheetPresented = false
+    
     var body: some View {
-        NavigationStack {
-            Form {
-                Section("Group Name") {
-                    TextField("My Group Name", text: $viewModel.groupName)
-                }
-                
-                Section {
-                    Button("Next") {
-                        viewModel.sendHelloMessage()
+        ZStack(alignment: .topTrailing) {
+            NavigationStack {
+                Form {
+                    Section("Group Name") {
+                        TextField("My Group Name", text: $viewModel.groupName)
+                    }
+                    
+                    if viewModel.headingBetweenInitialAndNext != nil {
+                        Section {
+                            Button("Next") {
+                                viewModel.sendHelloMessage(initialBeacon: currentBeacon + 1, nextBeacon: nextBeacon + 1)
+                            }
+                        }
                     }
                 }
+                .navigationTitle("Set Up")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isAdminSheetPresented = true
+                        } label: {
+                            Image(systemName: viewModel.headingBetweenInitialAndNext != nil ? "person.circle" : "person.crop.circle.badge.exclamationmark")
+                        }
+                    }
+                }
+                .sheet(isPresented: $isAdminSheetPresented) {
+                    AdminSetUpView(viewModel: viewModel, currentBeacon: $currentBeacon, nextBeacon: $nextBeacon)
+                }
             }
-            .navigationTitle("Set Up")
         }
     }
 }

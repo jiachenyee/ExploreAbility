@@ -10,10 +10,10 @@ import MultipeerConnectivity
 import SwiftUI
 
 extension ViewModel {
-    func sendHelloMessage() {
+    func sendHelloMessage(initialBeacon: Int, nextBeacon: Int) {
         guard let hostPeerID else { return }
         
-        let helloMessage = HelloClientMessage(groupName: groupName)
+        let helloMessage = HelloClientMessage(groupName: groupName, initialBeacon: initialBeacon, nextBeacon: nextBeacon)
         do {
             let data = try ClientMessage(payload: .hello(helloMessage)).toData()
             

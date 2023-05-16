@@ -169,6 +169,7 @@
 		32AB449E2A036D3000E688BB /* ChallengeBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449D2A036D3000E688BB /* ChallengeBallView.swift */; };
 		32AB44A02A03798700E688BB /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */; };
 		32AB44A12A03798A00E688BB /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */; };
+		32ADA1F02A120E5C007E071B /* AdminSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */; };
 		32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */; };
 		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
 		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
@@ -338,6 +339,7 @@
 		32AB449B2A0362EE00E688BB /* GameState+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameState+Validation.swift"; sourceTree = "<group>"; };
 		32AB449D2A036D3000E688BB /* ChallengeBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeBallView.swift; sourceTree = "<group>"; };
 		32AB449F2A03798700E688BB /* LiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityAttributes.swift; sourceTree = "<group>"; };
+		32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSetUpView.swift; sourceTree = "<group>"; };
 		32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+LiveActivities.swift"; sourceTree = "<group>"; };
 		32E418C12A0B82B300D04174 /* GameOverARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverARView.swift; sourceTree = "<group>"; };
 		32E418E02A0C9C3800D04174 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 			children = (
 				32AB445429FFEA0F00E688BB /* WaitingRoomView.swift */,
 				32AB445129FFE8B500E688BB /* GroupSetupView.swift */,
+				32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */,
 				32AB44672A003E6500E688BB /* Connection View */,
 			);
 			path = "Pre-Game";
@@ -1191,6 +1194,7 @@
 				32AB444829FFC58800E688BB /* NextChallengeConsoleMessage.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
+				32ADA1F02A120E5C007E071B /* AdminSetUpView.swift in Sources */,
 				3284FBC82A041E4700F6CA13 /* ViewModel+PositionCalculation.swift in Sources */,
 				3202747A29FCD34700377188 /* IPSPosition.swift in Sources */,
 				32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */,

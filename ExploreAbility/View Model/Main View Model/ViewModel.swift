@@ -26,6 +26,10 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var isConnected = false
     
     @Published var completedChallenges: [GameState] = []
+    
+    @Published var heading = 0.0
+    @Published var headingBetweenInitialAndNext: Double?
+    
     @Published var gameState = GameState.connection {
         didSet {
             switch gameState {
