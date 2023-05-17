@@ -33,7 +33,9 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var gameState = GameState.connection {
         didSet {
             switch gameState {
-            case .exploring: say(text: "Put on your blindfolds.")
+            case .exploring:
+                nextChallengeInitialRSSI = nil
+                say(text: "Put on your blindfolds.")
             case .internalTest, .groupSetUp, .waitingRoom: break
             case .gameOver:
                 leaveSession()
@@ -69,11 +71,9 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     var currentChallenge: NextChallengeConsoleMessage?
     var nextChallenge: NextChallengeConsoleMessage?
     
-    var progress: Double = 0.0 {
-        didSet {
-            
-        }
-    }
+    var nextChallengeInitialRSSI: Double?
+    
+    var progress: Double = 0.0
     
     override init() {
         deviceId = UserDefaults.standard.string(forKey: "deviceID") ?? String(UUID().uuidString.split(separator: "-")[0])
