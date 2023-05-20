@@ -34,7 +34,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         didSet {
             switch gameState {
             case .exploring:
-                nextChallengeInitialRSSI = nil
+                nextChallengeInitialAccuracy = nil
                 say(text: "Put on your blindfolds.")
             case .internalTest, .groupSetUp, .waitingRoom: break
             case .gameOver:
@@ -71,7 +71,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     var currentChallenge: NextChallengeConsoleMessage?
     var nextChallenge: NextChallengeConsoleMessage?
     
-    var nextChallengeInitialRSSI: Double?
+    var nextChallengeInitialAccuracy: Double?
     
     var progress: Double = 0.0
     

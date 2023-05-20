@@ -76,8 +76,6 @@ extension ViewModel: CLLocationManagerDelegate {
         guard let sessionInfo else { return }
         
         for beacon in beacons where sessionInfo.location.rawValue == beacon.major.intValue {
-            print(beacon.major)
-            
             guard let locationDataSource = LocationDataSource(rawValue: beacon.minor.intValue),
                   let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue - 1],
                   beacon.accuracy > 0 else { return }
@@ -92,8 +90,22 @@ extension ViewModel: CLLocationManagerDelegate {
 //            default: break
 //            }
             
+            let accuracy: Double
+            
+            switch beacon.proximity {
+            case .immediate:
+                accuracy = -1
+            case .near:
+                accuracy = beacon.accuracy
+            case .far:
+                accuracy = -2
+            default:
+                accuracy = -3
+            }
+            
             locationData[locationDataSource] = LocationData(position: localBeaconPosition,
-                                                            rssi: Double(beacon.rssi), date: .now)
+                                                            accuracy: accuracy,
+                                                            date: .now)
         }
         
 //    case unknown = 0

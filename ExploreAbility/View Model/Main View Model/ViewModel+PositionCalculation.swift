@@ -12,23 +12,29 @@ extension ViewModel {
         guard let nextChallenge,
               let nextChallengeBeaconRanging = locationData[LocationDataSource(rawValue: nextChallenge.beacon)!] else { return }
         
-        if nextChallengeInitialRSSI == nil {
-            nextChallengeInitialRSSI = nextChallengeBeaconRanging.rssi
+        print("HELP")
+        switch nextChallengeBeaconRanging.accuracy {
+        case -1: progress = 1
+        case -2, -3: progress = 0
+        default:
+            if nextChallengeInitialAccuracy == nil {
+                nextChallengeInitialAccuracy = nextChallengeBeaconRanging.accuracy
+            }
+            
+            guard let nextChallengeInitialAccuracy else { return }
+            
+            let progress = getProgress(initialRSSI: nextChallengeInitialAccuracy, currentRSSI: nextChallengeBeaconRanging.accuracy)
+            
+            self.progress = progress
         }
-        
-        guard let nextChallengeInitialRSSI else { return }
-        
-        let progress = getProgress(initialRSSI: nextChallengeInitialRSSI, currentRSSI: nextChallengeBeaconRanging.rssi)
-        
-        self.progress = progress
         
         print(progress)
         
     }
     
     func getProgress(initialRSSI: Double, currentRSSI: Double) -> Double {
-        let clampedInitialRSSI = abs(min(initialRSSI, -40)) - 40
-        let clampedCurrentRSSI = abs(min(currentRSSI, -40)) - 40
+        let clampedInitialRSSI = initialRSSI
+        let clampedCurrentRSSI = currentRSSI
         
         let value = (clampedInitialRSSI - clampedCurrentRSSI) / clampedInitialRSSI
         
