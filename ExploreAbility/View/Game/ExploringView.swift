@@ -69,5 +69,8 @@ struct ExploringView: View {
             hapticsManager.viewModel = viewModel
             hapticsManager.play()
         }
+        .onDisappear {
+            hapticsManager.stop()
+        }
     }
 }

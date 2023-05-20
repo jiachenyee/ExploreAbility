@@ -14,7 +14,9 @@ class HapticsManager: ObservableObject {
     
     var viewModel: ViewModel!
     
-    private var progress: Double {
+    private(set) var isPlaying = false
+    
+    var progress: Double {
         viewModel.progress
     }
     
@@ -32,14 +34,24 @@ class HapticsManager: ObservableObject {
     }
     
     func play() {
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
+        guard !isPlaying else { return }
+        
+        isPlaying = true
+        
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { mainTimer in
+            guard self.isPlaying else {
+                mainTimer.invalidate()
+                return
+            }
+            
             let buzzCount = Int(floor((self.progress * 20)) + 1)
             
             let buzzDuration = 1.25 / (Double(buzzCount) * 2)
             
             var count = 0
+            
             Timer.scheduledTimer(withTimeInterval: buzzDuration, repeats: true) { timer in
-                if count < buzzCount {
+                if count < buzzCount && self.isPlaying {
                     self.playHaptic(time: buzzDuration, intensity: 1, sharpness: 1)
                 } else {
                     timer.invalidate()
@@ -47,6 +59,11 @@ class HapticsManager: ObservableObject {
                 count += 1
             }
         }
+    }
+    
+    func stop() {
+        guard isPlaying else { return }
+        isPlaying = false
     }
     
     private func playHaptic(time: TimeInterval,
