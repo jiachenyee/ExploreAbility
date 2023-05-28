@@ -72,7 +72,7 @@ struct ContentView: View {
                     }
                 }
             case .gameOver:
-                GameOverView()
+                GameOverView(groupName: viewModel.groupName)
             }
             
             if viewModel.gameState != .gameOver {

@@ -45,8 +45,10 @@ class GameOverViewModel: ObservableObject {
                     ArrivedGroup(name: groupName, dateArrived: Date(timeIntervalSince1970: date))
                 }.sorted { $0.dateArrived < $1.dateArrived }
                 
-                if arrivedGroups.count != values.count {
-                    Timer.scheduledTimer(withTimeInterval: 1 + Double(arrivedGroups.count) * 0.25,
+                if arrivedGroups.count != values.count,
+                    let latestValue = values.last {
+                    
+                    Timer.scheduledTimer(withTimeInterval: -abs(latestValue.dateArrived.timeIntervalSinceNow) + 1 + Double(arrivedGroups.count) * 0.25,
                                          repeats: false) { [self] _ in
                         arrivedGroups = values
                         playAnimation()

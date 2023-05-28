@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GameOverView: View {
     
+    var groupName: String
+    
     @State var isPasswordViewVisible = false
     
     @StateObject private var goViewModel = GameOverViewModel()
@@ -44,18 +46,21 @@ struct GameOverView: View {
                     }
                 }
             }
+            .onAppear {
+                goViewModel.groupName = groupName
+            }
         case .unlocked, .scanning:
             GameOverUnlockedView {
                 goViewModel.state = .scanning
             }
         case .completed:
-            Text("DONE")
+            GeometryReader { context in
+                Rectangle()
+                    .fill(.green)
+                    .frame(width: context.size.width * goViewModel.animationPercentage,
+                           alignment: .trailing)
+                    .edgesIgnoringSafeArea(.all)
+            }
         }
-    }
-}
-
-struct GameOverView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameOverView()
     }
 }
