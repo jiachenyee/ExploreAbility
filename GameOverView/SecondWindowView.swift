@@ -28,7 +28,7 @@ struct SecondWindowView: View {
                                         let rankValue = rank
                                         
                                         if viewModel.arrivedGroups.count > rankValue {
-                                            HStack {
+                                            HStack(alignment: .top) {
                                                 ZStack {
                                                     Circle()
                                                         .fill(.white.opacity(0.2))
@@ -61,7 +61,7 @@ struct SecondWindowView: View {
                                         let rankValue = rank + 6
                                         
                                         if viewModel.arrivedGroups.count > rankValue {
-                                            HStack {
+                                            HStack(alignment: .top) {
                                                 Circle()
                                                     .matchedGeometryEffect(id: viewModel.arrivedGroups[rankValue].id, in: namespace)
                                                     .foregroundColor(.white.opacity(0.2))
@@ -105,6 +105,7 @@ struct SecondWindowView: View {
                                         .font(.system(size: reader.size.width / 5, weight: .bold, design: .rounded))
                                     Text(viewModel.arrivedGroups.last?.name ?? "")
                                         .font(.system(size: reader.size.width / 20, weight: .medium, design: .rounded))
+                                        .multilineTextAlignment(.center)
                                 }
                             }
                         }

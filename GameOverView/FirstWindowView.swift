@@ -46,6 +46,7 @@ struct FirstWindowView: View {
                                         .font(.system(size: reader.size.width / 5, weight: .bold, design: .rounded))
                                     Text(viewModel.arrivedGroups.last?.name ?? "")
                                         .font(.system(size: reader.size.width / 20, weight: .medium, design: .rounded))
+                                        .multilineTextAlignment(.center)
                                 }
                             }
                         }
