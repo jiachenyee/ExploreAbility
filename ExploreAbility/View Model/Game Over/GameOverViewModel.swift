@@ -44,9 +44,9 @@ class GameOverViewModel: NSObject, ObservableObject {
     
     func complete() {
         if groupName!.isEmpty {
-            groupName = "testgroup"
+            groupName = UUID().uuidString
         }
-        ref.child("arrivedGroup").setValue([groupName! : Date.now.timeIntervalSince1970])
+        ref.child("arrivedGroup").child(groupName!).setValue(Date.now.timeIntervalSince1970)
     }
     
     func startObserving() {
@@ -70,9 +70,7 @@ class GameOverViewModel: NSObject, ObservableObject {
                 
                 Timer.scheduledTimer(withTimeInterval: -abs(Date(timeIntervalSince1970: latestTimestamp).timeIntervalSinceNow) + 5 + Double(completedTeams) * 0.25, repeats: false) { _ in
                     
-                    withAnimation(.linear(duration: 0.25)) {
-                        self.animationPercentage = 1
-                    }
+                    self.animationPercentage = 0
                 }
             }
         }

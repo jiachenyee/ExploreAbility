@@ -57,8 +57,8 @@ struct GameOverView: View {
             GeometryReader { context in
                 Rectangle()
                     .fill(.green)
-                    .frame(width: context.size.width * goViewModel.animationPercentage,
-                           alignment: .trailing)
+                    .frame(width: context.size.width * goViewModel.animationPercentage)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                     .edgesIgnoringSafeArea(.all)
             }
         }
