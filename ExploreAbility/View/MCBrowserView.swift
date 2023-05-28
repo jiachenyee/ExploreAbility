@@ -13,6 +13,7 @@ import MultipeerConnectivity
 struct MCBrowserView: UIViewControllerRepresentable {
     
     var session: MCSession
+    @Environment(\.dismiss) var dismiss
     
     func makeUIViewController(context: Context) -> MCBrowserViewController {
         let vc = MCBrowserViewController(serviceType: MCConstant.service, session: session)
@@ -26,16 +27,23 @@ struct MCBrowserView: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(parent: self)
     }
     
     class Coordinator: NSObject, MCBrowserViewControllerDelegate {
+        
+        var parent: MCBrowserView
+        
+        init(parent: MCBrowserView) {
+            self.parent = parent
+        }
+        
         func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-            
+            parent.dismiss()
         }
         
         func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-            
+            parent.dismiss()
         }
     }
 }

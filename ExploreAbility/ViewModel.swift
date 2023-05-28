@@ -8,13 +8,18 @@
 import Foundation
 import MultipeerConnectivity
 import CoreLocation
+import AVFAudio
 
-class ViewModel: NSObject, ObservableObject {
+class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+    
+    let synthesizer = AVSpeechSynthesizer()
+    
     @Published var deviceId: String
     
     @Published var completedChallenges: [GameState] = []
     @Published var gameState = GameState.connection {
         didSet {
+            print("TEST")
             switch gameState {
             case .exploring: say(text: "Put on your blindfolds.")
             default: say(text: "Remove your blindfolds.")
@@ -30,8 +35,8 @@ class ViewModel: NSObject, ObservableObject {
     
     override init() {
         deviceId = String(UUID().uuidString.split(separator: "-")[0])
-        
         super.init()
+        synthesizer.delegate = self
         
         setUpMultipeerConnectivity()
     }
@@ -49,5 +54,9 @@ class ViewModel: NSObject, ObservableObject {
                 manager.startMonitoring(for: beacon)
             }
         }
+    }
+    
+    deinit {
+        print("Deinitialised!!!")
     }
 }
