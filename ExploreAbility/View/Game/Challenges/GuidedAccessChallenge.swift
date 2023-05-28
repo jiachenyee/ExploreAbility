@@ -18,6 +18,8 @@ struct GuidedAccessChallenge: View {
     @State private var stage = GuidedAccessStage.started
     @State private var isDropped = false
     
+    @EnvironmentObject var successHapticsManager: SuccessHapticsManager
+    
     var body: some View {
         GeometryReader { context in
             VStack {
@@ -84,6 +86,8 @@ struct GuidedAccessChallenge: View {
         }
         
         Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
+            successHapticsManager.fire()
+            
             withAnimation(.spring(response: 0.5, dampingFraction: 0.3)) {
                 isDropped = true
             }

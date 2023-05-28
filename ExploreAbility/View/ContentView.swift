@@ -13,6 +13,8 @@ struct ContentView: View {
     @Namespace var namespace
     
     @StateObject var viewModel = ViewModel()
+    @StateObject var successHapticsManager = SuccessHapticsManager()
+    
     @Environment(\.scenePhase) var scenePhase
     
     var body: some View {

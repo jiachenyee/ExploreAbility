@@ -172,6 +172,8 @@
 		32ADA1F02A120E5C007E071B /* AdminSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */; };
 		32ADA1F22A13203C007E071B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADA1F12A13203C007E071B /* HapticsManager.swift */; };
 		32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */; };
+		32D1D6222A233408004CE639 /* success.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D6212A233407004CE639 /* success.ahap */; };
+		32D1D6242A233449004CE639 /* SuccessHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D6232A233449004CE639 /* SuccessHapticsManager.swift */; };
 		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
 		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
 		32E418E32A0C9DA900D04174 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E22A0C9DA900D04174 /* PasscodeView.swift */; };
@@ -343,6 +345,8 @@
 		32ADA1EF2A120E5C007E071B /* AdminSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSetUpView.swift; sourceTree = "<group>"; };
 		32ADA1F12A13203C007E071B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+LiveActivities.swift"; sourceTree = "<group>"; };
+		32D1D6212A233407004CE639 /* success.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = success.ahap; sourceTree = "<group>"; };
+		32D1D6232A233449004CE639 /* SuccessHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessHapticsManager.swift; sourceTree = "<group>"; };
 		32E418C12A0B82B300D04174 /* GameOverARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverARView.swift; sourceTree = "<group>"; };
 		32E418E02A0C9C3800D04174 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		32E418E22A0C9DA900D04174 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
@@ -582,6 +586,7 @@
 				32AB445029FFE86F00E688BB /* View Model */,
 				326D42DC29F8052B00AE2F45 /* View */,
 				326D428529F7AEBA00AE2F45 /* Assets.xcassets */,
+				32D1D6212A233407004CE639 /* success.ahap */,
 				326D432329F92AC800AE2F45 /* success.mov */,
 				326D431F29F9250800AE2F45 /* game.mov */,
 				326D428729F7AEBA00AE2F45 /* Preview Content */,
@@ -779,6 +784,7 @@
 				32618A5D2A0E0CF700448C32 /* Main View Model */,
 				32618A5C2A0E0CF100448C32 /* Game Over */,
 				32ADA1F12A13203C007E071B /* HapticsManager.swift */,
+				32D1D6232A233449004CE639 /* SuccessHapticsManager.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1116,6 +1122,7 @@
 				326D428929F7AEBA00AE2F45 /* Preview Assets.xcassets in Resources */,
 				326D432429F92AC800AE2F45 /* success.mov in Resources */,
 				326D432029F9250800AE2F45 /* game.mov in Resources */,
+				32D1D6222A233408004CE639 /* success.ahap in Resources */,
 				326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,6 +1188,7 @@
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
 				32AB441E29FF884800E688BB /* MessageContents.swift in Sources */,
 				32618A612A0E0EB400448C32 /* GameOverViewModel+CoreMotion.swift in Sources */,
+				32D1D6242A233449004CE639 /* SuccessHapticsManager.swift in Sources */,
 				3202746F29FC164500377188 /* DeveloperMenuConfirmationView.swift in Sources */,
 				32AB447B2A03365F00E688BB /* MCBrowserManager.swift in Sources */,
 				32AB44792A025ABF00E688BB /* LocationData.swift in Sources */,

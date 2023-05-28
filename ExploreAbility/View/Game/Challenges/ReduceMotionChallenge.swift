@@ -22,6 +22,8 @@ struct ReduceMotionChallenge: View {
     
     @State private var state = ReduceMotionState.started
     
+    @EnvironmentObject var successHapticsManager: SuccessHapticsManager
+    
     var body: some View {
         GeometryReader { context in
             ZStack {
@@ -87,6 +89,8 @@ struct ReduceMotionChallenge: View {
                 }
                 
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                    successHapticsManager.fire()
+                    
                     withAnimation(.spring(response: 0.5, dampingFraction: 0.3)) {
                         isDropped = true
                     }

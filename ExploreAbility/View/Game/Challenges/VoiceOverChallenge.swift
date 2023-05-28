@@ -15,6 +15,8 @@ struct VoiceOverChallenge: View {
     
     var onSucceed: (() -> ())?
     
+    @EnvironmentObject var successHapticsManager: SuccessHapticsManager
+    
     @State private var sliderValue = 0.0
     @State private var toggleValue = false
     
@@ -99,6 +101,8 @@ struct VoiceOverChallenge: View {
                     }
                     
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                        successHapticsManager.fire()
+                        
                         withAnimation(.spring(response: 0.5, dampingFraction: 0.3)) {
                             isDropped = true
                         }

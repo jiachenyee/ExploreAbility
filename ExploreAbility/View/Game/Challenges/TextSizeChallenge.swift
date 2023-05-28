@@ -13,6 +13,8 @@ struct TextSizeChallenge: View {
     
     var onSucceed: (() -> ())?
     
+    @EnvironmentObject var successHapticsManager: SuccessHapticsManager
+    
     private let publisher = NotificationCenter.default.publisher(for: UIContentSizeCategory.didChangeNotification)
     
     private let fontSizes: [Double] = [6, 8, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
@@ -125,6 +127,8 @@ struct TextSizeChallenge: View {
             }
             
             Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
+                successHapticsManager.fire()
+                
                 withAnimation(.spring(response: 0.5, dampingFraction: 0.3)) {
                     isDropped = true
                 }

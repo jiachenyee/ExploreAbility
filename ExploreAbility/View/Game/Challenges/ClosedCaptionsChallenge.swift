@@ -19,6 +19,8 @@ struct ClosedCaptionsChallenge: View {
     
     var onSucceed: (() -> ())?
     
+    @EnvironmentObject var successHapticsManager: SuccessHapticsManager
+    
     @State private var looper: AVPlayerLooper?
     @State private var isClosedCaptionsEnabled = false
     @State private var isYouDidItShown = false
@@ -113,6 +115,9 @@ struct ClosedCaptionsChallenge: View {
                             }
                             
                             Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
+                                
+                                successHapticsManager.fire()
+                                
                                 withAnimation(.spring(response: 0.5, dampingFraction: 0.3)) {
                                     isDropped = true
                                 }
