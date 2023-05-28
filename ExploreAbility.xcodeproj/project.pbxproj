@@ -57,6 +57,16 @@
 		326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D432529F9323700AE2F45 /* ReducedMotionChallenge.swift */; };
 		32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */; };
 		32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */; };
+		F63937D229FA617200842173 /* HintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63937D129FA617200842173 /* HintsView.swift */; };
+		F63937D429FA630C00842173 /* HintsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63937D329FA630C00842173 /* HintsModel.swift */; };
+		F63937D729FB7AD500842173 /* Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63937D629FB7AD500842173 /* Coins.swift */; };
+		F63937D929FB7AFD00842173 /* GlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63937D829FB7AFD00842173 /* GlassModifier.swift */; };
+		F63937DB29FB7B7100842173 /* ChallengeHints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63937DA29FB7B7100842173 /* ChallengeHints.swift */; };
+		F6C8AB112A23351000748C95 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8AB102A23351000748C95 /* SongView.swift */; };
+		F6C8AB132A23352700748C95 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8AB122A23352700748C95 /* Track.swift */; };
+		F6C8AB152A23353E00748C95 /* ShazamVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8AB142A23353E00748C95 /* ShazamVM.swift */; };
+		F6C8AB182A233CE000748C95 /* BallsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8AB172A233CE000748C95 /* BallsView.swift */; };
+		F6C8AB1A2A233CF100748C95 /* BallGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8AB192A233CF100748C95 /* BallGameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +115,17 @@
 		326D432829F9599100AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		32A5342029FA27D4009BC57D /* ViewModel+Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Speech.swift"; sourceTree = "<group>"; };
 		32A5342229FA2ADD009BC57D /* InternalTestMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalTestMenu.swift; sourceTree = "<group>"; };
+		F63937D129FA617200842173 /* HintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsView.swift; sourceTree = "<group>"; };
+		F63937D329FA630C00842173 /* HintsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsModel.swift; sourceTree = "<group>"; };
+		F63937D629FB7AD500842173 /* Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coins.swift; sourceTree = "<group>"; };
+		F63937D829FB7AFD00842173 /* GlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassModifier.swift; sourceTree = "<group>"; };
+		F63937DA29FB7B7100842173 /* ChallengeHints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHints.swift; sourceTree = "<group>"; };
+		F6C8AB102A23351000748C95 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
+		F6C8AB122A23352700748C95 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		F6C8AB142A23353E00748C95 /* ShazamVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamVM.swift; sourceTree = "<group>"; };
+		F6C8AB162A2338FF00748C95 /* ExploreAbility.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExploreAbility.entitlements; sourceTree = "<group>"; };
+		F6C8AB172A233CE000748C95 /* BallsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallsView.swift; sourceTree = "<group>"; };
+		F6C8AB192A233CF100748C95 /* BallGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallGameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +187,7 @@
 		326D428029F7AEB900AE2F45 /* ExploreAbility */ = {
 			isa = PBXGroup;
 			children = (
+				F6C8AB162A2338FF00748C95 /* ExploreAbility.entitlements */,
 				326D432829F9599100AE2F45 /* Info.plist */,
 				326D428129F7AEB900AE2F45 /* ExploreAbilityApp.swift */,
 				326D429629F7DFEF00AE2F45 /* GameState.swift */,
@@ -174,6 +196,7 @@
 				326D429A29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift */,
 				326D432329F92AC800AE2F45 /* success.mov */,
 				326D431F29F9250800AE2F45 /* game.mov */,
+				F63937D529FB7ACC00842173 /* Hints */,
 				326D42DC29F8052B00AE2F45 /* View */,
 				326D428529F7AEBA00AE2F45 /* Assets.xcassets */,
 				326D428729F7AEBA00AE2F45 /* Preview Content */,
@@ -292,6 +315,39 @@
 				326D42F529F8F86F00AE2F45 /* TransmittingView.swift */,
 			);
 			path = "ExploreAbility Beacon Shared";
+			sourceTree = "<group>";
+		};
+		F63937D529FB7ACC00842173 /* Hints */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8AB0F2A2334F400748C95 /* Balls */,
+				F6E1B9B62A134C5E00D0397F /* Song */,
+				F63937D329FA630C00842173 /* HintsModel.swift */,
+				F63937D129FA617200842173 /* HintsView.swift */,
+				F63937D629FB7AD500842173 /* Coins.swift */,
+				F63937D829FB7AFD00842173 /* GlassModifier.swift */,
+				F63937DA29FB7B7100842173 /* ChallengeHints.swift */,
+			);
+			path = Hints;
+			sourceTree = "<group>";
+		};
+		F6C8AB0F2A2334F400748C95 /* Balls */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8AB172A233CE000748C95 /* BallsView.swift */,
+				F6C8AB192A233CF100748C95 /* BallGameScene.swift */,
+			);
+			path = Balls;
+			sourceTree = "<group>";
+		};
+		F6E1B9B62A134C5E00D0397F /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8AB102A23351000748C95 /* SongView.swift */,
+				F6C8AB122A23352700748C95 /* Track.swift */,
+				F6C8AB142A23353E00748C95 /* ShazamVM.swift */,
+			);
+			path = Song;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,19 +513,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				326D42ED29F8F4C100AE2F45 /* CLBeaconRegion.swift in Sources */,
+				F6C8AB1A2A233CF100748C95 /* BallGameScene.swift in Sources */,
+				F6C8AB182A233CE000748C95 /* BallsView.swift in Sources */,
+				F6C8AB132A23352700748C95 /* Track.swift in Sources */,
 				326D429529F7DFB600AE2F45 /* ViewModel.swift in Sources */,
 				326D42F429F8F66400AE2F45 /* Location.swift in Sources */,
+				F6C8AB112A23351000748C95 /* SongView.swift in Sources */,
 				326D429929F7E43600AE2F45 /* VoiceOverChallenge.swift in Sources */,
 				326D42E029F8071C00AE2F45 /* ConnectionView.swift in Sources */,
 				326D428429F7AEB900AE2F45 /* ContentView.swift in Sources */,
+				F63937D429FA630C00842173 /* HintsModel.swift in Sources */,
 				326D429229F7D28700AE2F45 /* ExploringView.swift in Sources */,
 				326D429729F7DFEF00AE2F45 /* GameState.swift in Sources */,
 				326D42E829F8C5EB00AE2F45 /* GuidedAccessChallenge.swift in Sources */,
+				F6C8AB152A23353E00748C95 /* ShazamVM.swift in Sources */,
 				326D42E229F81C6A00AE2F45 /* ClosedCaptionsChallenge.swift in Sources */,
 				326D429B29F7FBB100AE2F45 /* ViewModel+MultipeerConnectivity.swift in Sources */,
+				F63937D229FA617200842173 /* HintsView.swift in Sources */,
 				326D429029F7BEF200AE2F45 /* TextSizeChallenge.swift in Sources */,
 				326D432629F9323700AE2F45 /* ReducedMotionChallenge.swift in Sources */,
 				326D42D829F804C600AE2F45 /* MCConstant.swift in Sources */,
+				F63937D729FB7AD500842173 /* Coins.swift in Sources */,
+				F63937DB29FB7B7100842173 /* ChallengeHints.swift in Sources */,
+				F63937D929FB7AFD00842173 /* GlassModifier.swift in Sources */,
 				326D429D29F802B400AE2F45 /* MCBrowserView.swift in Sources */,
 				32A5342329FA2ADD009BC57D /* InternalTestMenu.swift in Sources */,
 				32A5342129FA27D4009BC57D /* ViewModel+Speech.swift in Sources */,
@@ -642,15 +708,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ExploreAbility/ExploreAbility.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExploreAbility/Preview Content\"";
-				DEVELOPMENT_TEAM = XL5JK4F896;
+				DEVELOPMENT_TEAM = GFLA8JWCSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExploreAbility/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -675,15 +744,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ExploreAbility/ExploreAbility.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExploreAbility/Preview Content\"";
-				DEVELOPMENT_TEAM = XL5JK4F896;
+				DEVELOPMENT_TEAM = GFLA8JWCSF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExploreAbility/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect to ExploreAbility Console";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to ExploreAbility Console";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -839,7 +911,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExploreAbility Console/Preview Content\"";
-				DEVELOPMENT_TEAM = XL5JK4F896;
+				DEVELOPMENT_TEAM = GFLA8JWCSF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -868,7 +940,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExploreAbility Console/Preview Content\"";
-				DEVELOPMENT_TEAM = XL5JK4F896;
+				DEVELOPMENT_TEAM = GFLA8JWCSF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

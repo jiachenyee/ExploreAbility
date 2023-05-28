@@ -10,7 +10,7 @@ import SwiftUI
 struct GuidedAccessChallenge: View {
     
     var namespace: Namespace.ID
-    
+    @ObservedObject var viewModel : ViewModel
     var onSucceed: (() -> ())?
     
     private let publisher = NotificationCenter.default.publisher(for: UIAccessibility.guidedAccessStatusDidChangeNotification)
@@ -18,9 +18,11 @@ struct GuidedAccessChallenge: View {
     @State private var stage = GuidedAccessStage.started
     @State private var isDropped = false
     
+    
     var body: some View {
         GeometryReader { context in
             VStack {
+                
                 ZStack {
                     let circleDiameter = isDropped ? 20 : CGFloat(stage.rawValue) * 100
                     
@@ -70,6 +72,7 @@ struct GuidedAccessChallenge: View {
                 break
             }
         }
+        
     }
     
     enum GuidedAccessStage: Int {

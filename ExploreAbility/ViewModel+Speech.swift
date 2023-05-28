@@ -7,6 +7,7 @@
 
 import Foundation
 import AVFoundation
+import Speech
 
 extension ViewModel {
     func say(text: String) {
@@ -22,6 +23,25 @@ extension ViewModel {
         
         // Speak the utterance using the synthesizer
         synthesizer.speak(utterance)
+    }
+    
+    func getPermission() {
+        SFSpeechRecognizer.requestAuthorization {
+          [unowned self] (authStatus) in
+          switch authStatus {
+          case .authorized:
+              print("Authorized yeay")
+//            if let recording = self.recording {
+//              //TODO: Kick off the transcription
+//            }
+          case .denied:
+            print("Speech recognition authorization denied")
+          case .restricted:
+            print("Not available on this device")
+          case .notDetermined:
+            print("Not determined")
+          }
+        }
     }
 }
 

@@ -22,6 +22,8 @@ class ViewModel: NSObject, ObservableObject {
         }
     }
     @Published var location = Location.academy
+    @Published var hintsModel = HintsModel()
+    
     
     var peerID: MCPeerID!
     var mcSession: MCSession!

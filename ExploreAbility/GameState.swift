@@ -74,6 +74,24 @@ enum GameState: Int, CustomStringConvertible {
             return "Test"
         }
     }
+    var hints : String? {
+        switch self {
+        case .textSize:
+            return "Try getting the text size as big as possible"
+        case .voiceOver:
+            return "There are 3 items hidden in the view"
+        case .closedCaptions:
+            return "Search Closed Captions in your settings"
+        case .reducedMotion:
+            return "Try turning on the Reduced Motion in your accessibility settings"
+        case .guidedAccess:
+            return "Try turning on the Guided Access Features in your settings"
+        case .connection:
+            return "This is just for testing only"
+        default:
+            return nil
+        }
+    }
     
     func performPreconditionCheck() -> Bool {
         switch self {
