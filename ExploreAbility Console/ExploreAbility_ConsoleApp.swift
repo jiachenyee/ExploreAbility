@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ExploreAbility_ConsoleApp: App {
+    
+    @StateObject var viewModel = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: viewModel)
+        }
+        .windowStyle(.hiddenTitleBar)
+        
+        Window("Nothing to see here.", id: "nothing-to-see-here") {
+            PrivateControllerView(viewModel: viewModel)
         }
     }
 }

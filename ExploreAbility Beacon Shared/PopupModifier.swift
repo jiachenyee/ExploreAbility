@@ -10,6 +10,8 @@ import SwiftUI
 
 struct PopupModifier: ViewModifier {
     
+    var beaconName: String
+    
     @Binding var isPresented: Bool
     
     func body(content: Content) -> some View {
@@ -17,12 +19,12 @@ struct PopupModifier: ViewModifier {
         content
             .padding()
             .sheet(isPresented: $isPresented) {
-                TransmittingView(isActive: $isPresented)
+                TransmittingView(isActive: $isPresented, beaconName: beaconName)
             }
         #else
         content
             .fullScreenCover(isPresented: $isPresented) {
-                TransmittingView(isActive: $isPresented)
+                TransmittingView(isActive: $isPresented, beaconName: beaconName)
             }
         #endif
     }

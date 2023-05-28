@@ -9,4 +9,5 @@ import Foundation
 
 enum MCConstant {
     static let service = "ilb-ExpAbility"
+    static let celebration = "ilb-celebrate"
 }

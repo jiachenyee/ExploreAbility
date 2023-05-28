@@ -11,6 +11,8 @@ struct TransmittingView: View {
     
     @Binding var isActive: Bool
     
+    var beaconName: String
+    
     @State private var isAlertPresented = false
     @State private var imageState = 0
     
@@ -18,6 +20,7 @@ struct TransmittingView: View {
     
     var body: some View {
         VStack {
+            Text(beaconName)
             Spacer()
             Image("radiowave.00\(imageState + 1)")
                 .resizable()
