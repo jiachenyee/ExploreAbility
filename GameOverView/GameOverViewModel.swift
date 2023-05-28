@@ -7,6 +7,9 @@
 
 import Foundation
 import SwiftUI
+import FirebaseDatabase
+import FirebaseDatabaseSwift
+import FirebaseCore
 
 struct ArrivedGroup: Identifiable {
     var id: String {
@@ -26,11 +29,31 @@ class GameOverViewModel: ObservableObject {
     
     @Published var isCircleRankShown = false
     
-    @Published var arrivedGroups: [ArrivedGroup] = [
-        ArrivedGroup(name: "test1", dateArrived: .now),
-        ArrivedGroup(name: "test2", dateArrived: .now),
-        ArrivedGroup(name: "test3", dateArrived: .now),ArrivedGroup(name: "test4", dateArrived: .now),ArrivedGroup(name: "test5", dateArrived: .now),ArrivedGroup(name: "test6", dateArrived: .now),ArrivedGroup(name: "tes7", dateArrived: .now)
-    ]
+    var ref: DatabaseReference!
+    
+    @Published var arrivedGroups: [ArrivedGroup] = []
+    
+    init() {
+        FirebaseApp.configure()
+        
+        ref = Database.database().reference()
+        
+        ref.child("arrivedGroup").observe(.value) { [self] snapshot in
+            
+            if let value = snapshot.value as? [String: Double] {
+                let values = value.map { (groupName, date) in
+                    ArrivedGroup(name: groupName, dateArrived: Date(timeIntervalSince1970: date))
+                }.sorted { $0.dateArrived < $1.dateArrived }
+                
+                if arrivedGroups.count != values.count {
+                    arrivedGroups = values
+                    self.playAnimation()
+                }
+            } else {
+                print("ERROR")
+            }
+        }
+    }
     
     func playAnimation() {
         withAnimation {
@@ -52,7 +75,7 @@ class GameOverViewModel: ObservableObject {
                 self.circleOffset = -0.5
             }
             
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+            Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
                 
                 withAnimation {
                     self.currentState = .leaderboards

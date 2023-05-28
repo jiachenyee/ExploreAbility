@@ -29,14 +29,24 @@ struct SecondWindowView: View {
                                         
                                         if viewModel.arrivedGroups.count > rankValue {
                                             HStack {
-                                                Circle()
-                                                    .fill(.white.opacity(0.2))
-                                                    .matchedGeometryEffect(id: viewModel.arrivedGroups[rankValue].id, in: namespace)
-                                                    .frame(width: reader.size.width / 30, height: reader.size.width / 30)
-                                                    .overlay {
-                                                        Text("\(rank + 1)")
+                                                ZStack {
+                                                    Circle()
+                                                        .fill(.white.opacity(0.2))
+                                                        .matchedGeometryEffect(id: viewModel.arrivedGroups[rankValue].id, in: namespace)
+                                                        .frame(width: reader.size.width / 30, height: reader.size.width / 30)
+                                                        .overlay {
+                                                            Text("\(rank + 1)")
+                                                                .font(.system(size: reader.size.width / 40, weight: .regular))
+                                                        }
+                                                    
+                                                    if rankValue == 0 {
+                                                        Image(systemName: "trophy.circle.fill")
                                                             .font(.system(size: reader.size.width / 40, weight: .regular))
+                                                            .offset(x: reader.size.width / 70, y: reader.size.width / 70)
+                                                            .foregroundColor(.yellow)
                                                     }
+                                                }
+                                                
                                                 Text(viewModel.arrivedGroups[rankValue].name)
                                             }
                                             .font(.system(size: reader.size.width / 30, weight: .bold))

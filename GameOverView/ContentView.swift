@@ -31,7 +31,7 @@ struct ContentView: View {
                     openWindow(id: "lhs")
                     openWindow(id: "rhs")
                 }
-                Button("Show Anim") {
+                Button("Replay last animation") {
                     viewModel.playAnimation()
                 }
             }

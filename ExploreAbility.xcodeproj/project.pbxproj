@@ -182,6 +182,8 @@
 		32D1D63B2A23D714004CE639 /* SecondWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D63A2A23D714004CE639 /* SecondWindowView.swift */; };
 		32D1D63D2A23D74B004CE639 /* GameOverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D63C2A23D74B004CE639 /* GameOverViewModel.swift */; };
 		32D1D63F2A23ED12004CE639 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D63E2A23ED12004CE639 /* GoogleService-Info.plist */; };
+		32D1D6422A23EDE4004CE639 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 32D1D6412A23EDE4004CE639 /* FirebaseDatabase */; };
+		32D1D6442A23EDE4004CE639 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 32D1D6432A23EDE4004CE639 /* FirebaseDatabaseSwift */; };
 		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
 		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
 		32E418E32A0C9DA900D04174 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E22A0C9DA900D04174 /* PasscodeView.swift */; };
@@ -420,6 +422,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D1D6442A23EDE4004CE639 /* FirebaseDatabaseSwift in Frameworks */,
+				32D1D6422A23EDE4004CE639 /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,6 +1115,10 @@
 			dependencies = (
 			);
 			name = GameOverView;
+			packageProductDependencies = (
+				32D1D6412A23EDE4004CE639 /* FirebaseDatabase */,
+				32D1D6432A23EDE4004CE639 /* FirebaseDatabaseSwift */,
+			);
 			productName = GameOverView;
 			productReference = 32D1D6292A23D6E6004CE639 /* GameOverView.app */;
 			productType = "com.apple.product-type.application";
@@ -1159,6 +1167,7 @@
 			mainGroup = 326D427529F7AEB900AE2F45;
 			packageReferences = (
 				32AB447C2A0357F000E688BB /* XCRemoteSwiftPackageReference "forever" */,
+				32D1D6402A23EDE4004CE639 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 326D427F29F7AEB900AE2F45 /* Products */;
 			projectDirPath = "";
@@ -1984,7 +1993,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.jiachen.GameOverView;
+				PRODUCT_BUNDLE_IDENTIFIER = app.jiachen.gameoverview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2013,7 +2022,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.jiachen.GameOverView;
+				PRODUCT_BUNDLE_IDENTIFIER = app.jiachen.gameoverview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2107,6 +2116,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		32D1D6402A23EDE4004CE639 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2114,6 +2131,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 32AB447C2A0357F000E688BB /* XCRemoteSwiftPackageReference "forever" */;
 			productName = Forever;
+		};
+		32D1D6412A23EDE4004CE639 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32D1D6402A23EDE4004CE639 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		32D1D6432A23EDE4004CE639 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32D1D6402A23EDE4004CE639 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
