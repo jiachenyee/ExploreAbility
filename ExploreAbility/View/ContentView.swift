@@ -75,11 +75,13 @@ struct ContentView: View {
                 GameOverView()
             }
             
-            Image(systemName: viewModel.isConnected ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
-                .foregroundColor(viewModel.isConnected ? .green : .red)
-                .padding()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .accessibilityHidden(true)
+            if viewModel.gameState != .gameOver {
+                Image(systemName: viewModel.isConnected ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
+                    .foregroundColor(viewModel.isConnected ? .green : .red)
+                    .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .accessibilityHidden(true)
+            }
         }
         .onChange(of: scenePhase) { newPhase in
             switch newPhase {
