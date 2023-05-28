@@ -16,7 +16,7 @@ struct HintsModel{
         case allAvailable
     }
     
-    var hintCounter = 0
+    var hintCounter = 2
     var hintShow = false {
         didSet{
             currentDetentCase = .mediumSmallOnly

@@ -43,7 +43,7 @@ struct HintsView: View {
                         }
                     }
                 }
-                Text("You have \(viewModel.hintsModel.hintCounter) hint credits")
+                Text("You have \(viewModel.hintsModel.hintCounter) Hint credits")
                     .foregroundColor(.white)
                     .font(.system(size: 22))
                     .bold()
@@ -167,7 +167,7 @@ struct HintsView: View {
                     .font(.callout)
                     .foregroundColor(.white)
                     .bold()
-                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .frame(maxWidth: .infinity, maxHeight: 100)
 //                    .modifier(ConvexGlassView())
                     .padding(.horizontal)
             }

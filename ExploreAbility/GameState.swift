@@ -77,15 +77,15 @@ enum GameState: Int, CustomStringConvertible {
     var hints : String? {
         switch self {
         case .textSize:
-            return "Try getting the text size as big as possible"
+            return "You might have seen this enabled on your grandparents device if they cant see clearly"
         case .voiceOver:
-            return "There are 3 items hidden in the view"
+            return "This allows those who cannot see to use their phone by having texts read aloud"
         case .closedCaptions:
-            return "Search Closed Captions in your settings"
+            return "This allows those who cannot hear clearly to understand the content by reading"
         case .reducedMotion:
-            return "Try turning on the Reduced Motion in your accessibility settings"
+            return "Some people may find animations distracting or annoying, this feature disables that."
         case .guidedAccess:
-            return "Try turning on the Guided Access Features in your settings"
+            return "Don’t trust the person you’re passing your phone to? Enable this feature to ensure they don’t leave the app"
         case .connection:
             return "This is just for testing only"
         default:
