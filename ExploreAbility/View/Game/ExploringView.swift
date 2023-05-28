@@ -18,6 +18,8 @@ struct ExploringView: View {
     
     @StateObject var hapticsManager = HapticsManager()
     
+    @State var isCompassVisible = true
+    
     var body: some View {
         ZStack {
             Color.black
@@ -25,7 +27,22 @@ struct ExploringView: View {
             
             VStack {
                 Spacer()
-                if isTextShown {
+                
+                if isCompassVisible {
+                    
+                    Text("Turn your phone around to find the next challenge.")
+                    
+                    VStack {
+                        Button("Next") {
+                            withAnimation {
+                                isCompassVisible = false
+                            }
+                        }
+                    }
+                    .onChange(of: viewModel.heading) { heading in
+                        print(heading)
+                    }
+                } else {
                     Button {
                         tapCounter += 1
                         if tapCounter == 10 {
@@ -43,6 +60,7 @@ struct ExploringView: View {
                 }
                 
                 Spacer()
+                
                 HStack {
                     ForEach(viewModel.completedChallenges, id: \.rawValue) { challenge in
                         ZStack {
@@ -59,18 +77,13 @@ struct ExploringView: View {
                 .padding()
             }
             .onAppear {
-                withAnimation {
-                    isTextShown = true
-                }
+                hapticsManager.viewModel = viewModel
+                hapticsManager.play()
+            }
+            .onDisappear {
+                hapticsManager.stop()
             }
         }
         .foregroundColor(.white)
-        .onAppear {
-            hapticsManager.viewModel = viewModel
-            hapticsManager.play()
-        }
-        .onDisappear {
-            hapticsManager.stop()
-        }
     }
 }

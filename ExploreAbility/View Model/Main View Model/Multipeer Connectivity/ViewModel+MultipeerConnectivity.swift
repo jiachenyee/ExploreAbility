@@ -23,10 +23,6 @@ extension ViewModel: MCSessionDelegate {
         browserManager.start(location: location)
     }
     
-    func leaveSession() {
-        mcSession.disconnect()
-    }
-    
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         
         guard peerID.displayName == "Academy" || peerID.displayName == "Foundation" else { return }

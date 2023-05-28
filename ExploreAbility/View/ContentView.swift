@@ -83,6 +83,7 @@ struct ContentView: View {
                     .accessibilityHidden(true)
             }
         }
+        .environmentObject(successHapticsManager)
         .onChange(of: scenePhase) { newPhase in
             switch newPhase {
             case .inactive: break

@@ -174,6 +174,14 @@
 		32B2FAF82A03850100862AA8 /* ViewModel+LiveActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */; };
 		32D1D6222A233408004CE639 /* success.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D6212A233407004CE639 /* success.ahap */; };
 		32D1D6242A233449004CE639 /* SuccessHapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D6232A233449004CE639 /* SuccessHapticsManager.swift */; };
+		32D1D62C2A23D6E6004CE639 /* GameOverViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D62B2A23D6E6004CE639 /* GameOverViewApp.swift */; };
+		32D1D62E2A23D6E6004CE639 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D62D2A23D6E6004CE639 /* ContentView.swift */; };
+		32D1D6302A23D6E7004CE639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D62F2A23D6E7004CE639 /* Assets.xcassets */; };
+		32D1D6332A23D6E7004CE639 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D6322A23D6E7004CE639 /* Preview Assets.xcassets */; };
+		32D1D6392A23D70F004CE639 /* FirstWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D6382A23D70F004CE639 /* FirstWindowView.swift */; };
+		32D1D63B2A23D714004CE639 /* SecondWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D63A2A23D714004CE639 /* SecondWindowView.swift */; };
+		32D1D63D2A23D74B004CE639 /* GameOverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D63C2A23D74B004CE639 /* GameOverViewModel.swift */; };
+		32D1D63F2A23ED12004CE639 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D63E2A23ED12004CE639 /* GoogleService-Info.plist */; };
 		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
 		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
 		32E418E32A0C9DA900D04174 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E22A0C9DA900D04174 /* PasscodeView.swift */; };
@@ -347,6 +355,16 @@
 		32B2FAF72A03850100862AA8 /* ViewModel+LiveActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+LiveActivities.swift"; sourceTree = "<group>"; };
 		32D1D6212A233407004CE639 /* success.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = success.ahap; sourceTree = "<group>"; };
 		32D1D6232A233449004CE639 /* SuccessHapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessHapticsManager.swift; sourceTree = "<group>"; };
+		32D1D6292A23D6E6004CE639 /* GameOverView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOverView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32D1D62B2A23D6E6004CE639 /* GameOverViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewApp.swift; sourceTree = "<group>"; };
+		32D1D62D2A23D6E6004CE639 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32D1D62F2A23D6E7004CE639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32D1D6322A23D6E7004CE639 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		32D1D6342A23D6E7004CE639 /* GameOverView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameOverView.entitlements; sourceTree = "<group>"; };
+		32D1D6382A23D70F004CE639 /* FirstWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWindowView.swift; sourceTree = "<group>"; };
+		32D1D63A2A23D714004CE639 /* SecondWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWindowView.swift; sourceTree = "<group>"; };
+		32D1D63C2A23D74B004CE639 /* GameOverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewModel.swift; sourceTree = "<group>"; };
+		32D1D63E2A23ED12004CE639 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32E418C12A0B82B300D04174 /* GameOverARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverARView.swift; sourceTree = "<group>"; };
 		32E418E02A0C9C3800D04174 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		32E418E22A0C9DA900D04174 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
@@ -395,6 +413,13 @@
 			files = (
 				32AB44882A03607500E688BB /* SwiftUI.framework in Frameworks */,
 				32AB44862A03607500E688BB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D1D6262A23D6E6004CE639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +584,7 @@
 				326D42B529F8048900AE2F45 /* ExploreAbility Beacon Mac */,
 				320274B729FD088800377188 /* ExploreAbility Room Scanner */,
 				32AB44892A03607500E688BB /* ExploreAbility LiveActivity */,
+				32D1D62A2A23D6E6004CE639 /* GameOverView */,
 				32AB44842A03607500E688BB /* Frameworks */,
 				326D427F29F7AEB900AE2F45 /* Products */,
 			);
@@ -573,6 +599,7 @@
 				326D42C729F804A800AE2F45 /* ExploreAbility Console.app */,
 				320274B629FD088800377188 /* ExploreAbility Room Scanner.app */,
 				32AB44832A03607500E688BB /* ExploreAbility LiveActivityExtension.appex */,
+				32D1D6292A23D6E6004CE639 /* GameOverView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -924,6 +951,30 @@
 			path = "ExploreAbility LiveActivity";
 			sourceTree = "<group>";
 		};
+		32D1D62A2A23D6E6004CE639 /* GameOverView */ = {
+			isa = PBXGroup;
+			children = (
+				32D1D63E2A23ED12004CE639 /* GoogleService-Info.plist */,
+				32D1D62B2A23D6E6004CE639 /* GameOverViewApp.swift */,
+				32D1D63C2A23D74B004CE639 /* GameOverViewModel.swift */,
+				32D1D6382A23D70F004CE639 /* FirstWindowView.swift */,
+				32D1D63A2A23D714004CE639 /* SecondWindowView.swift */,
+				32D1D62D2A23D6E6004CE639 /* ContentView.swift */,
+				32D1D62F2A23D6E7004CE639 /* Assets.xcassets */,
+				32D1D6342A23D6E7004CE639 /* GameOverView.entitlements */,
+				32D1D6312A23D6E7004CE639 /* Preview Content */,
+			);
+			path = GameOverView;
+			sourceTree = "<group>";
+		};
+		32D1D6312A23D6E7004CE639 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				32D1D6322A23D6E7004CE639 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		32E418C02A0B829F00D04174 /* Game Over */ = {
 			isa = PBXGroup;
 			children = (
@@ -1047,6 +1098,23 @@
 			productReference = 32AB44832A03607500E688BB /* ExploreAbility LiveActivityExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		32D1D6282A23D6E6004CE639 /* GameOverView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32D1D6352A23D6E7004CE639 /* Build configuration list for PBXNativeTarget "GameOverView" */;
+			buildPhases = (
+				32D1D6252A23D6E6004CE639 /* Sources */,
+				32D1D6262A23D6E6004CE639 /* Frameworks */,
+				32D1D6272A23D6E6004CE639 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameOverView;
+			productName = GameOverView;
+			productReference = 32D1D6292A23D6E6004CE639 /* GameOverView.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1075,6 +1143,9 @@
 					32AB44822A03607500E688BB = {
 						CreatedOnToolsVersion = 14.3;
 					};
+					32D1D6282A23D6E6004CE639 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 				};
 			};
 			buildConfigurationList = 326D427929F7AEB900AE2F45 /* Build configuration list for PBXProject "ExploreAbility" */;
@@ -1099,6 +1170,7 @@
 				326D42B329F8048900AE2F45 /* ExploreAbility Beacon Mac */,
 				320274B529FD088800377188 /* ExploreAbility Room Scanner */,
 				32AB44822A03607500E688BB /* ExploreAbility LiveActivityExtension */,
+				32D1D6282A23D6E6004CE639 /* GameOverView */,
 			);
 		};
 /* End PBXProject section */
@@ -1159,6 +1231,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				32AB44912A03607600E688BB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D1D6272A23D6E6004CE639 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D1D6332A23D6E7004CE639 /* Preview Assets.xcassets in Resources */,
+				32D1D6302A23D6E7004CE639 /* Assets.xcassets in Resources */,
+				32D1D63F2A23ED12004CE639 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1354,6 +1436,18 @@
 				32AB448D2A03607500E688BB /* ExploreAbility_LiveActivity.swift in Sources */,
 				32AB448B2A03607500E688BB /* ExploreAbility_LiveActivityBundle.swift in Sources */,
 				32AB449E2A036D3000E688BB /* ChallengeBallView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32D1D6252A23D6E6004CE639 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D1D63B2A23D714004CE639 /* SecondWindowView.swift in Sources */,
+				32D1D63D2A23D74B004CE639 /* GameOverViewModel.swift in Sources */,
+				32D1D62E2A23D6E6004CE639 /* ContentView.swift in Sources */,
+				32D1D62C2A23D6E6004CE639 /* GameOverViewApp.swift in Sources */,
+				32D1D6392A23D70F004CE639 /* FirstWindowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1869,6 +1963,64 @@
 			};
 			name = Release;
 		};
+		32D1D6362A23D6E7004CE639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GameOverView/GameOverView.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GameOverView/Preview Content\"";
+				DEVELOPMENT_TEAM = 9W63WN9LG4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.jiachen.GameOverView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		32D1D6372A23D6E7004CE639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GameOverView/GameOverView.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GameOverView/Preview Content\"";
+				DEVELOPMENT_TEAM = 9W63WN9LG4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.jiachen.GameOverView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1931,6 +2083,15 @@
 			buildConfigurations = (
 				32AB44972A03607600E688BB /* Debug */,
 				32AB44982A03607600E688BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D1D6352A23D6E7004CE639 /* Build configuration list for PBXNativeTarget "GameOverView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D1D6362A23D6E7004CE639 /* Debug */,
+				32D1D6372A23D6E7004CE639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
