@@ -50,6 +50,8 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
     @Published var sessionInfo: SessionInfoConsoleMessage?
     
+    @Published var hintsModel = HintsModel()
+    
     var locationData: [LocationDataSource: LocationData] = [:] {
         didSet {
             calculateCurrentProgress()

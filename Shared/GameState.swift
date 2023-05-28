@@ -109,4 +109,23 @@ enum GameState: Int, CustomStringConvertible, Codable, Equatable, Comparable {
     static func < (lhs: GameState, rhs: GameState) -> Bool {
         lhs.rawValue < rhs.rawValue
     }
+    
+    var hints : String? {
+        switch self {
+        case .textSize:
+            return "You might have seen this enabled on your grandparents device if they cant see clearly"
+        case .voiceOver:
+            return "This allows those who cannot see to use their phone by having texts read aloud"
+        case .closedCaptions:
+            return "This allows those who cannot hear clearly to understand the content by reading"
+        case .reduceMotion:
+            return "Some people may find animations distracting or annoying, this feature disables that."
+        case .guidedAccess:
+            return "Don’t trust the person you’re passing your phone to? Enable this feature to ensure they don’t leave the app"
+        case .connection:
+            return "This is just for testing only"
+        default:
+            return nil
+        }
+    }
 }

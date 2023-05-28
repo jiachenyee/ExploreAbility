@@ -82,6 +82,31 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .accessibilityHidden(true)
             }
+            
+            if viewModel.gameState.hints != nil {
+                VStack {
+                    
+                    HStack {
+                        Spacer()
+                        Button {
+                            withAnimation {
+                                viewModel.hintsModel.hintShow.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "questionmark.circle")
+                                .resizable()
+                                .frame(width: 35,height: 35 )
+                        }
+                        
+                    }
+                    Spacer()
+                    
+                }.padding()
+                    .sheet(isPresented: $viewModel.hintsModel.hintShow) {
+                        HintsView(viewModel: viewModel)
+                            .presentationDetents(Set(viewModel.hintsModel.listDetent.map { $0 }),selection: $viewModel.hintsModel.selectedDetent)
+                    }
+            }
         }
         .environmentObject(successHapticsManager)
         .onChange(of: scenePhase) { newPhase in
@@ -122,4 +147,17 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+
+struct BackgroundClearView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        DispatchQueue.main.async {
+            view.superview?.superview?.backgroundColor = .clear
+        }
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {}
 }
