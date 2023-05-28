@@ -46,7 +46,7 @@ class GameOverViewModel: ObservableObject {
                 }.sorted { $0.dateArrived < $1.dateArrived }
                 
                 if arrivedGroups.count != values.count {
-                    Timer.scheduledTimer(withTimeInterval: 1 + Double(arrivedGroups.count) * 0.5,
+                    Timer.scheduledTimer(withTimeInterval: 1 + Double(arrivedGroups.count) * 0.25,
                                          repeats: false) { [self] _ in
                         arrivedGroups = values
                         playAnimation()
