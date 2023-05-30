@@ -14,10 +14,14 @@ import ActivityKit
 
 class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     
+    var availableCheckpoints = [1, 2, 3, 4, 5, 6]
+    
     let synthesizer = AVSpeechSynthesizer()
     let locationManager = CLLocationManager()
     
     var liveActivity: Activity<LiveActivityAttributes>?
+    
+    @Published var location: Location = .academy
     
     @Published var groupName: String = ""
     
@@ -30,7 +34,9 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var heading = 0.0
     @Published var headingBetweenInitialAndNext: Double?
     
-    @Published var gameState = GameState.connection {
+    var headingOffset = 0.0
+    
+    @Published var gameState = GameState.groupSetUp {
         didSet {
             switch gameState {
             case .exploring:
@@ -48,7 +54,18 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         }
     }
     
-    @Published var sessionInfo: SessionInfoConsoleMessage?
+    @Published var sessionInfo: SessionInfoConsoleMessage? {
+        didSet {
+            if let currentBeacon = currentChallenge?.beacon,
+               let nextBeacon = nextChallenge?.beacon,
+               let nextBeaconLocation = sessionInfo?.beaconLocations[nextBeacon],
+               let currentBeaconLocation = sessionInfo?.beaconLocations[currentBeacon],
+               let headingBetweenInitialAndNext {
+                
+                headingOffset = nextBeaconLocation.toAngle(from: currentBeaconLocation, withHeading: headingBetweenInitialAndNext)
+            }
+        }
+    }
     
     @Published var hintsModel = HintsModel()
     
@@ -87,7 +104,7 @@ class ViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         
         deleteLiveActivity()
         
-        setUpMultipeerConnectivity()
+//        setUpMultipeerConnectivity()
         startMonitoring()
         startLiveActivity()
     }

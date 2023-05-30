@@ -8,7 +8,6 @@
 import Foundation
 
 struct LocationData {
-    var position: Position
     var accuracy: Double
     var date: Date
 }

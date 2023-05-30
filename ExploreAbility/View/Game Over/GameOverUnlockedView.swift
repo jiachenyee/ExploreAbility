@@ -26,15 +26,18 @@ struct GameOverUnlockedView: View {
                     .foregroundColor(.green)
                     .bold()
                     .padding(.bottom)
+                    .font(.system(size: 18, design: .monospaced))
             } else {
                 Text("RECEIVING INCOMING MESSAGE:")
                     .foregroundColor(.red)
                     .bold()
                     .opacity(headerIsAnimating ? 0.5 : 1)
                     .padding(.bottom)
+                    .font(.system(size: 18, design: .monospaced))
             }
             Text(text)
                 .foregroundColor(.white)
+                .font(.system(size: 18, design: .monospaced))
             
             Spacer()
             
@@ -47,6 +50,7 @@ struct GameOverUnlockedView: View {
             Text("\(text.count) BYTES RECEIVED")
                 .foregroundColor(.white)
                 .opacity(0.7)
+                .font(.system(size: 18, design: .monospaced))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()

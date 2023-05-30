@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+let password = Int.random(in: 100000...999999)
+
 struct GameOverView: View {
     
     var groupName: String
     
     @State var isPasswordViewVisible = false
+    
+    @State var isPasswordVisible = false
     
     @StateObject private var goViewModel = GameOverViewModel()
     
@@ -19,8 +23,31 @@ struct GameOverView: View {
         switch goViewModel.state {
         case .ar:
             ZStack {
-                GameOverARView()
+                
+                GameOverARView(isPasswordVisible: $isPasswordVisible)
                     .edgesIgnoringSafeArea(.all)
+                
+                Image("coral.001")
+                    .resizable()
+                    .scaledToFit()
+                    .opacity(0.2)
+                
+                Text("Find this anywhere within the academy")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .font(.system(size: 16))
+                    .padding()
+                
+                if isPasswordVisible {
+                    Text(String(password))
+                        .foregroundColor(.white)
+                        .font(.system(size: 32, design: .monospaced))
+                        .padding()
+                        .background(.black)
+                        .cornerRadius(8)
+                        .padding()
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                }
                 
                 Button {
                     withAnimation {

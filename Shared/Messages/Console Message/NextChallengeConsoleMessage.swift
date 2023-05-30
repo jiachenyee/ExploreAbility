@@ -8,11 +8,11 @@
 import Foundation
 
 struct NextChallengeConsoleMessage: MessageContents {
-    var nextChallenge: GameState
+    var challenge: GameState
     var beacon: Int
     
     enum CodingKeys: String, CodingKey {
-        case nextChallenge = "nc"
+        case challenge = "nc"
         case beacon = "p"
     }
 }

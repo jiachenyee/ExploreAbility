@@ -73,11 +73,8 @@ extension ViewModel: CLLocationManagerDelegate {
                          didRange beacons: [CLBeacon],
                          satisfying beaconConstraint: CLBeaconIdentityConstraint) {
         
-        guard let sessionInfo else { return }
-        
-        for beacon in beacons where sessionInfo.location.rawValue == beacon.major.intValue {
+        for beacon in beacons where location.rawValue == beacon.major.intValue {
             guard let locationDataSource = LocationDataSource(rawValue: beacon.minor.intValue),
-                  let localBeaconPosition = sessionInfo.beaconLocations[beacon.minor.intValue - 1],
                   beacon.accuracy > 0 else { return }
             
 //            switch beacon.proximity {
@@ -103,8 +100,7 @@ extension ViewModel: CLLocationManagerDelegate {
                 accuracy = -3
             }
             
-            locationData[locationDataSource] = LocationData(position: localBeaconPosition,
-                                                            accuracy: accuracy,
+            locationData[locationDataSource] = LocationData(accuracy: accuracy,
                                                             date: .now)
         }
         

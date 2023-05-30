@@ -12,6 +12,8 @@ import ARKit
 
 struct GameOverARView: UIViewRepresentable {
     
+    @Binding var isPasswordVisible: Bool
+    
     func makeUIView(context: Context) -> ARSCNView {
         let view = ARSCNView()
         
@@ -19,7 +21,7 @@ struct GameOverARView: UIViewRepresentable {
         let configuration = ARWorldTrackingConfiguration()
         let referenceObjects = ARReferenceObject.referenceObjects(inGroupNamed: "AR Resource Group", bundle: .main)
         configuration.detectionObjects = referenceObjects!
-//        configuration.sceneReconstruction.insert(.meshWithClassification)
+        
         view.delegate = context.coordinator
         
         view.session.run(configuration)
@@ -36,16 +38,28 @@ struct GameOverARView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator()
+        return Coordinator(self)
     }
     
     class Coordinator: NSObject, ARSCNViewDelegate {
+        
+        var parent: GameOverARView
+        
+        init(_ parent: GameOverARView) {
+            self.parent = parent
+        }
+        
         func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
             if anchor.name == "Coral" {
                 let cubeNode = createCubeNode()
                 
                 node.addChildNode(cubeNode)
                 node.rotation = .init(0, 0, 0, 0)
+                
+                withAnimation(.default.delay(5.5)) {
+                    self.parent.isPasswordVisible = true
+                }
+                print("HELLO")
             }
             
         }
@@ -56,19 +70,27 @@ struct GameOverARView: UIViewRepresentable {
             }
         }
         
+        var player: AVPlayer!
+        
         func createCubeNode() -> SCNNode {
             let cube = SCNPyramid(width: 0.5, height: 1, length: 0.5)
             
             cube.materials = []
             
-            let colors: [UIColor] = [.red, .green, .blue, .yellow, .purple, .orange]
+            player = AVPlayer(url: Bundle.main.url(forResource: "gameover", withExtension: "mov")!)
+            player.play()
+            
+            let colors: [AVPlayer] = [player, player, player, player, player, player]
             
             // rotate cube
             
             for i in 0..<5 {
                 let material = SCNMaterial()
-                material.diffuse.contents = colors[i].withAlphaComponent(0.5)
-                material.blendMode = .multiply
+                material.diffuse.contents = colors[i] //.withAlphaComponent(0.5)
+//                material.blendMode = .multiply
+                
+                // flip material vertically
+                material.diffuse.contentsTransform = SCNMatrix4Translate(SCNMatrix4MakeScale(1, -1, 1), 0, 1, 0)
                 
                 cube.materials.append(material)
             }

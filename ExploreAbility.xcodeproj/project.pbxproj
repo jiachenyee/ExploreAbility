@@ -195,6 +195,7 @@
 		32D1D65F2A2404A0004CE639 /* ShazamVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D65E2A2404A0004CE639 /* ShazamVM.swift */; };
 		32D1D6612A2404B4004CE639 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D6602A2404B4004CE639 /* SongView.swift */; };
 		32D1D6632A2404C2004CE639 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1D6622A2404C2004CE639 /* Track.swift */; };
+		32D1D6652A2433D3004CE639 /* gameover.mov in Resources */ = {isa = PBXBuildFile; fileRef = 32D1D6642A2433D3004CE639 /* gameover.mov */; };
 		32E418C22A0B82B300D04174 /* GameOverARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418C12A0B82B300D04174 /* GameOverARView.swift */; };
 		32E418E12A0C9C3800D04174 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E02A0C9C3800D04174 /* GameOverView.swift */; };
 		32E418E32A0C9DA900D04174 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E418E22A0C9DA900D04174 /* PasscodeView.swift */; };
@@ -387,6 +388,7 @@
 		32D1D65E2A2404A0004CE639 /* ShazamVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamVM.swift; sourceTree = "<group>"; };
 		32D1D6602A2404B4004CE639 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		32D1D6622A2404C2004CE639 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		32D1D6642A2433D3004CE639 /* gameover.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = gameover.mov; sourceTree = "<group>"; };
 		32E418C12A0B82B300D04174 /* GameOverARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverARView.swift; sourceTree = "<group>"; };
 		32E418E02A0C9C3800D04174 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		32E418E22A0C9DA900D04174 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 				326D42DC29F8052B00AE2F45 /* View */,
 				326D428529F7AEBA00AE2F45 /* Assets.xcassets */,
 				32D1D6212A233407004CE639 /* success.ahap */,
+				32D1D6642A2433D3004CE639 /* gameover.mov */,
 				326D432329F92AC800AE2F45 /* success.mov */,
 				326D431F29F9250800AE2F45 /* game.mov */,
 				326D428729F7AEBA00AE2F45 /* Preview Content */,
@@ -1260,6 +1263,7 @@
 				326D428929F7AEBA00AE2F45 /* Preview Assets.xcassets in Resources */,
 				326D432429F92AC800AE2F45 /* success.mov in Resources */,
 				326D432029F9250800AE2F45 /* game.mov in Resources */,
+				32D1D6652A2433D3004CE639 /* gameover.mov in Resources */,
 				32D1D6222A233408004CE639 /* success.ahap in Resources */,
 				326D428629F7AEBA00AE2F45 /* Assets.xcassets in Resources */,
 				32D1D64C2A23FB7D004CE639 /* GoogleService-Info.plist in Resources */,

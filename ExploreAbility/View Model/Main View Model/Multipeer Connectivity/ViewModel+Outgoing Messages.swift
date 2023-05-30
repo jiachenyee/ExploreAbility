@@ -11,23 +11,27 @@ import SwiftUI
 
 extension ViewModel {
     func sendHelloMessage(initialBeacon: Int, nextBeacon: Int) {
-        guard let hostPeerID else { return }
-        
-        currentChallenge = NextChallengeConsoleMessage(nextChallenge: .waitingRoom, beacon: initialBeacon)
-        nextChallenge = NextChallengeConsoleMessage(nextChallenge: .closedCaptions, beacon: nextBeacon)
-        
-        let helloMessage = HelloClientMessage(groupName: groupName, initialBeacon: initialBeacon, nextBeacon: nextBeacon)
-        do {
-            let data = try ClientMessage(payload: .hello(helloMessage)).toData()
-            
-            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
-            
-            withAnimation {
-                gameState = .waitingRoom
-            }
-        } catch {
-            print(error.localizedDescription)
+        withAnimation {
+            gameState = .exploring
         }
+//        guard let hostPeerID else { return }
+        
+        
+//        currentChallenge = NextChallengeConsoleMessage(nextChallenge: .waitingRoom, beacon: initialBeacon)
+//        nextChallenge = NextChallengeConsoleMessage(nextChallenge: .closedCaptions, beacon: nextBeacon)
+//
+//        let helloMessage = HelloClientMessage(groupName: groupName, initialBeacon: initialBeacon, nextBeacon: nextBeacon)
+//        do {
+//            let data = try ClientMessage(payload: .hello(helloMessage)).toData()
+//
+//            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
+//
+//            withAnimation {
+//                gameState = .waitingRoom
+//            }
+//        } catch {
+//            print(error.localizedDescription)
+//        }
     }
     
     func sendHeartbeatMessage() {
@@ -73,14 +77,14 @@ extension ViewModel {
     }
     
     func sendChallengeCompletedMessage() {
-        guard let hostPeerID, let finishedChallenge = completedChallenges.last else { return }
+//        guard let hostPeerID, let finishedChallenge = completedChallenges.last else { return }
         
-        do {
-            let data = try ClientMessage(payload: .challengeFinished(ChallengeFinishedClientMessage(gameState: finishedChallenge, date: .now))).toData()
-            
-            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
-        } catch {
-            print(error.localizedDescription)
-        }
+//        do {
+//            let data = try ClientMessage(payload: .challengeFinished(ChallengeFinishedClientMessage(gameState: finishedChallenge, date: .now))).toData()
+//
+//            try mcSession.send(data, toPeers: [hostPeerID], with: .reliable)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
     }
 }

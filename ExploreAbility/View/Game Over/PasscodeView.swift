@@ -90,7 +90,7 @@ struct PasswordView: View {
         }
         .onChange(of: password) { newValue in
             guard newValue.count == 6 else { return }
-            if newValue != "123456" {
+            if newValue != String(ExploreAbility.password) {
                 // Access Denied
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
                 

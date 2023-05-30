@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-let password = "346678"
-
 enum GameState: Int, CustomStringConvertible, Codable, Equatable, Comparable {
     
     case internalTest = -100

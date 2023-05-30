@@ -18,7 +18,7 @@ struct ExploringView: View {
     
     @StateObject var hapticsManager = HapticsManager()
     
-    @State var isCompassVisible = true
+    @State var isCompassVisible = false
     
     var body: some View {
         ZStack {
@@ -28,36 +28,22 @@ struct ExploringView: View {
             VStack {
                 Spacer()
                 
-                if isCompassVisible {
-                    
-                    Text("Turn your phone around to find the next challenge.")
-                    
-                    VStack {
-                        Button("Next") {
-                            withAnimation {
-                                isCompassVisible = false
-                            }
-                        }
+                
+                Button {
+                    tapCounter += 1
+                    if tapCounter == 10 {
+                        viewModel.gameState = .internalTest
                     }
-                    .onChange(of: viewModel.heading) { heading in
-                        print(heading)
-                    }
-                } else {
-                    Button {
-                        tapCounter += 1
-                        if tapCounter == 10 {
-                            viewModel.gameState = .internalTest
-                        }
-                    } label: {
-                        Image(systemName: "eye.slash")
-                            .font(.system(size: 32))
-                            .foregroundColor(.white)
-                    }
-                    
-                    Text("Put on your blindfolds")
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 24))
+                } label: {
+                    Image(systemName: "figure.walk")
+                        .font(.system(size: 32))
+                        .foregroundColor(.white)
                 }
+                
+                Text("Find the next check point to based on the haptics")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 24))
+                
                 
                 Spacer()
                 
@@ -79,6 +65,24 @@ struct ExploringView: View {
             .onAppear {
                 hapticsManager.viewModel = viewModel
                 hapticsManager.play()
+                
+                if let nextChallenge = viewModel.nextChallenge?.challenge.next,
+                   let checkpoint = viewModel.availableCheckpoints.randomElement() {
+                    
+                    viewModel.availableCheckpoints.removeAll {
+                        $0 == viewModel.nextChallenge?.beacon
+                    }
+                    
+                    viewModel.nextChallenge = .init(challenge: nextChallenge, beacon: checkpoint)
+                    
+                    viewModel.availableCheckpoints.removeAll {
+                        $0 == checkpoint
+                    }
+                    
+                    print("NEXT IS", checkpoint)
+                } else {
+                    // Game over
+                }
             }
             .onDisappear {
                 hapticsManager.stop()
@@ -86,4 +90,6 @@ struct ExploringView: View {
         }
         .foregroundColor(.white)
     }
+    
+    
 }

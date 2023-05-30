@@ -38,21 +38,25 @@ struct AdminSetUpView: View {
                             }
                         }
                         
-                        Picker("Next Beacon", selection: $nextBeacon) {
-                            ForEach(0..<7) { index in
-                                if currentBeacon != index {
-                                    Text("Beacon \(index + 1)")
-                                        .tag(index)
-                                }
-                            }
-                        }
+//                        Picker("Next Beacon", selection: $nextBeacon) {
+//                            ForEach(0..<7) { index in
+//                                if currentBeacon != index {
+//                                    Text("Beacon \(index + 1)")
+//                                        .tag(index)
+//                                }
+//                            }
+//                        }
                     } header: {
                         Text("Configure Beacons")
                     }
-                    Section("Point the device at the next beacon") {
-                        Button("Save Heading: \(viewModel.heading)°") {
-                            viewModel.headingBetweenInitialAndNext = viewModel.heading
-                        }
+//                    Section("Point the device at the next beacon") {
+//                        Button("Save Heading: \(viewModel.heading)°") {
+//                            viewModel.headingBetweenInitialAndNext = viewModel.heading
+//                        }
+//                    }
+                    
+                    Button("Save Heading: \(viewModel.heading)°") {
+                        viewModel.headingBetweenInitialAndNext = viewModel.heading
                     }
                 }
             }

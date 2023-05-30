@@ -5,6 +5,7 @@
 //  Created by Jia Chen Yee on 5/5/23.
 //
 
+import SwiftUI
 import Foundation
 
 extension ViewModel {
@@ -28,8 +29,14 @@ extension ViewModel {
             self.progress = progress
         }
         
+        if progress == 1 {
+            if gameState != nextChallenge.challenge {
+                withAnimation {
+                    gameState = nextChallenge.challenge
+                }
+            }
+        }
         print(progress)
-        
     }
     
     func getProgress(initialRSSI: Double, currentRSSI: Double) -> Double {

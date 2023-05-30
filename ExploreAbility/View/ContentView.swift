@@ -36,7 +36,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .gameOver
                         viewModel.completedChallenges.append(.textSize)
-                        viewModel.sendChallengeCompletedMessage()
+//                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .voiceOver:
@@ -44,7 +44,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.voiceOver)
-                        viewModel.sendChallengeCompletedMessage()
+//                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .closedCaptions:
@@ -52,7 +52,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.closedCaptions)
-                        viewModel.sendChallengeCompletedMessage()
+//                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .reduceMotion:
@@ -60,7 +60,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.reduceMotion)
-                        viewModel.sendChallengeCompletedMessage()
+//                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .guidedAccess:
@@ -68,20 +68,20 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1)) {
                         viewModel.gameState = .exploring
                         viewModel.completedChallenges.append(.guidedAccess)
-                        viewModel.sendChallengeCompletedMessage()
+//                        viewModel.sendChallengeCompletedMessage()
                     }
                 }
             case .gameOver:
                 GameOverView(groupName: viewModel.groupName)
             }
             
-            if viewModel.gameState != .gameOver {
-                Image(systemName: viewModel.isConnected ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
-                    .foregroundColor(viewModel.isConnected ? .green : .red)
-                    .padding()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .accessibilityHidden(true)
-            }
+//            if viewModel.gameState != .gameOver {
+//                Image(systemName: viewModel.isConnected ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
+//                    .foregroundColor(viewModel.isConnected ? .green : .red)
+//                    .padding()
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+//                    .accessibilityHidden(true)
+//            }
             
             if viewModel.gameState.hints != nil {
                 VStack {
@@ -106,6 +106,7 @@ struct ContentView: View {
                         HintsView(viewModel: viewModel)
                             .presentationDetents(Set(viewModel.hintsModel.listDetent.map { $0 }),selection: $viewModel.hintsModel.selectedDetent)
                     }
+                    .accessibilityHidden(true)
             }
         }
         .environmentObject(successHapticsManager)
